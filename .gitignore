@@ -8,3 +8,6 @@ private
 *.log.*
 *.mo
 local_settings.py
+
+handlers_i18n
+register_ng
