@@ -7,13 +7,12 @@
 # -------------------------------------------------------------------- #
 
 
+LANGUAGE_CODE = 'fr'
+
 # you should configure your database here before doing any real work.
 # see: http://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "who.db"
-    }
+
 }
 
 
@@ -28,17 +27,7 @@ DATABASES = {
 # to configure it. see the documentation in those modules for a list of
 # the valid options for each.
 INSTALLED_BACKENDS = {
-    #"att": {
-    #    "ENGINE": "rapidsms.backends.gsm",
-    #    "PORT": "/dev/ttyUSB0"
-    #},
-    #"verizon": {
-    #    "ENGINE": "rapidsms.backends.gsm,
-    #    "PORT": "/dev/ttyUSB1"
-    #},
-    "message_tester": {
-        "ENGINE": "rapidsms.backends.bucket"
-    }
+
 }
 
 
@@ -75,14 +64,11 @@ INSTALLED_APPS = [
     "rapidsms.contrib.export",
     "rapidsms.contrib.httptester",
     "rapidsms.contrib.locations",
-    "rapidsms.contrib.messagelog",
     "rapidsms.contrib.messaging",
-    "rapidsms.contrib.registration",
     "rapidsms.contrib.scheduler",
     "handlers_i18n",
     "direct_sms",
     "logger_ng",
-    "django_extensions",
     "healthmodels",
     "who_base"
 ]
@@ -92,12 +78,12 @@ INSTALLED_APPS = [
 # tabbed navigation. when adding an app to INSTALLED_APPS, you may wish
 # to add it here, also, to expose it in the rapidsms ui.
 RAPIDSMS_TABS = [
-    ("logger_ng.views.index",       "Message Log"),
-    ("rapidsms.contrib.registration.views.registration",    "Registration"),
-    ("rapidsms.contrib.messaging.views.messaging",          "Messaging"),
-    ("rapidsms.contrib.locations.views.locations",          "Map"),
-    ("rapidsms.contrib.scheduler.views.index",              "Event Scheduler"),
-    ("rapidsms.contrib.httptester.views.generate_identity", "Message Tester"),
+    ("logger_ng.views.index", "Journal des messages"),
+    ("who_base.views.index", "Acceuil"),
+    ("register_ng.views.registration", "Inscription"),
+    ("rapidsms.contrib.messaging.views.messaging", "Envoyer des messages"),
+    ("rapidsms.contrib.locations.views.locations", "Carte"),
+    ("rapidsms.contrib.httptester.views.generate_identity", "Testeur de SMS"),
 ]
 
 
@@ -109,17 +95,7 @@ RAPIDSMS_TABS = [
 # debug mode is turned on as default, since rapidsms is under heavy
 # development at the moment, and full stack traces are very useful
 # when reporting bugs. don't forget to turn this off in production.
-DEBUG = TEMPLATE_DEBUG = True
-
-
-# after login (which is handled by django.contrib.auth), redirect to the
-# dashboard rather than 'accounts/profile' (the default).
-LOGIN_REDIRECT_URL = "/"
-
-
-# for some reason this setting is blank in django's global_settings.py,
-# but it is needed for static assets to be linkable.
-MEDIA_URL = "/static/"
+DEBUG = TEMPLATE_DEBUG = False
 
 
 # use django-nose to run tests. rapidsms contains lots of packages and
@@ -136,7 +112,7 @@ SITE_ID = 1
 
 # the default log settings are very noisy.
 LOG_LEVEL   = "DEBUG"
-LOG_FILE    = "rapidsms.log"
+LOG_FILE    = "/var/log/rapidsms/rapidsms.log"
 LOG_FORMAT  = "[%(name)s]: %(message)s"
 LOG_SIZE    = 8192 # 8192 bytes = 64 kb
 LOG_BACKUPS = 256 # number of logs to keep

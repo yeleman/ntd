@@ -1,8 +1,10 @@
-*pyc
-*db
-*sqlite*
+*.pyc
+*.db
+*.sqlite*
 ~*
-*orig
+*.orig
 private
-*log
-*log.*
+*.log
+*.log.*
+*.mo
+local_settings.py
