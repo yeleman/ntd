@@ -79,11 +79,12 @@ INSTALLED_APPS = [
     "rapidsms.contrib.messaging",
     "rapidsms.contrib.registration",
     "rapidsms.contrib.scheduler",
-    'handlers_i18n',
-    "echo",
+    "handlers_i18n",
     "direct_sms",
     "logger_ng",
-    "django_extensions"
+    "django_extensions",
+    "healthmodels",
+    "who_base"
 ]
 
 
@@ -109,6 +110,16 @@ RAPIDSMS_TABS = [
 # development at the moment, and full stack traces are very useful
 # when reporting bugs. don't forget to turn this off in production.
 DEBUG = TEMPLATE_DEBUG = True
+
+
+# after login (which is handled by django.contrib.auth), redirect to the
+# dashboard rather than 'accounts/profile' (the default).
+LOGIN_REDIRECT_URL = "/"
+
+
+# for some reason this setting is blank in django's global_settings.py,
+# but it is needed for static assets to be linkable.
+MEDIA_URL = "/static/"
 
 
 # use django-nose to run tests. rapidsms contains lots of packages and
@@ -141,17 +152,6 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "django.core.context_processors.request"
 ]
 
-
-ROOT_URLCONF = "urls"
-
-# rapidsms provide a custom login page
-# you can override it by setting this variable and matching patters in urls.py
-LOGIN_URL = "/rapidsms/accounts/login/"
-
-# after login (which is handled by django.contrib.auth), redirect to the
-# dashboard rather than 'accounts/profile' (the default).
-LOGIN_REDIRECT_URL = "/rapidsms/"
-
 # -------------------------------------------------------------------- #
 #                           HERE BE DRAGONS!                           #
 #        these settings are pure hackery, and will go away soon        #
@@ -169,6 +169,10 @@ TEST_EXCLUDED_APPS = [
     "rapidsms.contrib.httptester",
 ]
 
+# the default ROOT_URLCONF module, bundled with rapidsms, detects and
+# maps the urls.py module of each app into a single project urlconf.
+# this is handy, but too magical for the taste of some. (remove it?)
+ROOT_URLCONF = "rapidsms.djangoproject.urls"
 
 # since we might hit the database from any thread during testing, the
 # in-memory sqlite database isn't sufficient. it spawns a separate
@@ -182,7 +186,7 @@ if 'test' in sys.argv:
             tempfile.gettempdir(), 
             "%s.rapidsms.test.sqlite3" % db_name)
             
-try
+try:
     import local_settings.py
 except ImportError:
     pass

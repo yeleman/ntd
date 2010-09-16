@@ -1,21 +1,14 @@
 #!/usr/bin/env python
 # vim: ai ts=4 sts=4 et sw=4
 
-# Uncomment the next two lines to enable the admin:
-from django.contrib import admin
-admin.autodiscover()
+# i'm afraid that url routing within rapidsms is a bit of a mess, right
+# now. the rapidsms.djangoproject.urls module reveals artifacts of an
+# earlier, more magical framework. you can add your urls here, but the
+# urls of the contrib apps are bundled within them, making them rather
+# difficult to change. fixing this (removing the magic) is a priority.
+
 
 from django.conf.urls.defaults import *
 urlpatterns = patterns("",
-
-    # Example:
-    # (r'^django_project/', include('django_project.foo.urls')),
-
-    # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
-    # to INSTALLED_APPS to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    (r'^admin/', include(admin.site.urls)),
-    (r'^rapidsms/', include("rapidsms.urls")),
+    
 )
