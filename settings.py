@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     "direct_sms",
     "logger_ng",
     "healthmodels",
+    "simple_locations",
     "register_ng",
     "django_simple_config",
     "who_base",
