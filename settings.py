@@ -35,6 +35,7 @@ INSTALLED_BACKENDS = {
 # by default. you may wish to remove some and/or add your own.
 INSTALLED_APPS = [
 
+     "south",
     # the essentials.
     "django_nose",
     "djtables",
@@ -70,7 +71,12 @@ INSTALLED_APPS = [
     "direct_sms",
     "logger_ng",
     "healthmodels",
-    "who_base"
+    "register_ng",
+    "django_simple_config",
+    "who_base",
+    'code_generator',
+    "rapidsms_roles",
+   
 ]
 
 
@@ -78,8 +84,9 @@ INSTALLED_APPS = [
 # tabbed navigation. when adding an app to INSTALLED_APPS, you may wish
 # to add it here, also, to expose it in the rapidsms ui.
 RAPIDSMS_TABS = [
+
+    ("who_base.views.dashboard", "Acceuil"),
     ("logger_ng.views.index", "Journal des messages"),
-    ("who_base.views.index", "Acceuil"),
     ("register_ng.views.registration", "Inscription"),
     ("rapidsms.contrib.messaging.views.messaging", "Envoyer des messages"),
     ("rapidsms.contrib.locations.views.locations", "Carte"),

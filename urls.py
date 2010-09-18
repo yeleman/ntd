@@ -9,6 +9,9 @@
 
 
 from django.conf.urls.defaults import *
+
 urlpatterns = patterns("",
+    (r'^$',  "who_base.views.index"),
+    (r'^',  include("rapidsms.djangoproject.urls")),
     
 )
