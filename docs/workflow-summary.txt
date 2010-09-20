@@ -1,0 +1,83 @@
+
+WHO/NTD/MALI/FIELD TEST
+=======================
+
+CAMPAIGN
+--------
+
+* Target Locations
+* Period
+* keyword code
+
+LOCATIONS
+---------
+
+* Name
+* Reporting code
+* populations
+
+INPUT USERS
+-----------
+
+* CSCOM (chef de poste)
+
+
+REPORTS
+-------
+
+A report is a paper form.
+
+* drug package
+* area identification
+* number of packages distributed to:
+    - Male
+        - 1-4 years old.
+        - 5-14 years old.
+        - ≥ 15 years old.
+    - Female
+        - 1-4 years old.
+        - 5-14 years old.
+        - ≥ 15 years old.
+* Drug distributor (from campaign?)
+* Campaign
+* Date of treatment.
+* Field agent name.
+
+Informations:
+- A paper form is for 1 day only.
+- A paper form is for 1 location only: Village, Community, School, etc.
+- CSCOM collects forms from multiple persons/places.
+- 
+
+WORKFLOW
+--------
+
+#. Campaign is created.
+#. Campaign Manager distributes reporting codes to CSCOM: cscom code + areas codes.
+#. Field agents receives drug from drug stores
+#. Field agents distribute drugs and fills report
+#. CSCOM collects (or agents bring to) forms.
+#. CSCOM sends SMS report.
+#. System sends back report-receipt.
+
+EXAMPLE SMS FORMAT: NTD A78 PA 1009 20 30 45 18 22 40
+NTD: campaign keyword
+A78: location code
+PA: drug package code
+1009: date: September 10th
+20 30 45: Male data
+18 22 40: Female data
+
+
+INDICATORS
+----------
+
+*Statistics*
+* Number of reporting units which have reported yet.
+* Number of reporting units which have *not* reported yet.
+* Reporting rate.
+
+Relative to a campaign
+* Programme coverage
+* Geographical coverage
+* National coverage
