@@ -8,15 +8,16 @@ from django.utils.translation import ugettext as _
 
 from auth.decorators import role_required
 
-from handlers_i18n.handlers.keyword import KeywordHandlerI18n
+from handlers_i18n.handlers.callback import CallbackHandler
+from handlers_i18n.exceptions import ExitHandle
 
-from ..models import DrugsPack, Results
+from ..models import DrugsPack, Results, Campaign
 from ..utils import check_location, check_exists, check_date, fix_date_year
 
 #todo: do a customRoleHandler that you can inherit from, that register the 
 # role you want
 
-class NtdHandler(KeywordHandlerI18n):
+class NtdWithCampaignHandler(CallbackHandler):
     u"""
     
     Given this workflow:
@@ -31,7 +32,8 @@ class NtdHandler(KeywordHandlerI18n):
 
     Allow stage 6:    
 
-        EXAMPLE SMS FORMAT: NTD A78 PA 1009 20 30 45 18 22 40
+        EXAMPLE SMS FORMAT: c001 A78 PA 1009 20 30 45 18 22 40
+        c001: campaign code
         A78: location code
         PA: drug package code
         1009: date: September 10th
@@ -39,21 +41,38 @@ class NtdHandler(KeywordHandlerI18n):
         18 22 40: Female data
     
     """
-
-    keyword = "ntd"
     
     ARGUMENTS = _(u"<location code> <drugs package> <treatement delivery date>"\
                   u" <male data X3> <females data X 3>")
 
+    @classmethod
+    def match(cls, msg):
+        """
+            Check if the first keyword is a campaign
+        """
+        try:
+            text = msg.text.split()
+            code = text.pop(0).strip().lower()
+            campaign = Campaign.objects.get(code=code)
+        except (IndexError, Campaign.DoesNotExist):
+            if code != 'ntd' and len(text) == 9:
+                 raise ExitHandle(_(u"No running matching the code: "\
+                                    u"'%(code)s'") % {'code': code})
+        
+            return False
+        else:
+            if campaign.end_date:
+                raise ExitHandle(_(u"The campaign %(campaign)s is over.") % {
+                                   'campaign': campaign})
+            return campaign, ' '.join(text).strip()
 
-    def help(self, keyword, lang_code):
-        self.respond(_(u"To report, send: NTD ") + self.cls.ARGUMENTS)
 
-
+    #todo: refactor handle
     @role_required('cscom')
-    def handle(self, text, keyword, lang_code):
+    def handle(self, match):
+        campaign, text = match
     
-        args = [self.flatten_string(arg) for arg in text.split()]
+        args = [arg.strip().lower() for arg in text.split()]
         
         # todo: check for location type here
         
@@ -61,12 +80,15 @@ class NtdHandler(KeywordHandlerI18n):
             location = check_location(args[0])
             
             try:
-                result = Results.objects.filter(area=location, disabled=False)\
-                                        .filter(campaign__end_date__isnull=True)\
-                                        .latest('campaign__start_date')
+                result = campaign.results_set\
+                                 .filter(area=location, disabled=False)\
+                                 .filter(campaign__end_date__isnull=True)\
+                                 .latest('campaign__start_date')
+                                 
             except Results.DoesNotExist:
-                return self.respond(_(u"There are no active campaigns for "\
-                                       u"%(location)s right now.") % {
+                return self.respond(_(u"The campaign %(campaign)s does not "\
+                                       u"include %(location)s right now.") % {
+                                       'campaign': campaign,
                                        'location': location})
             
             drugs_package = check_exists(args[1], DrugsPack)

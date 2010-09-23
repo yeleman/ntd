@@ -27,7 +27,7 @@ class Campaign(models.Model):
     
     def __unicode__(self):
         return _(u'%(name)s (started on %(date)s) ') % {'name': self.name, 
-                                           'date': self.start_date}
+               'date': self.start_date.strftime(_('%m/%d/%Y'))}
     
 
 class Drug(models.Model):
@@ -98,6 +98,7 @@ class Results(models.Model):
     
     completed = models.BooleanField(default=False, verbose_name=__(u'completed'))
     disabled = models.BooleanField(default=False, verbose_name=__(u'disabled'))
+    
     
     def __unicode__(self):
         return _(u"Results of campaign %(campaign)s at %(area)s") % {
