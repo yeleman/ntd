@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
 
-from .models import Campaign
+from .models import Campaign, Results
 
 
 @login_required
@@ -33,7 +33,7 @@ def dashboard(request):
             campaign = campaigns[0]
 
     if campaign:
-        results = sorted(campaign.results.all(), attrgetter('location.name'))
+        results = sorted(Results.objects.filter(campaign=campaign), attrgetter('location.name'))
         results = groupby(results, attrgetter('location.name'))
 
     ctx = locals()
