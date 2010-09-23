@@ -1,0 +1,116 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-23 11:18+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
+
+#: models.py:18 models.py:71
+msgid "campaign"
+msgstr "campagne"
+
+#: models.py:20 models.py:37 models.py:51
+msgid "name"
+msgstr "nom"
+
+#: models.py:21 models.py:52
+msgid "code"
+msgstr "code"
+
+#: models.py:23
+msgid "start date"
+msgstr "date de début"
+
+#: models.py:25
+msgid "end date"
+msgstr "date de fin"
+
+#: models.py:28
+#, python-format
+msgid "[%(date)s] %(name)s"
+msgstr "[%(date)s] %(name)s"
+
+#: models.py:35
+msgid "drug"
+msgstr "médicament"
+
+#: models.py:47 models.py:73
+msgid "drugs pack"
+msgstr "lot de médicaments"
+
+#: models.py:48
+msgid "drugs packs"
+msgstr "lots de médicaments"
+
+#: models.py:54
+msgid "drugs"
+msgstr "médicaments"
+
+#: models.py:59
+#, python-format
+msgid "[%(code)s] %(name)s"
+msgstr "[%(code)s] %(name)s"
+
+#: models.py:69
+msgid "result"
+msgstr "résultat"
+
+#: models.py:72
+msgid "area"
+msgstr "lieu"
+
+#: models.py:75
+msgid "distributor"
+msgstr "distributeur"
+
+#: models.py:77
+#, fuzzy
+msgid "report date"
+msgstr "date du rapport"
+
+#: models.py:78
+msgid "treatment date"
+msgstr "date du traitement"
+
+#: models.py:80
+msgid "1-4 years old males"
+msgstr "hommes de 1-4 ans"
+
+#: models.py:81
+msgid "5-14 years old males"
+msgstr "hommes de 5-14 ans"
+
+#: models.py:82
+msgid "15+ years old males"
+msgstr "hommes de plus de 15 ans"
+
+#: models.py:84
+msgid "1-4 years old females"
+msgstr "femmes de 1-4 ans"
+
+#: models.py:85
+msgid "5-14 years old females"
+msgstr "femmes de 5-14 ans"
+
+#: models.py:86
+msgid "15+ years old females"
+msgstr "femmes de plus de 15 ans"
+
+#: models.py:88
+msgid "disabled"
+msgstr "désactivé"
+
+#~ msgid "NTD reporting tool"
+#~ msgstr "Outil de rapport MTN"

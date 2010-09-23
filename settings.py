@@ -12,6 +12,8 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 LANGUAGE_CODE = 'fr'
+USE_L10N = True
+
 
 # you should configure your database here before doing any real work.
 # see: http://docs.djangoproject.com/en/dev/ref/settings/#databases
@@ -79,21 +81,23 @@ INSTALLED_APPS = [
     "auth",
     "django_simple_config",
     "who_base",
-   "simple_locations"
+    "mptt",
+   "simple_locations",
 ]
 
 
 # this rapidsms-specific setting defines which views are linked by the
 # tabbed navigation. when adding an app to INSTALLED_APPS, you may wish
 # to add it here, also, to expose it in the rapidsms ui.
+
+# todo: make that translatable
 RAPIDSMS_TABS = [
 
     ("who_base.views.dashboard", "Acceuil"),
     ("logger_ng.views.index", "Journal des messages"),
-    ("auth.views.registration", "Inscription"),
+    ("auth.views.registration", "Inscription des contacts"),
     ("rapidsms.contrib.messaging.views.messaging", "Envoyer des messages"),
-    ("rapidsms.contrib.locations.views.locations", "Carte"),
-    ("rapidsms.contrib.httptester.views.generate_identity", "Testeur de SMS"),
+    ("rapidsms.contrib.httptester.views.generate_identity", "Tester les SMS"),
 ]
 
 
@@ -117,7 +121,7 @@ TEST_RUNNER = "django_nose.NoseTestSuiteRunner"
 # this is required for the django.contrib.sites tests to run, but also
 # not included in global_settings.py, and is almost always ``1``.
 # see: http://docs.djangoproject.com/en/dev/ref/contrib/sites/
-SITE_ID = 1
+SITE_ID = 2
 
 
 # the default log settings are very noisy.

@@ -1,7 +1,27 @@
 {% extends "layout.html" %}
 
+{% load i18n %}
 
 {% block content %}
-test
+
+{% if not campaign %}
+
+    <h2>{% trans "No campaign yet" %}</h2>
+    
+    <p>
+    {% url admin:who_base_campaign_add as admin_url %}
+    {% blocktrans %}
+        <a href="{{ admin_url }}">Add a campaign</a>
+    {% endblocktrans %}
+    </p>
+    
+{% else %}
+
+    <h2>{% trans "Campaign" %}: {{ campaign.name }}<h2>
+    
+    
+    
+    
+{% endif %}
 
 {% endblock %}

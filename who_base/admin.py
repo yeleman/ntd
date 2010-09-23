@@ -7,5 +7,5 @@ from .models import *
 
 admin.site.register(Campaign)
 admin.site.register(Drug)  
-admin.site.register(DrugPack)
-admin.site.register(Result)
+admin.site.register(DrugsPack)
+admin.site.register(Results)

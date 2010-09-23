@@ -17,7 +17,7 @@
         "pk": 3, 
         "model": "who_base.drug", 
         "fields": {
-            "name": "Ivermectin"
+            "name": "Ivermectin/Mectizan"
         }
     }, 
     {
@@ -33,5 +33,18 @@
         "fields": {
             "name": "Azithromycin"
         }
+    },
+    {
+        "pk": 1, 
+        "model": "who_base.drugspack", 
+        "fields": {
+            "drugs": [
+                2, 
+                3
+            ], 
+            "code": "p001", 
+            "name": ""
+        }
     }
+
 ]

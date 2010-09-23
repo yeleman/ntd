@@ -13,6 +13,9 @@ from code_generator.fields import CodeField
 
 
 class Campaign(models.Model):
+
+    class Meta:
+        verbose_name = __('campaign')
     
     name = models.CharField(max_length=64, verbose_name=__(u'name'))
     code = CodeField(verbose_name=__("code"),  max_length=12, prefix='c')
@@ -22,11 +25,14 @@ class Campaign(models.Model):
                                 verbose_name=__(u'end date'))
     
     def __unicode__(self):
-        return _(u'[%(date)s] %(name)s') % {'name': self.name, 
+        return _(u'%(name)s (started on %(date)s) ') % {'name': self.name, 
                                            'date': self.start_date}
     
 
 class Drug(models.Model):
+
+    class Meta:
+        verbose_name = __('drug')
 
     name = models.CharField(max_length=64, verbose_name=__(u'name'),
                             unique=True)
@@ -35,7 +41,11 @@ class Drug(models.Model):
         return self.name
             
       
-class DrugPack(models.Model):
+class DrugsPack(models.Model):
+
+    class Meta:
+        verbose_name = __('drugs pack')
+        verbose_name_plural = __('drugs packs')
 
     name = models.CharField(max_length=64, blank=True, null=True,
                             verbose_name=__(u'name')) 
@@ -53,22 +63,41 @@ class DrugPack(models.Model):
         return u"[%(code)s] %(drugs)s" % {'code': self.code, 'drugs': drugs}
         
         
-class Result(models.Model):
-    campaign = models.ForeignKey(Campaign, verbose_name=__(u'Campaign'))
+class Results(models.Model):
+
+    class Meta:
+        verbose_name = __('results')
+        verbose_name_plural = __('results')
+
+    campaign = models.ForeignKey(Campaign, verbose_name=__(u'campaign'))
     area =  models.ForeignKey(Area, verbose_name=__(u'area'))
-    pack = models.ForeignKey(DrugPack, verbose_name=__(u'drug pack'))
-    distributor = models.CharField(max_length=64, 
+    
+    pack = models.ForeignKey(DrugsPack, verbose_name=__(u'drugs pack'),  
+                             blank=True, null=True)
+    distributor = models.CharField(max_length=64,  blank=True, null=True,
                                    verbose_name=__(u'distributor'))
-    report_date = models.DateField(default=datetime.datetime.today,
-                                  verbose_name=__(u'report date'))
-    treatment_date = models.DateField(verbose_name=__(u'treatment date'))
+    report_date = models.DateField(verbose_name=__(u'report date'),
+                                     blank=True, null=True)
+    treatment_date = models.DateField(verbose_name=__(u'treatment date'),
+                                       blank=True, null=True)
     
-    child_males_data = models.IntegerField(verbose_name=__(u'1-4 years old males'))
-    teen_males_data = models.IntegerField(verbose_name=__(u'5-14 years old males'))
-    adult_males_data = models.IntegerField(verbose_name=__(u'15 years old males'))
+    child_males_data = models.IntegerField(verbose_name=__(u'1-4 years old males'),
+                                             blank=True, null=True)
+    teen_males_data = models.IntegerField(verbose_name=__(u'5-14 years old males'),
+                                             blank=True, null=True)
+    adult_males_data = models.IntegerField(verbose_name=__(u'15+ years old males'),
+                                             blank=True, null=True)
     
-    child_females_data = models.IntegerField(verbose_name=__(u'1-4 years old females'))
-    teen_females_data = models.IntegerField(verbose_name=__(u'5-14 years old females'))
-    adult_females_data = models.IntegerField(verbose_name=__(u'15 years old females'))
+    child_females_data = models.IntegerField(verbose_name=__(u'1-4 years old females'),
+                                             blank=True, null=True)
+    teen_females_data = models.IntegerField(verbose_name=__(u'5-14 years old females'),
+                                             blank=True, null=True)
+    adult_females_data = models.IntegerField(verbose_name=__(u'15+ years old females'),
+                                             blank=True, null=True)
     
+    completed = models.BooleanField(default=False, verbose_name=__(u'completed'))
     disabled = models.BooleanField(default=False, verbose_name=__(u'disabled'))
+    
+    def __unicode__(self):
+        return _(u"Results of campaign %(campaign)s at %(area)s") % {
+                  'campaign': self.campaign, 'area': self.area  }

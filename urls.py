@@ -9,6 +9,6 @@ admin.autodiscover()
 
 urlpatterns = patterns("",
 
-    (r'^admin/', include(admin.site.urls)),
-    (r'^',  include("rapidsms.urls")),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^',  include("rapidsms.urls"), name='rapidsms-ui'),
 )
