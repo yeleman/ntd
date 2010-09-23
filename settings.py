@@ -1,5 +1,9 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
+
+import os
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 # -------------------------------------------------------------------- #
@@ -30,6 +34,8 @@ INSTALLED_BACKENDS = {
 
 }
 
+DEFAULT_RESPONSE = "Désolé, nous ne comprenons pas votre message"
+
 
 # to help you get started quickly, many django/rapidsms apps are enabled
 # by default. you may wish to remove some and/or add your own.
@@ -47,7 +53,6 @@ INSTALLED_APPS = [
     # overwise, you'll have to copy app settings.py vars into this file
 
     # common dependencies (which don't clutter up the ui).
-    "rapidsms.contrib.handlers",
     "rapidsms.contrib.ajax",
 
     # enable the django admin using a little shim app (which includes
@@ -71,13 +76,10 @@ INSTALLED_APPS = [
     "direct_sms",
     "logger_ng",
     "healthmodels",
-    "simple_locations",
-    "register_ng",
+    "auth",
     "django_simple_config",
     "who_base",
-    'code_generator',
-    "rapidsms_roles",
-   
+   "simple_locations"
 ]
 
 
@@ -88,7 +90,7 @@ RAPIDSMS_TABS = [
 
     ("who_base.views.dashboard", "Acceuil"),
     ("logger_ng.views.index", "Journal des messages"),
-    ("register_ng.views.registration", "Inscription"),
+    ("auth.views.registration", "Inscription"),
     ("rapidsms.contrib.messaging.views.messaging", "Envoyer des messages"),
     ("rapidsms.contrib.locations.views.locations", "Carte"),
     ("rapidsms.contrib.httptester.views.generate_identity", "Testeur de SMS"),
@@ -153,10 +155,16 @@ TEST_EXCLUDED_APPS = [
     "rapidsms.contrib.httptester",
 ]
 
-# the default ROOT_URLCONF module, bundled with rapidsms, detects and
-# maps the urls.py module of each app into a single project urlconf.
-# this is handy, but too magical for the taste of some. (remove it?)
-ROOT_URLCONF = "rapidsms.djangoproject.urls"
+
+ROOT_URLCONF = "urls"
+
+# rapidsms provide a custom login page
+# you can override it by setting this variable and matching patters in urls.py
+LOGIN_URL = "/accounts/login/"
+
+# after login (which is handled by django.contrib.auth), redirect to the
+# dashboard rather than 'accounts/profile' (the default).
+LOGIN_REDIRECT_URL = "/"
 
 # since we might hit the database from any thread during testing, the
 # in-memory sqlite database isn't sufficient. it spawns a separate

@@ -10,4 +10,5 @@ private
 local_settings.py
 
 handlers_i18n
-register_ng
+auth
+simple_locations

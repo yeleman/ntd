@@ -1,0 +1,37 @@
+[
+    {
+        "pk": 1, 
+        "model": "who_base.drug", 
+        "fields": {
+            "name": "Praziqunatel"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "who_base.drug", 
+        "fields": {
+            "name": "Albendazole/Mebendazole"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "who_base.drug", 
+        "fields": {
+            "name": "Ivermectin"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "who_base.drug", 
+        "fields": {
+            "name": "DEC"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "who_base.drug", 
+        "fields": {
+            "name": "Azithromycin"
+        }
+    }
+]

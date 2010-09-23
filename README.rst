@@ -11,7 +11,6 @@ It is based on rapidsms (0.9.x) and depends on the following packages:
 * `logger_ng <http://github.com/ksamuel/Logger-NG>`_ (new-core branch)
 * `health_models <http://github.com/daveycrockett/healthmodels>`_ (simple branch)
 * `simple_locations <http://github.com/yeleman/simple_locations>`_
-* `register_ng <http://github.com/yeleman/register_ng>`_
+* `auth <http://github.com/yeleman/auth>`_
 * `django_simple_config <http://github.com/yeleman/django_simple_config>`_
 * `code_generator <http://github.com/yeleman/code_generator>`_
-* `rapidsms_roles <http://github.com/yeleman/rapidsms_roles>`_

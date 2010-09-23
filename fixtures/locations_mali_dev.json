@@ -1,0 +1,8314 @@
+[
+   {
+      pk: 1,
+      model: 'simple_locations.areatype',
+      fields: {
+         name: 'Country',
+         slug: 'country'
+      }
+   },
+   {
+      pk: 2,
+      model: 'simple_locations.areatype',
+      fields: {
+         name: 'Region',
+         slug: 'region'
+      }
+   },
+   {
+      pk: 3,
+      model: 'simple_locations.areatype',
+      fields: {
+         name: 'Cercle',
+         slug: 'cercle'
+      }
+   },
+   {
+      pk: 4,
+      model: 'simple_locations.areatype',
+      fields: {
+         name: 'Commune',
+         slug: 'commune'
+      }
+   },
+   {
+      pk: 5,
+      model: 'simple_locations.areatype',
+      fields: {
+         name: 'District',
+         slug: 'district'
+      }
+   },
+   {
+      pk: 1,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 1,
+         code: '<Area: Mali>',
+         name: 'Mali',
+         parent: null,
+         location: null
+      }
+   },
+   {
+      pk: 2,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 2,
+         code: '<Area: Region of Gao>',
+         name: 'Gao',
+         parent: 1,
+         location: null
+      }
+   },
+   {
+      pk: 3,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Ansongo>',
+         name: 'Ansongo',
+         parent: 2,
+         location: null
+      }
+   },
+   {
+      pk: 4,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ansongo>',
+         name: 'Ansongo',
+         parent: 3,
+         location: null
+      }
+   },
+   {
+      pk: 5,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bara>',
+         name: 'Bara',
+         parent: 3,
+         location: null
+      }
+   },
+   {
+      pk: 6,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bourra>',
+         name: 'Bourra',
+         parent: 3,
+         location: null
+      }
+   },
+   {
+      pk: 7,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ouattagouna>',
+         name: 'Ouattagouna',
+         parent: 3,
+         location: null
+      }
+   },
+   {
+      pk: 8,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Talataye>',
+         name: 'Talataye',
+         parent: 3,
+         location: null
+      }
+   },
+   {
+      pk: 9,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tessit>',
+         name: 'Tessit',
+         parent: 3,
+         location: null
+      }
+   },
+   {
+      pk: 10,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tin Hama>',
+         name: 'Tin Hama',
+         parent: 3,
+         location: null
+      }
+   },
+   {
+      pk: 11,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Bourem>',
+         name: 'Bourem',
+         parent: 2,
+         location: null
+      }
+   },
+   {
+      pk: 12,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bamba>',
+         name: 'Bamba',
+         parent: 11,
+         location: null
+      }
+   },
+   {
+      pk: 13,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bourem>',
+         name: 'Bourem',
+         parent: 11,
+         location: null
+      }
+   },
+   {
+      pk: 14,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Taboye>',
+         name: 'Taboye',
+         parent: 11,
+         location: null
+      }
+   },
+   {
+      pk: 15,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tarkint>',
+         name: 'Tarkint',
+         parent: 11,
+         location: null
+      }
+   },
+   {
+      pk: 16,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Temera>',
+         name: 'Temera',
+         parent: 11,
+         location: null
+      }
+   },
+   {
+      pk: 17,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Gao>',
+         name: 'Gao',
+         parent: 2,
+         location: null
+      }
+   },
+   {
+      pk: 18,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Anchawadi>',
+         name: 'Anchawadi',
+         parent: 17,
+         location: null
+      }
+   },
+   {
+      pk: 19,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gabero>',
+         name: 'Gabero',
+         parent: 17,
+         location: null
+      }
+   },
+   {
+      pk: 20,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gao>',
+         name: 'Gao',
+         parent: 17,
+         location: null
+      }
+   },
+   {
+      pk: 21,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gounzoureye>',
+         name: 'Gounzoureye',
+         parent: 17,
+         location: null
+      }
+   },
+   {
+      pk: 22,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'tillit>',
+         name: 'N\'tillit',
+         parent: 17,
+         location: null
+      }
+   },
+   {
+      pk: 23,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sony Aliber>',
+         name: 'Sony Aliber',
+         parent: 17,
+         location: null
+      }
+   },
+   {
+      pk: 24,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tilemsi>',
+         name: 'Tilemsi',
+         parent: 17,
+         location: null
+      }
+   },
+   {
+      pk: 25,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Ménaka>',
+         name: 'Ménaka',
+         parent: null,
+         location: null
+      }
+   },
+   {
+      pk: 26,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Alata>',
+         name: 'Alata',
+         parent: 25,
+         location: null
+      }
+   },
+   {
+      pk: 27,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of AlataAnderamboukane>',
+         name: 'AlataAnderamboukane',
+         parent: 25,
+         location: null
+      }
+   },
+   {
+      pk: 28,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Inekar>',
+         name: 'Inekar',
+         parent: 25,
+         location: null
+      }
+   },
+   {
+      pk: 29,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Menaka>',
+         name: 'Menaka',
+         parent: 25,
+         location: null
+      }
+   },
+   {
+      pk: 30,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tidermene>',
+         name: 'Tidermene',
+         parent: 25,
+         location: null
+      }
+   },
+   {
+      pk: 31,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 2,
+         code: '<Area: Region of Kayes>',
+         name: 'Kayes',
+         parent: 1,
+         location: null
+      }
+   },
+   {
+      pk: 32,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Bafoulabé>',
+         name: 'Bafoulabé',
+         parent: 31,
+         location: null
+      }
+   },
+   {
+      pk: 33,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bafoulabé>',
+         name: 'Bafoulabé',
+         parent: 32,
+         location: null
+      }
+   },
+   {
+      pk: 34,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bamafelé>',
+         name: 'Bamafelé',
+         parent: 32,
+         location: null
+      }
+   },
+   {
+      pk: 35,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diakon>',
+         name: 'Diakon',
+         parent: 32,
+         location: null
+      }
+   },
+   {
+      pk: 36,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diallan>',
+         name: 'Diallan',
+         parent: 32,
+         location: null
+      }
+   },
+   {
+      pk: 37,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diokele>',
+         name: 'Diokele',
+         parent: 32,
+         location: null
+      }
+   },
+   {
+      pk: 38,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kontela>',
+         name: 'Kontela',
+         parent: 32,
+         location: null
+      }
+   },
+   {
+      pk: 39,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Mahina>',
+         name: 'Mahina',
+         parent: 32,
+         location: null
+      }
+   },
+   {
+      pk: 40,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Niambia>',
+         name: 'Niambia',
+         parent: 32,
+         location: null
+      }
+   },
+   {
+      pk: 41,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koundian>',
+         name: 'Koundian',
+         parent: 32,
+         location: null
+      }
+   },
+   {
+      pk: 42,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Oualia>',
+         name: 'Oualia',
+         parent: 32,
+         location: null
+      }
+   },
+   {
+      pk: 43,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sidibela>',
+         name: 'Sidibela',
+         parent: 32,
+         location: null
+      }
+   },
+   {
+      pk: 44,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tomora>',
+         name: 'Tomora',
+         parent: 32,
+         location: null
+      }
+   },
+   {
+      pk: 45,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Diema>',
+         name: 'Diema',
+         parent: 31,
+         location: null
+      }
+   },
+   {
+      pk: 46,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bema>',
+         name: 'Bema',
+         parent: 45,
+         location: null
+      }
+   },
+   {
+      pk: 47,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diangounté Camara>',
+         name: 'Diangounté Camara',
+         parent: 45,
+         location: null
+      }
+   },
+   {
+      pk: 48,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dianguirdé>',
+         name: 'Dianguirdé',
+         parent: 45,
+         location: null
+      }
+   },
+   {
+      pk: 49,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diema>',
+         name: 'Diema',
+         parent: 45,
+         location: null
+      }
+   },
+   {
+      pk: 50,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dieoura>',
+         name: 'Dieoura',
+         parent: 45,
+         location: null
+      }
+   },
+   {
+      pk: 51,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dioumara>',
+         name: 'Dioumara',
+         parent: 45,
+         location: null
+      }
+   },
+   {
+      pk: 52,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fassou Debe>',
+         name: 'Fassou Debe',
+         parent: 45,
+         location: null
+      }
+   },
+   {
+      pk: 53,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fatao>',
+         name: 'Fatao',
+         parent: 45,
+         location: null
+      }
+   },
+   {
+      pk: 54,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gomitradougou>',
+         name: 'Gomitradougou',
+         parent: 45,
+         location: null
+      }
+   },
+   {
+      pk: 55,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Groumera>',
+         name: 'Groumera',
+         parent: 45,
+         location: null
+      }
+   },
+   {
+      pk: 56,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Guedebine>',
+         name: 'Guedebine',
+         parent: 45,
+         location: null
+      }
+   },
+   {
+      pk: 57,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Lakamane>',
+         name: 'Lakamane',
+         parent: 45,
+         location: null
+      }
+   },
+   {
+      pk: 58,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Lambidou>',
+         name: 'Lambidou',
+         parent: 45,
+         location: null
+      }
+   },
+   {
+      pk: 59,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Madiga Sacko>',
+         name: 'Madiga Sacko',
+         parent: 45,
+         location: null
+      }
+   },
+   {
+      pk: 60,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sansankide>',
+         name: 'Sansankide',
+         parent: 45,
+         location: null
+      }
+   },
+   {
+      pk: 61,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Kayes>',
+         name: 'Kayes',
+         parent: 31,
+         location: null
+      }
+   },
+   {
+      pk: 62,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bangassi>',
+         name: 'Bangassi',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 63,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diamou>',
+         name: 'Diamou',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 64,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Djélébou>',
+         name: 'Djélébou',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 65,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Falémé>',
+         name: 'Falémé',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 66,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fégui>',
+         name: 'Fégui',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 67,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gory Gopela>',
+         name: 'Gory Gopela',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 68,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Goumera>',
+         name: 'Goumera',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 69,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Guidimakan>',
+         name: 'Guidimakan',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 70,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Hawa Dembaya>',
+         name: 'Hawa Dembaya',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 71,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Karakoro>',
+         name: 'Karakoro',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 72,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kayes>',
+         name: 'Kayes',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 73,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kemene Tambo>',
+         name: 'Kemene Tambo',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 74,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Khouloum>',
+         name: 'Khouloum',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 75,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kolombine>',
+         name: 'Kolombine',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 76,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koussane>',
+         name: 'Koussane',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 77,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Liberte Dembaya>',
+         name: 'Liberte Dembaya',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 78,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Logo>',
+         name: 'Logo',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 79,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Marena Diombougou>',
+         name: 'Marena Diombougou',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 80,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Marintoumania>',
+         name: 'Marintoumania',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 81,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sadiola>',
+         name: 'Sadiola',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 82,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sahel>',
+         name: 'Sahel',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 83,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Same Diomboma>',
+         name: 'Same Diomboma',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 84,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Segala>',
+         name: 'Segala',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 85,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sero Diamanou>',
+         name: 'Sero Diamanou',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 86,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Somankidy>',
+         name: 'Somankidy',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 87,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tafacirga>',
+         name: 'Tafacirga',
+         parent: 61,
+         location: null
+      }
+   },
+   {
+      pk: 88,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Kenieba>',
+         name: 'Kenieba',
+         parent: 31,
+         location: null
+      }
+   },
+   {
+      pk: 89,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Baye>',
+         name: 'Baye',
+         parent: 88,
+         location: null
+      }
+   },
+   {
+      pk: 90,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dabia>',
+         name: 'Dabia',
+         parent: 88,
+         location: null
+      }
+   },
+   {
+      pk: 91,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dialafara>',
+         name: 'Dialafara',
+         parent: 88,
+         location: null
+      }
+   },
+   {
+      pk: 92,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dombia>',
+         name: 'Dombia',
+         parent: 88,
+         location: null
+      }
+   },
+   {
+      pk: 93,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Falea>',
+         name: 'Falea',
+         parent: 88,
+         location: null
+      }
+   },
+   {
+      pk: 94,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Faraba>',
+         name: 'Faraba',
+         parent: 88,
+         location: null
+      }
+   },
+   {
+      pk: 95,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Guenegore>',
+         name: 'Guenegore',
+         parent: 88,
+         location: null
+      }
+   },
+   {
+      pk: 96,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kassama>',
+         name: 'Kassama',
+         parent: 88,
+         location: null
+      }
+   },
+   {
+      pk: 97,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kenieba>',
+         name: 'Kenieba',
+         parent: 88,
+         location: null
+      }
+   },
+   {
+      pk: 98,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kroukoto>',
+         name: 'Kroukoto',
+         parent: 88,
+         location: null
+      }
+   },
+   {
+      pk: 99,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sagalo>',
+         name: 'Sagalo',
+         parent: 88,
+         location: null
+      }
+   },
+   {
+      pk: 100,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sitakily>',
+         name: 'Sitakily',
+         parent: 88,
+         location: null
+      }
+   },
+   {
+      pk: 101,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Kita>',
+         name: 'Kita',
+         parent: 31,
+         location: null
+      }
+   },
+   {
+      pk: 102,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Badia>',
+         name: 'Badia',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 103,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bendougouba>',
+         name: 'Bendougouba',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 104,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Boudofo>',
+         name: 'Boudofo',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 105,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bougarybaya>',
+         name: 'Bougarybaya',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 106,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dindanko>',
+         name: 'Dindanko',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 107,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Djidian>',
+         name: 'Djidian',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 108,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Djougoun>',
+         name: 'Djougoun',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 109,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gadougou 1>',
+         name: 'Gadougou 1',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 110,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gadougou 2>',
+         name: 'Gadougou 2',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 111,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Guemoukouraba>',
+         name: 'Guemoukouraba',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 112,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kassaro>',
+         name: 'Kassaro',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 113,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kita>',
+         name: 'Kita',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 114,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kita Nord>',
+         name: 'Kita Nord',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 115,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kita Ouest>',
+         name: 'Kita Ouest',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 116,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kobri>',
+         name: 'Kobri',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 117,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kokofata>',
+         name: 'Kokofata',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 118,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kotouba>',
+         name: 'Kotouba',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 119,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koulou>',
+         name: 'Koulou',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 120,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kourounikoto>',
+         name: 'Kourounikoto',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 121,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Madina>',
+         name: 'Madina',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 122,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Makano>',
+         name: 'Makano',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 123,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Namala Guimba>',
+         name: 'Namala Guimba',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 124,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Niantanso>',
+         name: 'Niantanso',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 125,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Saboula>',
+         name: 'Saboula',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 126,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sebekoro>',
+         name: 'Sebekoro',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 127,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sefeto Nord>',
+         name: 'Sefeto Nord',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 128,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sefeto Ouest>',
+         name: 'Sefeto Ouest',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 129,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Senko>',
+         name: 'Senko',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 130,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sirakoro>',
+         name: 'Sirakoro',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 131,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Souransan Tomoto>',
+         name: 'Souransan Tomoto',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 132,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tambaga>',
+         name: 'Tambaga',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 133,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Toukoto>',
+         name: 'Toukoto',
+         parent: 101,
+         location: null
+      }
+   },
+   {
+      pk: 134,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Nioro>',
+         name: 'Nioro',
+         parent: 31,
+         location: null
+      }
+   },
+   {
+      pk: 135,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Baniene Kore>',
+         name: 'Baniene Kore',
+         parent: 134,
+         location: null
+      }
+   },
+   {
+      pk: 136,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diabigue>',
+         name: 'Diabigue',
+         parent: 134,
+         location: null
+      }
+   },
+   {
+      pk: 137,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diarra>',
+         name: 'Diarra',
+         parent: 134,
+         location: null
+      }
+   },
+   {
+      pk: 138,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diaye Coura>',
+         name: 'Diaye Coura',
+         parent: 134,
+         location: null
+      }
+   },
+   {
+      pk: 139,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gavinane>',
+         name: 'Gavinane',
+         parent: 134,
+         location: null
+      }
+   },
+   {
+      pk: 140,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gogui>',
+         name: 'Gogui',
+         parent: 134,
+         location: null
+      }
+   },
+   {
+      pk: 141,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Guetema>',
+         name: 'Guetema',
+         parent: 134,
+         location: null
+      }
+   },
+   {
+      pk: 142,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kadiaba Kadiel>',
+         name: 'Kadiaba Kadiel',
+         parent: 134,
+         location: null
+      }
+   },
+   {
+      pk: 143,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Korera Kore>',
+         name: 'Korera Kore',
+         parent: 134,
+         location: null
+      }
+   },
+   {
+      pk: 144,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Nioro>',
+         name: 'Nioro',
+         parent: 134,
+         location: null
+      }
+   },
+   {
+      pk: 145,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Nioro Tougoune Rangabe>',
+         name: 'Nioro Tougoune Rangabe',
+         parent: 134,
+         location: null
+      }
+   },
+   {
+      pk: 146,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sandare>',
+         name: 'Sandare',
+         parent: 134,
+         location: null
+      }
+   },
+   {
+      pk: 147,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Simbi>',
+         name: 'Simbi',
+         parent: 134,
+         location: null
+      }
+   },
+   {
+      pk: 148,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Troungoumbe>',
+         name: 'Troungoumbe',
+         parent: 134,
+         location: null
+      }
+   },
+   {
+      pk: 149,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Yerere>',
+         name: 'Yerere',
+         parent: 134,
+         location: null
+      }
+   },
+   {
+      pk: 150,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Youri>',
+         name: 'Youri',
+         parent: 134,
+         location: null
+      }
+   },
+   {
+      pk: 151,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Yelimane>',
+         name: 'Yelimane',
+         parent: 31,
+         location: null
+      }
+   },
+   {
+      pk: 152,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diafounou Diongaga>',
+         name: 'Diafounou Diongaga',
+         parent: 151,
+         location: null
+      }
+   },
+   {
+      pk: 153,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diafounou Gory>',
+         name: 'Diafounou Gory',
+         parent: 151,
+         location: null
+      }
+   },
+   {
+      pk: 154,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fanga>',
+         name: 'Fanga',
+         parent: 151,
+         location: null
+      }
+   },
+   {
+      pk: 155,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gory>',
+         name: 'Gory',
+         parent: 151,
+         location: null
+      }
+   },
+   {
+      pk: 156,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Guidime>',
+         name: 'Guidime',
+         parent: 151,
+         location: null
+      }
+   },
+   {
+      pk: 157,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kirane Kaniaga>',
+         name: 'Kirane Kaniaga',
+         parent: 151,
+         location: null
+      }
+   },
+   {
+      pk: 158,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Konsiga>',
+         name: 'Konsiga',
+         parent: 151,
+         location: null
+      }
+   },
+   {
+      pk: 159,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kremis>',
+         name: 'Kremis',
+         parent: 151,
+         location: null
+      }
+   },
+   {
+      pk: 160,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Marekaffo>',
+         name: 'Marekaffo',
+         parent: 151,
+         location: null
+      }
+   },
+   {
+      pk: 161,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Soumpou>',
+         name: 'Soumpou',
+         parent: 151,
+         location: null
+      }
+   },
+   {
+      pk: 162,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Toya>',
+         name: 'Toya',
+         parent: 151,
+         location: null
+      }
+   },
+   {
+      pk: 163,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tringa>',
+         name: 'Tringa',
+         parent: 151,
+         location: null
+      }
+   },
+   {
+      pk: 164,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 2,
+         code: '<Area: Region of Kidal>',
+         name: 'Kidal',
+         parent: 1,
+         location: null
+      }
+   },
+   {
+      pk: 165,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Abeibara>',
+         name: 'Abeibara',
+         parent: 164,
+         location: null
+      }
+   },
+   {
+      pk: 166,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Abeibara>',
+         name: 'Abeibara',
+         parent: 165,
+         location: null
+      }
+   },
+   {
+      pk: 167,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Boghassa>',
+         name: 'Boghassa',
+         parent: 165,
+         location: null
+      }
+   },
+   {
+      pk: 168,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tinzawatene>',
+         name: 'Tinzawatene',
+         parent: 165,
+         location: null
+      }
+   },
+   {
+      pk: 169,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Kidal>',
+         name: 'Kidal',
+         parent: 164,
+         location: null
+      }
+   },
+   {
+      pk: 170,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Anefif>',
+         name: 'Anefif',
+         parent: 169,
+         location: null
+      }
+   },
+   {
+      pk: 171,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Essouk>',
+         name: 'Essouk',
+         parent: 169,
+         location: null
+      }
+   },
+   {
+      pk: 172,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kidal>',
+         name: 'Kidal',
+         parent: 169,
+         location: null
+      }
+   },
+   {
+      pk: 173,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Tessalit>',
+         name: 'Tessalit',
+         parent: 164,
+         location: null
+      }
+   },
+   {
+      pk: 174,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Adjelhoc>',
+         name: 'Adjelhoc',
+         parent: 173,
+         location: null
+      }
+   },
+   {
+      pk: 175,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tessalit>',
+         name: 'Tessalit',
+         parent: 173,
+         location: null
+      }
+   },
+   {
+      pk: 176,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Timtaghene>',
+         name: 'Timtaghene',
+         parent: 173,
+         location: null
+      }
+   },
+   {
+      pk: 177,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Tin-Essako>',
+         name: 'Tin-Essako',
+         parent: 164,
+         location: null
+      }
+   },
+   {
+      pk: 178,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Intedjédit>',
+         name: 'Intedjédit',
+         parent: 177,
+         location: null
+      }
+   },
+   {
+      pk: 179,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tin-Essako>',
+         name: 'Tin-Essako',
+         parent: 177,
+         location: null
+      }
+   },
+   {
+      pk: 180,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 2,
+         code: '<Area: Region of Koulikoro>',
+         name: 'Koulikoro',
+         parent: 1,
+         location: null
+      }
+   },
+   {
+      pk: 181,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Banamba>',
+         name: 'Banamba',
+         parent: 180,
+         location: null
+      }
+   },
+   {
+      pk: 182,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Banamba>',
+         name: 'Banamba',
+         parent: 181,
+         location: null
+      }
+   },
+   {
+      pk: 183,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Benkadi>',
+         name: 'Benkadi',
+         parent: 181,
+         location: null
+      }
+   },
+   {
+      pk: 184,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Boron>',
+         name: 'Boron',
+         parent: 181,
+         location: null
+      }
+   },
+   {
+      pk: 185,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Duguwolowula>',
+         name: 'Duguwolowula',
+         parent: 181,
+         location: null
+      }
+   },
+   {
+      pk: 186,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kiban>',
+         name: 'Kiban',
+         parent: 181,
+         location: null
+      }
+   },
+   {
+      pk: 187,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Madina Sacko>',
+         name: 'Madina Sacko',
+         parent: 181,
+         location: null
+      }
+   },
+   {
+      pk: 188,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sebete>',
+         name: 'Sebete',
+         parent: 181,
+         location: null
+      }
+   },
+   {
+      pk: 189,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Toubacoro>',
+         name: 'Toubacoro',
+         parent: 181,
+         location: null
+      }
+   },
+   {
+      pk: 190,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Toukoroba>',
+         name: 'Toukoroba',
+         parent: 181,
+         location: null
+      }
+   },
+   {
+      pk: 191,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Dioila>',
+         name: 'Dioila',
+         parent: 180,
+         location: null
+      }
+   },
+   {
+      pk: 192,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Banco>',
+         name: 'Banco',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 193,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Benkadi>',
+         name: 'Benkadi',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 194,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Binko>',
+         name: 'Binko',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 195,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Degnekoro>',
+         name: 'Degnekoro',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 196,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diebe>',
+         name: 'Diebe',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 197,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diédougou>',
+         name: 'Diédougou',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 198,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diouman>',
+         name: 'Diouman',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 199,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dolendougou>',
+         name: 'Dolendougou',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 200,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Guegneka>',
+         name: 'Guegneka',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 201,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Jekafo>',
+         name: 'Jekafo',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 202,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kaladougou>',
+         name: 'Kaladougou',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 203,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kemekafo>',
+         name: 'Kemekafo',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 204,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kerela>',
+         name: 'Kerela',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 205,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kilidougou>',
+         name: 'Kilidougou',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 206,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Massigui>',
+         name: 'Massigui',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 207,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Nangola>',
+         name: 'Nangola',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 208,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'dlondougou>',
+         name: 'N\'dlondougou',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 209,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'garadougou>',
+         name: 'N\'garadougou',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 210,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'golobougou>',
+         name: 'N\'golobougou',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 211,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Niantjila>',
+         name: 'Niantjila',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 212,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tenindougou>',
+         name: 'Tenindougou',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 213,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Wacoro>',
+         name: 'Wacoro',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 214,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Zan Coulibaly>',
+         name: 'Zan Coulibaly',
+         parent: 191,
+         location: null
+      }
+   },
+   {
+      pk: 215,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Kangaba>',
+         name: 'Kangaba',
+         parent: 180,
+         location: null
+      }
+   },
+   {
+      pk: 216,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Balan Bakama>',
+         name: 'Balan Bakama',
+         parent: 215,
+         location: null
+      }
+   },
+   {
+      pk: 217,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Benkadi>',
+         name: 'Benkadi',
+         parent: 215,
+         location: null
+      }
+   },
+   {
+      pk: 218,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kaniogo>',
+         name: 'Kaniogo',
+         parent: 215,
+         location: null
+      }
+   },
+   {
+      pk: 219,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Karan>',
+         name: 'Karan',
+         parent: 215,
+         location: null
+      }
+   },
+   {
+      pk: 220,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Maramandougou>',
+         name: 'Maramandougou',
+         parent: 215,
+         location: null
+      }
+   },
+   {
+      pk: 221,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Minidian>',
+         name: 'Minidian',
+         parent: 215,
+         location: null
+      }
+   },
+   {
+      pk: 222,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Narena>',
+         name: 'Narena',
+         parent: 215,
+         location: null
+      }
+   },
+   {
+      pk: 223,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Nouga>',
+         name: 'Nouga',
+         parent: 215,
+         location: null
+      }
+   },
+   {
+      pk: 224,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Kati>',
+         name: 'Kati',
+         parent: 180,
+         location: null
+      }
+   },
+   {
+      pk: 225,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Baguineda-camp>',
+         name: 'Baguineda-camp',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 226,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bamako>',
+         name: 'Bamako',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 227,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bancoumana>',
+         name: 'Bancoumana',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 228,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bossofala>',
+         name: 'Bossofala',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 229,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bougoula>',
+         name: 'Bougoula',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 230,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kati>',
+         name: 'Kati',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 231,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Daban>',
+         name: 'Daban',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 232,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diago>',
+         name: 'Diago',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 233,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dialakoroba>',
+         name: 'Dialakoroba',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 234,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dialakorodji>',
+         name: 'Dialakorodji',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 235,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diedougou>',
+         name: 'Diedougou',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 236,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dio-gare>',
+         name: 'Dio-gare',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 237,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dogodouman>',
+         name: 'Dogodouman',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 238,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dombila>',
+         name: 'Dombila',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 239,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Doubabougou>',
+         name: 'Doubabougou',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 240,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Faraba>',
+         name: 'Faraba',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 241,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kalabancoro>',
+         name: 'Kalabancoro',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 242,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kalifabougou>',
+         name: 'Kalifabougou',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 243,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kambila>',
+         name: 'Kambila',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 244,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kourouba>',
+         name: 'Kourouba',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 245,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Mande>',
+         name: 'Mande',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 246,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Moribabougou>',
+         name: 'Moribabougou',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 247,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Mountougoula>',
+         name: 'Mountougoula',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 248,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'gabacoro Droit>',
+         name: 'N\'gabacoro Droit',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 249,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'gouraba>',
+         name: 'N\'gouraba',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 250,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Niagadina>',
+         name: 'Niagadina',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 251,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Nioumamakana>',
+         name: 'Nioumamakana',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 252,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'tjiba>',
+         name: 'N\'tjiba',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 253,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ouelessebougou>',
+         name: 'Ouelessebougou',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 254,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Safo>',
+         name: 'Safo',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 255,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sanankoro Djitoumou>',
+         name: 'Sanankoro Djitoumou',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 256,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sanankoroba>',
+         name: 'Sanankoroba',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 257,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sangarebougou>',
+         name: 'Sangarebougou',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 258,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Siby>',
+         name: 'Siby',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 259,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sobra>',
+         name: 'Sobra',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 260,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tiakadougou-dialakoro>',
+         name: 'Tiakadougou-dialakoro',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 261,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tiele>',
+         name: 'Tiele',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 262,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Yelekebougou>',
+         name: 'Yelekebougou',
+         parent: 224,
+         location: null
+      }
+   },
+   {
+      pk: 263,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Kolokani>',
+         name: 'Kolokani',
+         parent: 180,
+         location: null
+      }
+   },
+   {
+      pk: 264,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Didieni>',
+         name: 'Didieni',
+         parent: 263,
+         location: null
+      }
+   },
+   {
+      pk: 265,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Guihoyo>',
+         name: 'Guihoyo',
+         parent: 263,
+         location: null
+      }
+   },
+   {
+      pk: 266,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kolokani>',
+         name: 'Kolokani',
+         parent: 263,
+         location: null
+      }
+   },
+   {
+      pk: 267,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Massantola>',
+         name: 'Massantola',
+         parent: 263,
+         location: null
+      }
+   },
+   {
+      pk: 268,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Nonkon>',
+         name: 'Nonkon',
+         parent: 263,
+         location: null
+      }
+   },
+   {
+      pk: 269,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Nossombougou>',
+         name: 'Nossombougou',
+         parent: 263,
+         location: null
+      }
+   },
+   {
+      pk: 270,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ouolodo>',
+         name: 'Ouolodo',
+         parent: 263,
+         location: null
+      }
+   },
+   {
+      pk: 271,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sagabala>',
+         name: 'Sagabala',
+         parent: 263,
+         location: null
+      }
+   },
+   {
+      pk: 272,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sebecoro 1>',
+         name: 'Sebecoro 1',
+         parent: 263,
+         location: null
+      }
+   },
+   {
+      pk: 273,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tioribougou>',
+         name: 'Tioribougou',
+         parent: 263,
+         location: null
+      }
+   },
+   {
+      pk: 274,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Koulikoro>',
+         name: 'Koulikoro',
+         parent: 180,
+         location: null
+      }
+   },
+   {
+      pk: 275,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dinandougou>',
+         name: 'Dinandougou',
+         parent: 274,
+         location: null
+      }
+   },
+   {
+      pk: 276,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Doumba>',
+         name: 'Doumba',
+         parent: 274,
+         location: null
+      }
+   },
+   {
+      pk: 277,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koula>',
+         name: 'Koula',
+         parent: 274,
+         location: null
+      }
+   },
+   {
+      pk: 278,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koulikoro>',
+         name: 'Koulikoro',
+         parent: 274,
+         location: null
+      }
+   },
+   {
+      pk: 279,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Meguetan>',
+         name: 'Meguetan',
+         parent: 274,
+         location: null
+      }
+   },
+   {
+      pk: 280,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Nyamina>',
+         name: 'Nyamina',
+         parent: 274,
+         location: null
+      }
+   },
+   {
+      pk: 281,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sirakorola>',
+         name: 'Sirakorola',
+         parent: 274,
+         location: null
+      }
+   },
+   {
+      pk: 282,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tienfala>',
+         name: 'Tienfala',
+         parent: 274,
+         location: null
+      }
+   },
+   {
+      pk: 283,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tougouni>',
+         name: 'Tougouni',
+         parent: 274,
+         location: null
+      }
+   },
+   {
+      pk: 284,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Nara>',
+         name: 'Nara',
+         parent: 180,
+         location: null
+      }
+   },
+   {
+      pk: 285,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Allahina>',
+         name: 'Allahina',
+         parent: 284,
+         location: null
+      }
+   },
+   {
+      pk: 286,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dabo>',
+         name: 'Dabo',
+         parent: 284,
+         location: null
+      }
+   },
+   {
+      pk: 287,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dilly>',
+         name: 'Dilly',
+         parent: 284,
+         location: null
+      }
+   },
+   {
+      pk: 288,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dogofry>',
+         name: 'Dogofry',
+         parent: 284,
+         location: null
+      }
+   },
+   {
+      pk: 289,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fallou>',
+         name: 'Fallou',
+         parent: 284,
+         location: null
+      }
+   },
+   {
+      pk: 290,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gueneibe>',
+         name: 'Gueneibe',
+         parent: 284,
+         location: null
+      }
+   },
+   {
+      pk: 291,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Guire>',
+         name: 'Guire',
+         parent: 284,
+         location: null
+      }
+   },
+   {
+      pk: 292,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koronga>',
+         name: 'Koronga',
+         parent: 284,
+         location: null
+      }
+   },
+   {
+      pk: 293,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Nara>',
+         name: 'Nara',
+         parent: 284,
+         location: null
+      }
+   },
+   {
+      pk: 294,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Niamana>',
+         name: 'Niamana',
+         parent: 284,
+         location: null
+      }
+   },
+   {
+      pk: 295,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ouagadou>',
+         name: 'Ouagadou',
+         parent: 284,
+         location: null
+      }
+   },
+   {
+      pk: 296,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 2,
+         code: '<Area: Region of Mopti>',
+         name: 'Mopti',
+         parent: 1,
+         location: null
+      }
+   },
+   {
+      pk: 297,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Bandiagara>',
+         name: 'Bandiagara',
+         parent: 296,
+         location: null
+      }
+   },
+   {
+      pk: 298,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bandiagara>',
+         name: 'Bandiagara',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 299,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bara Sara>',
+         name: 'Bara Sara',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 300,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Borko>',
+         name: 'Borko',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 301,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dandoli>',
+         name: 'Dandoli',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 302,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diamnati>',
+         name: 'Diamnati',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 303,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dogani Bere>',
+         name: 'Dogani Bere',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 304,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Doucoumbo>',
+         name: 'Doucoumbo',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 305,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dourou>',
+         name: 'Dourou',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 306,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kendé>',
+         name: 'Kendé',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 307,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kendié>',
+         name: 'Kendié',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 308,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Lowol Gueou>',
+         name: 'Lowol Gueou',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 309,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Muetoumou>',
+         name: 'Muetoumou',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 310,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ondougou>',
+         name: 'Ondougou',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 311,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Pelou>',
+         name: 'Pelou',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 312,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Pignari>',
+         name: 'Pignari',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 313,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Pignari Bana>',
+         name: 'Pignari Bana',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 314,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sangha>',
+         name: 'Sangha',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 315,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ségué-Iré>',
+         name: 'Ségué-Iré',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 316,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Soroly>',
+         name: 'Soroly',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 317,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Timiri>',
+         name: 'Timiri',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 318,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Wadouba>',
+         name: 'Wadouba',
+         parent: 297,
+         location: null
+      }
+   },
+   {
+      pk: 319,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Bankass>',
+         name: 'Bankass',
+         parent: 296,
+         location: null
+      }
+   },
+   {
+      pk: 320,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bankass>',
+         name: 'Bankass',
+         parent: 319,
+         location: null
+      }
+   },
+   {
+      pk: 321,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Baye>',
+         name: 'Baye',
+         parent: 319,
+         location: null
+      }
+   },
+   {
+      pk: 322,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diallassagou>',
+         name: 'Diallassagou',
+         parent: 319,
+         location: null
+      }
+   },
+   {
+      pk: 323,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dimbal Habé>',
+         name: 'Dimbal Habé',
+         parent: 319,
+         location: null
+      }
+   },
+   {
+      pk: 324,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kani Bonzon>',
+         name: 'Kani Bonzon',
+         parent: 319,
+         location: null
+      }
+   },
+   {
+      pk: 325,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koulogon >',
+         name: 'Koulogon ',
+         parent: 319,
+         location: null
+      }
+   },
+   {
+      pk: 326,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of HabéLessagou >',
+         name: 'HabéLessagou ',
+         parent: 319,
+         location: null
+      }
+   },
+   {
+      pk: 327,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of HabéOuenkoro>',
+         name: 'HabéOuenkoro',
+         parent: 319,
+         location: null
+      }
+   },
+   {
+      pk: 328,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ségué>',
+         name: 'Ségué',
+         parent: 319,
+         location: null
+      }
+   },
+   {
+      pk: 329,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sokoura>',
+         name: 'Sokoura',
+         parent: 319,
+         location: null
+      }
+   },
+   {
+      pk: 330,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Soubala>',
+         name: 'Soubala',
+         parent: 319,
+         location: null
+      }
+   },
+   {
+      pk: 331,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tori>',
+         name: 'Tori',
+         parent: 319,
+         location: null
+      }
+   },
+   {
+      pk: 332,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Djenné>',
+         name: 'Djenné',
+         parent: 296,
+         location: null
+      }
+   },
+   {
+      pk: 333,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ali>',
+         name: 'Ali',
+         parent: 332,
+         location: null
+      }
+   },
+   {
+      pk: 334,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dandougou Fakala>',
+         name: 'Dandougou Fakala',
+         parent: 332,
+         location: null
+      }
+   },
+   {
+      pk: 335,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Derary>',
+         name: 'Derary',
+         parent: 332,
+         location: null
+      }
+   },
+   {
+      pk: 336,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Djenné>',
+         name: 'Djenné',
+         parent: 332,
+         location: null
+      }
+   },
+   {
+      pk: 337,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fakala>',
+         name: 'Fakala',
+         parent: 332,
+         location: null
+      }
+   },
+   {
+      pk: 338,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Femaye>',
+         name: 'Femaye',
+         parent: 332,
+         location: null
+      }
+   },
+   {
+      pk: 339,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kéwa>',
+         name: 'Kéwa',
+         parent: 332,
+         location: null
+      }
+   },
+   {
+      pk: 340,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Madiama>',
+         name: 'Madiama',
+         parent: 332,
+         location: null
+      }
+   },
+   {
+      pk: 341,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Nema-Badenya-Kafo>',
+         name: 'Nema-Badenya-Kafo',
+         parent: 332,
+         location: null
+      }
+   },
+   {
+      pk: 342,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Niansanarie>',
+         name: 'Niansanarie',
+         parent: 332,
+         location: null
+      }
+   },
+   {
+      pk: 343,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Pondori>',
+         name: 'Pondori',
+         parent: 332,
+         location: null
+      }
+   },
+   {
+      pk: 344,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Togue Mourari>',
+         name: 'Togue Mourari',
+         parent: 332,
+         location: null
+      }
+   },
+   {
+      pk: 345,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Douentza>',
+         name: 'Douentza',
+         parent: 296,
+         location: null
+      }
+   },
+   {
+      pk: 346,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dallah>',
+         name: 'Dallah',
+         parent: 345,
+         location: null
+      }
+   },
+   {
+      pk: 347,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dangol-bore>',
+         name: 'Dangol-bore',
+         parent: 345,
+         location: null
+      }
+   },
+   {
+      pk: 348,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Debere>',
+         name: 'Debere',
+         parent: 345,
+         location: null
+      }
+   },
+   {
+      pk: 349,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dianwely>',
+         name: 'Dianwely',
+         parent: 345,
+         location: null
+      }
+   },
+   {
+      pk: 350,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Djaptodji>',
+         name: 'Djaptodji',
+         parent: 345,
+         location: null
+      }
+   },
+   {
+      pk: 351,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Douentza>',
+         name: 'Douentza',
+         parent: 345,
+         location: null
+      }
+   },
+   {
+      pk: 352,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gandamia>',
+         name: 'Gandamia',
+         parent: 345,
+         location: null
+      }
+   },
+   {
+      pk: 353,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Haire>',
+         name: 'Haire',
+         parent: 345,
+         location: null
+      }
+   },
+   {
+      pk: 354,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Hombori>',
+         name: 'Hombori',
+         parent: 345,
+         location: null
+      }
+   },
+   {
+      pk: 355,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kerena>',
+         name: 'Kerena',
+         parent: 345,
+         location: null
+      }
+   },
+   {
+      pk: 356,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Korarou>',
+         name: 'Korarou',
+         parent: 345,
+         location: null
+      }
+   },
+   {
+      pk: 357,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koubewel Koundia>',
+         name: 'Koubewel Koundia',
+         parent: 345,
+         location: null
+      }
+   },
+   {
+      pk: 358,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Mondoro>',
+         name: 'Mondoro',
+         parent: 345,
+         location: null
+      }
+   },
+   {
+      pk: 359,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Petaka>',
+         name: 'Petaka',
+         parent: 345,
+         location: null
+      }
+   },
+   {
+      pk: 360,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tedje>',
+         name: 'Tedje',
+         parent: 345,
+         location: null
+      }
+   },
+   {
+      pk: 361,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Koro>',
+         name: 'Koro',
+         parent: 296,
+         location: null
+      }
+   },
+   {
+      pk: 362,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bamba>',
+         name: 'Bamba',
+         parent: 361,
+         location: null
+      }
+   },
+   {
+      pk: 363,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Barapireli>',
+         name: 'Barapireli',
+         parent: 361,
+         location: null
+      }
+   },
+   {
+      pk: 364,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bondo>',
+         name: 'Bondo',
+         parent: 361,
+         location: null
+      }
+   },
+   {
+      pk: 365,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diankabou>',
+         name: 'Diankabou',
+         parent: 361,
+         location: null
+      }
+   },
+   {
+      pk: 366,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dinangourou>',
+         name: 'Dinangourou',
+         parent: 361,
+         location: null
+      }
+   },
+   {
+      pk: 367,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dioungani>',
+         name: 'Dioungani',
+         parent: 361,
+         location: null
+      }
+   },
+   {
+      pk: 368,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dougoutene 1>',
+         name: 'Dougoutene 1',
+         parent: 361,
+         location: null
+      }
+   },
+   {
+      pk: 369,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dougoutene 2>',
+         name: 'Dougoutene 2',
+         parent: 361,
+         location: null
+      }
+   },
+   {
+      pk: 370,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kassa>',
+         name: 'Kassa',
+         parent: 361,
+         location: null
+      }
+   },
+   {
+      pk: 371,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koporo-Pen Koporona>',
+         name: 'Koporo-Pen Koporona',
+         parent: 361,
+         location: null
+      }
+   },
+   {
+      pk: 372,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koro>',
+         name: 'Koro',
+         parent: 361,
+         location: null
+      }
+   },
+   {
+      pk: 373,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Madougou>',
+         name: 'Madougou',
+         parent: 361,
+         location: null
+      }
+   },
+   {
+      pk: 374,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Pel-Maoude>',
+         name: 'Pel-Maoude',
+         parent: 361,
+         location: null
+      }
+   },
+   {
+      pk: 375,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Yoro>',
+         name: 'Yoro',
+         parent: 361,
+         location: null
+      }
+   },
+   {
+      pk: 376,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Youdiou>',
+         name: 'Youdiou',
+         parent: 361,
+         location: null
+      }
+   },
+   {
+      pk: 377,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Mopti>',
+         name: 'Mopti',
+         parent: 296,
+         location: null
+      }
+   },
+   {
+      pk: 378,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bassirou>',
+         name: 'Bassirou',
+         parent: 377,
+         location: null
+      }
+   },
+   {
+      pk: 379,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Borondougou>',
+         name: 'Borondougou',
+         parent: 377,
+         location: null
+      }
+   },
+   {
+      pk: 380,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dialloube>',
+         name: 'Dialloube',
+         parent: 377,
+         location: null
+      }
+   },
+   {
+      pk: 381,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fatoma>',
+         name: 'Fatoma',
+         parent: 377,
+         location: null
+      }
+   },
+   {
+      pk: 382,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Konna>',
+         name: 'Konna',
+         parent: 377,
+         location: null
+      }
+   },
+   {
+      pk: 383,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Korombana>',
+         name: 'Korombana',
+         parent: 377,
+         location: null
+      }
+   },
+   {
+      pk: 384,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koubaye>',
+         name: 'Koubaye',
+         parent: 377,
+         location: null
+      }
+   },
+   {
+      pk: 385,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kounari>',
+         name: 'Kounari',
+         parent: 377,
+         location: null
+      }
+   },
+   {
+      pk: 386,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Mopti>',
+         name: 'Mopti',
+         parent: 377,
+         location: null
+      }
+   },
+   {
+      pk: 387,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ouro-Modi>',
+         name: 'Ouro-Modi',
+         parent: 377,
+         location: null
+      }
+   },
+   {
+      pk: 388,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ouroube- Doude>',
+         name: 'Ouroube- Doude',
+         parent: 377,
+         location: null
+      }
+   },
+   {
+      pk: 389,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sasalbe>',
+         name: 'Sasalbe',
+         parent: 377,
+         location: null
+      }
+   },
+   {
+      pk: 390,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sio>',
+         name: 'Sio',
+         parent: 377,
+         location: null
+      }
+   },
+   {
+      pk: 391,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Socoura>',
+         name: 'Socoura',
+         parent: 377,
+         location: null
+      }
+   },
+   {
+      pk: 392,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Soye>',
+         name: 'Soye',
+         parent: 377,
+         location: null
+      }
+   },
+   {
+      pk: 393,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Tenenkou>',
+         name: 'Tenenkou',
+         parent: 296,
+         location: null
+      }
+   },
+   {
+      pk: 394,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diafarabé>',
+         name: 'Diafarabé',
+         parent: 393,
+         location: null
+      }
+   },
+   {
+      pk: 395,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diaka>',
+         name: 'Diaka',
+         parent: 393,
+         location: null
+      }
+   },
+   {
+      pk: 396,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diondori>',
+         name: 'Diondori',
+         parent: 393,
+         location: null
+      }
+   },
+   {
+      pk: 397,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kareri>',
+         name: 'Kareri',
+         parent: 393,
+         location: null
+      }
+   },
+   {
+      pk: 398,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ouro Ardo>',
+         name: 'Ouro Ardo',
+         parent: 393,
+         location: null
+      }
+   },
+   {
+      pk: 399,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ouro Guiré>',
+         name: 'Ouro Guiré',
+         parent: 393,
+         location: null
+      }
+   },
+   {
+      pk: 400,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sougoulbé>',
+         name: 'Sougoulbé',
+         parent: 393,
+         location: null
+      }
+   },
+   {
+      pk: 401,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tenenkou>',
+         name: 'Tenenkou',
+         parent: 393,
+         location: null
+      }
+   },
+   {
+      pk: 402,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Toguere-coumbe>',
+         name: 'Toguere-coumbe',
+         parent: 393,
+         location: null
+      }
+   },
+   {
+      pk: 403,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Youvarou>',
+         name: 'Youvarou',
+         parent: 296,
+         location: null
+      }
+   },
+   {
+      pk: 404,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bimbéré-Tama>',
+         name: 'Bimbéré-Tama',
+         parent: 403,
+         location: null
+      }
+   },
+   {
+      pk: 405,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Deboye>',
+         name: 'Deboye',
+         parent: 403,
+         location: null
+      }
+   },
+   {
+      pk: 406,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dirma>',
+         name: 'Dirma',
+         parent: 403,
+         location: null
+      }
+   },
+   {
+      pk: 407,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dongo>',
+         name: 'Dongo',
+         parent: 403,
+         location: null
+      }
+   },
+   {
+      pk: 408,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Farimake>',
+         name: 'Farimake',
+         parent: 403,
+         location: null
+      }
+   },
+   {
+      pk: 409,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'dodjiga>',
+         name: 'N\'dodjiga',
+         parent: 403,
+         location: null
+      }
+   },
+   {
+      pk: 410,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tama>',
+         name: 'Tama',
+         parent: 403,
+         location: null
+      }
+   },
+   {
+      pk: 411,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Youwarou>',
+         name: 'Youwarou',
+         parent: 403,
+         location: null
+      }
+   },
+   {
+      pk: 412,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 2,
+         code: '<Area: Region of Ségou>',
+         name: 'Ségou',
+         parent: 1,
+         location: null
+      }
+   },
+   {
+      pk: 413,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Baraoueli>',
+         name: 'Baraoueli',
+         parent: 412,
+         location: null
+      }
+   },
+   {
+      pk: 414,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Baraoueli>',
+         name: 'Baraoueli',
+         parent: 413,
+         location: null
+      }
+   },
+   {
+      pk: 415,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Boidie>',
+         name: 'Boidie',
+         parent: 413,
+         location: null
+      }
+   },
+   {
+      pk: 416,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dougoufie>',
+         name: 'Dougoufie',
+         parent: 413,
+         location: null
+      }
+   },
+   {
+      pk: 417,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gouendo>',
+         name: 'Gouendo',
+         parent: 413,
+         location: null
+      }
+   },
+   {
+      pk: 418,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kalake>',
+         name: 'Kalake',
+         parent: 413,
+         location: null
+      }
+   },
+   {
+      pk: 419,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Konobougou>',
+         name: 'Konobougou',
+         parent: 413,
+         location: null
+      }
+   },
+   {
+      pk: 420,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'gassola>',
+         name: 'N\'gassola',
+         parent: 413,
+         location: null
+      }
+   },
+   {
+      pk: 421,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sanando>',
+         name: 'Sanando',
+         parent: 413,
+         location: null
+      }
+   },
+   {
+      pk: 422,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Somo>',
+         name: 'Somo',
+         parent: 413,
+         location: null
+      }
+   },
+   {
+      pk: 423,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tamani>',
+         name: 'Tamani',
+         parent: 413,
+         location: null
+      }
+   },
+   {
+      pk: 424,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tesserla>',
+         name: 'Tesserla',
+         parent: 413,
+         location: null
+      }
+   },
+   {
+      pk: 425,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Bla>',
+         name: 'Bla',
+         parent: 412,
+         location: null
+      }
+   },
+   {
+      pk: 426,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Beguene>',
+         name: 'Beguene',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 427,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bla>',
+         name: 'Bla',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 428,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diaramana>',
+         name: 'Diaramana',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 429,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diéna>',
+         name: 'Diéna',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 430,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dougouolo>',
+         name: 'Dougouolo',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 431,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Falo>',
+         name: 'Falo',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 432,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fani>',
+         name: 'Fani',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 433,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kazangasso>',
+         name: 'Kazangasso',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 434,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kéméni>',
+         name: 'Kéméni',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 435,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Korodougou>',
+         name: 'Korodougou',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 436,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koulandougou>',
+         name: 'Koulandougou',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 437,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Niala>',
+         name: 'Niala',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 438,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Samabogo>',
+         name: 'Samabogo',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 439,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Somasso>',
+         name: 'Somasso',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 440,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tiéména>',
+         name: 'Tiéména',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 441,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Touna>',
+         name: 'Touna',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 442,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Yangasso>',
+         name: 'Yangasso',
+         parent: 425,
+         location: null
+      }
+   },
+   {
+      pk: 443,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Macina>',
+         name: 'Macina',
+         parent: 412,
+         location: null
+      }
+   },
+   {
+      pk: 444,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Boky Wèrè>',
+         name: 'Boky Wèrè',
+         parent: 443,
+         location: null
+      }
+   },
+   {
+      pk: 445,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Folomana>',
+         name: 'Folomana',
+         parent: 443,
+         location: null
+      }
+   },
+   {
+      pk: 446,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kokry>',
+         name: 'Kokry',
+         parent: 443,
+         location: null
+      }
+   },
+   {
+      pk: 447,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kolongo>',
+         name: 'Kolongo',
+         parent: 443,
+         location: null
+      }
+   },
+   {
+      pk: 448,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Macina>',
+         name: 'Macina',
+         parent: 443,
+         location: null
+      }
+   },
+   {
+      pk: 449,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Matomo>',
+         name: 'Matomo',
+         parent: 443,
+         location: null
+      }
+   },
+   {
+      pk: 450,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Monimpébougou>',
+         name: 'Monimpébougou',
+         parent: 443,
+         location: null
+      }
+   },
+   {
+      pk: 451,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Saloba>',
+         name: 'Saloba',
+         parent: 443,
+         location: null
+      }
+   },
+   {
+      pk: 452,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sana>',
+         name: 'Sana',
+         parent: 443,
+         location: null
+      }
+   },
+   {
+      pk: 453,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Souleye>',
+         name: 'Souleye',
+         parent: 443,
+         location: null
+      }
+   },
+   {
+      pk: 454,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tongué>',
+         name: 'Tongué',
+         parent: 443,
+         location: null
+      }
+   },
+   {
+      pk: 455,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Niono>',
+         name: 'Niono',
+         parent: 412,
+         location: null
+      }
+   },
+   {
+      pk: 456,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diabaly>',
+         name: 'Diabaly',
+         parent: 455,
+         location: null
+      }
+   },
+   {
+      pk: 457,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dogofry>',
+         name: 'Dogofry',
+         parent: 455,
+         location: null
+      }
+   },
+   {
+      pk: 458,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kala Siguida>',
+         name: 'Kala Siguida',
+         parent: 455,
+         location: null
+      }
+   },
+   {
+      pk: 459,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Mariko>',
+         name: 'Mariko',
+         parent: 455,
+         location: null
+      }
+   },
+   {
+      pk: 460,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Nampalari>',
+         name: 'Nampalari',
+         parent: 455,
+         location: null
+      }
+   },
+   {
+      pk: 461,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Niono>',
+         name: 'Niono',
+         parent: 455,
+         location: null
+      }
+   },
+   {
+      pk: 462,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Pogo>',
+         name: 'Pogo',
+         parent: 455,
+         location: null
+      }
+   },
+   {
+      pk: 463,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Siribala>',
+         name: 'Siribala',
+         parent: 455,
+         location: null
+      }
+   },
+   {
+      pk: 464,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sirifila Boundy>',
+         name: 'Sirifila Boundy',
+         parent: 455,
+         location: null
+      }
+   },
+   {
+      pk: 465,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sokolo>',
+         name: 'Sokolo',
+         parent: 455,
+         location: null
+      }
+   },
+   {
+      pk: 466,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Toridaga-ko>',
+         name: 'Toridaga-ko',
+         parent: 455,
+         location: null
+      }
+   },
+   {
+      pk: 467,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Yeredon Saniona>',
+         name: 'Yeredon Saniona',
+         parent: 455,
+         location: null
+      }
+   },
+   {
+      pk: 468,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of San>',
+         name: 'San',
+         parent: 412,
+         location: null
+      }
+   },
+   {
+      pk: 469,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Baramandougou>',
+         name: 'Baramandougou',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 470,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dah>',
+         name: 'Dah',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 471,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diakourouna>',
+         name: 'Diakourouna',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 472,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diéli>',
+         name: 'Diéli',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 473,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Djéguéna>',
+         name: 'Djéguéna',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 474,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fion>',
+         name: 'Fion',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 475,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kaniegué>',
+         name: 'Kaniegué',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 476,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Karaba>',
+         name: 'Karaba',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 477,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kassorola>',
+         name: 'Kassorola',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 478,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kava>',
+         name: 'Kava',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 479,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Moribila>',
+         name: 'Moribila',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 480,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'goa>',
+         name: 'N\'goa',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 481,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Niamana>',
+         name: 'Niamana',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 482,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Niasso>',
+         name: 'Niasso',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 483,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'torosso>',
+         name: 'N\'torosso',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 484,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ouolon>',
+         name: 'Ouolon',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 485,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of San>',
+         name: 'San',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 486,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Siadougou>',
+         name: 'Siadougou',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 487,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Somo>',
+         name: 'Somo',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 488,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sy>',
+         name: 'Sy',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 489,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Teneni>',
+         name: 'Teneni',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 490,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tourakolomba>',
+         name: 'Tourakolomba',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 491,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Waki>',
+         name: 'Waki',
+         parent: 468,
+         location: null
+      }
+   },
+   {
+      pk: 492,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Ségou>',
+         name: 'Ségou',
+         parent: 412,
+         location: null
+      }
+   },
+   {
+      pk: 493,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Baguindadougou>',
+         name: 'Baguindadougou',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 494,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bellen>',
+         name: 'Bellen',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 495,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Boussin>',
+         name: 'Boussin',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 496,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Cinzana>',
+         name: 'Cinzana',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 497,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diédougou>',
+         name: 'Diédougou',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 498,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diganibougou>',
+         name: 'Diganibougou',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 499,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dioro>',
+         name: 'Dioro',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 500,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diouna>',
+         name: 'Diouna',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 501,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dougabougou>',
+         name: 'Dougabougou',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 502,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Farako>',
+         name: 'Farako',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 503,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fatine>',
+         name: 'Fatine',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 504,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kamiandougou>',
+         name: 'Kamiandougou',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 505,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Katiéna>',
+         name: 'Katiéna',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 506,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Konodimini>',
+         name: 'Konodimini',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 507,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Markala>',
+         name: 'Markala',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 508,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Massa>',
+         name: 'Massa',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 509,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Massala>',
+         name: 'Massala',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 510,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'gara>',
+         name: 'N\'gara',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 511,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'koumandougou>',
+         name: 'N\'koumandougou',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 512,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Pélengana>',
+         name: 'Pélengana',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 513,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sakoiba>',
+         name: 'Sakoiba',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 514,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sama Foulala>',
+         name: 'Sama Foulala',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 515,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Saminè>',
+         name: 'Saminè',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 516,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sansanding>',
+         name: 'Sansanding',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 517,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sebougou>',
+         name: 'Sebougou',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 518,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ségou>',
+         name: 'Ségou',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 519,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sibila>',
+         name: 'Sibila',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 520,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Soignebougou>',
+         name: 'Soignebougou',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 521,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Souba>',
+         name: 'Souba',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 522,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Togou>',
+         name: 'Togou',
+         parent: 492,
+         location: null
+      }
+   },
+   {
+      pk: 523,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Tominian>',
+         name: 'Tominian',
+         parent: 412,
+         location: null
+      }
+   },
+   {
+      pk: 524,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Benena>',
+         name: 'Benena',
+         parent: 523,
+         location: null
+      }
+   },
+   {
+      pk: 525,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diora>',
+         name: 'Diora',
+         parent: 523,
+         location: null
+      }
+   },
+   {
+      pk: 526,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fangasso>',
+         name: 'Fangasso',
+         parent: 523,
+         location: null
+      }
+   },
+   {
+      pk: 527,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koula>',
+         name: 'Koula',
+         parent: 523,
+         location: null
+      }
+   },
+   {
+      pk: 528,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Lanfiala>',
+         name: 'Lanfiala',
+         parent: 523,
+         location: null
+      }
+   },
+   {
+      pk: 529,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Mafouné>',
+         name: 'Mafouné',
+         parent: 523,
+         location: null
+      }
+   },
+   {
+      pk: 530,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Mandiakuy>',
+         name: 'Mandiakuy',
+         parent: 523,
+         location: null
+      }
+   },
+   {
+      pk: 531,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ouan>',
+         name: 'Ouan',
+         parent: 523,
+         location: null
+      }
+   },
+   {
+      pk: 532,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sanekuy>',
+         name: 'Sanekuy',
+         parent: 523,
+         location: null
+      }
+   },
+   {
+      pk: 533,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Timissa>',
+         name: 'Timissa',
+         parent: 523,
+         location: null
+      }
+   },
+   {
+      pk: 534,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tominian>',
+         name: 'Tominian',
+         parent: 523,
+         location: null
+      }
+   },
+   {
+      pk: 535,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Yasso>',
+         name: 'Yasso',
+         parent: 523,
+         location: null
+      }
+   },
+   {
+      pk: 536,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 2,
+         code: '<Area: Region of Sikasso>',
+         name: 'Sikasso',
+         parent: 1,
+         location: null
+      }
+   },
+   {
+      pk: 537,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Bougouni>',
+         name: 'Bougouni',
+         parent: 536,
+         location: null
+      }
+   },
+   {
+      pk: 538,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bladie-tiemala>',
+         name: 'Bladie-tiemala',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 539,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bougouni>',
+         name: 'Bougouni',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 540,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Danou>',
+         name: 'Danou',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 541,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Debelin>',
+         name: 'Debelin',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 542,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Defina>',
+         name: 'Defina',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 543,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dogo>',
+         name: 'Dogo',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 544,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Domba>',
+         name: 'Domba',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 545,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Faradiélé>',
+         name: 'Faradiélé',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 546,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Faragouaran>',
+         name: 'Faragouaran',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 547,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Garalo>',
+         name: 'Garalo',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 548,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kokélé>',
+         name: 'Kokélé',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 549,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kola>',
+         name: 'Kola',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 550,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koumantou>',
+         name: 'Koumantou',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 551,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kouroulamini>',
+         name: 'Kouroulamini',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 552,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Meridiela>',
+         name: 'Meridiela',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 553,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ouroun>',
+         name: 'Ouroun',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 554,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sanso>',
+         name: 'Sanso',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 555,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sibirila>',
+         name: 'Sibirila',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 556,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sido>',
+         name: 'Sido',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 557,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Syentoula>',
+         name: 'Syentoula',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 558,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tiemala-banimonotié>',
+         name: 'Tiemala-banimonotié',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 559,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Wola>',
+         name: 'Wola',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 560,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Yinindougou>',
+         name: 'Yinindougou',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 561,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Yiridougou>',
+         name: 'Yiridougou',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 562,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Zantiébougou>',
+         name: 'Zantiébougou',
+         parent: 537,
+         location: null
+      }
+   },
+   {
+      pk: 563,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Kadiolo>',
+         name: 'Kadiolo',
+         parent: 536,
+         location: null
+      }
+   },
+   {
+      pk: 564,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diou>',
+         name: 'Diou',
+         parent: 563,
+         location: null
+      }
+   },
+   {
+      pk: 565,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dioumaténé>',
+         name: 'Dioumaténé',
+         parent: 563,
+         location: null
+      }
+   },
+   {
+      pk: 566,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fourou>',
+         name: 'Fourou',
+         parent: 563,
+         location: null
+      }
+   },
+   {
+      pk: 567,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kadiolo>',
+         name: 'Kadiolo',
+         parent: 563,
+         location: null
+      }
+   },
+   {
+      pk: 568,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kai>',
+         name: 'Kai',
+         parent: 563,
+         location: null
+      }
+   },
+   {
+      pk: 569,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Loulouni>',
+         name: 'Loulouni',
+         parent: 563,
+         location: null
+      }
+   },
+   {
+      pk: 570,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Misseni>',
+         name: 'Misseni',
+         parent: 563,
+         location: null
+      }
+   },
+   {
+      pk: 571,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Nimbougou>',
+         name: 'Nimbougou',
+         parent: 563,
+         location: null
+      }
+   },
+   {
+      pk: 572,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Zégoua>',
+         name: 'Zégoua',
+         parent: 563,
+         location: null
+      }
+   },
+   {
+      pk: 573,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Kolondiéba>',
+         name: 'Kolondiéba',
+         parent: 536,
+         location: null
+      }
+   },
+   {
+      pk: 574,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bougoula>',
+         name: 'Bougoula',
+         parent: 573,
+         location: null
+      }
+   },
+   {
+      pk: 575,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fakola>',
+         name: 'Fakola',
+         parent: 573,
+         location: null
+      }
+   },
+   {
+      pk: 576,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Farako>',
+         name: 'Farako',
+         parent: 573,
+         location: null
+      }
+   },
+   {
+      pk: 577,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kadiana>',
+         name: 'Kadiana',
+         parent: 573,
+         location: null
+      }
+   },
+   {
+      pk: 578,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kebila>',
+         name: 'Kebila',
+         parent: 573,
+         location: null
+      }
+   },
+   {
+      pk: 579,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kolondiéba>',
+         name: 'Kolondiéba',
+         parent: 573,
+         location: null
+      }
+   },
+   {
+      pk: 580,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kolosso>',
+         name: 'Kolosso',
+         parent: 573,
+         location: null
+      }
+   },
+   {
+      pk: 581,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Mena>',
+         name: 'Mena',
+         parent: 573,
+         location: null
+      }
+   },
+   {
+      pk: 582,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Nangalasso>',
+         name: 'Nangalasso',
+         parent: 573,
+         location: null
+      }
+   },
+   {
+      pk: 583,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'golodiana>',
+         name: 'N\'golodiana',
+         parent: 573,
+         location: null
+      }
+   },
+   {
+      pk: 584,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tiongui>',
+         name: 'Tiongui',
+         parent: 573,
+         location: null
+      }
+   },
+   {
+      pk: 585,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tousséguéla>',
+         name: 'Tousséguéla',
+         parent: 573,
+         location: null
+      }
+   },
+   {
+      pk: 586,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Koutiala>',
+         name: 'Koutiala',
+         parent: 536,
+         location: null
+      }
+   },
+   {
+      pk: 587,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diédougou>',
+         name: 'Diédougou',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 588,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fagui>',
+         name: 'Fagui',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 589,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fakolo>',
+         name: 'Fakolo',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 590,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gouadji-kao>',
+         name: 'Gouadji-kao',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 591,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gouadji-soukouna>',
+         name: 'Gouadji-soukouna',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 592,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kafo Faboli>',
+         name: 'Kafo Faboli',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 593,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kapala>',
+         name: 'Kapala',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 594,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Karagouana Mallé>',
+         name: 'Karagouana Mallé',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 595,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kolonigue>',
+         name: 'Kolonigue',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 596,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Konina>',
+         name: 'Konina',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 597,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koningue>',
+         name: 'Koningue',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 598,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Konseguela>',
+         name: 'Konseguela',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 599,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kouniana>',
+         name: 'Kouniana',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 600,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koutiala>',
+         name: 'Koutiala',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 601,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Logouana>',
+         name: 'Logouana',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 602,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Mièna>',
+         name: 'Mièna',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 603,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of M\'pessoba>',
+         name: 'M\'pessoba',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 604,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Nafanga>',
+         name: 'Nafanga',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 605,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Nampé>',
+         name: 'Nampé',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 606,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'golonianasso>',
+         name: 'N\'golonianasso',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 607,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'goutjina>',
+         name: 'N\'goutjina',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 608,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Niantaga>',
+         name: 'Niantaga',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 609,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'tossoni>',
+         name: 'N\'tossoni',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 610,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sincina>',
+         name: 'Sincina',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 611,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sinkolo>',
+         name: 'Sinkolo',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 612,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Songo-doubakoré>',
+         name: 'Songo-doubakoré',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 613,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Songoua>',
+         name: 'Songoua',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 614,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sorobasso>',
+         name: 'Sorobasso',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 615,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tao>',
+         name: 'Tao',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 616,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Yognogo>',
+         name: 'Yognogo',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 617,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Zanfigue>',
+         name: 'Zanfigue',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 618,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Zangasso>',
+         name: 'Zangasso',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 619,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Zanina>',
+         name: 'Zanina',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 620,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Zebala>',
+         name: 'Zebala',
+         parent: 586,
+         location: null
+      }
+   },
+   {
+      pk: 621,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Sikasso>',
+         name: 'Sikasso',
+         parent: 536,
+         location: null
+      }
+   },
+   {
+      pk: 622,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Benkadi>',
+         name: 'Benkadi',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 623,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Blendio>',
+         name: 'Blendio',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 624,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Danderesso>',
+         name: 'Danderesso',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 625,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dembela>',
+         name: 'Dembela',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 626,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dialakoro>',
+         name: 'Dialakoro',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 627,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diomaténé>',
+         name: 'Diomaténé',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 628,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dogoni>',
+         name: 'Dogoni',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 629,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Doumanaba>',
+         name: 'Doumanaba',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 630,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fama>',
+         name: 'Fama',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 631,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Farakala>',
+         name: 'Farakala',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 632,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Finkolo>',
+         name: 'Finkolo',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 633,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Finkolo Ganadougou>',
+         name: 'Finkolo Ganadougou',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 634,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gongasso>',
+         name: 'Gongasso',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 635,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kabarasso>',
+         name: 'Kabarasso',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 636,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kaboila>',
+         name: 'Kaboila',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 637,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kafouziéla>',
+         name: 'Kafouziéla',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 638,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kapala>',
+         name: 'Kapala',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 639,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kapolondougou>',
+         name: 'Kapolondougou',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 640,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kignan>',
+         name: 'Kignan',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 641,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kléla>',
+         name: 'Kléla',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 642,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kofan>',
+         name: 'Kofan',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 643,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kolokoba>',
+         name: 'Kolokoba',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 644,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koumankou>',
+         name: 'Koumankou',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 645,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kouoro>',
+         name: 'Kouoro',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 646,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kourouma>',
+         name: 'Kourouma',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 647,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Lobougoula>',
+         name: 'Lobougoula',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 648,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Miniko>',
+         name: 'Miniko',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 649,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Missirikoro>',
+         name: 'Missirikoro',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 650,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Natien>',
+         name: 'Natien',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 651,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Niéna>',
+         name: 'Niéna',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 652,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Nongo-Souala>',
+         name: 'Nongo-Souala',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 653,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'tjikouna>',
+         name: 'N\'tjikouna',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 654,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Pimperna>',
+         name: 'Pimperna',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 655,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sanzana>',
+         name: 'Sanzana',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 656,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sikasso>',
+         name: 'Sikasso',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 657,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sokourani-missirikoro>',
+         name: 'Sokourani-missirikoro',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 658,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tella>',
+         name: 'Tella',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 659,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tiankadi>',
+         name: 'Tiankadi',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 660,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Waténi>',
+         name: 'Waténi',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 661,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Zanferebougou>',
+         name: 'Zanferebougou',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 662,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Zangaradougou>',
+         name: 'Zangaradougou',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 663,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Zaniéna>',
+         name: 'Zaniéna',
+         parent: 621,
+         location: null
+      }
+   },
+   {
+      pk: 664,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Yanfolila>',
+         name: 'Yanfolila',
+         parent: 536,
+         location: null
+      }
+   },
+   {
+      pk: 665,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Baya >',
+         name: 'Baya ',
+         parent: 664,
+         location: null
+      }
+   },
+   {
+      pk: 666,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bolofouta>',
+         name: 'Bolofouta',
+         parent: 664,
+         location: null
+      }
+   },
+   {
+      pk: 667,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Djallon-foula>',
+         name: 'Djallon-foula',
+         parent: 664,
+         location: null
+      }
+   },
+   {
+      pk: 668,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Djiguiya De Koloni>',
+         name: 'Djiguiya De Koloni',
+         parent: 664,
+         location: null
+      }
+   },
+   {
+      pk: 669,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gouanan>',
+         name: 'Gouanan',
+         parent: 664,
+         location: null
+      }
+   },
+   {
+      pk: 670,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gouandiaka>',
+         name: 'Gouandiaka',
+         parent: 664,
+         location: null
+      }
+   },
+   {
+      pk: 671,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koussan>',
+         name: 'Koussan',
+         parent: 664,
+         location: null
+      }
+   },
+   {
+      pk: 672,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sankarani>',
+         name: 'Sankarani',
+         parent: 664,
+         location: null
+      }
+   },
+   {
+      pk: 673,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sere Moussa Ani Samou >',
+         name: 'Sere Moussa Ani Samou ',
+         parent: 664,
+         location: null
+      }
+   },
+   {
+      pk: 674,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tagandougou>',
+         name: 'Tagandougou',
+         parent: 664,
+         location: null
+      }
+   },
+   {
+      pk: 675,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Wassoulou-ballé>',
+         name: 'Wassoulou-ballé',
+         parent: 664,
+         location: null
+      }
+   },
+   {
+      pk: 676,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Yallankoro-Soloba>',
+         name: 'Yallankoro-Soloba',
+         parent: 664,
+         location: null
+      }
+   },
+   {
+      pk: 677,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Yorosso>',
+         name: 'Yorosso',
+         parent: 536,
+         location: null
+      }
+   },
+   {
+      pk: 678,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Boura>',
+         name: 'Boura',
+         parent: 677,
+         location: null
+      }
+   },
+   {
+      pk: 679,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Karangana>',
+         name: 'Karangana',
+         parent: 677,
+         location: null
+      }
+   },
+   {
+      pk: 680,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kiffosso 1>',
+         name: 'Kiffosso 1',
+         parent: 677,
+         location: null
+      }
+   },
+   {
+      pk: 681,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koumbia>',
+         name: 'Koumbia',
+         parent: 677,
+         location: null
+      }
+   },
+   {
+      pk: 682,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koury>',
+         name: 'Koury',
+         parent: 677,
+         location: null
+      }
+   },
+   {
+      pk: 683,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Mahou>',
+         name: 'Mahou',
+         parent: 677,
+         location: null
+      }
+   },
+   {
+      pk: 684,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Menamba 1>',
+         name: 'Menamba 1',
+         parent: 677,
+         location: null
+      }
+   },
+   {
+      pk: 685,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ourikela>',
+         name: 'Ourikela',
+         parent: 677,
+         location: null
+      }
+   },
+   {
+      pk: 686,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Yorosso>',
+         name: 'Yorosso',
+         parent: 677,
+         location: null
+      }
+   },
+   {
+      pk: 687,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 2,
+         code: '<Area: Region of Tombouctou>',
+         name: 'Tombouctou',
+         parent: 1,
+         location: null
+      }
+   },
+   {
+      pk: 688,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Diré>',
+         name: 'Diré',
+         parent: 687,
+         location: null
+      }
+   },
+   {
+      pk: 689,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Arham>',
+         name: 'Arham',
+         parent: 688,
+         location: null
+      }
+   },
+   {
+      pk: 690,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Binga>',
+         name: 'Binga',
+         parent: 688,
+         location: null
+      }
+   },
+   {
+      pk: 691,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bourem Sidi Amar>',
+         name: 'Bourem Sidi Amar',
+         parent: 688,
+         location: null
+      }
+   },
+   {
+      pk: 692,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dangha>',
+         name: 'Dangha',
+         parent: 688,
+         location: null
+      }
+   },
+   {
+      pk: 693,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Diré>',
+         name: 'Diré',
+         parent: 688,
+         location: null
+      }
+   },
+   {
+      pk: 694,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Garbakoira>',
+         name: 'Garbakoira',
+         parent: 688,
+         location: null
+      }
+   },
+   {
+      pk: 695,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Haibongo>',
+         name: 'Haibongo',
+         parent: 688,
+         location: null
+      }
+   },
+   {
+      pk: 696,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kirchamba>',
+         name: 'Kirchamba',
+         parent: 688,
+         location: null
+      }
+   },
+   {
+      pk: 697,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kondi>',
+         name: 'Kondi',
+         parent: 688,
+         location: null
+      }
+   },
+   {
+      pk: 698,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Sareyamou>',
+         name: 'Sareyamou',
+         parent: 688,
+         location: null
+      }
+   },
+   {
+      pk: 699,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tienkour>',
+         name: 'Tienkour',
+         parent: 688,
+         location: null
+      }
+   },
+   {
+      pk: 700,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tindirma>',
+         name: 'Tindirma',
+         parent: 688,
+         location: null
+      }
+   },
+   {
+      pk: 701,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tingueréguif>',
+         name: 'Tingueréguif',
+         parent: 688,
+         location: null
+      }
+   },
+   {
+      pk: 702,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Goundam>',
+         name: 'Goundam',
+         parent: 687,
+         location: null
+      }
+   },
+   {
+      pk: 703,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Adarmalane>',
+         name: 'Adarmalane',
+         parent: 702,
+         location: null
+      }
+   },
+   {
+      pk: 704,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Alzounoub>',
+         name: 'Alzounoub',
+         parent: 702,
+         location: null
+      }
+   },
+   {
+      pk: 705,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bintagoungou>',
+         name: 'Bintagoungou',
+         parent: 702,
+         location: null
+      }
+   },
+   {
+      pk: 706,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Douekire>',
+         name: 'Douekire',
+         parent: 702,
+         location: null
+      }
+   },
+   {
+      pk: 707,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Doukouria>',
+         name: 'Doukouria',
+         parent: 702,
+         location: null
+      }
+   },
+   {
+      pk: 708,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Essakane>',
+         name: 'Essakane',
+         parent: 702,
+         location: null
+      }
+   },
+   {
+      pk: 709,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gargando>',
+         name: 'Gargando',
+         parent: 702,
+         location: null
+      }
+   },
+   {
+      pk: 710,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Goundam>',
+         name: 'Goundam',
+         parent: 702,
+         location: null
+      }
+   },
+   {
+      pk: 711,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Issa Bery>',
+         name: 'Issa Bery',
+         parent: 702,
+         location: null
+      }
+   },
+   {
+      pk: 712,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Kaneye>',
+         name: 'Kaneye',
+         parent: 702,
+         location: null
+      }
+   },
+   {
+      pk: 713,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of M\'bouna>',
+         name: 'M\'bouna',
+         parent: 702,
+         location: null
+      }
+   },
+   {
+      pk: 714,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Raz El Ma>',
+         name: 'Raz El Ma',
+         parent: 702,
+         location: null
+      }
+   },
+   {
+      pk: 715,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tele>',
+         name: 'Tele',
+         parent: 702,
+         location: null
+      }
+   },
+   {
+      pk: 716,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tilemsi>',
+         name: 'Tilemsi',
+         parent: 702,
+         location: null
+      }
+   },
+   {
+      pk: 717,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tin Aicha>',
+         name: 'Tin Aicha',
+         parent: 702,
+         location: null
+      }
+   },
+   {
+      pk: 718,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tonka>',
+         name: 'Tonka',
+         parent: 702,
+         location: null
+      }
+   },
+   {
+      pk: 719,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Gourma-rharous>',
+         name: 'Gourma-rharous',
+         parent: 687,
+         location: null
+      }
+   },
+   {
+      pk: 720,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bambara Maoude>',
+         name: 'Bambara Maoude',
+         parent: 719,
+         location: null
+      }
+   },
+   {
+      pk: 721,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Banicane>',
+         name: 'Banicane',
+         parent: 719,
+         location: null
+      }
+   },
+   {
+      pk: 722,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Gossi>',
+         name: 'Gossi',
+         parent: 719,
+         location: null
+      }
+   },
+   {
+      pk: 723,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Hamzakona>',
+         name: 'Hamzakona',
+         parent: 719,
+         location: null
+      }
+   },
+   {
+      pk: 724,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Haribomo>',
+         name: 'Haribomo',
+         parent: 719,
+         location: null
+      }
+   },
+   {
+      pk: 725,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Inadiatafane>',
+         name: 'Inadiatafane',
+         parent: 719,
+         location: null
+      }
+   },
+   {
+      pk: 726,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ouinerden>',
+         name: 'Ouinerden',
+         parent: 719,
+         location: null
+      }
+   },
+   {
+      pk: 727,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Rharous>',
+         name: 'Rharous',
+         parent: 719,
+         location: null
+      }
+   },
+   {
+      pk: 728,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Serere>',
+         name: 'Serere',
+         parent: 719,
+         location: null
+      }
+   },
+   {
+      pk: 729,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Niafunké>',
+         name: 'Niafunké',
+         parent: 687,
+         location: null
+      }
+   },
+   {
+      pk: 730,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Banikane>',
+         name: 'Banikane',
+         parent: 729,
+         location: null
+      }
+   },
+   {
+      pk: 731,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Dianke>',
+         name: 'Dianke',
+         parent: 729,
+         location: null
+      }
+   },
+   {
+      pk: 732,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Fitounga>',
+         name: 'Fitounga',
+         parent: 729,
+         location: null
+      }
+   },
+   {
+      pk: 733,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Koumaira>',
+         name: 'Koumaira',
+         parent: 729,
+         location: null
+      }
+   },
+   {
+      pk: 734,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Lere>',
+         name: 'Lere',
+         parent: 729,
+         location: null
+      }
+   },
+   {
+      pk: 735,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of N\'gorkou>',
+         name: 'N\'gorkou',
+         parent: 729,
+         location: null
+      }
+   },
+   {
+      pk: 736,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Souboundou>',
+         name: 'Souboundou',
+         parent: 729,
+         location: null
+      }
+   },
+   {
+      pk: 737,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Soumpi>',
+         name: 'Soumpi',
+         parent: 729,
+         location: null
+      }
+   },
+   {
+      pk: 738,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Tombouctou>',
+         name: 'Tombouctou',
+         parent: 687,
+         location: null
+      }
+   },
+   {
+      pk: 739,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Alafia>',
+         name: 'Alafia',
+         parent: 738,
+         location: null
+      }
+   },
+   {
+      pk: 740,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Ber>',
+         name: 'Ber',
+         parent: 738,
+         location: null
+      }
+   },
+   {
+      pk: 741,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Bourem-inaly>',
+         name: 'Bourem-inaly',
+         parent: 738,
+         location: null
+      }
+   },
+   {
+      pk: 742,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Lafia>',
+         name: 'Lafia',
+         parent: 738,
+         location: null
+      }
+   },
+   {
+      pk: 743,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Salam>',
+         name: 'Salam',
+         parent: 738,
+         location: null
+      }
+   },
+   {
+      pk: 744,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Tombouctou>',
+         name: 'Tombouctou',
+         parent: 738,
+         location: null
+      }
+   },
+   {
+      pk: 745,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 5,
+         code: '<Area: District of Bamako>',
+         name: 'Bamako',
+         parent: 1,
+         location: null
+      }
+   },
+   {
+      pk: 746,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 3,
+         code: '<Area: Cercle of Bamako>',
+         name: 'Bamako',
+         parent: 745,
+         location: null
+      }
+   },
+   {
+      pk: 747,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Commune I>',
+         name: 'Commune I',
+         parent: 746,
+         location: null
+      }
+   },
+   {
+      pk: 748,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Commune II>',
+         name: 'Commune II',
+         parent: 746,
+         location: null
+      }
+   },
+   {
+      pk: 749,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Commune III>',
+         name: 'Commune III',
+         parent: 746,
+         location: null
+      }
+   },
+   {
+      pk: 750,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Commune IV>',
+         name: 'Commune IV',
+         parent: 746,
+         location: null
+      }
+   },
+   {
+      pk: 751,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Commune V>',
+         name: 'Commune V',
+         parent: 746,
+         location: null
+      }
+   },
+   {
+      pk: 752,
+      model: 'simple_locations.area',
+      fields: {
+         kind: 4,
+         code: '<Area: Commune of Commune VI>',
+         name: 'Commune VI',
+         parent: 746,
+         location: null
+      }
+   }
+]
