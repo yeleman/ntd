@@ -13,7 +13,8 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 LANGUAGE_CODE = 'fr'
 USE_L10N = True
-
+DATE_FORMAT = 'm/d/Y'
+FORMAT_MODULE_PATH = 'formats'
 
 # you should configure your database here before doing any real work.
 # see: http://docs.djangoproject.com/en/dev/ref/settings/#databases

@@ -3,6 +3,8 @@
 
 
 from django.conf.urls.defaults import *
+from django.conf import settings
+
 urlpatterns = patterns("",
 
     # Example:
@@ -14,4 +16,7 @@ urlpatterns = patterns("",
 
     # Uncomment the next line to enable the admin:
     (r'$',  "who_base.views.dashboard"),
+    
 )
+
+

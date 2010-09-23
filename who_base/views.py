@@ -17,7 +17,7 @@ from .models import Campaign, Results
 @login_required
 def dashboard(request):
 
-    paginator = Paginator(Campaign.objects.all(), 1)
+    paginator = Paginator(Campaign.objects.order_by('-start_date'), 1)
     
     try:
         page = int(request.GET.get('page', '1'))
@@ -26,15 +26,25 @@ def dashboard(request):
 
     campaign = None
     try:
-        campaign = paginator.page(page).object_list[0]
+        page = paginator.page(page)
+        campaign = page.object_list[0]
     except (EmptyPage, InvalidPage, IndexError):
-        campaigns = paginator.page(paginator.num_pages).object_list
-        if campaigns:
-            campaign = campaigns[0]
+        page = paginator.page(paginator.num_pages)
+        if page.object_list:
+            campaign = page.object_list[0]
 
     if campaign:
-        results = sorted(Results.objects.filter(campaign=campaign), attrgetter('location.name'))
-        results = groupby(results, attrgetter('location.name'))
+        # group by commune
+        results = sorted(Results.objects.filter(campaign=campaign), 
+                                                key=attrgetter('area'))
+        results = groupby(results, attrgetter('area')) 
+        
+        # group by cercle (nested lambda, don't you like it :-) ?)
+        get_ = lambda i, k: (lambda o: getattr(o[i], k) ) 
+        results = groupby(results, get_(0, 'parent'))      
+        
+        # group by region
+        results = groupby(results, get_(0, 'parent')) 
 
     ctx = locals()
 

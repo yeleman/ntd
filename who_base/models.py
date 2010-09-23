@@ -26,7 +26,7 @@ class Campaign(models.Model):
                                 verbose_name=__(u'end date'))
     
     def __unicode__(self):
-        return _(u'%(name)s (started on %(date)s) ') % {'name': self.name, 
+        return _(u'%(name)s (started on %(date)s)') % {'name': self.name, 
                'date': self.start_date.strftime(_('%m/%d/%Y'))}
     
 
@@ -69,6 +69,7 @@ class Results(models.Model):
     class Meta:
         verbose_name = __('results')
         verbose_name_plural = __('results')
+        unique_together = (('campaign', 'area'),)
 
     campaign = models.ForeignKey(Campaign, verbose_name=__(u'campaign'))
     area =  models.ForeignKey(Area, verbose_name=__(u'area'))

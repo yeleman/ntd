@@ -1,0 +1,19 @@
+#who-dashboard #pagination {
+text-align: center;
+display: inline;
+}
+
+#who-dashboard #pagination h2 {
+display: inline;
+margin: 1em 1em; 
+}
+
+#who-dashboard #dashboard-header #campaign-date {
+position:relative;
+top:-3em;
+left:70%;
+}
+
+#who-dashboard #pagination .previous {
+margin-left: 1em; 
+}
