@@ -3,6 +3,7 @@
 # vim: ai ts=4 sts=4 et sw=4
 
 import datetime
+import re
 
 from django.utils.translation import ugettext as _, ugettext_lazy as __
 from django.db import models
@@ -101,3 +102,20 @@ class Results(models.Model):
     def __unicode__(self):
         return _(u"Results of campaign %(campaign)s at %(area)s") % {
                   'campaign': self.campaign, 'area': self.area  }
+
+    @property
+    def receipt(self):
+        if self.completed and self.report_date:
+            return _(u"%(campaign)sD%(day)s/%(reportid)s") % \
+                     {'campaign': self.campaign.id, \
+                      'day': self.report_date.timetuple().tm_yday,
+                      'reportid': self.id}
+        else:
+            return None
+
+    @classmethod
+    def by_receipt(cls, receipt):
+        campaign_id, day_id, report_id = \
+                    re.search('([0-9]+)D([0-9]+)\/([0-9]+)', receipt).groups()
+        return cls.objects.get(campaign=Campaign.objects.get(id=campaign_id),
+                               id=report_id)
