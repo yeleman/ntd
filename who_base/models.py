@@ -7,6 +7,7 @@ import re
 
 from django.utils.translation import ugettext as _, ugettext_lazy as __
 from django.db import models
+from django.db.models import Q
 
 from simple_locations.models import Area
 
@@ -73,7 +74,9 @@ class Results(models.Model):
 
     campaign = models.ForeignKey(Campaign, verbose_name=__(u'campaign'))
     area =  models.ForeignKey(Area, verbose_name=__(u'area'),
-                              limit_choices_to = {'kind__slug': 'village'})
+                              limit_choices_to = ~Q(kind__slug__in= \
+                                    ('country', 'region', 'district', \
+                                     'cercle', 'commune')))
     
     pack = models.ForeignKey(DrugsPack, verbose_name=__(u'drugs pack'),  
                              blank=True, null=True)
