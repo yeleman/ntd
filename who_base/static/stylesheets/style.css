@@ -54,6 +54,10 @@ margin-left: 0pt;
     margin-bottom:0;
 }
 
+#who-dashboard table .total {
+    text-align:right;
+}
+
 #who-dashboard .download  {
     text-align: right;
     margin-right:10%;

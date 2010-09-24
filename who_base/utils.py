@@ -26,6 +26,7 @@ def check_location(location_code, location_type=None):
     try:
         location = Area.objects.get(code__iexact=location_code)
     except Area.DoesNotExist:
+    
         raise ExitHandle(_(u"The code %(code)s doesn't match any known "\
                            u"location. Ask your administrator the right code "\
                            u"for your location") % {'code': location_code})

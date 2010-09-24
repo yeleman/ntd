@@ -87,23 +87,61 @@ def dashboard(request):
 
     if campaign:
         
+        totals = { 'child_males': 0,
+                   'teen_males': 0,
+                   'adult_males': 0,
+                    'child_females': 0,
+                    'teen_females': 0,
+                    'adult_females': 0,
+                    'all_males': 0,
+                    'all_females': 0,
+                    'all': 0}
+        
         results_by_cities = {}
         for result in Results.objects.filter(campaign=campaign):
+        
+            print "result", result.area.name
+            
+        
             data = results_by_cities.setdefault(result.area.parent, {})
             data['count'] = data.get('count', 0) + 1
             data.setdefault('results', []).append(result)
             
+            totals['child_males'] += result.child_males_data or 0
+            totals['teen_males'] += result.teen_males_data or 0
+            totals['adult_males'] += result.adult_males_data or 0
+            totals['child_females'] += result.child_females_data or 0
+            totals['teen_females'] += result.teen_females_data or 0
+            totals['adult_females'] += result.adult_females_data or 0
+            
         cities_by_cercle = {}
         for city, city_data in results_by_cities.iteritems():
+        
+            print "city", city.name
+        
             data = cities_by_cercle.setdefault(city.parent, {})
             data['count'] = data.get('count', 0) + 1
             data.setdefault('cities', []).append((city, city_data))
     
         cercles_by_region = {}
         for cercle, cercle_data in cities_by_cercle.iteritems():
+        
+            print "cercle", cercle.name
+        
             data = cercles_by_region.setdefault(cercle.parent, {})
             data['count'] = data.get('count', 0) + 1
             data.setdefault('cercles', []).append((cercle, cercle_data))
+            
+        import pprint 
+        pprint.pprint(cercles_by_region)
+            
+        totals['all_males'] = sum((totals['child_males'],
+                                   totals['teen_males'], 
+                                   totals['adult_males']))
+        totals['all_females'] += sum((totals['child_females'],
+                                   totals['teen_females'], 
+                                   totals['adult_females']))
+        totals['all'] += sum((totals['all_males'], totals['all_females']))
             
     ctx = locals()
 

@@ -101,10 +101,10 @@ class NtdHandler(KeywordHandlerI18n):
                            u"still %(receipt)s") % {'results': result,
                                                     'receipt': result.receipt })
         else:
+            result.completed = True
             self.respond(_(u"The %(results)s have been saved. Receipt is"\
                            u" %(receipt)s") % {'results': result,
                                                'receipt': result.receipt })
-            result.completed = True
         
         result.save()
         

@@ -55,7 +55,7 @@
 
         
         <tr>
-            <th rowspan="4" >{% trans "Region" %}</th>
+            <th rowspan="2" >{% trans "Region" %}</th>
             <th rowspan="2" >{% trans "Cercle" %}</th>
             <th rowspan="2" >{% trans "City" %}</th>
             <th rowspan="2" >{% trans "Village" %}</th>
@@ -91,19 +91,29 @@
                     
                         <tr>
                         
-                            {% if forloop.parentloop.parentloop.parentloop.counter ==  1 %}
-                                <td rowspan="{{ region_data.count }}">{{ region.name }}</td>
-                            {% endif %}
-                        
-                            {% if forloop.parentloop.parentloop.counter ==  1 %}
-                                <td rowspan="{{ cercle_data.count }}">{{ cercle.name }}</td>
-                            {% endif %}
-                        
+                            <!-- 
                             {% if forloop.parentloop.counter ==  1 %}
+                            
+                                {% if forloop.parentloop.parentloop.counter ==  1 %}
+                                    
+                                    {% if forloop.parentloop.parentloop.parentloop.counter ==  1 %}
+                                        <td rowspan="{{ region_data.count }}">{{ region.name }}</td>
+                                    {% endif %}
+                                
+                                    <td rowspan="{{ cercle_data.count }}">{{ cercle.name }}</td>
+                                {% endif %}
+                            
                                 <td rowspan="{{ city_data.count }}">{{ city.name }}</td>
                             {% endif %}
                         
-                        
+                         -->
+                         
+                                        <td >{{ region.name }}</td>
+                                
+                                    <td >{{ cercle.name }}</td>
+                            
+                                <td >{{ city.name }}</td>
+                         
                             <td>{{ r.area.name }}</td>
                             <td>
                                 <ul>
@@ -127,6 +137,22 @@
                 {% endfor %}
             {% endfor %}
         {% endfor %}
+            <tr>
+                <td class='total' rowspan="3" colspan="8" >{% trans "Total" %}</td>
+                <td>{{ totals.child_males|default:'' }}</td>
+                <td>{{ totals.teen_males|default:'' }}</td>
+                <td>{{ totals.adult_males|default:'' }}</td>
+                <td>{{ totals.child_females|default:'' }}</td>
+                <td>{{ totals.teen_females|default:'' }}</td>
+                <td>{{ totals.adult_females|default:'' }}</td>
+            </tr>
+           <tr>
+                <td colspan="3">{{ totals.all_males|default:'' }}</td>
+                <td colspan="3">{{ totals.all_females|default:'' }}</td>
+            </tr>
+           <tr>
+                <td colspan="6">{{ totals.all|default:'' }}</td>
+            </tr>
         </tbody>
     
     </table>
