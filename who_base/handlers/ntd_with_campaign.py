@@ -56,7 +56,7 @@ class NtdWithCampaignHandler(CallbackHandler):
             campaign = Campaign.objects.get(code=code)
         except (IndexError, Campaign.DoesNotExist):
             if code != 'ntd' and len(text) == 9:
-                 raise ExitHandle(_(u"No running matching the code: "\
+                 raise ExitHandle(_(u"No running campaign matching the code: "\
                                     u"'%(code)s'") % {'code': code})
         
             return False

@@ -34,6 +34,8 @@ def dashboard(request):
             campaign = page.object_list[0]
 
     if campaign:
+        # group by region, circle, city, results are by village
+    
         # group by commune
         results = sorted(Results.objects.filter(campaign=campaign), 
                                                 key=attrgetter('area'))

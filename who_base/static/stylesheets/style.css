@@ -17,3 +17,31 @@ left:70%;
 #who-dashboard #pagination .previous {
 margin-left: 1em; 
 }
+
+#who-dashboard table thead {
+text-align:center;
+}
+
+#who-dashboard table ul {
+padding-left:2ex;
+}
+
+#branding h1 a 
+{
+background-image: None;
+}
+
+#branding h1 
+{
+    background-color: transparent;
+    background-image: url("../images/Logo_OMS_small.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 100% 50%;
+    height: 65px;
+    color: #ffffff;
+    margin-top: 0pt;
+    margin-right: 0pt;
+    margin-bottom: 0pt;
+    margin-left: 0pt;
+}

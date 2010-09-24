@@ -66,7 +66,7 @@
             <th>{% trans "1-4" %}</th>
             <th>{% trans "5-14" %}</th>
             <th>{% trans "15+" %}</th>
-            <th>{% trans " 1-4" %}</th>
+            <th>{% trans "1-4" %}</th>
             <th>{% trans "5-14" %}</th>
             <th>{% trans "15+" %}</th>
 
@@ -74,27 +74,34 @@
         
         </thead>
         
+        {% if results %}
+        
         <tbody>
         {% for region, circles in results %}
             {% for circle, cities in circles %}
-                {{ circle }}
                 {% for city, res in cities %}
                     {% for r in res %}
                     
                         <tr>
-                            <td>{{ region }}</td>
-                            <td>{{ circle }}</td>
-                            <td>{{ city }}</td>
-                            <td>{{ r.drugs_pack }}</td>
-                            <td>{{ r.distributor }}</td>
-                            <td>{{ r.treatment_date }}</td>
-                            <td>{{ r.report_date }}</td>
-                            <td>{{ r.child_males_data }}</td>
-                            <td>{{ r.teen_males_data }}</td>
-                            <td>{{ r.adult_males_data }}</td>
-                            <td>{{ r.child_females_data }}</td>
-                            <td>{{ r.teen_females_data }}</td>
-                            <td>{{ r.adult_females_data }}</td>
+                            <td>{{ region.name }}</td>
+                            <td>{{ circle.name }}</td>
+                            <td>{{ city.name }}</td>
+                            <td>
+                                <ul>
+                                {% for drug in r.pack.drugs.all %}
+                                    <li>{{ drug }}</li>
+                                {% endfor %}
+                                </ul>
+                            </td>
+                            <td>{{ r.distributor|default:"" }}</td>
+                            <td>{{ r.treatment_date|default:"" }}</td>
+                            <td>{{ r.report_date|default:"" }}</td>
+                            <td>{{ r.child_males_data|default:"" }}</td>
+                            <td>{{ r.teen_males_data|default:"" }}</td>
+                            <td>{{ r.adult_males_data|default:"" }}</td>
+                            <td>{{ r.child_females_data|default:"" }}</td>
+                            <td>{{ r.teen_females_data|default:"" }}</td>
+                            <td>{{ r.adult_females_data|default:"" }}</td>
                         </tr>
                 
                     {% endfor %}
@@ -104,6 +111,12 @@
         </tbody>
     
     </table>
+    
+    {% else %}
+    <p>{% trans "This campaing is empty." %}
+        <a href="{% url admin:who_base_results_add %}">{% trans "Add results" %}</a>
+    </p>    
+    {% endif %}
     
     
 {% endif %}

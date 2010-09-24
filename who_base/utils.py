@@ -57,8 +57,8 @@ def check_date(date_str, date_format, remove_separators=()):
     try:
         return datetime.datetime.strptime(date_str, date_format)
     except ValueError:
-        raise ExitHandle(_(u"%(date_str)s is not a valid date %(field_name)s. "\
-                           u"The expected date format is: %(format)s ") % {
+        raise ExitHandle(_(u"%(date_str)s is not a valid date. "\
+                           u"The expected date format is: %(format)s") % {
                            'date_str': date_str, 'format':date_format })
                                
 

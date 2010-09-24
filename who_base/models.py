@@ -72,7 +72,8 @@ class Results(models.Model):
         unique_together = (('campaign', 'area'),)
 
     campaign = models.ForeignKey(Campaign, verbose_name=__(u'campaign'))
-    area =  models.ForeignKey(Area, verbose_name=__(u'area'))
+    area =  models.ForeignKey(Area, verbose_name=__(u'area'),
+                              limit_choices_to = {'kind__slug': 'village'})
     
     pack = models.ForeignKey(DrugsPack, verbose_name=__(u'drugs pack'),  
                              blank=True, null=True)
