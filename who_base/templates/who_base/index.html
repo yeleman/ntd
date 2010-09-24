@@ -9,6 +9,7 @@
 <link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}who_base/stylesheets/style.css" />
 {% endblock %}
 
+
 {% block content %}
 
 <div id='who-dashboard'>
@@ -45,6 +46,8 @@
     
     </div>
     
+    {% if cercles_by_region %}
+    
     <table>
         <thead>
 
@@ -53,6 +56,7 @@
             <th rowspan="4" >{% trans "Region" %}</th>
             <th rowspan="2" >{% trans "Cercle" %}</th>
             <th rowspan="2" >{% trans "City" %}</th>
+            <th rowspan="2" >{% trans "Village" %}</th>
             <th rowspan="2" >{% trans "Drugs" %}</th>
             <th rowspan="2" >{% trans "Distributor" %}</th>
             <th rowspan="2" >{% trans "Treated on" %}</th>
@@ -74,18 +78,31 @@
         
         </thead>
         
-        {% if results %}
-        
         <tbody>
-        {% for region, circles in results %}
-            {% for circle, cities in circles %}
-                {% for city, res in cities %}
-                    {% for r in res %}
+        {% for region, region_data in cercles_by_region.iteritems %}
+            
+            {% for cercle, cercle_data in region_data.cercles %}
+            
+                {% for city, city_data in cercle_data.cities %}
+                
+                    {% for r in city_data.results %}
                     
                         <tr>
-                            <td>{{ region.name }}</td>
-                            <td>{{ circle.name }}</td>
-                            <td>{{ city.name }}</td>
+                        
+                            {% if forloop.parentloop.parentloop.parentloop.counter ==  1 %}
+                                <td rowspan="{{ region_data.count }}">{{ region.name }}</td>
+                            {% endif %}
+                        
+                            {% if forloop.parentloop.parentloop.counter ==  1 %}
+                                <td rowspan="{{ cercle_data.count }}">{{ cercle.name }}</td>
+                            {% endif %}
+                        
+                            {% if forloop.parentloop.counter ==  1 %}
+                                <td rowspan="{{ city_data.count }}">{{ city.name }}</td>
+                            {% endif %}
+                        
+                        
+                            <td>{{ r.area.name }}</td>
                             <td>
                                 <ul>
                                 {% for drug in r.pack.drugs.all %}

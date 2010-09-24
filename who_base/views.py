@@ -34,19 +34,27 @@ def dashboard(request):
             campaign = page.object_list[0]
 
     if campaign:
-        # group by region, circle, city, results are by village
+        
+        results_by_cities = {}
+        for result in Results.objects.filter(campaign=campaign):
+            data = results_by_cities.setdefault(result.area.parent, {})
+            data['count'] = data.get('count', 0) + 1
+            data.setdefault('results', []).append(result)
+            
+        cities_by_cercle = {}
+        for city, city_data in results_by_cities.iteritems():
+            data = cities_by_cercle.setdefault(city.parent, {})
+            data['count'] = data.get('count', 0) + 1
+            data.setdefault('cities', []).append((city, city_data))
     
-        # group by commune
-        results = sorted(Results.objects.filter(campaign=campaign), 
-                                                key=attrgetter('area'))
-        results = groupby(results, attrgetter('area')) 
-        
-        # group by cercle (nested lambda, don't you like it :-) ?)
-        get_ = lambda i, k: (lambda o: getattr(o[i], k) ) 
-        results = groupby(results, get_(0, 'parent'))      
-        
-        # group by region
-        results = groupby(results, get_(0, 'parent')) 
+        cercles_by_region = {}
+        for cercle, cercle_data in cities_by_cercle.iteritems():
+            data = cercles_by_region.setdefault(cercle.parent, {})
+            data['count'] = data.get('count', 0) + 1
+            data.setdefault('cercles', []).append((cercle, cercle_data))
+            
+        import pprint
+        pprint.pprint(cercles_by_region)
 
     ctx = locals()
 

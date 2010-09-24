@@ -31,17 +31,28 @@ padding-left:2ex;
 background-image: None;
 }
 
-#branding h1 
-{
-    background-color: transparent;
-    background-image: url("../images/Logo_OMS_small.png");
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: 100% 50%;
-    height: 65px;
-    color: #ffffff;
-    margin-top: 0pt;
-    margin-right: 0pt;
-    margin-bottom: 0pt;
-    margin-left: 0pt;
+#branding h1 {
+background-color: transparent;
+background-image: url("../images/Logo_OMS_small.png");
+background-repeat: no-repeat;
+background-attachment: scroll;
+background-position: 100% 50%;
+height: 65px;
+color: #ffffff;
+margin-top: 0pt;
+margin-right: 0pt;
+margin-bottom: 0pt;
+margin-left: 0pt;
 }
+
+#who-dashboard table td {
+    border: 1px solid #DDDDDD;
+}
+
+#who-dashboard table  {
+    padding-bottom:0;
+    margin-bottom:0;
+}
+
+
+
