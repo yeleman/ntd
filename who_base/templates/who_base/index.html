@@ -48,6 +48,8 @@
     
     {% if cercles_by_region %}
     
+    <div id="data">
+    
     <table>
         <thead>
 
@@ -128,6 +130,14 @@
         </tbody>
     
     </table>
+    
+    <p class='download'>
+        <a href="?page={{ page.number }}&amp;format=csv">
+        {% trans "Download" %}
+        </a>
+    </p>
+    
+    </div>
     
     {% else %}
     <p>{% trans "This campaing is empty." %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-24 07:58+0200\n"
+"POT-Creation-Date: 2010-09-24 12:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,12 +31,12 @@ msgstr "%d/%m/%Y"
 msgid "[%(code)s] %(name)s"
 msgstr "[%(code)s] %(name)s"
 
-#: models.py:105
+#: models.py:106
 #, python-format
 msgid "Results of campaign %(campaign)s at %(area)s"
 msgstr "Résultats de la campagne %(campaign)s à %(area)s"
 
-#: models.py:111
+#: models.py:112
 #, python-format
 msgid "%(campaign)sD%(day)s/%(reportid)s"
 msgstr "%(campaign)sD%(day)s/%(reportid)s"
@@ -56,16 +56,15 @@ msgid ""
 "You can only do this with a %(expected_type)s but %(location)s is a %"
 "(current_type)s."
 msgstr ""
-"Vous pouvez faire cela uniquement avec un(e) %(expected_type)s mais "
-"%(location)s est un(e) %(current_type)s."
+"Vous pouvez faire cela uniquement avec un(e) %(expected_type)s mais %"
+"(location)s est un(e) %(current_type)s."
 
 #: utils.py:60
 #, python-format
 msgid ""
-"%(date_str)s is not a valid date. The expected date format is: %(format)s."
-
+"%(date_str)s is not a valid date. The expected date format is: %(format)s"
 msgstr ""
-"%(date_str)s n'est pas une date valide. Le format attendu est %(format)s."
+"%(date_str)s n'est pas une date valide. Le format attendu est %(format)s"
 
 #: utils.py:80
 #, python-format
@@ -75,6 +74,62 @@ msgid ""
 msgstr ""
 "Aucun(e) %(obj_name)s avec pour %(field_name)s '%(code)s' n'existe. Demandez "
 "à votre administrateur le ou la %(field_name)s pour votre %(obj_name)s."
+
+#: views.py:55 templates/who_base/index.html:58
+msgid "Region"
+msgstr "Region"
+
+#: views.py:55 templates/who_base/index.html:59
+msgid "Cercle"
+msgstr "Cercle"
+
+#: views.py:56 templates/who_base/index.html:60
+msgid "City"
+msgstr "Commune"
+
+#: views.py:56 templates/who_base/index.html:61
+msgid "Village"
+msgstr "Village"
+
+#: views.py:57 templates/who_base/index.html:62
+msgid "Drugs"
+msgstr "Médicaments"
+
+#: views.py:57 templates/who_base/index.html:63
+msgid "Distributor"
+msgstr "Distributeur"
+
+#: views.py:57 templates/who_base/index.html:64
+msgid "Treated on"
+msgstr "Traité le"
+
+#: views.py:58 templates/who_base/index.html:65
+msgid "Reported on"
+msgstr "Reporté le"
+
+#: views.py:59
+msgid "1-4 years old males"
+msgstr "hommes de 1-4 ans"
+
+#: views.py:59
+msgid "5-14 years old males"
+msgstr "hommes de 5-14 ans"
+
+#: views.py:60
+msgid "15+ years old males"
+msgstr "hommes de plus de 15 ans"
+
+#: views.py:61
+msgid "1-4 years old females"
+msgstr "femmes de 1-4 ans"
+
+#: views.py:61
+msgid "5-14 years old females"
+msgstr "femmes de 5-14 ans"
+
+#: views.py:62
+msgid "15+ years old females"
+msgstr "femmes de plus de 15 ans"
 
 #: handlers/ntd.py:45 handlers/ntd_with_campaign.py:45
 msgid ""
@@ -102,8 +157,8 @@ msgid ""
 "The last 6 values must be 3 numbers for male statistics, and 3 numbers for "
 "females statistics."
 msgstr ""
-"Les 6 dernières valeurs doivent être 3 chiffres pour les statistiques homme et"
-" 3 chiffres pour les statistiques femme."
+"Les 6 dernières valeurs doivent être 3 chiffres pour les statistiques homme "
+"et 3 chiffres pour les statistiques femme."
 
 #: handlers/ntd.py:82 handlers/ntd_with_campaign.py:104
 msgid "This commands is expecting a keyword and 9 values: "
@@ -134,87 +189,61 @@ msgstr "La campagne %(campaign)s est terminée."
 msgid "The campaign %(campaign)s does not include %(location)s right now."
 msgstr "La campagne %(campaign)s n'inclut pas %(location)s pour le moment."
 
-#: templates/who_base/index.html:18
+#: templates/who_base/index.html:19
 msgid "No campaign yet"
 msgstr "Aucune campagne pour le moment"
 
-#: templates/who_base/index.html:21
+#: templates/who_base/index.html:22
 msgid "Add a campaign"
 msgstr "Ajouter une campagne"
 
-#: templates/who_base/index.html:21
-msgid "Add results"
-msgstr "Ajouter des résultats"
-
-#: templates/who_base/index.html:21
-msgid "This campaing is empty."
-msgstr "Cette campagne est vide."
-
-#: templates/who_base/index.html:28
+#: templates/who_base/index.html:29
 msgid "Campaign"
 msgstr "Campagne"
 
-#: templates/who_base/index.html:33
+#: templates/who_base/index.html:34
 msgid "Previous"
 msgstr "Précédente"
 
-#: templates/who_base/index.html:39
+#: templates/who_base/index.html:40
 msgid "Next"
 msgstr "Suivante"
 
-#: templates/who_base/index.html:44
+#: templates/who_base/index.html:45
 msgid "started on"
 msgstr "date de début"
 
-#: templates/who_base/index.html:53
-msgid "Region"
-msgstr "Region"
-
-#: templates/who_base/index.html:54
-msgid "Cercle"
-msgstr "Cercle"
-
-#: templates/who_base/index.html:55
-msgid "City"
-msgstr "Commune"
-
-#: templates/who_base/index.html:56
-#, fuzzy
-msgid "Drugs"
-msgstr "médicaments"
-
-#: templates/who_base/index.html:57
-#, fuzzy
-msgid "Distributor"
-msgstr "distributeur"
-
-#: templates/who_base/index.html:58
-msgid "Treated on"
-msgstr "Traité le"
-
-#: templates/who_base/index.html:59
-msgid "Reported on"
-msgstr "Reporté le"
-
-#: templates/who_base/index.html:60
+#: templates/who_base/index.html:66
 msgid "Males, by age"
 msgstr "Hommes, par age"
 
-#: templates/who_base/index.html:61
+#: templates/who_base/index.html:67
 msgid "Females, by age"
 msgstr "Femmes, par age"
 
-#: templates/who_base/index.html:66
+#: templates/who_base/index.html:72 templates/who_base/index.html.py:75
 msgid "1-4"
 msgstr "1-4"
 
-#: templates/who_base/index.html:67 templates/who_base/index.html.py:70
+#: templates/who_base/index.html:73 templates/who_base/index.html.py:76
 msgid "5-14"
 msgstr "5-14"
 
-#: templates/who_base/index.html:68 templates/who_base/index.html.py:71
+#: templates/who_base/index.html:74 templates/who_base/index.html.py:77
 msgid "15+"
 msgstr "15+"
+
+#: templates/who_base/index.html:136
+msgid "Download"
+msgstr "Télécharger"
+
+#: templates/who_base/index.html:143
+msgid "This campaing is empty."
+msgstr "Cette campagne est vide."
+
+#: templates/who_base/index.html:144
+msgid "Add results"
+msgstr "Ajouter des résultats"
 
 #~ msgid "name"
 #~ msgstr "nom"
@@ -243,30 +272,11 @@ msgstr "15+"
 #~ msgid "area"
 #~ msgstr "lieu"
 
-#, fuzzy
 #~ msgid "report date"
 #~ msgstr "date du rapport"
 
 #~ msgid "treatment date"
 #~ msgstr "date du traitement"
-
-#~ msgid "1-4 years old males"
-#~ msgstr "hommes de 1-4 ans"
-
-#~ msgid "5-14 years old males"
-#~ msgstr "hommes de 5-14 ans"
-
-#~ msgid "15+ years old males"
-#~ msgstr "hommes de plus de 15 ans"
-
-#~ msgid "1-4 years old females"
-#~ msgstr "femmes de 1-4 ans"
-
-#~ msgid "5-14 years old females"
-#~ msgstr "femmes de 5-14 ans"
-
-#~ msgid "15+ years old females"
-#~ msgstr "femmes de plus de 15 ans"
 
 #~ msgid "disabled"
 #~ msgstr "désactivé"
