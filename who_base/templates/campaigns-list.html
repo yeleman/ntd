@@ -12,7 +12,7 @@
     {% if campaigns_list %}
     <ul>
         {% for campaign in campaigns_list %}
-            <li>{{ campaign }}</li>
+            <li><a href="{{ campaign.get_absolute_url }}">{{ campaign }}</a></li>
         {% endfor  %}
     </ul>
     {% endif %}

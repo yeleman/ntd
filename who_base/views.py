@@ -26,6 +26,28 @@ def dashboard(request):
 
     return render_to_response('who_base/index.html',  {},
                               context_instance=RequestContext(request))
+            
+            
+@login_required                          
+def edit_campaign(request, pk):
+
+    # todo: add more checks here
+    campaign = Campaign.objects.get(pk=int(pk))
+    results = Results.objects.filter(campaign=campaign)
+    locations = Area.objects.filter(as_data_source__isnull=False)
+    
+    if request.method == 'POST':
+        campaign_form = CampaignForm(request.POST, instance=campaign)
+        if campaign_form.is_valid():
+           campaign_form.save() 
+           return redirect(campaign.get_absolute_url())
+    else:
+        campaign_form = CampaignForm(instance=campaign)
+
+    ctx = locals()
+    return render_to_response('edit_campaign.html',  ctx,
+                              context_instance=RequestContext(request))
+            
                               
 @login_required                          
 def create_campaign(request):

@@ -8,6 +8,7 @@ import re
 from django.utils.translation import ugettext as _, ugettext_lazy as __
 from django.db import models
 from django.db.models import Q
+from django.db.models import permalink
 
 from simple_locations.models import Area
 
@@ -34,6 +35,11 @@ class Campaign(models.Model):
         return _(u'%(name)s (started on %(date)s)') % {'name': self.name, 
                'date': self.start_date.strftime(_('%m/%d/%Y'))}
     
+
+    @permalink  
+    def get_absolute_url(self):
+        return ('edit-campaign', (self.pk,))
+
 
 class Drug(models.Model):
 
@@ -165,6 +171,7 @@ class Results(models.Model):
         return cls.objects.get(campaign=Campaign.objects.get(id=campaign_id),
                                id=report_id)
                                
+
 
 class LocationHierarchy(models.Model):
 

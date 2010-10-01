@@ -34,15 +34,31 @@ class CampaignForm(forms.ModelForm):
         # todo : make add a slug to report type
         rt = ReportType.objects.get(name='NTD Mali')
         report_mgr = Report.objects.create(type=rt)
-    
+
         # todo: put more validation here
-        for location in self.data.getlist('locations'):
+        # create or enable checked location
+        locations = set(self.data.getlist('locations'))
+        for location in locations:
             area = Area.objects.get(pk=location)
-            result = Results.objects.create(campaign=campaign,
-                                           area=area,
-                                           data_collection_location=area.as_data_source.data_collection,
-                                           drug_pack=self.cleaned_data['drug_pack'],
-                                           report_manager=report_mgr)
+            
+            try:
+                result = Results.objects.get(campaign=campaign, area=area)
+            except Results.DoesNotExist:
+                result = Results.objects.create(campaign=campaign,
+                                               area=area,
+                                               data_collection_location=area.as_data_source.data_collection,
+                                               drug_pack=self.cleaned_data['drug_pack'],
+                                               report_manager=report_mgr)
+            else:
+                if result.disabled:
+                    result.disabled = False
+                    result.save()
+                
+        # disable unchecked locations
+        for result in campaign.results_set.all():
+            if unicode(result.area.pk) not in locations:
+                result.disabled = True
+                result.save()
     
         return campaign
        
