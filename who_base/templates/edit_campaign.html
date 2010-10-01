@@ -6,6 +6,8 @@
 
 {% block content %}
 
+    <p><a href="{% url campaigns-list %}"><< {% trans "Campaigns list" %}</a></a>
+
     <h2>{% trans "Edit a campaign" %}</h2>
 
     {{ campaign_form.errors }}

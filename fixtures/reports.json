@@ -1,5 +1,21 @@
 [
     {
+        "pk": 7, 
+        "model": "eav.attribute", 
+        "fields": {
+            "description": "", 
+            "created": "2010-10-01 11:06:14", 
+            "datatype": "object", 
+            "enum_group": null, 
+            "required": false, 
+            "modified": "2010-10-01 11:06:14", 
+            "type": "", 
+            "slug": "contact", 
+            "name": "contact"
+        }
+    }, 
+
+    {
         "pk": 5, 
         "model": "eav.attribute", 
         "fields": {
@@ -93,7 +109,7 @@
         "pk": 1, 
         "model": "report_parts.reporttype", 
         "fields": {
-            "delay": "0:06:00", 
+            "delay": "0:15:00", 
             "parts": [
                 5, 
                 4, 

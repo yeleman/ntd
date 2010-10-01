@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-01 13:17+0200\n"
+"POT-Creation-Date: 2010-10-01 16:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,45 +21,45 @@ msgstr ""
 msgid "You must select at least one location"
 msgstr ""
 
-#: models.py:34
+#: models.py:35
 #, python-format
-msgid "%(name)s (started on %(date)s)"
+msgid "%(name)s (starts on %(date)s)"
 msgstr "%(name)s (démarrée le %(date)s)"
 
-#: models.py:35
+#: models.py:36
 msgid "%m/%d/%Y"
 msgstr "%d/%m/%Y"
 
-#: models.py:65
+#: models.py:71
 #, python-format
 msgid "[%(code)s] %(name)s"
 msgstr "[%(code)s] %(name)s"
 
-#: models.py:148
+#: models.py:154
 #, python-format
 msgid "Results of campaign %(campaign)s at %(area)s"
 msgstr "Résultats de la campagne %(campaign)s à %(area)s"
 
-#: models.py:154
+#: models.py:160
 #, python-format
 msgid "%(campaign)sD%(day)s/%(reportid)s"
 msgstr "%(campaign)sD%(day)s/%(reportid)s"
 
-#: models.py:172
+#: models.py:179
 msgid "locations hierarchy"
 msgstr "Hiérarchie de lieux"
 
-#: models.py:173
+#: models.py:180
 msgid "locations hierarchies"
 msgstr "hiérarchies de lieux"
 
-#: models.py:176
+#: models.py:183
 msgid "data collection location"
 msgstr "lieu de collecte des données"
 
-#: models.py:178
+#: models.py:185
 msgid "data source location"
-msgstr "lieu source des données"
+msgstr "lieu source de données"
 
 #: utils.py:30
 #, python-format
@@ -165,20 +165,19 @@ msgstr "Ajouter une campagne"
 msgid "Create a new campaign"
 msgstr "Ajouter une nouvelle campagne"
 
-#: templates/create_campaign.html:22
+#: templates/create_campaign.html:22 templates/edit_campaign.html:22
 msgid "Name"
 msgstr "Nom"
 
-#: templates/create_campaign.html:23
-#, fuzzy
+#: templates/create_campaign.html:23 templates/edit_campaign.html:23
 msgid "Start date"
 msgstr "date de début"
 
-#: templates/create_campaign.html:26
+#: templates/create_campaign.html:26 templates/edit_campaign.html:26
 msgid "Drug pack"
-msgstr "Lot de médicament"
+msgstr "Lot de médicaments"
 
-#: templates/create_campaign.html:28
+#: templates/create_campaign.html:28 templates/edit_campaign.html:28
 msgid "Areas"
 msgstr "Lieux"
 
@@ -189,6 +188,18 @@ msgstr "Créer"
 #: templates/create_campaign.html:46
 msgid "There are no areas. Please create some before starting a campaign"
 msgstr "Il n'y a pas de zone. Créez en avant de commencer une campagne"
+
+#: templates/edit_campaign.html:9
+msgid "Campaigns list"
+msgstr "Liste des campagnes"
+
+#: templates/edit_campaign.html:11
+msgid "Edit a campaign"
+msgstr "Modifier une campagne"
+
+#: templates/edit_campaign.html:50
+msgid "Save"
+msgstr "Sauvegarder"
 
 #: templates/who_base/index.html:19
 msgid "No campaign yet"
@@ -211,8 +222,8 @@ msgid "Next"
 msgstr "Suivante"
 
 #: templates/who_base/index.html:45
-msgid "started on"
-msgstr "date de début"
+msgid "starts on"
+msgstr "débute le"
 
 #: templates/who_base/index.html:58
 msgid "Region"

@@ -32,7 +32,7 @@ class Campaign(models.Model):
                                   blank=True, null=True)
     
     def __unicode__(self):
-        return _(u'%(name)s (started on %(date)s)') % {'name': self.name, 
+        return _(u'%(name)s (starts on %(date)s)') % {'name': self.name, 
                'date': self.start_date.strftime(_('%m/%d/%Y'))}
     
 
@@ -95,11 +95,9 @@ class Results(models.Model):
                                                   related_name='results_collected_here',
                                                   verbose_name=__(u'data collection location'))
                                                          
-    drug_pack = models.ForeignKey(DrugsPack, verbose_name=__(u'drugs pack'),  
+    drugs_pack = models.ForeignKey(DrugsPack, verbose_name=__(u'drugs pack'),  
                                   blank=True, null=True)
                                    
-    report_date = models.DateField(verbose_name=__(u'report date'),
-                                     blank=True, null=True)
     treatment_start_date = models.DateField(verbose_name=__(u'treatment start date'),
                                        blank=True, null=True)
     treatment_end_date = models.DateField(verbose_name=__(u'treatment end date'),

@@ -43,49 +43,6 @@ def check_location(location_code, location_type=None):
     return location                        
 
 
-def check_date(date_str, date_format, remove_separators=()):
-    """
-        Exit the handle if the objects does not exists.
-        
-        If it does, returns it.
-        
-        Code field must have a unique constraint for it to work
-    """
-    
-    translate_table = dict((ord(c), None) for c in remove_separators)
-    date_str = date_str.translate(translate_table)
-
-    try:
-        return datetime.datetime.strptime(date_str, date_format)
-    except ValueError:
-        raise ExitHandle(_(u"%(date_str)s is not a valid date. "\
-                           u"The expected date format is: %(format)s") % {
-                           'date_str': date_str, 'format':date_format })
-                               
-
-
-def check_exists(code, model, field_code='code'):
-    """
-        Exit the handle if the objects does not exists.
-        
-        If it does, returns it.
-        
-        Code field must have a unique constraint for it to work
-    """
-    
-    try:
-        obj = model.objects.get(**{})
-    except model.DoesNotExist:
-        obj_name = unicode(model._meta.verbose_name)
-        field_name = unicode(model._meta.get_field_by_name(field_code)[0])
-        raise ExitHandle(_(u"No %(obj_name)s with %(field_name)s '%(code)s' "\
-                           u"exists. Ask your administrator the right "\
-                           u"%(field_name)s for your %(obj_name)s.") % {
-                           'obj_name': obj_name, 'field_name':field_name, 
-                           'code': code})
-                               
-    return obj  
-    
     
 def fix_date_year(date):
     """
