@@ -1,0 +1,65 @@
+[
+    {
+        "pk": 1, 
+        "model": "who_base.drug", 
+        "fields": {
+            "name": "Praziqunatel"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "who_base.drug", 
+        "fields": {
+            "name": "Albendazole/Mebendazole"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "who_base.drug", 
+        "fields": {
+            "name": "Ivermectin/Mectizan"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "who_base.drug", 
+        "fields": {
+            "name": "DEC"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "who_base.drug", 
+        "fields": {
+            "name": "Azithromycin"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "who_base.drugspack", 
+        "fields": {
+            "drugs": [
+                2, 
+                3
+            ], 
+            "code": "p001", 
+            "name": ""
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "who_base.locationhierarchy", 
+        "fields": {
+            "data_source": 753, 
+            "data_collection": 746
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "who_base.locationhierarchy", 
+        "fields": {
+            "data_source": 754, 
+            "data_collection": 3
+        }
+    }
+]

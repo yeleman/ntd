@@ -7,27 +7,6 @@
             "permissions": []
         }
     }, 
-
-    {
-        "pk": 2, 
-        "model": "auth.user", 
-        "fields": {
-            "username": "system", 
-            "first_name": "System", 
-            "last_name": "", 
-            "is_active": true, 
-            "is_superuser": true, 
-            "is_staff": true, 
-            "last_login": "2010-09-22 10:30:31", 
-            "groups": [
-                1
-            ], 
-            "user_permissions": [], 
-            "password": "sha1$1cf09$72676e42eff263733facfcef99dc5a774b7829c9", 
-            "email": "", 
-            "date_joined": "2010-09-22 10:30:31"
-        }
-    }, 
     {
         "pk": 1, 
         "model": "auth.role", 

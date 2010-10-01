@@ -46,7 +46,7 @@ INSTALLED_APPS = [
 
      "south",
     # the essentials.
-    "django_nose",
+    #"django_nose",
     "djtables",
     "rapidsms",
     
@@ -84,6 +84,8 @@ INSTALLED_APPS = [
     "who_base",
     "mptt",
    "simple_locations",
+   "report_parts",
+   "eav"
 ]
 
 
@@ -116,7 +118,7 @@ DEBUG = TEMPLATE_DEBUG = False
 # use django-nose to run tests. rapidsms contains lots of packages and
 # modules which django does not find automatically, and importing them
 # all manually is tiresome and error-prone.
-TEST_RUNNER = "django_nose.NoseTestSuiteRunner"
+#TEST_RUNNER = "django_nose.NoseTestSuiteRunner"
 
 
 # this is required for the django.contrib.sites tests to run, but also

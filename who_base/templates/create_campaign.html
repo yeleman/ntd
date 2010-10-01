@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block page-id %}create-campaign{% endblock %}
+
+{% block content %}
+
+    <h2>{% trans "Create a new campaign" %}</h2>
+
+    {% if locations %}
+    
+    {{ campaign_form.errors }}
+
+    <!-- todo improve form ergonomics -->
+    
+    <form method='post' action='{% url create-campaign %}' >
+    
+    {% csrf_token %}
+    
+    <p>
+        <label>{% trans "Name" %}</label>: {{ campaign_form.name }} 
+        <label>{% trans "Start date" %}</label>: {{ campaign_form.start_date }}
+    </p>
+    <p>
+        <label>{% trans "Drug pack" %}</label>: {{ campaign_form.drug_pack }} 
+    </p>
+    <h3>{% trans "Areas" %}</h3>
+
+    <table>
+    {% for location in locations %}
+        <tr>
+            <td><input type="checkbox" name="locations" value="{{ location.pk }}" /></td>
+            <td>{{ location.as_data_source.data_collection.parent }}</td> 
+            <td>{{ location.as_data_source.data_collection }}</td>      
+            <td>{{ location }}</td>     
+        </tr>
+    {% endfor %}
+    </table>
+
+    <input type='submit' value='{% trans "Create" %}'>
+    
+    </form>
+
+    {% else %}
+    <p>{% trans "There are no areas. Please create some before starting a campaign" %}</p>
+    {% endif %}
+
+{% endblock %}

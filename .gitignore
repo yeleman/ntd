@@ -12,3 +12,4 @@ local_settings.py
 handlers_i18n
 auth
 simple_locations
+report_parts

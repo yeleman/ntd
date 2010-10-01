@@ -1,0 +1,108 @@
+[
+    {
+        "pk": 5, 
+        "model": "eav.attribute", 
+        "fields": {
+            "description": "", 
+            "created": "2010-10-01 05:26:09", 
+            "datatype": "bool", 
+            "enum_group": null, 
+            "required": false, 
+            "modified": "2010-10-01 05:26:09", 
+            "type": "", 
+            "slug": "cpf", 
+            "name": "cpf"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "eav.attribute", 
+        "fields": {
+            "description": "", 
+            "created": "2010-10-01 05:25:52", 
+            "datatype": "bool", 
+            "enum_group": null, 
+            "required": false, 
+            "modified": "2010-10-01 05:25:52", 
+            "type": "", 
+            "slug": "cph", 
+            "name": "cph"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "eav.attribute", 
+        "fields": {
+            "description": "", 
+            "created": "2010-10-01 05:25:26", 
+            "datatype": "bool", 
+            "enum_group": null, 
+            "required": false, 
+            "modified": "2010-10-01 05:25:26", 
+            "type": "", 
+            "slug": "fem", 
+            "name": "fem"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "eav.attribute", 
+        "fields": {
+            "description": "", 
+            "created": "2010-10-01 05:25:18", 
+            "datatype": "bool", 
+            "enum_group": null, 
+            "required": false, 
+            "modified": "2010-10-01 05:25:18", 
+            "type": "", 
+            "slug": "hom", 
+            "name": "hom"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "eav.attribute", 
+        "fields": {
+            "description": "", 
+            "created": "2010-10-01 05:26:23", 
+            "datatype": "bool", 
+            "enum_group": null, 
+            "required": false, 
+            "modified": "2010-10-01 05:26:23", 
+            "type": "", 
+            "slug": "med", 
+            "name": "med"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "eav.attribute", 
+        "fields": {
+            "description": "", 
+            "created": "2010-10-01 05:25:08", 
+            "datatype": "bool", 
+            "enum_group": null, 
+            "required": false, 
+            "modified": "2010-10-01 05:25:08", 
+            "type": "", 
+            "slug": "vil", 
+            "name": "vil"
+        }
+    },
+    {
+        "pk": 1, 
+        "model": "report_parts.reporttype", 
+        "fields": {
+            "delay": "0:06:00", 
+            "parts": [
+                5, 
+                4, 
+                3, 
+                2, 
+                6, 
+                1
+            ], 
+            "name": "NTD Mali"
+        }
+    }
+]

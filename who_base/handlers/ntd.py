@@ -37,7 +37,6 @@ class NtdHandler(KeywordHandlerI18n):
         1009: date: September 10th
         20 30 45: Male data
         18 22 40: Female data
-    
     """
 
     keyword = "ntd"

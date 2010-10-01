@@ -4,18 +4,19 @@
 
 from django.conf.urls.defaults import *
 from django.conf import settings
+from django.views.generic.list_detail import object_list
+
+from .models import Campaign
 
 urlpatterns = patterns("",
 
-    # Example:
-    # (r'^django_project/', include('django_project.foo.urls')),
-
-    # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
-    # to INSTALLED_APPS to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    (r'$',  "who_base.views.dashboard"),
+    url(r'campaigns/$',  object_list, {'queryset': Campaign.objects.all(),
+                                       'template_name': 'campaigns-list.html', 
+                                       'template_object_name': 'campaigns'}, 
+        name="campaigns-list"),
+    url(r'campaign/create/$',  "who_base.views.create_campaign", 
+        name="create-campaign"),
+    url(r'$',  "who_base.views.dashboard"),
     
 )
 
