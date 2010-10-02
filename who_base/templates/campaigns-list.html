@@ -12,7 +12,8 @@
     {% if campaigns_list %}
     <ul>
         {% for campaign in campaigns_list %}
-            <li><a href="{{ campaign.get_absolute_url }}">{{ campaign }}</a></li>
+            <li><a href="{{ campaign.get_absolute_url }}">{{ campaign }}</a>
+             | <a href="{% url delete-campaign campaign.pk %}">{% trans "delete" %}</a></li>
         {% endfor  %}
     </ul>
     {% endif %}

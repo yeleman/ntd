@@ -86,7 +86,7 @@ class VilHandler(KeywordHandlerI18n):
         
         if count == 1:
             return self.respond(_(u"You are now reporting results for the "\
-                           u"campaign %(campaign)s in %(location)s.") {
+                           u"campaign %(campaign)s in %(location)s.") % {
                            'campaign': campaign, 'location': location })
         
         if count == 6:
@@ -101,7 +101,7 @@ class VilHandler(KeywordHandlerI18n):
                                                                 ('-', '/')))
         result.treatment_end_date = fix_date_year(check_date(args[3], 
                                                              _("%d%m"), 
-                                                             ('-', '/'))
+                                                             ('-', '/')))
         
         try:
             data = [int(x) for x in args[4:]]
@@ -112,13 +112,13 @@ class VilHandler(KeywordHandlerI18n):
             return self.respond(_(u"Target population value (%(target_pop)s) "\
                                   u"can not be bigger than the total "\
                                   u"population value (%(total_pop)s).") % {
-                                  'target_pop': data[1], 'total_pop': data[0]}
+                                  'target_pop': data[1], 'total_pop': data[0]})
 
         if data[2] > data[1]:
             return self.respond(_(u"Patients under six value (%(under_six_pop)s) "\
                                   u"can not be bigger than the target "\
                                   u"population value (%(target_pop)s).") % {
-                                  'under_six_pop': data[2], 'target_pop': data[1]}
+                               'under_six_pop': data[2], 'target_pop': data[1]})
 
         result.total_pop = data[0]
         result.target_pop = data[1]                                   
@@ -134,6 +134,6 @@ class VilHandler(KeywordHandlerI18n):
                        u"%(under_six_pop)s under six.") % {'total_pop': data[0],
                        'under_six_pop': data[2], 'target_pop': data[1], 
                        'campaign': campaign, 'start': result.treatment_start_date,
-                       'end': result.treatment_end_date, 'location': location}
+                       'end': result.treatment_end_date, 'location': location})
 
             

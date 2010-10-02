@@ -18,6 +18,8 @@ urlpatterns = patterns("",
         name="create-campaign"),
     url(r'campaign/edit/(?P<pk>\d+)/$',  "who_base.views.edit_campaign", 
         name="edit-campaign"),
+    url(r'campaign/delete/(?P<pk>\d+)/$',  "who_base.views.delete_campaign", 
+        name="delete-campaign"),
     url(r'$',  "who_base.views.dashboard"),
     
 )

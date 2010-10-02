@@ -50,16 +50,19 @@
         "pk": 1, 
         "model": "who_base.locationhierarchy", 
         "fields": {
+            "distributor": "Pierre Richard", 
             "data_source": 753, 
-            "data_collection": 746
+            "data_collection": 2
         }
     }, 
     {
         "pk": 2, 
         "model": "who_base.locationhierarchy", 
         "fields": {
+            "distributor": "Roger moore", 
             "data_source": 754, 
             "data_collection": 3
         }
     }
+
 ]

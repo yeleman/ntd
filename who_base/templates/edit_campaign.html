@@ -23,7 +23,7 @@
         <label>{% trans "Start date" %}</label>: {{ campaign_form.start_date }}
     </p>
     <p>
-        <label>{% trans "Drug pack" %}</label>: {{ campaign_form.drug_pack }} 
+        <label>{% trans "Drug pack" %}</label>: {{ campaign_form.drugs_pack }} 
     </p>
     <h3>{% trans "Areas" %}</h3>
 
@@ -42,7 +42,7 @@
             /></td>
             <td>{{ location.as_data_source.data_collection.parent }}</td> 
             <td>{{ location.as_data_source.data_collection }}</td>      
-            <td>{{ location }}</td>     
+            <td>{{ location.code }} - {{ location }}</td>     
         </tr>
     {% endfor %}
     </table>

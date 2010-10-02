@@ -65,3 +65,18 @@ def create_campaign(request):
     ctx = locals()
     return render_to_response('create_campaign.html',  ctx,
                               context_instance=RequestContext(request))
+                              
+  
+@login_required                          
+def delete_campaign(request, pk):
+
+    # todo: add more checks here
+    campaign = Campaign.objects.get(pk=int(pk))
+    
+    if request.GET.get('confirm'):
+        campaign.delete()
+        return redirect('campaigns-list')
+
+    ctx = locals()
+    return render_to_response('delete_campaign.html',  ctx,
+                              context_instance=RequestContext(request))

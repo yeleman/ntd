@@ -28,7 +28,7 @@ class Campaign(models.Model):
                                   verbose_name=__(u'start date'))
     end_date = models.DateField(blank=True, null=True, 
                                 verbose_name=__(u'end date'))
-    drug_pack = models.ForeignKey('DrugsPack', verbose_name=__(u'drugs pack'),
+    drugs_pack = models.ForeignKey('DrugsPack', verbose_name=__(u'drugs pack'),
                                   blank=True, null=True)
     
     def __unicode__(self):

@@ -47,7 +47,7 @@ class CampaignForm(forms.ModelForm):
                 result = Results.objects.create(campaign=campaign,
                                                area=area,
                                                data_collection_location=area.as_data_source.data_collection,
-                                               drug_pack=self.cleaned_data['drug_pack'],
+                                               drugs_pack=self.cleaned_data['drugs_pack'],
                                                report_manager=report_mgr)
             else:
                 if result.disabled:
