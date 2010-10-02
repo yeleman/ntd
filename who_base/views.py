@@ -2,10 +2,6 @@
 # encoding=utf-8
 # vim: ai ts=4 sts=4 et sw=4
 
-import csv
-
-from itertools import groupby
-from operator import attrgetter
 
 from django.http import HttpResponse
 from django.shortcuts import render_to_response, redirect
@@ -14,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
+from django.db.models import Sum
 
 from .models import Campaign, Results
 
@@ -21,12 +18,48 @@ from simple_locations.models import Area
 
 from .forms import CampaignForm
 
+
 @login_required
 def dashboard(request):
 
-    return render_to_response('who_base/index.html',  {},
-                              context_instance=RequestContext(request))
+    paginator = Paginator(Campaign.objects.order_by('-start_date'), 1)
+    
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    campaign = None
+    try:
+        page = paginator.page(page)
+        campaign = page.object_list[0]
+    except (EmptyPage, InvalidPage, IndexError):
+        page = paginator.page(paginator.num_pages)
+        if page.object_list:
+            campaign = page.object_list[0]
             
+    if campaign:
+        
+        results = Results.objects\
+                         .filter(campaign=campaign)\
+                         .select_related('area__as_data_source__data_collection__parent')\
+                         .order_by('area__as_data_source__data_collection__parent',
+                                   'area__as_data_source__data_collection',
+                                   'area')
+        
+        totals = Results.objects.filter(campaign=campaign)\
+                                .aggregate(total_pop=Sum('total_pop'), 
+                                           target_pop=Sum('target_pop'), 
+                                           treated_under_six=Sum('treated_under_six'))
+
+    print totals
+
+    ctx = locals()
+
+    return render_to_response('who_dashboard.html',  ctx,
+                              context_instance=RequestContext(request)) 
+ 
+ 
             
 @login_required                          
 def edit_campaign(request, pk):

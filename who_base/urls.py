@@ -5,6 +5,7 @@
 from django.conf.urls.defaults import *
 from django.conf import settings
 from django.views.generic.list_detail import object_list
+from django.views.generic.simple import redirect_to
 
 from .models import Campaign
 
@@ -20,8 +21,8 @@ urlpatterns = patterns("",
         name="edit-campaign"),
     url(r'campaign/delete/(?P<pk>\d+)/$',  "who_base.views.delete_campaign", 
         name="delete-campaign"),
-    url(r'$',  "who_base.views.dashboard"),
-    
+    url(r'dashboard/$',  "who_base.views.dashboard", name='who-dashboard'),
+    url(r'$',  redirect_to, { 'url': "/dashboard/" }),
 )
 
 

@@ -96,7 +96,7 @@ INSTALLED_APPS = [
 # todo: make that translatable
 RAPIDSMS_TABS = [
 
-    ("who_base.views.dashboard", "Acceuil"),
+    ("who_base.views.dashboard", "Retour"),
     ("logger_ng.views.index", "Journal des messages"),
     ("auth.views.registration", "Inscription des contacts"),
     ("rapidsms.contrib.messaging.views.messaging", "Envoyer des messages"),
@@ -135,8 +135,7 @@ LOG_SIZE    = 8192 # 8192 bytes = 64 kb
 LOG_BACKUPS = 256 # number of logs to keep
 
 
-# these weird dependencies should be handled by their respective apps,
-# but they're not, so here they are. most of them are for django admin.
+
 TEMPLATE_CONTEXT_PROCESSORS = [
     "django.core.context_processors.auth",
     "django.core.context_processors.debug",
@@ -144,6 +143,15 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "django.core.context_processors.media",
     "django.core.context_processors.request"
 ]
+
+MIDDLEWARE_CLASSES = (
+    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'who_base.middleware.ViewNameMiddleware',
+)
 
 # -------------------------------------------------------------------- #
 #                           HERE BE DRAGONS!                           #

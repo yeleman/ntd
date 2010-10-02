@@ -11,8 +11,30 @@
     </head>
     
     <body>
-    
+        
+        {% load i18n %}
+        
         <div id="{% block page-id %}{% endblock %}" class="container"> 
+        
+            <ul id="menu">
+                {% if 'dashboard' in request.view_name %}
+                <li>{% trans "Home" %}</li>
+                <li>
+                    <a href="{% url campaigns-list %}">
+                    {% trans "Manage campaigns" %}
+                    </a>
+                </li>
+                {% else %}
+                <li><a href="{% url who-dashboard %}">{% trans "Home" %}</a></li>
+                <li>{% trans "Manage campaigns" %}</li>
+                {% endif %}
+                <li>
+                    <a href="{% url rapidsms-dashboard %}">
+                    {% trans "RapidSMS admin" %}
+                    </a>
+                </li>
+            </ul>
+        
             {% block content %}{% endblock %}
         </div>
         

@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block page-id %}dashboard{% endblock %}
+
+
+{% block content %}
+
+
+{% if not campaign %}
+
+    <h2>{% trans "No campaign yet" %}</h2>
+    
+    <p>
+        <a href="{% url create-campaign %}">{% trans "Add a campaign" %}</a>
+    </p>
+    
+{% else %}
+
+    <div id="dashboard-header">
+
+        <p id="title-prefix">{% trans "Campaign" %}:</p>
+        
+        <div id="pagination">
+        
+        {% if page.has_next %}
+                <a class="previous" href="?page={{ page.next_page_number }}">&lt; {% trans "Previous" %}</a>
+        {% endif %}
+        
+        <h2>{{ campaign.name }}</h2> 
+         
+        {% if page.has_previous %}
+            <a href="?page={{ page.previous_page_number }}">{% trans "Next" %} &gt;</a>
+        {% endif %}
+        
+         </div>
+        
+        <p id="campaign-date">{% trans "starts on" %} {{ campaign.start_date }}</p>
+    
+    </div>
+    
+    
+    <div id="data">
+    
+    <table>
+        <thead>
+        <tr>
+            <th>{% trans "Zone" %}</th>
+            <th>{% trans "Reported from" %}</th>
+            <th>{% trans "Target area" %}</th>
+            <th>{% trans "Drugs" %}</th>
+            <th>{% trans "Distributor" %}</th>
+            <th>{% trans "Treatment started on" %}</th>
+            <th>{% trans "Treatment ended on" %}</th>
+            <th>{% trans "Total population" %}</th>
+            <th>{% trans "Target population" %}</th>
+            <th>{% trans "Target population under 6" %}</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+                
+        {% for r in results %}
+            <tr>
+                <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
+                <td >{{ r.area.as_data_source.data_collection.name }}</td>
+                <td>{{ r.area.name }}</td>
+                <td>
+                    <ul>
+                    {% for drug in r.drugs_pack.drugs.all %}
+                        <li>{{ drug }}</li>
+                    {% endfor %}
+                    </ul>
+                </td>
+                <td>{{ r.distributor|default:"" }}</td>
+                <td>{{ r.treatment_start_date|default:"" }}</td>
+                <td>{{ r.treatment_end_date|default:"" }}</td>
+                <td>{{ r.total_pop|default:"" }}</td>
+                <td>{{ r.target_pop|default:"" }}</td>
+                <td>{{ r.treated_under_six|default:"" }}</td>
+            </tr>
+    
+        {% endfor %}
+        
+        </tbody>
+        
+        <tfoot>
+ 
+            <tr>
+                <td class='total' colspan="7" >{% trans "Total" %}</td>
+                <td>{{ totals.total_pop|default:'' }}</td>
+                <td>{{ totals.target_pop|default:'' }}</td>
+                <td>{{ totals.treated_under_six|default:'' }}</td>
+            </tr>
+        </tfoot>
+    
+    </table>
+    
+    <p class='download'>
+        <a href="?page={{ page.number }}&amp;format=csv">
+        {% trans "Download" %}
+        </a>
+    </p>
+    
+    </div>
+   
+    
+    
+{% endif %}
+
+
+{% endblock %}

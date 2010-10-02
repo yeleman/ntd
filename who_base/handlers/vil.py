@@ -8,7 +8,7 @@ from django.utils.translation import ugettext as _
 
 from auth.decorators import registration_required
 
-from handlers_i18n.handlers.keyword import KeywordHandlerI18n
+from handlers_i18n.handlers.keyword import KeywordHandler
 from handlers_i18n.helpers import require_args, check_exists, check_date
 
 from ..models import DrugsPack, Results
@@ -17,7 +17,7 @@ from ..utils import check_location, fix_date_year
 #todo: do a customRoleHandler that you can inherit from, that register the 
 # role you want
 
-class VilHandler(KeywordHandlerI18n):
+class VilHandler(KeywordHandler):
     u"""
     
     Given this workflow:
@@ -44,7 +44,7 @@ class VilHandler(KeywordHandlerI18n):
 
     keyword = "vil"
     
-    aliases = (('fr', ("vil", "village")), 
+    aliases = (('fr', ("vil", "village", "ville")), 
                ('en', ("vil", "village")),)
     
     ARGUMENTS = _(u"<location code> <drugs package> <start treatment date>"\
@@ -53,10 +53,10 @@ class VilHandler(KeywordHandlerI18n):
 
 
     def help(self, keyword, lang_code):
-        self.respond(_(u"To report, send: VIL ") + self.__class__.ARGUMENTS)
+        return self.respond(_(u"To report, send: VIL ") + self.__class__.ARGUMENTS)
 
 
-    @registration_required
+    @registration_required()
     def handle(self, text, keyword, lang_code):
     
         args = [self.flatten_string(arg) for arg in text.split()]
@@ -70,6 +70,7 @@ class VilHandler(KeywordHandlerI18n):
             result = Results.objects.filter(area=location, disabled=False)\
                                     .filter(campaign__end_date__isnull=True)\
                                     .latest('campaign__start_date')
+            campaign = result.campaign
         except Results.DoesNotExist:
             return self.respond(_(u"There are no active campaigns for "\
                                    u"%(location)s right now.") % {
@@ -81,7 +82,7 @@ class VilHandler(KeywordHandlerI18n):
                        'location': location})
         
         # update last sent sms
-        result.report_manager.status.contact = self.message.contact
+        result.report_manager.status.contact = self.msg.contact
         result.report_manager.save()
         
         if count == 1:
@@ -90,9 +91,9 @@ class VilHandler(KeywordHandlerI18n):
                            'campaign': campaign, 'location': location })
         
         if count == 6:
-            if not result.drug_package:
-                return self.respond(_(u"Must provide a drug package with these "\
-                               u"results. It should be the third value."))
+            if not result.drugs_pack:
+                return self.respond(_(u"You must provide a drug package with these "\
+                               u"results. It should be the second value alfter 'VIL'."))
         else:
             result.drugs_pack = check_exists(args[1], DrugsPack)
         
@@ -102,6 +103,13 @@ class VilHandler(KeywordHandlerI18n):
         result.treatment_end_date = fix_date_year(check_date(args[3], 
                                                              _("%d%m"), 
                                                              ('-', '/')))
+        
+        if result.treatment_start_date > result.treatment_end_date:
+            return self.respond(_(u"Start treatment date (%(start)s) "\
+                                  u"can not be after end treatment date "\
+                                  u"(%(end)s).") % {
+                                  'start': result.treatment_start_date.strftime(_('%m/%d/%Y')),
+                                  'end': result.treatment_end_date.strftime(_('%m/%d/%Y'))})
         
         try:
             data = [int(x) for x in args[4:]]
@@ -128,12 +136,15 @@ class VilHandler(KeywordHandlerI18n):
         result.report_manager.save()
         result.save()
         
+        # todo: maybe this is too long...
         self.respond(_(u"The results for the campaign %(campaign)s in "\
                        u"%(location)s are saved. From %(start)s, to %(end)s "\
-                       u"targetting %(target_pop)s/%(total_pop)s with "\
+                       u"targetting %(target_pop)s/%(total_pop)s people with "\
                        u"%(under_six_pop)s under six.") % {'total_pop': data[0],
                        'under_six_pop': data[2], 'target_pop': data[1], 
-                       'campaign': campaign, 'start': result.treatment_start_date,
-                       'end': result.treatment_end_date, 'location': location})
+                       'campaign': campaign, 
+                       'start': result.treatment_start_date.strftime(_('%m/%d/%Y')),
+                       'end': result.treatment_end_date.strftime(_('%m/%d/%Y')), 
+                       'location': location})
 
             

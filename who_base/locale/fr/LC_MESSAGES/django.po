@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-01 16:46+0200\n"
+"POT-Creation-Date: 2010-10-02 20:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,14 +19,14 @@ msgstr ""
 
 #: forms.py:26
 msgid "You must select at least one location"
-msgstr ""
+msgstr "Vous devez choisir au moins un lieu"
 
 #: models.py:35
 #, python-format
 msgid "%(name)s (starts on %(date)s)"
 msgstr "%(name)s (démarrée le %(date)s)"
 
-#: models.py:36
+#: models.py:36 handlers/vil.py:111 handlers/vil.py:112
 msgid "%m/%d/%Y"
 msgstr "%d/%m/%Y"
 
@@ -35,29 +35,29 @@ msgstr "%d/%m/%Y"
 msgid "[%(code)s] %(name)s"
 msgstr "[%(code)s] %(name)s"
 
-#: models.py:154
+#: models.py:152
 #, python-format
 msgid "Results of campaign %(campaign)s at %(area)s"
 msgstr "Résultats de la campagne %(campaign)s à %(area)s"
 
-#: models.py:160
+#: models.py:158
 #, python-format
 msgid "%(campaign)sD%(day)s/%(reportid)s"
 msgstr "%(campaign)sD%(day)s/%(reportid)s"
 
-#: models.py:179
+#: models.py:177
 msgid "locations hierarchy"
 msgstr "Hiérarchie de lieux"
 
-#: models.py:180
+#: models.py:178
 msgid "locations hierarchies"
 msgstr "hiérarchies de lieux"
 
-#: models.py:183
+#: models.py:181
 msgid "data collection location"
 msgstr "lieu de collecte des données"
 
-#: models.py:185
+#: models.py:183
 msgid "data source location"
 msgstr "lieu source de données"
 
@@ -79,85 +79,115 @@ msgstr ""
 "Vous pouvez faire cela uniquement avec un(e) %(expected_type)s mais %"
 "(location)s est un(e) %(current_type)s."
 
-#: utils.py:61
-#, python-format
+#: handlers/vil.py:50
 msgid ""
-"%(date_str)s is not a valid date. The expected date format is: %(format)s"
+"<location code> <drugs package> <start treatment date> <end treatment date> "
+"<total population> <target population> <treated under 6>"
 msgstr ""
-"%(date_str)s n'est pas une date valide. Le format attendu est %(format)s"
+"<code de lieu> <lot de médi caments> <date de début de traitement> <date de "
+"fin de traitement> <population totale> <population cible> <traités en "
+"dessous de 6 ans>"
 
-#: utils.py:81
-#, python-format
-msgid ""
-"No %(obj_name)s with %(field_name)s '%(code)s' exists. Ask your "
-"administrator the right %(field_name)s for your %(obj_name)s."
-msgstr ""
-"Aucun(e) %(obj_name)s avec pour %(field_name)s '%(code)s' n'existe. Demandez "
-"à votre administrateur le ou la %(field_name)s pour votre %(obj_name)s."
+#: handlers/vil.py:56
+msgid "To report, send: VIL "
+msgstr "Pour faire un rapport, envoyez: VIL"
 
-#: handlers/ntd.py:44 handlers/ntd_with_campaign.py:45
-msgid ""
-"<location code> <drugs package> <treatement delivery date> <male data X3> "
-"<females data X 3>"
-msgstr ""
-"<code de lieu> <lot de médicaments> <date de traitement> <données homme X3> "
-"<données femme X 3>"
-
-#: handlers/ntd.py:49
-msgid "To report, send: NTD "
-msgstr "Pour faire un rapport, envoyez: NTD"
-
-#: handlers/ntd.py:67
+#: handlers/vil.py:75
 #, python-format
 msgid "There are no active campaigns for %(location)s right now."
 msgstr "Il n'y a pas de campaign active pour %(location)s en ce moment."
 
-#: handlers/ntd.py:73 handlers/ntd_with_campaign.py:96
+#: handlers/vil.py:79
+#, python-format
+msgid ""
+"There are several active campaigns for %(location)s right now. Replace 'VIL' "
+"by the campagne code and resend your message."
+msgstr ""
+"Il y a plusieurs campagnes active pour %(location)s en ce moment. Remplacez "
+"'VIL' par le code de la campagne et renvoyez votre message."
+
+#: handlers/vil.py:89
+#, python-format
+msgid ""
+"You are now reporting results for the campaign %(campaign)s in %(location)s."
+msgstr ""
+"Votre rapport porte maintenant sur la campagne %(campaign)s, %(location)s."
+
+#: handlers/vil.py:95
+msgid ""
+"You must provide a drug package with these results. It should be the second "
+"value alfter 'VIL'."
+msgstr ""
+"Vous devez précisez le lot de médicaments avec ces résultats. Ce devrait "
+"être la seconde valeur après 'VIL'."
+
+#: handlers/vil.py:101 handlers/vil.py:104
 msgid "%d%m"
 msgstr "%d%m"
 
-#: handlers/ntd.py:78 handlers/ntd_with_campaign.py:101
+#: handlers/vil.py:108
+#, python-format
 msgid ""
-"The last 6 values must be 3 numbers for male statistics, and 3 numbers for "
-"females statistics."
+"Start treatment date (%(start)s) can not be after end treatment date (%(end)"
+"s)."
 msgstr ""
-"Les 6 dernières valeurs doivent être 3 chiffres pour les statistiques homme "
-"et 3 chiffres pour les statistiques femme."
+"La date de début de traitement (%(start)s) ne peut pas être après la date de "
+"fin de traitement (%(end)s)."
 
-#: handlers/ntd.py:81 handlers/ntd_with_campaign.py:104
-msgid "This commands is expecting a keyword and 9 values: "
-msgstr "Cette commande s'attend à un mot clé et 9 valeurs"
+#: handlers/vil.py:117
+msgid "The last 3 values must be 3 numbers"
+msgstr "Les trois dernières valeurs doivent êtres des nombres"
 
-#: handlers/ntd.py:99 handlers/ntd_with_campaign.py:122
+#: handlers/vil.py:120
 #, python-format
-msgid "The %(results)s have been updated. Receipt is still %(receipt)s"
-msgstr "Les %(results)s ont été mis à jour. Le reçu est toujours %(receipt)s"
+msgid ""
+"Target population value (%(target_pop)s) can not be bigger than the total "
+"population value (%(total_pop)s)."
+msgstr ""
+"La valeur de la population cible (%(target_pop)s) ne peut pas être plus "
+"grande que celle de la population totale (%(total_pop)s)."
 
-#: handlers/ntd.py:104 handlers/ntd_with_campaign.py:126
+#: handlers/vil.py:126
 #, python-format
-msgid "The %(results)s have been saved. Receipt is %(receipt)s"
-msgstr "Les %(results)s on été sauvegardés. Le reçu est %(receipt)s"
+msgid ""
+"Patients under six value (%(under_six_pop)s) can not be bigger than the "
+"target population value (%(target_pop)s)."
+msgstr ""
+"La valeur de la population cible de moins de 6 ans (%(under_six_pop)s) ne "
+"peut pas être  que la valeur de la population cible totale (%(target_pop)s)."
 
-#: handlers/ntd_with_campaign.py:59
+#: handlers/vil.py:139
 #, python-format
-msgid "No running campaign matching the code: '%(code)s'"
-msgstr "Aucune campagne en cours ne correspond à ce code : '%(code)s'"
+msgid ""
+"The results for the campaign %(campaign)s in %(location)s are saved. From %"
+"(start)s, to %(end)s targetting %(target_pop)s/%(total_pop)s people with %"
+"(under_six_pop)s under six."
+msgstr ""
+"Les résultats de la campagne %(campaign)s pour %(location)s sont "
+"sauvegardés. De %(start)s, à %(end)s elle cible %(target_pop)s/%(total_pop)s "
+"personnes dont %(under_six_pop)s de moins de 6 ans."
 
-#: handlers/ntd_with_campaign.py:65
-#, python-format
-msgid "The campaign %(campaign)s is over."
-msgstr "La campagne %(campaign)s est terminée."
+#: templates/base.html:21 templates/base.html.py:28
+msgid "Home"
+msgstr "Acceuil"
 
-#: handlers/ntd_with_campaign.py:89
-#, python-format
-msgid "The campaign %(campaign)s does not include %(location)s right now."
-msgstr "La campagne %(campaign)s n'inclut pas %(location)s pour le moment."
+#: templates/base.html:24 templates/base.html.py:29
+msgid "Manage campaigns"
+msgstr "Gérer les campagne"
+
+#: templates/base.html:33
+msgid "RapidSMS admin"
+msgstr "RapidSMS admin"
 
 #: templates/campaigns-list.html:9
 msgid "Campaigns"
 msgstr "Campagnes"
 
-#: templates/campaigns-list.html:20
+#: templates/campaigns-list.html:16
+msgid "delete"
+msgstr "supprimer"
+
+#: templates/campaigns-list.html:21
 msgid "Create a campaign"
 msgstr "Ajouter une campagne"
 
@@ -185,9 +215,32 @@ msgstr "Lieux"
 msgid "Create"
 msgstr "Créer"
 
-#: templates/create_campaign.html:46
+#: templates/create_campaign.html:47
 msgid "There are no areas. Please create some before starting a campaign"
 msgstr "Il n'y a pas de zone. Créez en avant de commencer une campagne"
+
+#: templates/delete_campaign.html:9
+msgid "Delete campaign"
+msgstr "Supprimer une campagne"
+
+#: templates/delete_campaign.html:13
+#, python-format
+msgid ""
+" \n"
+"    Are you sure you want to delete %(campaign)s ?\n"
+"    "
+msgstr ""
+" \n"
+"    Êtes vous sûr(e) de vouloir supprimer %(campaign)s ?\n"
+"    "
+
+#: templates/delete_campaign.html:18
+msgid "Yes, delete"
+msgstr "Oui, supprimer"
+
+#: templates/delete_campaign.html:19
+msgid "Cancel"
+msgstr "Annuler"
 
 #: templates/edit_campaign.html:9
 msgid "Campaigns list"
@@ -201,97 +254,145 @@ msgstr "Modifier une campagne"
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: templates/who_base/index.html:19
+#: templates/who_dashboard.html:13
 msgid "No campaign yet"
 msgstr "Aucune campagne pour le moment"
 
-#: templates/who_base/index.html:22
+#: templates/who_dashboard.html:16
 msgid "Add a campaign"
 msgstr "Ajouter une campagne"
 
-#: templates/who_base/index.html:29
+#: templates/who_dashboard.html:23
 msgid "Campaign"
 msgstr "Campagne"
 
-#: templates/who_base/index.html:34
+#: templates/who_dashboard.html:28
 msgid "Previous"
 msgstr "Précédente"
 
-#: templates/who_base/index.html:40
+#: templates/who_dashboard.html:34
 msgid "Next"
 msgstr "Suivante"
 
-#: templates/who_base/index.html:45
+#: templates/who_dashboard.html:39
 msgid "starts on"
-msgstr "débute le"
+msgstr "débutée le"
 
-#: templates/who_base/index.html:58
-msgid "Region"
-msgstr "Région"
+#: templates/who_dashboard.html:49
+msgid "Zone"
+msgstr ""
 
-#: templates/who_base/index.html:59
-msgid "Cercle"
-msgstr "Cercle"
+#: templates/who_dashboard.html:50
+msgid "Reported from"
+msgstr "Reporté le"
 
-#: templates/who_base/index.html:60
-msgid "City"
-msgstr "Commune"
+#: templates/who_dashboard.html:51
+msgid "Target area"
+msgstr ""
 
-#: templates/who_base/index.html:61
-msgid "Village"
-msgstr "Village"
-
-#: templates/who_base/index.html:62
+#: templates/who_dashboard.html:52
 msgid "Drugs"
 msgstr "Médicaments"
 
-#: templates/who_base/index.html:63
+#: templates/who_dashboard.html:53
 msgid "Distributor"
 msgstr "Distributeur"
 
-#: templates/who_base/index.html:64
-msgid "Treated on"
-msgstr "Traité le"
+#: templates/who_dashboard.html:54
+msgid "Treatment started on"
+msgstr "Début du traitement"
 
-#: templates/who_base/index.html:65
-msgid "Reported on"
-msgstr "Reporté le"
+#: templates/who_dashboard.html:55
+msgid "Treatment ended on"
+msgstr "Fin du traitement traitement"
 
-#: templates/who_base/index.html:66
-msgid "Males, by age"
-msgstr "Hommes, par age"
+#: templates/who_dashboard.html:56
+msgid "Total population"
+msgstr "Population totale"
 
-#: templates/who_base/index.html:67
-msgid "Females, by age"
-msgstr "Femmes, par age"
+#: templates/who_dashboard.html:57
+msgid "Target population"
+msgstr "Population cible"
 
-#: templates/who_base/index.html:72 templates/who_base/index.html.py:75
-msgid "1-4"
-msgstr "1-4"
+#: templates/who_dashboard.html:58
+msgid "Target population under 6"
+msgstr "Population cible de moins de 6 ans"
 
-#: templates/who_base/index.html:73 templates/who_base/index.html.py:76
-msgid "5-14"
-msgstr "5-14"
-
-#: templates/who_base/index.html:74 templates/who_base/index.html.py:77
-msgid "15+"
-msgstr "15+"
-
-#: templates/who_base/index.html:141
+#: templates/who_dashboard.html:91
 msgid "Total"
 msgstr "Total"
 
-#: templates/who_base/index.html:162
+#: templates/who_dashboard.html:102
 msgid "Download"
 msgstr "Télécharger"
 
-#: templates/who_base/index.html:169
-msgid "This campaing is empty."
-msgstr "Cette campagne est vide."
+#~ msgid "Region"
+#~ msgstr "Région"
 
-#: templates/who_base/index.html:170
-msgid "Add results"
-msgstr "Ajouter des résultats"
+#~ msgid "Cercle"
+#~ msgstr "Cercle"
+
+#~ msgid "City"
+#~ msgstr "Commune"
+
+#~ msgid "Village"
+#~ msgstr "Village"
+
+#~ msgid "Treated on"
+#~ msgstr "Traité le"
+
+#~ msgid "Males, by age"
+#~ msgstr "Hommes, par age"
+
+#~ msgid "Females, by age"
+#~ msgstr "Femmes, par age"
+
+#~ msgid "1-4"
+#~ msgstr "1-4"
+
+#~ msgid "5-14"
+#~ msgstr "5-14"
+
+#~ msgid "15+"
+#~ msgstr "15+"
+
+#~ msgid "This campaing is empty."
+#~ msgstr "Cette campagne est vide."
+
+#~ msgid "Add results"
+#~ msgstr "Ajouter des résultats"
+
+#~ msgid ""
+#~ "%(date_str)s is not a valid date. The expected date format is: %(format)s"
+#~ msgstr ""
+#~ "%(date_str)s n'est pas une date valide. Le format attendu est %(format)s"
+
+#~ msgid ""
+#~ "No %(obj_name)s with %(field_name)s '%(code)s' exists. Ask your "
+#~ "administrator the right %(field_name)s for your %(obj_name)s."
+#~ msgstr ""
+#~ "Aucun(e) %(obj_name)s avec pour %(field_name)s '%(code)s' n'existe. "
+#~ "Demandez à votre administrateur le ou la %(field_name)s pour votre %"
+#~ "(obj_name)s."
+
+#~ msgid ""
+#~ "The last 6 values must be 3 numbers for male statistics, and 3 numbers "
+#~ "for females statistics."
+#~ msgstr ""
+#~ "Les 6 dernières valeurs doivent être 3 chiffres pour les statistiques "
+#~ "homme et 3 chiffres pour les statistiques femme."
+
+#~ msgid "The %(results)s have been saved. Receipt is %(receipt)s"
+#~ msgstr "Les %(results)s on été sauvegardés. Le reçu est %(receipt)s"
+
+#~ msgid "No running campaign matching the code: '%(code)s'"
+#~ msgstr "Aucune campagne en cours ne correspond à ce code : '%(code)s'"
+
+#~ msgid "The campaign %(campaign)s is over."
+#~ msgstr "La campagne %(campaign)s est terminée."
+
+#~ msgid "The campaign %(campaign)s does not include %(location)s right now."
+#~ msgstr "La campagne %(campaign)s n'inclut pas %(location)s pour le moment."
 
 #~ msgid "campaign"
 #~ msgstr "campagne"
@@ -320,92 +421,8 @@ msgstr "Ajouter des résultats"
 #~ msgid "report date"
 #~ msgstr "date du rapport"
 
-#~ msgid "treatment start date"
-#~ msgstr "date début du traitement"
-
-#~ msgid "treatment end date"
-#~ msgstr "date du fin du traitement"
-
-#~ msgid "total population"
-#~ msgstr "population totale"
-
-#~ msgid "target population"
-#~ msgstr "population cible"
-
-#~ msgid "treated under 6 years old"
-#~ msgstr "traités avant l'age de 6 ans"
-
-#~ msgid "5-15 ans years old males given one dose"
-#~ msgstr "garçons de 5-15 ans ayant ayant reçu une dose"
-
-#~ msgid "15+ years old males given one dose"
-#~ msgstr "hommes de plus de 15 ans ayant reçu une dose"
-
-#~ msgid "5-15 ans years old males given two doses"
-#~ msgstr "garçons de 5-15 ans ayant ayant reçu deux doses"
-
-#~ msgid "15+ years old males given two doses"
-#~ msgstr "hommes de plus de 15 ans ayant reçu deux doses"
-
-#~ msgid "5-15 ans years old males given three doses"
-#~ msgstr "garçons de 5-15 ans ayant ayant reçu trois doses"
-
-#~ msgid "15+ years old males given three doses"
-#~ msgstr "hommes de plus de 15 ans ayant reçu trois doses"
-
-#~ msgid "5-15 ans years old males given four doses"
-#~ msgstr "garçons de 5-15 ans ayant ayant reçu quatres doses"
-
-#~ msgid "15+ years old males given four doses"
-#~ msgstr "hommes de plus de 15 ans ayant reçu quatre doses"
-
-#~ msgid "5-15 ans years old females given one dose"
-#~ msgstr "filles de 5-15 ans ayant ayant reçu une dose"
-
-#~ msgid "15+ years old females given one dose"
-#~ msgstr "femmes de plus de 15 ans ayant reçu une dose"
-
-#~ msgid "5-15 ans years old females given two doses"
-#~ msgstr "filles de 5-15 ans ayant ayant reçu deux doses"
-
-#~ msgid "15+ years old females given two doses"
-#~ msgstr "femmes de plus de 15 ans ayant reçu deux doses"
-
-#~ msgid "5-15 ans years old females given three doses"
-#~ msgstr "filles de 5-15 ans ayant ayant reçu trois doses"
-
-#~ msgid "15+ years old females given three doses"
-#~ msgstr "femmes de plus de 15 ans ayant reçu trois doses"
-
-#~ msgid "5-15 ans years old females given four doses"
-#~ msgstr "filles de 5-15 ans ayant ayant reçu quatres doses"
-
-#~ msgid "15+ years old females given four doses"
-#~ msgstr "femmes de plus de 15 ans ayant reçu quatre doses"
-
 #~ msgid "disabled"
 #~ msgstr "désactivé"
-
-#~ msgid "1-4 years old males"
-#~ msgstr "hommes de 1-4 ans"
-
-#~ msgid "5-14 years old males"
-#~ msgstr "hommes de 5-14 ans"
-
-#~ msgid "15+ years old males"
-#~ msgstr "hommes de plus de 15 ans"
-
-#~ msgid "1-4 years old females"
-#~ msgstr "femmes de 1-4 ans"
-
-#~ msgid "5-14 years old females"
-#~ msgstr "femmes de 5-14 ans"
-
-#~ msgid "15+ years old females"
-#~ msgstr "femmes de plus de 15 ans"
-
-#~ msgid "[%(date)s] %(name)s"
-#~ msgstr "[%(date)s] %(name)s"
 
 #~ msgid "NTD reporting tool"
 #~ msgstr "Outil de rapport MTN"
