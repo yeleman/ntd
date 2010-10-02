@@ -108,7 +108,11 @@ class Results(models.Model):
     target_pop = models.IntegerField(verbose_name=__(u'target population'),
                                     blank=True, null=True)                                   
     treated_under_six = models.IntegerField(verbose_name=__(u'treated under 6 years old'),
-                                    blank=True, null=True)                                       
+                                    blank=True, null=True)  
+                                    
+    distributor = distributor = models.CharField(max_length=64, 
+                                                 verbose_name=__(u'distributor'),
+                                                 blank=True, null=True)                                  
 
     one_dose_child_males = models.IntegerField(verbose_name=__(u'5-15 ans years old males given one dose'),
                                              blank=True, null=True)

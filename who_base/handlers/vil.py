@@ -57,7 +57,7 @@ class VilHandler(KeywordHandler):
 
 
     @registration_required()
-    def handle(self, text, keyword, lang_code):
+    def handle(self, text, keyword, lang_code, campaign=None):
     
         args = [self.flatten_string(arg) for arg in text.split()]
         count = len(args)
@@ -66,20 +66,30 @@ class VilHandler(KeywordHandler):
         # todo: check for location type here
         location = check_location(args[0])
         
-        try:
-            result = Results.objects.filter(area=location, disabled=False)\
-                                    .filter(campaign__end_date__isnull=True)\
-                                    .latest('campaign__start_date')
-            campaign = result.campaign
-        except Results.DoesNotExist:
-            return self.respond(_(u"There are no active campaigns for "\
-                                   u"%(location)s right now.") % {
-                                   'location': location})
-        except Results.MultipleObjectsReturned:
-            return self.respond(_(u"There are several active campaigns for "\
-                       u"%(location)s right now. Replace 'VIL' by the "\
-                       u"campagne code and resend your message.") % {
-                       'location': location})
+        if campaign:
+            try:
+                result = campaign.results_set.get(area=location, disabled=False)
+            except Results.DoesNotExist:
+                return self.respond(_(u"The location %(location)s is not part "\
+                                       u"of the campaign %(campaign)s.") % {
+                                       'location': location,
+                                       'campaign': campaign})
+        else:
+        
+            try:
+                result = Results.objects.filter(area=location, disabled=False)\
+                                        .filter(campaign__end_date__isnull=True)\
+                                        .latest('campaign__start_date')
+                campaign = result.campaign
+            except Results.DoesNotExist:
+                return self.respond(_(u"There are no active campaigns for "\
+                                       u"%(location)s right now.") % {
+                                       'location': location})
+            except Results.MultipleObjectsReturned:
+                return self.respond(_(u"There are several active campaigns for "\
+                           u"%(location)s right now. Replace 'VIL' by the "\
+                           u"campagne code and resend your message.") % {
+                           'location': location})
         
         # update last sent sms
         result.report_manager.status.contact = self.msg.contact
@@ -131,6 +141,8 @@ class VilHandler(KeywordHandler):
         result.total_pop = data[0]
         result.target_pop = data[1]                                   
         result.treated_under_six = data[2]  
+        
+        result.distributor = location.as_data_source.distributor
         
         result.report_manager.status.vil = True
         result.report_manager.save()
