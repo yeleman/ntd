@@ -5,7 +5,7 @@
         "fields": {
             "description": "", 
             "created": "2010-10-01 11:06:14", 
-            "datatype": "object", 
+            "datatype": "int", 
             "enum_group": null, 
             "required": false, 
             "modified": "2010-10-01 11:06:14", 
@@ -26,8 +26,8 @@
             "required": false, 
             "modified": "2010-10-01 05:26:09", 
             "type": "", 
-            "slug": "cpf", 
-            "name": "cpf"
+            "slug": "wsc", 
+            "name": "wsc"
         }
     }, 
     {
@@ -41,8 +41,8 @@
             "required": false, 
             "modified": "2010-10-01 05:25:52", 
             "type": "", 
-            "slug": "cph", 
-            "name": "cph"
+            "slug": "msc", 
+            "name": "msc"
         }
     }, 
     {
@@ -56,8 +56,8 @@
             "required": false, 
             "modified": "2010-10-01 05:25:26", 
             "type": "", 
-            "slug": "fem", 
-            "name": "fem"
+            "slug": "wmen", 
+            "name": "wmen"
         }
     }, 
     {
@@ -71,8 +71,8 @@
             "required": false, 
             "modified": "2010-10-01 05:25:18", 
             "type": "", 
-            "slug": "hom", 
-            "name": "hom"
+            "slug": "men", 
+            "name": "men"
         }
     }, 
     {
@@ -86,8 +86,8 @@
             "required": false, 
             "modified": "2010-10-01 05:26:23", 
             "type": "", 
-            "slug": "med", 
-            "name": "med"
+            "slug": "drug", 
+            "name": "drug"
         }
     }, 
     {

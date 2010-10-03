@@ -255,13 +255,13 @@ msgid "All 8 values must be numbers"
 msgstr "Les 8 valeurs doivent êtres des nombres"
 
 #: handlers/men.py:98
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "The sum of all the results for females and males (%(total)s) can not be "
 "bigger than the target population (%(target_pop)s)"
 msgstr ""
-"La valeur de la population cible de moins de 6 ans (%(under_six_pop)s) ne "
-"peut pas être  que la valeur de la population cible totale (%(target_pop)s)."
+"La somme des résultats pour les hommes et les femmes (%(total)s) ne peut "
+"être plus grande que la population cible (%(target_pop)s)"
 
 #: handlers/men.py:117
 #, python-format
@@ -273,15 +273,15 @@ msgstr ""
 "hommes ont été sauvergardés."
 
 #: handlers/men.py:122
-#, fuzzy
 msgid " All reports for this location are completed!"
-msgstr "Le rapport pour ce lieu est complet!"
+msgstr "Tous les rapport pour ce lieu sont complets !"
 
 #: handlers/men.py:125
 #, python-format
 msgid ""
 " You have sent %(completed)s over %(to_complete)s reports for this location."
 msgstr ""
+" Vous avez envoyés %(completed)s sur %(to_complete)s rapports pour ce lieu."
 
 #: handlers/vil.py:60
 #, python-format
@@ -526,5 +526,3 @@ msgstr "Total"
 msgid "Download"
 msgstr "Télécharger"
 
-#~ msgid "No running campaign matching the code: '%(code)s'"
-#~ msgstr "Aucune campagne en cours ne correspond au code : '%(code)s'"
