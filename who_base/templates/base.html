@@ -16,6 +16,28 @@
         
         <div id="{% block page-id %}{% endblock %}" class="container"> 
         
+            <ul id="lang-switcher">
+                {% if 'dashboard' in request.view_name %}
+                    {% if LANGUAGE_CODE == 'fr'%}
+                    <li>
+                        Français
+                    </li>
+                    <li>
+                        <a href="{% url switch-lang %}?lang_code=en">
+                        Anglais
+                        </a>
+                    </li>
+                    {% else %}
+                        <a href="{% url switch-lang %}?lang_code=fr">
+                        Français
+                        </a>
+                    <li>
+                        Anglais
+                    </li>
+                    {% endif %}
+                {% endif %}
+            </ul>
+        
             <ul id="menu">
                 {% if 'dashboard' in request.view_name %}
                 <li>{% trans "Home" %}</li>

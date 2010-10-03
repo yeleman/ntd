@@ -21,6 +21,9 @@ urlpatterns = patterns("",
         name="edit-campaign"),
     url(r'campaign/delete/(?P<pk>\d+)/$',  "who_base.views.delete_campaign", 
         name="delete-campaign"),
+    
+    url(r'switch-language/$',  "who_base.views.switch_lang", name='switch-lang'),    
+    
     url(r'dashboard/$',  "who_base.views.dashboard", name='who-dashboard'),
     url(r'$',  redirect_to, { 'url': "/dashboard/" }),
 )

@@ -11,6 +11,7 @@ from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
 from django.db.models import Sum
+from django.conf import settings
 
 from .models import Campaign, Results
 
@@ -168,3 +169,15 @@ def delete_campaign(request, pk):
     ctx = locals()
     return render_to_response('delete_campaign.html',  ctx,
                               context_instance=RequestContext(request))
+
+                              
+def switch_lang(request):
+
+    # todo: add more checks here
+    lang_code = (request.GET.get('lang_code',  
+                                 settings.LANGUAGE_CODE)).lower().strip()
+    if lang_code not in ('en', 'fr'):
+        lang_code = settings.LANGUAGE_CODE
+    request.session['django_language'] = lang_code
+    
+    return redirect('who-dashboard')
