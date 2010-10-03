@@ -13,14 +13,13 @@ from handlers_i18n.helpers import require_args
 
 from report_parts.models import Report
 
+from ..utils import check_against_last_report
 
 #todo: do a customRoleHandler that you can inherit from, that register the 
 # role you want
 
 class MenHandler(KeywordHandler):
     u"""
-
-
         EXAMPLE SMS FORMAT: men 32 56 76 87 2 5 65 2 
         32: 5-15 years old males given one dose 
         56: 15+ years old males given one dose
@@ -36,14 +35,10 @@ class MenHandler(KeywordHandler):
     
     aliases = (('fr', ("hom", "homme", "hommes")), 
                ('en', ("men", "man")),)
-    
-    ARGUMENTS = _(u"<location code> <drugs package> <start treatment date>"\
-                  u" <end treatment date> <total population> "\
-                  u"<target population> <treated under 6>")
 
 
     def help(self, keyword, lang_code):
-        return self.respond(_(u"To report, send: VIL ") + self.__class__.ARGUMENTS)
+        return self.respond(_(u"To report, send 'MEN', followed by 8 numbers."))
 
 
     @registration_required()
@@ -54,24 +49,7 @@ class MenHandler(KeywordHandler):
         require_args(args, min=8, max=8)
         
         #todo: rename the report model in report manager
-        contact = self.msg.contact
-        
-        try:
-            report_manager = Report.objects.filter(status__contact=contact.pk)\
-                                           .latest('updated')
-        except Report.DoesNotExist:
-            is_outdated = True
-        else:
-            is_outdated = report_manager.is_outdated()
-        
-        if is_outdated:
-            return self.respond(_(u"You must specify the campaign and location you "\
-                           u"are reporting for. Send 'VIL' first."))
-                           
-        if not report_manager.status.vil:
-            return self.respond(_(u"You must specify the population of the location "\
-                           u"your are reporting for. Send a complete "\
-                           u"population report with 'VIL' first."))
+        report_manager = check_against_last_report(self.msg.contact)
         
         # make update the manager date so 
         report_manager.save()
@@ -85,20 +63,33 @@ class MenHandler(KeywordHandler):
         except ValueError:
             return self.respond(_(u"All 8 values must be numbers"))
 
-        total = sum((results.one_dose_child_females or 0,
-                    results.one_dose_adult_females or 0,
-                    results.two_doses_child_females or 0,
-                    results.two_doses_adult_females or 0,
-                    results.three_doses_child_females or 0,
-                    results.three_doses_adult_females or 0,
-                    results.four_doses_child_females or 0,
-                    results.four_doses_adult_females or 0 )) + sum(args)
+        total_men = sum(args)
 
-        if results.target_pop < total:
+        if report_manager.status.wmen:
+            total_wmen = (results.one_dose_child_females,
+                            results.one_dose_adult_females,
+                            results.two_doses_child_females,
+                            results.two_doses_adult_females,
+                            results.three_doses_child_females,
+                            results.three_doses_adult_females,
+                            results.four_doses_child_females,
+                            results.four_doses_adult_females)
+            total_wmen = sum(x or 0 for x in total_wmen)             
+
+            if results.target_pop != total_men + total_wmen:
+                return self.respond(_(u"The sum of all the results for females and"\
+                                      u" males (%(total)s) must be equal to "\
+                                      u" the target population (%(target_pop)s)") % {
+                                      'total': total_men + total_wmen, 
+                                      'target_pop': results.target_pop})              
+                    
+
+        if results.target_pop < total_men:
             return self.respond(_(u"The sum of all the results for females and"\
                                   u" males (%(total)s) can not be bigger than"\
                                   u" the target population (%(target_pop)s)") % {
-                                  'total': total, 'target_pop': results.target_pop})
+                                  'total': total_men, 
+                                  'target_pop': results.target_pop})
 
         results.one_dose_child_males = args[0]
         results.one_dose_adult_males = args[1]

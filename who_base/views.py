@@ -47,11 +47,68 @@ def dashboard(request):
                                    'area__as_data_source__data_collection',
                                    'area')
         
-        totals = Results.objects.filter(campaign=campaign)\
-                                .aggregate(total_pop=Sum('total_pop'), 
-                                           target_pop=Sum('target_pop'), 
-                                           treated_under_six=Sum('treated_under_six'))
-
+        totals = results.aggregate(total_pop=Sum('total_pop'), 
+                                   target_pop=Sum('target_pop'), 
+                                   total_one_dose_child_males=Sum('one_dose_child_males'),
+                                   total_two_doses_child_males=Sum('two_doses_child_males'),
+                                   total_three_doses_child_males=Sum('three_doses_child_males'),
+                                   total_four_doses_child_males=Sum('four_doses_child_males'),
+                                   total_one_dose_adult_males=Sum('one_dose_adult_males'),
+                                   total_two_doses_adult_males=Sum('two_doses_adult_males'),
+                                   total_three_doses_adult_males=Sum('three_doses_adult_males'),
+                                   total_four_doses_adult_males=Sum('four_doses_adult_males'),
+                                   treated_under_six=Sum('treated_under_six'))
+                  
+        total_child_males = (totals['total_one_dose_child_males'],
+                             totals['total_two_doses_child_males'],
+                             totals['total_three_doses_child_males'],
+                             totals['total_four_doses_child_males'])
+        total_child_males = (x or 0 for x in total_child_males)
+        totals['total_child_males'] = sum(total_child_males)
+                      
+        total_adult_males = (totals['total_one_dose_adult_males'],
+                             totals['total_two_doses_adult_males'],
+                             totals['total_three_doses_adult_males'],
+                             totals['total_four_doses_adult_males']) 
+        total_adult_males = (x or 0 for x in total_adult_males)          
+        totals['total_adult_males'] =  sum(total_adult_males)
+                                                
+        total_males = (totals['total_child_males'],
+                       totals['total_adult_males'])                                  
+        total_males = (x or 0 for x in total_males)   
+        totals['total_males'] = sum(total_males) 
+            
+        totals.update(results.aggregate(total_pop=Sum('total_pop'), 
+                       target_pop=Sum('target_pop'), 
+                       total_one_dose_child_females=Sum('one_dose_child_females'),
+                       total_two_doses_child_females=Sum('two_doses_child_females'),
+                       total_three_doses_child_females=Sum('three_doses_child_females'),
+                       total_four_doses_child_females=Sum('four_doses_child_females'),
+                       total_one_dose_adult_females=Sum('one_dose_adult_females'),
+                       total_two_doses_adult_females=Sum('two_doses_adult_females'),
+                       total_three_doses_adult_females=Sum('three_doses_adult_females'),
+                       total_four_doses_adult_females=Sum('four_doses_adult_females'),
+                       treated_under_six=Sum('treated_under_six')))
+                  
+        total_child_females = (totals['total_one_dose_child_females'],
+                             totals['total_two_doses_child_females'],
+                             totals['total_three_doses_child_females'],
+                             totals['total_four_doses_child_females'])
+        total_child_females = (x or 0 for x in total_child_females)
+        totals['total_child_females'] = sum(total_child_females)
+                      
+        total_adult_females = (totals['total_one_dose_adult_females'],
+                             totals['total_two_doses_adult_females'],
+                             totals['total_three_doses_adult_females'],
+                             totals['total_four_doses_adult_females']) 
+        total_adult_females = (x or 0 for x in total_adult_females)          
+        totals['total_adult_females'] =  sum(total_adult_females)
+                                                
+        total_females = (totals['total_child_females'],
+                       totals['total_adult_females'])                                  
+        total_females = (x or 0 for x in total_females)   
+        totals['total_females'] = sum(total_females) 
+                                   
     ctx = locals()
 
     return render_to_response('who_dashboard.html',  ctx,

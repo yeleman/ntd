@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-03 16:30+0200\n"
+"POT-Creation-Date: 2010-10-03 17:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -216,25 +216,7 @@ msgstr ""
 "Vous pouvez faire cela uniquement avec un(e) %(expected_type)s mais %"
 "(location)s est un(e) %(current_type)s."
 
-#: handlers/campaign_code.py:47
-#, python-format
-msgid "The campaign %(campaign)s is over."
-msgstr "La campagne %(campaign)s est terminée"
-
-#: handlers/men.py:40 handlers/vil.py:37
-msgid ""
-"<location code> <drugs package> <start treatment date> <end treatment date> "
-"<total population> <target population> <treated under 6>"
-msgstr ""
-"<code de lieu> <lot de médicaments> <date de début de traitement> <date de "
-"fin de traitement> <population totale> <population cible> <traités en "
-"dessous de 6 ans>"
-
-#: handlers/men.py:46 handlers/vil.py:43
-msgid "To report, send: VIL "
-msgstr "Pour faire un rapport, envoyez: VIL"
-
-#: handlers/men.py:68
+#: utils.py:78
 msgid ""
 "You must specify the campaign and location you are reporting for. Send 'VIL' "
 "first."
@@ -242,7 +224,7 @@ msgstr ""
 "Vous devez préciser la campagne et le lieu pour lesquels vous faites ce "
 "rapport. Envoyez 'VIL' d'abord."
 
-#: handlers/men.py:72
+#: utils.py:82
 msgid ""
 "You must specify the population of the location your are reporting for. Send "
 "a complete population report with 'VIL' first."
@@ -250,11 +232,29 @@ msgstr ""
 "Vous devez préciser la population du lieu pour lequel vous faites ce "
 "rapport. Envoyez un rapport de population complet avec 'VIL' d'abord."
 
-#: handlers/men.py:86
+#: handlers/campaign_code.py:47
+#, python-format
+msgid "The campaign %(campaign)s is over."
+msgstr "La campagne %(campaign)s est terminée"
+
+#: handlers/men.py:43
+msgid "To report, send 'MEN', followed by 8 numbers."
+msgstr ""
+
+#: handlers/men.py:66 handlers/wmen.py:65
 msgid "All 8 values must be numbers"
 msgstr "Les 8 valeurs doivent êtres des nombres"
 
-#: handlers/men.py:98
+#: handlers/men.py:82
+# python-format
+msgid ""
+"The sum of all the results for females and males (%(total)s) must be equal "
+"to  the target population (%(target_pop)s)"
+msgstr ""
+"La somme des résultats pour les hommes et les femmes (%(total)s) doit "
+"être égale à la population cible (%(target_pop)s)"
+
+#: handlers/men.py:90
 #, python-format
 msgid ""
 "The sum of all the results for females and males (%(total)s) can not be "
@@ -263,7 +263,7 @@ msgstr ""
 "La somme des résultats pour les hommes et les femmes (%(total)s) ne peut "
 "être plus grande que la population cible (%(target_pop)s)"
 
-#: handlers/men.py:117
+#: handlers/men.py:110
 #, python-format
 msgid ""
 "The results for the campaign %(campaign)s in %(location)s related to men are "
@@ -272,16 +272,29 @@ msgstr ""
 "Les résultats de la campagne %(campaign)s à %(location)s concernant les "
 "hommes ont été sauvergardés."
 
-#: handlers/men.py:122
+#: handlers/men.py:115 handlers/wmen.py:114
 msgid " All reports for this location are completed!"
 msgstr "Tous les rapport pour ce lieu sont complets !"
 
-#: handlers/men.py:125
+#: handlers/men.py:118 handlers/wmen.py:117
 #, python-format
 msgid ""
 " You have sent %(completed)s over %(to_complete)s reports for this location."
 msgstr ""
 " Vous avez envoyés %(completed)s sur %(to_complete)s rapports pour ce lieu."
+
+#: handlers/vil.py:37
+msgid ""
+"<location code> <drugs package> <start treatment date> <end treatment date> "
+"<total population> <target population> <treated under 6>"
+msgstr ""
+"<code de lieu> <lot de médicaments> <date de début de traitement> <date de "
+"fin de traitement> <population totale> <population cible> <traités en "
+"dessous de 6 ans>"
+
+#: handlers/vil.py:43
+msgid "To report, send: VIL "
+msgstr "Pour faire un rapport, envoyez: VIL"
 
 #: handlers/vil.py:60
 #, python-format
@@ -362,6 +375,20 @@ msgstr ""
 "Les résultats de la campagne %(campaign)s pour %(location)s sont "
 "sauvegardés. De %(start)s, à %(end)s elle cible %(target_pop)s/%(total_pop)s "
 "personnes dont %(under_six_pop)s de moins de 6 ans."
+
+#: handlers/wmen.py:42
+msgid "To report, send 'WMEN', followed by 8 numbers."
+msgstr ""
+
+
+#: handlers/wmen.py:109
+#, python-format
+msgid ""
+"The results for the campaign %(campaign)s in %(location)s related to women "
+"are saved."
+msgstr ""
+"Les résultats de la campagne %(campaign)s à %(location)s concernant les "
+"femmes ont été sauvergardés."
 
 #: templates/base.html:21 templates/base.html.py:28
 msgid "Home"
@@ -478,19 +505,19 @@ msgstr "Suivante"
 msgid "starts on"
 msgstr "débutée le"
 
-#: templates/who_dashboard.html:49
+#: templates/who_dashboard.html:49 templates/who_dashboard.html.py:103
 msgid "Zone"
 msgstr "Zone"
 
-#: templates/who_dashboard.html:50
+#: templates/who_dashboard.html:50 templates/who_dashboard.html.py:104
 msgid "Reported from"
 msgstr "Reporté le"
 
-#: templates/who_dashboard.html:51
+#: templates/who_dashboard.html:51 templates/who_dashboard.html.py:105
 msgid "Target area"
 msgstr ""
 
-#: templates/who_dashboard.html:52
+#: templates/who_dashboard.html:52 templates/who_dashboard.html.py:106
 msgid "Drugs"
 msgstr "Médicaments"
 
@@ -518,11 +545,33 @@ msgstr "Population cible"
 msgid "Target population under 6"
 msgstr "Population cible de moins de 6 ans"
 
-#: templates/who_dashboard.html:91
+#: templates/who_dashboard.html:91 templates/who_dashboard.html.py:152
 msgid "Total"
 msgstr "Total"
 
-#: templates/who_dashboard.html:102
-msgid "Download"
-msgstr "Télécharger"
+#: templates/who_dashboard.html:107
+msgid "5-15 years old males"
+msgstr "garçons de 5-15 ans"
 
+#: templates/who_dashboard.html:108
+msgid "15+ years old males"
+msgstr "hommes de plus de 15 ans"
+
+#: templates/who_dashboard.html:111 templates/who_dashboard.html.py:115
+msgid "1 dose"
+msgstr ""
+
+#: templates/who_dashboard.html:112 templates/who_dashboard.html.py:116
+msgid "2 doses"
+msgstr ""
+
+#: templates/who_dashboard.html:113 templates/who_dashboard.html.py:117
+msgid "3 doses"
+msgstr ""
+
+#: templates/who_dashboard.html:114 templates/who_dashboard.html.py:118
+msgid "4 doses"
+msgstr ""
+
+#~ msgid "Download"
+#~ msgstr "Télécharger"

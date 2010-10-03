@@ -16,6 +16,9 @@ from handlers_i18n.exceptions import ExitHandle
 
 from simple_locations.models import Area
 
+from report_parts.models import Report
+
+
 def check_location(location_code, location_type=None):
     """
         Exit the handle if the location does not exists.
@@ -58,3 +61,29 @@ def fix_date_year(date):
             date = datetime.datetime(now.year - 1, date.month, date.day)
         
     return date           
+    
+    
+def check_against_last_report(contact):
+    """
+        Check if the report manager is not outdated and is initialized 
+        properly
+    """
+    
+    try:
+        report_manager = Report.objects.filter(status__contact=contact.pk)\
+                                       .latest('updated')
+    except Report.DoesNotExist:
+        is_outdated = True
+    else:
+        is_outdated = report_manager.is_outdated()
+    
+    if is_outdated:
+        raise ExitHandle(_(u"You must specify the campaign and location you "\
+                           u"are reporting for. Send 'VIL' first."))
+                       
+    if not report_manager.status.vil:
+        raise ExitHandle(_(u"You must specify the population of the location "\
+                           u"your are reporting for. Send a complete "\
+                           u"population report with 'VIL' first."))
+                           
+    return report_manager

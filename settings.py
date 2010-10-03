@@ -15,6 +15,8 @@ LANGUAGE_CODE = 'en'
 DATE_FORMAT = 'm/d/Y'
 FORMAT_MODULE_PATH = 'formats'
 TIME_ZONE = None
+USE_L18N = True
+
 
 # you should configure your database here before doing any real work.
 # see: http://docs.djangoproject.com/en/dev/ref/settings/#databases

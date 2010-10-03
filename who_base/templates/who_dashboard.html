@@ -73,35 +73,181 @@
                     {% endfor %}
                     </ul>
                 </td>
-                <td>{{ r.distributor|default:"" }}</td>
-                <td>{{ r.treatment_start_date|default:"" }}</td>
-                <td>{{ r.treatment_end_date|default:"" }}</td>
-                <td>{{ r.total_pop|default:"" }}</td>
-                <td>{{ r.target_pop|default:"" }}</td>
-                <td>{{ r.treated_under_six|default:"" }}</td>
+                <td>{{ r.distributor|default_if_none:"" }}</td>
+                <td>{{ r.treatment_start_date|default_if_none:"" }}</td>
+                <td>{{ r.treatment_end_date|default_if_none:"" }}</td>
+                <td>{{ r.total_pop|default_if_none:"" }}</td>
+                <td>{{ r.target_pop|default_if_none:"" }}</td>
+                <td>{{ r.treated_under_six|default_if_none:"" }}</td>
             </tr>
     
         {% endfor %}
         
         </tbody>
         
+        {% if totals.total_pop %}
         <tfoot>
  
             <tr>
                 <td class='total' colspan="7" >{% trans "Total" %}</td>
-                <td>{{ totals.total_pop|default:'' }}</td>
-                <td>{{ totals.target_pop|default:'' }}</td>
-                <td>{{ totals.treated_under_six|default:'' }}</td>
+                <td>{{ totals.total_pop|default_if_none:'' }}</td>
+                <td>{{ totals.target_pop|default_if_none:'' }}</td>
+                <td>{{ totals.treated_under_six|default_if_none:'' }}</td>
+            </tr>
+        </tfoot>
+        {% endif %}
+    
+    </table>
+    
+    <table>
+        <thead>
+        <tr>
+            <th rowspan="2" >{% trans "Zone" %}</th>
+            <th rowspan="2" >{% trans "Reported from" %}</th>
+            <th rowspan="2" >{% trans "Target area" %}</th>
+            <th rowspan="2" >{% trans "Drugs" %}</th>
+            <th colspan="4" >{% trans "5-15 years old males" %}</th>
+            <th colspan="4" >{% trans "15+ years old males" %}</th>
+        </tr>
+        <tr>
+            <th>{% trans "1 dose" %}</th>
+            <th>{% trans "2 doses" %}</th>
+            <th>{% trans "3 doses" %}</th>
+            <th>{% trans "4 doses" %}</th>
+            <th>{% trans "1 dose" %}</th>
+            <th>{% trans "2 doses" %}</th>
+            <th>{% trans "3 doses" %}</th>
+            <th>{% trans "4 doses" %}</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+                
+        {% for r in results %}
+            <tr>
+                <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
+                <td >{{ r.area.as_data_source.data_collection.name }}</td>
+                <td>{{ r.area.name }}</td>
+                <td>
+                    <ul>
+                    {% for drug in r.drugs_pack.drugs.all %}
+                        <li>{{ drug }}</li>
+                    {% endfor %}
+                    </ul>
+                </td>
+                <td>{{ r.one_dose_child_males|default_if_none:"" }}</td>
+                <td>{{ r.two_doses_child_males|default_if_none:"" }}</td>
+                <td>{{ r.three_doses_child_males|default_if_none:"" }}</td>
+                <td>{{ r.four_doses_child_males|default_if_none:"" }}</td>
+                <td>{{ r.one_dose_adult_males|default_if_none:"" }}</td>
+                <td>{{ r.two_doses_adult_males|default_if_none:"" }}</td>
+                <td>{{ r.three_doses_adult_males|default_if_none:"" }}</td>
+                <td>{{ r.four_doses_adult_males|default_if_none:"" }}</td>
+            </tr>
+    
+        {% endfor %}
+        
+        </tbody>
+        
+        {% if totals.total_males %}
+        <tfoot>
+            <tr>
+                <td class='total' colspan="4" "rowspan=3">{% trans "Total" %}</td>
+                <td>{{ totals.total_one_dose_child_males|default_if_none:'' }}</td>
+                <td>{{ totals.total_two_doses_child_males|default_if_none:'' }}</td>
+                <td>{{ totals.total_three_doses_child_males|default_if_none:'' }}</td>
+                <td>{{ totals.total_four_doses_child_males|default_if_none:'' }}</td>
+                <td>{{ totals.total_one_dose_adult_males|default_if_none:'' }}</td>
+                <td>{{ totals.total_two_doses_adult_males|default_if_none:'' }}</td>
+                <td>{{ totals.total_three_doses_adult_males|default_if_none:'' }}</td>
+                <td>{{ totals.total_four_doses_adult_males|default_if_none:'' }}</td>
+            </tr>
+            <tr>
+                <td colspan="4" >{{ totals.total_child_males|default_if_none:'' }}</td>
+                <td colspan="4" >{{ totals.total_adult_males|default_if_none:'' }}</td>
+            </tr>
+            <tr>
+                <td colspan="8" >{{ totals.total_males|default_if_none:'' }}</td>
+            </tr>
+        </tfoot>
+        {% endif %}
+    
+    </table>
+
+    <table>
+        <thead>
+        <tr>
+            <th rowspan="2" >{% trans "Zone" %}</th>
+            <th rowspan="2" >{% trans "Reported from" %}</th>
+            <th rowspan="2" >{% trans "Target area" %}</th>
+            <th rowspan="2" >{% trans "Drugs" %}</th>
+            <th colspan="4" >{% trans "5-15 years old females" %}</th>
+            <th colspan="4" >{% trans "15+ years old females" %}</th>
+        </tr>
+        <tr>
+            <th>{% trans "1 dose" %}</th>
+            <th>{% trans "2 doses" %}</th>
+            <th>{% trans "3 doses" %}</th>
+            <th>{% trans "4 doses" %}</th>
+            <th>{% trans "1 dose" %}</th>
+            <th>{% trans "2 doses" %}</th>
+            <th>{% trans "3 doses" %}</th>
+            <th>{% trans "4 doses" %}</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+                
+        {% for r in results %}
+            <tr>
+                <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
+                <td >{{ r.area.as_data_source.data_collection.name }}</td>
+                <td>{{ r.area.name }}</td>
+                <td>
+                    <ul>
+                    {% for drug in r.drugs_pack.drugs.all %}
+                        <li>{{ drug }}</li>
+                    {% endfor %}
+                    </ul>
+                </td>
+                <td>{{ r.one_dose_child_females|default_if_none:"" }}</td>
+                <td>{{ r.two_doses_child_females|default_if_none:"" }}</td>
+                <td>{{ r.three_doses_child_females|default_if_none:"" }}</td>
+                <td>{{ r.four_doses_child_females|default_if_none:"" }}</td>
+                <td>{{ r.one_dose_adult_females|default_if_none:"" }}</td>
+                <td>{{ r.two_doses_adult_females|default_if_none:"" }}</td>
+                <td>{{ r.three_doses_adult_females|default_if_none:"" }}</td>
+                <td>{{ r.four_doses_adult_females|default_if_none:"" }}</td>
+            </tr>
+    
+        {% endfor %}
+        
+        </tbody>
+        
+        {% if totals.total_females %}
+        <tfoot>
+            <tr>
+                <td class='total' colspan="4" "rowspan=3">{% trans "Total" %}</td>
+                <td>{{ totals.total_one_dose_child_females|default_if_none:'' }}</td>
+                <td>{{ totals.total_two_doses_child_females|default_if_none:'' }}</td>
+                <td>{{ totals.total_three_doses_child_females|default_if_none:'' }}</td>
+                <td>{{ totals.total_four_doses_child_females|default_if_none:'' }}</td>
+                <td>{{ totals.total_one_dose_adult_females|default_if_none:'' }}</td>
+                <td>{{ totals.total_two_doses_adult_females|default_if_none:'' }}</td>
+                <td>{{ totals.total_three_doses_adult_females|default_if_none:'' }}</td>
+                <td>{{ totals.total_four_doses_adult_females|default_if_none:'' }}</td>
+            </tr>
+            <tr>
+                <td colspan="4" >{{ totals.total_child_females|default_if_none:'' }}</td>
+                <td colspan="4" >{{ totals.total_adult_females|default_if_none:'' }}</td>
+            </tr>
+            <tr>
+                <td colspan="8" >{{ totals.total_females|default_if_none:'' }}</td>
             </tr>
         </tfoot>
     
     </table>
-    
-    <p class='download'>
-        <a href="?page={{ page.number }}&amp;format=csv">
-        {% trans "Download" %}
-        </a>
-    </p>
+    {% endif %}
     
     </div>
    
