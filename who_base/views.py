@@ -52,8 +52,6 @@ def dashboard(request):
                                            target_pop=Sum('target_pop'), 
                                            treated_under_six=Sum('treated_under_six'))
 
-    print totals
-
     ctx = locals()
 
     return render_to_response('who_dashboard.html',  ctx,

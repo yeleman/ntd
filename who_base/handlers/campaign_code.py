@@ -20,19 +20,6 @@ from vil import VilHandler
 
 class CampaignCodeHandler(CallbackHandler):
     u"""
-    
-    Given this workflow:
-        
-        1. Campaign is created.
-        2. Campaign Manager distributes reporting codes to CSCOM: cscom code + areas codes.
-        3. Field agents receives drug from drug stores
-        4. Field agents distribute drugs and fills report
-        5. CSCOM collects (or agents bring to) forms.
-        6. CSCOM sends SMS report.
-        7. System sends back report-receipt.
-
-    Allow stage 6:    
-
         EXAMPLE SMS FORMAT: c001 A78 PA 1009 1009 20 30 45 
         c001: campaign code
         A78: location code
@@ -43,7 +30,7 @@ class CampaignCodeHandler(CallbackHandler):
         30: target population
         15: treated under 6 years old 
     """
-
+    
     @classmethod
     def match(cls, msg):
         """
@@ -54,10 +41,6 @@ class CampaignCodeHandler(CallbackHandler):
             code = text.pop(0).strip().lower()
             campaign = Campaign.objects.get(code=code)
         except (IndexError, Campaign.DoesNotExist):
-            if code != 'ntd' and len(text) == 9:
-                 raise ExitHandle(_(u"No running campaign matching the code: "\
-                                    u"'%(code)s'") % {'code': code})
-        
             return False
         else:
             if campaign.end_date:

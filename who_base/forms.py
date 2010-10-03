@@ -33,8 +33,6 @@ class CampaignForm(forms.ModelForm):
     
         # todo : make add a slug to report type
         rt = ReportType.objects.get(name='NTD Mali')
-        report_mgr = Report.objects.create(type=rt)
-
         # todo: put more validation here
         # create or enable checked location
         locations = set(self.data.getlist('locations'))
@@ -44,11 +42,14 @@ class CampaignForm(forms.ModelForm):
             try:
                 result = Results.objects.get(campaign=campaign, area=area)
             except Results.DoesNotExist:
+                loc = area.as_data_source.data_collection
+                pack = campaign.drugs_pack
+                report_mgr = Report.objects.create(type=rt)
                 result = Results.objects.create(campaign=campaign,
-                                               area=area,
-                                               data_collection_location=area.as_data_source.data_collection,
-                                               drugs_pack=self.cleaned_data['drugs_pack'],
-                                               report_manager=report_mgr)
+                                                area=area,
+                                                data_collection_location=loc,
+                                                drugs_pack=pack,
+                                                report_manager=report_mgr)
             else:
                 if result.disabled:
                     result.disabled = False

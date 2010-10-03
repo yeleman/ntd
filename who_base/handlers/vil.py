@@ -19,19 +19,6 @@ from ..utils import check_location, fix_date_year
 
 class VilHandler(KeywordHandler):
     u"""
-    
-    Given this workflow:
-        
-        1. Campaign is created.
-        2. Campaign Manager distributes reporting codes to CSCOM: cscom code + areas codes.
-        3. Field agents receives drug from drug stores
-        4. Field agents distribute drugs and fills report
-        5. CSCOM collects (or agents bring to) forms.
-        6. CSCOM sends SMS report.
-        7. System sends back report-receipt.
-
-    Allow stage 6:    
-
         EXAMPLE SMS FORMAT: vil A78 PA 1009 1009 20 30 45 
         A78: location code
         PA: drug package code (optional)
@@ -92,7 +79,7 @@ class VilHandler(KeywordHandler):
                            'location': location})
         
         # update last sent sms
-        result.report_manager.status.contact = self.msg.contact
+        result.report_manager.status.contact = self.msg.contact.pk
         result.report_manager.save()
         
         if count == 1:
@@ -104,6 +91,7 @@ class VilHandler(KeywordHandler):
             if not result.drugs_pack:
                 return self.respond(_(u"You must provide a drug package with these "\
                                u"results. It should be the second value alfter 'VIL'."))
+            args.insert(1, result.drugs_pack.code)
         else:
             result.drugs_pack = check_exists(args[1], DrugsPack)
         

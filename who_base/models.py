@@ -39,6 +39,12 @@ class Campaign(models.Model):
     @permalink  
     def get_absolute_url(self):
         return ('edit-campaign', (self.pk,))
+        
+    
+    def delete(self, *args, **kwargs):
+        for results in self.results_set.all():
+            results.delete()
+        return models.Model.delete(self, *args, **kwargs)
 
 
 class Drug(models.Model):
@@ -148,7 +154,8 @@ class Results(models.Model):
     four_doses_adult_females = models.IntegerField(verbose_name=__(u'15+ years old females given four doses'),
                                              blank=True, null=True)       
     
-    report_manager = models.ForeignKey(Report, editable=False)
+    report_manager = models.OneToOneField(Report, related_name='results',
+                                          editable=False)
     disabled = models.BooleanField(default=False, verbose_name=__(u'disabled'))
     
     
@@ -172,7 +179,11 @@ class Results(models.Model):
                     re.search('([0-9]+)D([0-9]+)\/([0-9]+)', receipt).groups()
         return cls.objects.get(campaign=Campaign.objects.get(id=campaign_id),
                                id=report_id)
-                               
+      
+      
+    def delete(self, *args, **kwargs):
+        self.report_manager.delete()
+        return models.Model.delete(self, *args, **kwargs)
 
 
 class LocationHierarchy(models.Model):
