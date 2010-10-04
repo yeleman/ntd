@@ -116,42 +116,73 @@ class Results(models.Model):
     treated_under_six = models.IntegerField(verbose_name=__(u'treated under 6 years old'),
                                     blank=True, null=True)  
                                     
-    distributor = distributor = models.CharField(max_length=64, 
-                                                 verbose_name=__(u'distributor'),
-                                                 blank=True, null=True)                                  
+    distributor = models.CharField(max_length=64, 
+                                     verbose_name=__(u'distributor'),
+                                     blank=True, null=True)                                  
 
-    one_dose_child_males = models.IntegerField(verbose_name=__(u'5-15 ans years old males given one dose'),
+    one_dose_child_males = models.IntegerField(verbose_name=__(u'5-15 years old males given one dose'),
                                              blank=True, null=True)
     one_dose_adult_males = models.IntegerField(verbose_name=__(u'15+ years old males given one dose'),
                                              blank=True, null=True)
-    two_doses_child_males = models.IntegerField(verbose_name=__(u'5-15 ans years old males given two doses'),
+    two_doses_child_males = models.IntegerField(verbose_name=__(u'5-15 years old males given two doses'),
                                              blank=True, null=True)
     two_doses_adult_males = models.IntegerField(verbose_name=__(u'15+ years old males given two doses'),
                                              blank=True, null=True)
-    three_doses_child_males = models.IntegerField(verbose_name=__(u'5-15 ans years old males given three doses'),
+    three_doses_child_males = models.IntegerField(verbose_name=__(u'5-15 years old males given three doses'),
                                              blank=True, null=True)
     three_doses_adult_males = models.IntegerField(verbose_name=__(u'15+ years old males given three doses'),
                                              blank=True, null=True)                                            
-    four_doses_child_males = models.IntegerField(verbose_name=__(u'5-15 ans years old males given four doses'),
+    four_doses_child_males = models.IntegerField(verbose_name=__(u'5-15 years old males given four doses'),
                                              blank=True, null=True)
     four_doses_adult_males = models.IntegerField(verbose_name=__(u'15+ years old males given four doses'),
                                              blank=True, null=True)        
     
-    one_dose_child_females = models.IntegerField(verbose_name=__(u'5-15 ans years old females given one dose'),
+    one_dose_child_females = models.IntegerField(verbose_name=__(u'5-15 years old females given one dose'),
                                              blank=True, null=True)
     one_dose_adult_females = models.IntegerField(verbose_name=__(u'15+ years old females given one dose'),
                                              blank=True, null=True)
-    two_doses_child_females = models.IntegerField(verbose_name=__(u'5-15 ans years old females given two doses'),
+    two_doses_child_females = models.IntegerField(verbose_name=__(u'5-15 years old females given two doses'),
                                              blank=True, null=True)
     two_doses_adult_females = models.IntegerField(verbose_name=__(u'15+ years old females given two doses'),
                                              blank=True, null=True)
-    three_doses_child_females = models.IntegerField(verbose_name=__(u'5-15 ans years old females given three doses'),
+    three_doses_child_females = models.IntegerField(verbose_name=__(u'5-15 years old females given three doses'),
                                              blank=True, null=True)
     three_doses_adult_females = models.IntegerField(verbose_name=__(u'15+ years old females given three doses'),
                                              blank=True, null=True)                                            
-    four_doses_child_females = models.IntegerField(verbose_name=__(u'5-15 ans years old females given four doses'),
+    four_doses_child_females = models.IntegerField(verbose_name=__(u'5-15 years old females given four doses'),
                                              blank=True, null=True)
     four_doses_adult_females = models.IntegerField(verbose_name=__(u'15+ years old females given four doses'),
+                                             blank=True, null=True) 
+                                             
+                                             
+    child_males_not_available = models.IntegerField(verbose_name=__(u'not available 5-15 ans years old males'),
+                                             blank=True, null=True)
+    adult_males_not_available = models.IntegerField(verbose_name=__(u'not available 15+ years old males'),
+                                             blank=True, null=True)
+    child_males_refusing = models.IntegerField(verbose_name=__(u'5-15 years old males refusing treatment'),
+                                             blank=True, null=True)
+    adult_males_refusing = models.IntegerField(verbose_name=__(u'15+ years old males refusing treatment'),
+                                             blank=True, null=True)
+    child_males_side_effects = models.IntegerField(verbose_name=__(u'5-15 years old males having side effects'),
+                                             blank=True, null=True)
+    adult_males_side_effects = models.IntegerField(verbose_name=__(u'15+ years old males having side effects'),
+                                             blank=True, null=True)                                            
+      
+    child_females_not_available = models.IntegerField(verbose_name=__(u'not available 5-15 ans years old females'),
+                                             blank=True, null=True)
+    adult_females_not_available = models.IntegerField(verbose_name=__(u'not available 15+ years old females'),
+                                             blank=True, null=True)
+    child_females_refusing = models.IntegerField(verbose_name=__(u'5-15 years old females refusing treatment'),
+                                             blank=True, null=True)
+    adult_females_refusing = models.IntegerField(verbose_name=__(u'15+ years old females refusing treatment'),
+                                             blank=True, null=True)
+    child_females_side_effects = models.IntegerField(verbose_name=__(u'5-15 years old females having side effects'),
+                                             blank=True, null=True)
+    adult_females_side_effects = models.IntegerField(verbose_name=__(u'15+ years old females having side effects'),
+                                             blank=True, null=True)      
+    pregnant_child_females = models.IntegerField(verbose_name=__(u'pregnant 5-15 years old females'),
+                                             blank=True, null=True)
+    pregnant_adult_females = models.IntegerField(verbose_name=__(u'pregnant 15+ years old females'),
                                              blank=True, null=True)       
     
     report_manager = models.OneToOneField(Report, related_name='results',
@@ -159,6 +190,62 @@ class Results(models.Model):
     disabled = models.BooleanField(default=False, verbose_name=__(u'disabled'))
     
     
+    @property
+    def total_treated_males(self):
+        """
+            Sum of all the males population that received the treatment
+        """
+        total_men = (self.one_dose_child_males,
+                     self.one_dose_adult_males,
+                     self.two_doses_child_males,
+                     self.two_doses_adult_males,
+                     self.three_doses_child_males,
+                     self.three_doses_adult_males,
+                     self.four_doses_child_males,
+                     self.four_doses_adult_males)
+        return sum(x or 0 for x in total_men)    
+
+
+    @property
+    def total_untreated_males(self):
+        """
+            Sum of all the males population that didn't received the treatment
+        """
+        total_men = (self.child_males_not_available,
+                     self.adult_males_not_available,
+                     self.child_males_refusing,
+                     self.adult_males_refusing)
+        return sum(x or 0 for x in total_men)   
+
+
+    @property
+    def total_treated_females(self):
+        """
+            Sum of all the females population that received the treatment
+        """
+        total_men = (self.one_dose_child_females,
+                     self.one_dose_adult_females,
+                     self.two_doses_child_females,
+                     self.two_doses_adult_females,
+                     self.three_doses_child_females,
+                     self.three_doses_adult_females,
+                     self.four_doses_child_females,
+                     self.four_doses_adult_females)
+        return sum(x or 0 for x in total_men)    
+
+
+    @property
+    def total_untreated_females(self):
+        """
+            Sum of all the females population that didn't received the treatment
+        """
+        total_wmen = (self.child_females_not_available,
+                     self.adult_females_not_available,
+                     self.child_females_refusing,
+                     self.adult_females_refusing)
+        return sum(x or 0 for x in total_wmen) 
+
+         
     def __unicode__(self):
         return _(u"Results of campaign %(campaign)s at %(area)s") % {
                   'campaign': self.campaign, 'area': self.area  }
@@ -201,7 +288,7 @@ class LocationHierarchy(models.Model):
                                                            'district', 'cercle',
                                                             'commune')))
                                                             
-    distributor = models.CharField(max_length=64, 
+    distributor = models.CharField(max_length=64, blank=True, null=True,
                                    verbose_name=__(u'distributor'))
                                                             
     def __unicode__(self):

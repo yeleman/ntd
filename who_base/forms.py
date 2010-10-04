@@ -14,6 +14,8 @@ from report_parts.models import Report, ReportType
 
 from .models import Results
 
+# if we change the distributor, it should be set for all the active campagn
+
 class CampaignForm(forms.ModelForm):
 
     class Meta:
@@ -41,6 +43,9 @@ class CampaignForm(forms.ModelForm):
             
             try:
                 result = Results.objects.get(campaign=campaign, area=area)
+                if campaign.drugs_pack and not result.drugs_pack :
+                    result.drugs_pack = campaign.drugs_pack
+                    result.save()
             except Results.DoesNotExist:
                 loc = area.as_data_source.data_collection
                 pack = campaign.drugs_pack

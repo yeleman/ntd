@@ -44,6 +44,7 @@
     <div id="data">
     
     <table>
+        <caption>{% trans "Population" %}</caption>
         <thead>
         <tr>
             <th>{% trans "Zone" %}</th>
@@ -100,14 +101,15 @@
     </table>
     
     <table>
+        <caption>{% trans "Treatment distribution for males" %}</caption>
         <thead>
         <tr>
             <th rowspan="2" >{% trans "Zone" %}</th>
             <th rowspan="2" >{% trans "Reported from" %}</th>
             <th rowspan="2" >{% trans "Target area" %}</th>
             <th rowspan="2" >{% trans "Drugs" %}</th>
-            <th colspan="4" >{% trans "5-15 years old males" %}</th>
-            <th colspan="4" >{% trans "15+ years old males" %}</th>
+            <th colspan="4" >{% trans "5-15 years old" %}</th>
+            <th colspan="4" >{% trans "15+ years old" %}</th>
         </tr>
         <tr>
             <th>{% trans "1 dose" %}</th>
@@ -175,14 +177,15 @@
     </table>
 
     <table>
+        <caption>{% trans "Treatment distribution for females" %}</caption>
         <thead>
         <tr>
             <th rowspan="2" >{% trans "Zone" %}</th>
             <th rowspan="2" >{% trans "Reported from" %}</th>
             <th rowspan="2" >{% trans "Target area" %}</th>
             <th rowspan="2" >{% trans "Drugs" %}</th>
-            <th colspan="4" >{% trans "5-15 years old females" %}</th>
-            <th colspan="4" >{% trans "15+ years old females" %}</th>
+            <th colspan="4" >{% trans "5-15 years old" %}</th>
+            <th colspan="4" >{% trans "15+ years old" %}</th>
         </tr>
         <tr>
             <th>{% trans "1 dose" %}</th>
@@ -248,6 +251,139 @@
     
     </table>
     {% endif %}
+    
+    <table>
+        <caption>{% trans "Males special cases" %}</caption>
+        <thead>
+        <tr>
+            <th rowspan="2" >{% trans "Zone" %}</th>
+            <th rowspan="2" >{% trans "Reported from" %}</th>
+            <th rowspan="2" >{% trans "Target area" %}</th>
+            <th rowspan="2" >{% trans "Drugs" %}</th>
+            
+            <th colspan="2">{% trans "Not available" %}</th>
+            <th colspan="2">{% trans "Refused treatment" %}</th>
+            <th colspan="2">{% trans "Experienced side effects" %}</th>
+        </tr>
+        <tr>
+            <th>{% trans "5-15 years old" %}</th>
+            <th>{% trans "15+ years old" %}</th>
+            <th>{% trans "5-15 years old" %}</th>
+            <th>{% trans "15+ years old" %}</th>
+            <th>{% trans "5-15 years old" %}</th>
+            <th>{% trans "15+ years old" %}</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+                
+        {% for r in results %}
+            <tr>
+                <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
+                <td >{{ r.area.as_data_source.data_collection.name }}</td>
+                <td>{{ r.area.name }}</td>
+                <td>
+                    <ul>
+                    {% for drug in r.drugs_pack.drugs.all %}
+                        <li>{{ drug }}</li>
+                    {% endfor %}
+                    </ul>
+                </td>
+                <td>{{ r.child_males_not_available|default_if_none:"" }}</td>
+                <td>{{ r.adult_males_not_available|default_if_none:"" }}</td>
+                <td>{{ r.child_males_refusing|default_if_none:"" }}</td>
+                <td>{{ r.adult_males_refusing|default_if_none:"" }}</td>
+                <td>{{ r.child_males_side_effects|default_if_none:"" }}</td>
+                <td>{{ r.adult_males_side_effects|default_if_none:"" }}</td>
+            </tr>
+    
+        {% endfor %}
+        
+        </tbody>
+        
+        {% if totals.total_untreated_males %}
+        <tfoot>
+            <tr>
+                <td class='total' colspan="4" "rowspan=3">{% trans "Total" %}</td>
+                <td colspan="2">{{ totals.total_males_not_available|default_if_none:'' }}</td>
+                <td colspan="2" >{{ totals.total_males_refusing|default_if_none:'' }}</td>
+                <td colspan="2" >{{ totals.total_males_side_effects|default_if_none:'' }}</td>
+            </tr>
+            <tr>
+                <td colspan="6" >{{ totals.total_untreated_males|default_if_none:'' }}</td>
+            </tr>
+        </tfoot>
+        {% endif %} 
+    
+    <table>
+        <caption>{% trans "Females special cases" %}</caption>
+        <thead>
+        <tr>
+            <th rowspan="2" >{% trans "Zone" %}</th>
+            <th rowspan="2" >{% trans "Reported from" %}</th>
+            <th rowspan="2" >{% trans "Target area" %}</th>
+            <th rowspan="2" >{% trans "Drugs" %}</th>
+            
+            <th colspan="2">{% trans "Not available" %}</th>
+            <th colspan="2">{% trans "Refused treatment" %}</th>
+            <th colspan="2">{% trans "Experienced side effects" %}</th>
+            <th colspan="2">{% trans "Pregnant" %}</th>
+        </tr>
+        <tr>
+            <th>{% trans "5-15 years old" %}</th>
+            <th>{% trans "15+ years old" %}</th>
+            <th>{% trans "5-15 years old" %}</th>
+            <th>{% trans "15+ years old" %}</th>
+            <th>{% trans "5-15 years old" %}</th>
+            <th>{% trans "15+ years old" %}</th>
+            <th>{% trans "5-15 years old" %}</th>
+            <th>{% trans "15+ years old" %}</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+                
+        {% for r in results %}
+            <tr>
+                <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
+                <td >{{ r.area.as_data_source.data_collection.name }}</td>
+                <td>{{ r.area.name }}</td>
+                <td>
+                    <ul>
+                    {% for drug in r.drugs_pack.drugs.all %}
+                        <li>{{ drug }}</li>
+                    {% endfor %}
+                    </ul>
+                </td>
+                <td>{{ r.child_females_not_available|default_if_none:"" }}</td>
+                <td>{{ r.adult_females_not_available|default_if_none:"" }}</td>
+                <td>{{ r.child_females_refusing|default_if_none:"" }}</td>
+                <td>{{ r.adult_females_refusing|default_if_none:"" }}</td>
+                <td>{{ r.child_females_side_effects|default_if_none:"" }}</td>
+                <td>{{ r.adult_females_side_effects|default_if_none:"" }}</td>
+                <td>{{ r.pregnant_adult_females|default_if_none:"" }}</td>
+                <td>{{ r.pregnant_child_females|default_if_none:"" }}</td>
+            </tr>
+    
+        {% endfor %}
+        
+        </tbody>
+        
+        {% if totals.total_untreated_females %}
+        <tfoot>
+            <tr>
+                <td class='total' colspan="4" "rowspan=3">{% trans "Total" %}</td>
+                <td colspan="2">{{ totals.total_females_not_available|default_if_none:'' }}</td>
+                <td colspan="2" >{{ totals.total_females_refusing|default_if_none:'' }}</td>
+                <td colspan="2" >{{ totals.total_females_side_effects|default_if_none:'' }}</td>
+                <td colspan="2" >{{ totals.total_pregnant_females|default_if_none:'' }}</td>
+            </tr>
+            <tr>
+                <td colspan="6" >{{ totals.total_untreated_females|default_if_none:'' }}</td>
+                <td colspan="2" class="empty"></td>
+            </tr>
+        </tfoot>
+        {% endif %}
     
     </div>
    

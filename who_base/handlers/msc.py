@@ -18,27 +18,25 @@ from ..utils import check_against_last_report
 #todo: do a customRoleHandler that you can inherit from, that register the 
 # role you want
 
-class MenHandler(KeywordHandler):
+class MscHandler(KeywordHandler):
     u"""
-        EXAMPLE SMS FORMAT: men 32 56 76 87 2 5 65 2 
-        32: 5-15 years old males given one dose 
-        56: 15+ years old males given one dose
-        76: 5-15 years old males given two doses
-        87: 15+ years old males given two doses 
-        2:  5-15 years old males given three doses
-        5:  15+ years old males given three doses
-        65: 5-15 years old males given four doses
-        2:  15+ years old males given four doses
+        EXAMPLE SMS FORMAT: spm 32 56 76 87 2 5 
+        32: 5-15 years old males not available
+        56: 15+ years old males not available
+        76: 5-15 years old malesr refusing treatment
+        87: 15+ years old males refusing treatment
+        2:  5-15 years old males having side effects
+        5:  15+ years old males having side effects
     """
 
-    keyword = "men"
+    keyword = "msc"
     
-    aliases = (('fr', ("hom", "homme", "hommes")), 
-               ('en', ("men", "man")),)
+    aliases = (('fr', ("cph",)), 
+               ('en', ("msc",)),)
 
 
     def help(self, keyword, lang_code):
-        return self.respond(_(u"To report, send 'MEN', followed by 8 numbers."))
+        return self.respond(_(u"To report, send 'MSC', followed by 6 numbers."))
 
 
     @registration_required()
@@ -46,7 +44,7 @@ class MenHandler(KeywordHandler):
     
         # todo: factorize this
         args = [self.flatten_string(arg) for arg in text.split()]
-        require_args(args, min=8, max=8)
+        require_args(args, min=6, max=6)
         
         #todo: rename the report model in report manager
         report_manager = check_against_last_report(self.msg.contact)
@@ -61,48 +59,47 @@ class MenHandler(KeywordHandler):
         try:
             args = [int(x) for x in args]
         except ValueError:
-            return self.respond(_(u"All 8 values must be numbers"))
+            return self.respond(_(u"All 6 values must be numbers"))
 
-        total_men = sum(args)
+        total_msc = sum(args)
 
         if report_manager.status.wmen\
-            and report_manager.status.msc\
+            and report_manager.status.men\
             and report_manager.status.wsc:
-            tot = total_men + results.total_treated_females +\
-                  results.total_untreated_males + results.total_untreated_females             
+            tot = total_msc + results.total_treated_females +\
+                  results.total_treated_males + results.total_untreated_females             
 
             if results.target_pop != tot:
                 return self.respond(_(u"The sum of all the results for males and"\
                                       u" females (%(total)s) must be equal to "\
                                       u" the target population (%(target_pop)s)") % {
                                       'total': tot, 
-                                      'target_pop': results.target_pop})              
+                                      'target_pop': results.target_pop})      
 
-        if results.target_pop < total_men:
-            return self.respond(_(u"The sum of all the results for all"\
-                                  u" males (%(total)s) can not be bigger than"\
+        if results.target_pop < total_msc:
+            return self.respond(_(u"The sum of all the results for males special"\
+                                  u" cases (%(total)s) can not be bigger than"\
                                   u" the target population (%(target_pop)s)") % {
-                                  'total': total_men, 
+                                  'total': total_msc, 
                                   'target_pop': results.target_pop})
 
-        results.one_dose_child_males = args[0]
-        results.one_dose_adult_males = args[1]
-        results.two_doses_child_males = args[2]
-        results.two_doses_adult_males = args[3]
-        results.three_doses_child_males = args[4]
-        results.three_doses_adult_males = args[5]
-        results.four_doses_child_males = args[6]
-        results.four_doses_adult_males = args[7]
+        results.child_males_not_available = args[0]
+        results.adult_males_not_available = args[1]
+        results.child_males_refusing = args[2]
+        results.adult_males_refusing = args[3]
+        results.child_males_side_effects = args[4]
+        results.adult_males_side_effects = args[5]
         
-        results.report_manager.status.men = True
+        results.report_manager.status.msc = True
         results.report_manager.save()
         results.save()
         
         # todo: prefix successeful messages by 'OK'
         msg = _(u"The results for the campaign %(campaign)s in "\
-                   u"%(location)s related to men are saved.") % {
+                   u"%(location)s related to males special cases are saved.") % {
                    'campaign': results.campaign, 'location': results.area}
         
+        # refactor this
         if not report_was_completed and report_manager.is_completed():
             msg += _(u" All reports for this location are completed!") 
         else:

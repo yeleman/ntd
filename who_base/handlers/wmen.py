@@ -66,27 +66,21 @@ class WmenHandler(KeywordHandler):
 
         total_wmen = sum(args)
 
-        if report_manager.status.men:
-            total_men = (results.one_dose_child_males,
-                            results.one_dose_adult_males,
-                            results.two_doses_child_males,
-                            results.two_doses_adult_males,
-                            results.three_doses_child_males,
-                            results.three_doses_adult_males,
-                            results.four_doses_child_males,
-                            results.four_doses_adult_males)
-            total_men = sum(x or 0 for x in total_men)             
+        if report_manager.status.men\
+            and report_manager.status.msc\
+            and report_manager.status.wsc:
+            tot = total_wmen + results.total_untreated_females \
+                  + results.total_treated_males + results.total_untreated_males             
 
-            if results.target_pop != total_wmen + total_men:
+            if results.target_pop != tot:
                 return self.respond(_(u"The sum of all the results for males and"\
                                       u" females (%(total)s) must be equal to "\
                                       u" the target population (%(target_pop)s)") % {
-                                      'total': total_wmen + total_men, 
+                                      'total': tot, 
                                       'target_pop': results.target_pop})              
-                    
 
         if results.target_pop < total_wmen:
-            return self.respond(_(u"The sum of all the results for males and"\
+            return self.respond(_(u"The sum of all the results for all"\
                                   u" females (%(total)s) can not be bigger than"\
                                   u" the target population (%(target_pop)s)") % {
                                   'total': total_wmen, 
