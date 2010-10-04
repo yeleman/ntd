@@ -36,7 +36,7 @@ class WscHandler(KeywordHandler):
 
 
     def help(self, keyword, lang_code):
-        return self.respond(_(u"To report, send 'WSC', followed by 6 numbers."))
+        return self.respond(_(u"To report, send 'WSC', followed by 8 numbers."))
 
 
     @registration_required()
