@@ -1,7 +1,8 @@
 NTD
 ===
 
-This project provides a platform for NTD periodic data collection over SMS.
+This project provides a platform for Neglicted Tropical Disease 
+periodic data collection over SMS.
 
 It is based on rapidsms (0.9.x) and depends on the following packages:
 
@@ -14,3 +15,17 @@ It is based on rapidsms (0.9.x) and depends on the following packages:
 * `auth <http://github.com/yeleman/auth>`_
 * `django_simple_config <http://github.com/yeleman/django_simple_config>`_
 * `code_generator <http://github.com/yeleman/code_generator>`_
+* `report_parts <http://github.com/yeleman/report_parts>`_
+* `django_eav <http://github.com/mvpdev/django-eav>`_
+
+Setup
+======
+
+- Install all dependancies.
+- Setup the DB and backends in settings.py or even better, in local_settings.py
+  (you can find an exemple in the skeletons/ dir)
+- run "./manage.py loaddata fixtures/*json"
+- run "./manage.py runserver"
+- In the django admin, in 'location hierarchies', create some entries.
+
+
