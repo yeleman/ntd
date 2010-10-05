@@ -225,7 +225,7 @@ def delete_campaign(request, pk):
     return render_to_response('delete_campaign.html',  ctx,
                               context_instance=RequestContext(request))
 
-                              
+     # todo: use the django view for this                         
 def switch_lang(request):
 
     # todo: add more checks here

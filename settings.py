@@ -12,10 +12,10 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 LANGUAGE_CODE = 'en'
-DATE_FORMAT = 'm/d/Y'
+USE_L10N = True
 FORMAT_MODULE_PATH = 'formats'
 TIME_ZONE = None
-USE_L18N = True
+
 
 
 _ = lambda s: s

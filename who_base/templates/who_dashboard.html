@@ -18,11 +18,11 @@
     
 {% else %}
 
-    <div id="dashboard-header">
+    <div id="dashboard-header" class="span-24 last">
 
-        <p id="title-prefix">{% trans "Campaign" %}:</p>
+        <p id="title-prefix" class="span-24 last">{% trans "Campaign" %}:</p>
         
-        <div id="pagination">
+        <div id="pagination" class="span-20" >
         
         {% if page.has_next %}
                 <a class="previous" href="?page={{ page.next_page_number }}">&lt; {% trans "Previous" %}</a>
@@ -36,12 +36,14 @@
         
          </div>
         
-        <p id="campaign-date">{% trans "starts on" %} {{ campaign.start_date }}</p>
+        <p id="campaign-date" class="span-4 last" >
+        {% trans "starts on" %} {{ campaign.start_date|date:"SHORT_DATE_FORMAT" }}
+        </p>
     
     </div>
     
     
-    <div id="data">
+    <div id="data" class="span-24 last">
     
     <table>
         <caption>{% trans "Population" %}</caption>
@@ -67,7 +69,7 @@
                 <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
                 <td >{{ r.area.as_data_source.data_collection.name }}</td>
                 <td>{{ r.area.name }}</td>
-                <td>
+                <td class="drugs">
                     <ul>
                     {% for drug in r.drugs_pack.drugs.all %}
                         <li>{{ drug }}</li>
@@ -75,8 +77,8 @@
                     </ul>
                 </td>
                 <td>{{ r.distributor|default_if_none:"" }}</td>
-                <td>{{ r.treatment_start_date|default_if_none:"" }}</td>
-                <td>{{ r.treatment_end_date|default_if_none:"" }}</td>
+                <td>{{ r.treatment_start_date|default_if_none:""|date:"SHORT_DATE_FORMAT" }}</td>
+                <td>{{ r.treatment_end_date|default_if_none:""|date:"SHORT_DATE_FORMAT" }}</td>
                 <td>{{ r.total_pop|default_if_none:"" }}</td>
                 <td>{{ r.target_pop|default_if_none:"" }}</td>
                 <td>{{ r.treated_under_six|default_if_none:"" }}</td>
@@ -130,7 +132,7 @@
                 <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
                 <td >{{ r.area.as_data_source.data_collection.name }}</td>
                 <td>{{ r.area.name }}</td>
-                <td>
+                <td class="drugs">
                     <ul>
                     {% for drug in r.drugs_pack.drugs.all %}
                         <li>{{ drug }}</li>
@@ -206,7 +208,7 @@
                 <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
                 <td >{{ r.area.as_data_source.data_collection.name }}</td>
                 <td>{{ r.area.name }}</td>
-                <td>
+                <td class="drugs">
                     <ul>
                     {% for drug in r.drugs_pack.drugs.all %}
                         <li>{{ drug }}</li>
@@ -282,7 +284,7 @@
                 <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
                 <td >{{ r.area.as_data_source.data_collection.name }}</td>
                 <td>{{ r.area.name }}</td>
-                <td>
+                <td class="drugs">
                     <ul>
                     {% for drug in r.drugs_pack.drugs.all %}
                         <li>{{ drug }}</li>
@@ -348,7 +350,7 @@
                 <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
                 <td >{{ r.area.as_data_source.data_collection.name }}</td>
                 <td>{{ r.area.name }}</td>
-                <td>
+                <td class="drugs">
                     <ul>
                     {% for drug in r.drugs_pack.drugs.all %}
                         <li>{{ drug }}</li>

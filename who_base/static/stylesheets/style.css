@@ -2,5 +2,51 @@ table td {
     border: 1px solid #DDDDDD;
 }
 
+#dashboard table th,
+#dashboard table td {
+text-align: center;
+}
 
+#dashboard table .total {
+text-align: right;
+}
 
+#dashboard table .drugs {
+text-align: left;
+}
+
+#dashboard #lang-switcher {
+float: right;
+}
+
+#dashboard #lang-switcher li {
+display: inline;
+padding-right:1em;
+}
+
+#menu {
+margin-top:1em;
+}
+
+#menu li {
+display: inline;
+padding-right:1em;
+}
+
+#dashboard #pagination h2 {
+display: inline;
+margin: 1em;
+}
+
+#dashboard-header {
+margin: 1em;
+}
+
+#dashboard #title-prefix {
+font-size:1.2em;
+margin-bottom:0;
+}
+
+#dashboard #campaign-date {
+font-style: italic;
+}
