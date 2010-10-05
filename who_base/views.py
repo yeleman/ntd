@@ -15,7 +15,7 @@ from django.conf import settings
 
 from .models import Campaign, Results
 
-from simple_locations.models import Area
+from simple_locations.models import Area, AreaType
 
 from .forms import CampaignForm
 
@@ -223,6 +223,20 @@ def delete_campaign(request, pk):
 
     ctx = locals()
     return render_to_response('delete_campaign.html',  ctx,
+                              context_instance=RequestContext(request))
+
+@login_required                          
+def codes_campaign(request, pk):
+
+    # todo: add more checks here
+    campaign = Campaign.objects.get(pk=int(pk))
+    results = Results.objects.filter(campaign=campaign)
+    locations = Area.objects.filter(as_data_source__isnull=False)
+
+    loc = Area.objects.filter(kind=AreaType.objects.get(slug='cscom'))
+
+    ctx = locals()
+    return render_to_response('codes_campaign.html',  ctx,
                               context_instance=RequestContext(request))
 
      # todo: use the django view for this                         

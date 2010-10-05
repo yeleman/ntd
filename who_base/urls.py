@@ -21,6 +21,8 @@ urlpatterns = patterns("",
         name="edit-campaign"),
     url(r'campaign/delete/(?P<pk>\d+)/$',  "who_base.views.delete_campaign", 
         name="delete-campaign"),
+    url(r'campaign/codes/(?P<pk>\d+)/$',  "who_base.views.codes_campaign", 
+        name="codes-campaign"),
     
     url(r'switch-language/$',  "who_base.views.switch_lang", name='switch-lang'),    
     

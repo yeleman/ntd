@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{% block title %}Print Villages Codes{% endblock %}</title>
+<link rel="stylesheet" href="{{ MEDIA_URL }}static/who_base/stylesheets/blueprint/screen.css" type="text/css" media="screen"  />
+<link rel="stylesheet" href="{{ MEDIA_URL }}static/who_base/stylesheets/blueprint/print.css" type="text/css" media="print"  />
+<style type="text/css">
+table td {
+    border: 1px solid #DDDDDD;
+    padding-left: 2em;
+}
+</style>
+</head>
+<body>
+{% load i18n %}
+
+{% block content %}
+
+    <h2>{% trans "Villages Codes" %}</h2>
+
+    <table>
+
+    {% for cscom in loc %}
+
+        {% ifchanged %}
+        <tr>
+            <td colspan="4"><strong>{{ cscom }}</strong></td>
+        </tr>
+        {% endifchanged %}
+
+        {% for village in cscom.as_data_collector.all %}
+        <tr>
+            <td>{{ village.data_source.code }}</td>
+            <td>{{ village.data_source }}</td>
+            <td>{{ village.data_source.parent }}</td>
+        </tr>
+        {%endfor %}
+
+    {%endfor %}
+
+    </table>
+
+{% endblock %}
