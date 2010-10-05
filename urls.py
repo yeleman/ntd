@@ -16,7 +16,7 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     
     # rapidsms
-    (r'^account/', include('rapidsms.urls.login_logout')),
+    (r'^', include('rapidsms.urls.login_logout')),
     (r'^ajax/', include('rapidsms.contrib.ajax.urls')),
     (r'^export/', include('rapidsms.contrib.export.urls')),
     (r'^httptester/', include('rapidsms.contrib.httptester.urls')),
