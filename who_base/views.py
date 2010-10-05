@@ -228,12 +228,7 @@ def delete_campaign(request, pk):
 @login_required                          
 def codes_campaign(request, pk):
 
-    # todo: add more checks here
-    campaign = Campaign.objects.get(pk=int(pk))
-    results = Results.objects.filter(campaign=campaign)
-    locations = Area.objects.filter(as_data_source__isnull=False)
-
-    loc = Area.objects.filter(kind=AreaType.objects.get(slug='cscom'))
+    locations = Area.objects.filter(kind=AreaType.objects.get(slug='cscom'))
 
     ctx = locals()
     return render_to_response('codes_campaign.html',  ctx,
