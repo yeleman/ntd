@@ -28,7 +28,7 @@
                 <a class="previous" href="?page={{ page.next_page_number }}">&lt; {% trans "Previous" %}</a>
         {% endif %}
         
-        <h2>{{ campaign.name }}</h2> 
+        <h2 title={{ campaign.code }}>{{ campaign.name }}</h2> 
          
         {% if page.has_previous %}
             <a href="?page={{ page.previous_page_number }}">{% trans "Next" %} &gt;</a>
@@ -66,11 +66,13 @@
                 
         {% for r in results %}
             <tr>
-                <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
-                <td >{{ r.area.as_data_source.data_collection.name }}</td>
-                <td>{{ r.area.name }}</td>
-                <td class="drugs">
-                    <ul>
+                {% with r.area.as_data_source.data_collection as d_col %}
+                <td title='{{ d_col.parent.code }}' >{{ d_col.parent.name }}</td>
+                <td title='{{ d_col.code }}'>{{ d_col.name }}</td>
+                {% endwith %}
+                <td title='{{ r.area.code }}'>{{ r.area.name }}</td>
+               <td class="drugs">
+                    <ul title='{{ r.drugs_pack.code }}'>
                     {% for drug in r.drugs_pack.drugs.all %}
                         <li>{{ drug }}</li>
                     {% endfor %}
@@ -129,11 +131,13 @@
                 
         {% for r in results %}
             <tr>
-                <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
-                <td >{{ r.area.as_data_source.data_collection.name }}</td>
-                <td>{{ r.area.name }}</td>
-                <td class="drugs">
-                    <ul>
+                {% with r.area.as_data_source.data_collection as d_col %}
+                <td title='{{ d_col.parent.code }}' >{{ d_col.parent.name }}</td>
+                <td title='{{ d_col.code }}'>{{ d_col.name }}</td>
+                {% endwith %}
+                <td title='{{ r.area.code }}'>{{ r.area.name }}</td>
+               <td class="drugs">
+                    <ul title='{{ r.drugs_pack.code }}'>
                     {% for drug in r.drugs_pack.drugs.all %}
                         <li>{{ drug }}</li>
                     {% endfor %}
@@ -205,11 +209,13 @@
                 
         {% for r in results %}
             <tr>
-                <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
-                <td >{{ r.area.as_data_source.data_collection.name }}</td>
-                <td>{{ r.area.name }}</td>
-                <td class="drugs">
-                    <ul>
+                {% with r.area.as_data_source.data_collection as d_col %}
+                <td title='{{ d_col.parent.code }}' >{{ d_col.parent.name }}</td>
+                <td title='{{ d_col.code }}'>{{ d_col.name }}</td>
+                {% endwith %}
+                <td title='{{ r.area.code }}'>{{ r.area.name }}</td>
+               <td class="drugs">
+                    <ul title='{{ r.drugs_pack.code }}'>
                     {% for drug in r.drugs_pack.drugs.all %}
                         <li>{{ drug }}</li>
                     {% endfor %}
@@ -281,11 +287,13 @@
                 
         {% for r in results %}
             <tr>
-                <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
-                <td >{{ r.area.as_data_source.data_collection.name }}</td>
-                <td>{{ r.area.name }}</td>
-                <td class="drugs">
-                    <ul>
+                {% with r.area.as_data_source.data_collection as d_col %}
+                <td title='{{ d_col.parent.code }}' >{{ d_col.parent.name }}</td>
+                <td title='{{ d_col.code }}'>{{ d_col.name }}</td>
+                {% endwith %}
+                <td title='{{ r.area.code }}'>{{ r.area.name }}</td>
+               <td class="drugs">
+                    <ul title='{{ r.drugs_pack.code }}'>
                     {% for drug in r.drugs_pack.drugs.all %}
                         <li>{{ drug }}</li>
                     {% endfor %}
@@ -347,11 +355,13 @@
                 
         {% for r in results %}
             <tr>
-                <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
-                <td >{{ r.area.as_data_source.data_collection.name }}</td>
-                <td>{{ r.area.name }}</td>
-                <td class="drugs">
-                    <ul>
+                {% with r.area.as_data_source.data_collection as d_col %}
+                <td title='{{ d_col.parent.code }}' >{{ d_col.parent.name }}</td>
+                <td title='{{ d_col.code }}'>{{ d_col.name }}</td>
+                {% endwith %}
+                <td title='{{ r.area.code }}'>{{ r.area.name }}</td>
+               <td class="drugs">
+                    <ul title='{{ r.drugs_pack.code }}'>
                     {% for drug in r.drugs_pack.drugs.all %}
                         <li>{{ drug }}</li>
                     {% endfor %}
@@ -405,9 +415,11 @@
                 
         {% for r in results %}
             <tr>
-                <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
-                <td >{{ r.area.as_data_source.data_collection.name }}</td>
-                <td>{{ r.area.name }}</td>
+                {% with r.area.as_data_source.data_collection as d_col %}
+                <td title='{{ d_col.parent.code }}' >{{ d_col.parent.name }}</td>
+                <td title='{{ d_col.code }}'>{{ d_col.name }}</td>
+                {% endwith %}
+                <td title='{{ r.area.code }}'>{{ r.area.name }}</td>
                 
                 {% if r.stock_movements.exists %}
                     {% for mov in r.stock_movements.all %}

@@ -12,7 +12,7 @@ from django.conf import settings
 
 from .models import Campaign, Results, DrugsStockMovement
 
-from simple_locations.models import Area
+from simple_locations.models import Area, AreaType
 
 from .forms import CampaignForm
 
@@ -245,3 +245,13 @@ def switch_lang(request):
     request.session['django_language'] = lang_code
 
     return redirect('who-dashboard')
+
+
+@login_required
+def codes_campaign(request, pk):
+
+    locations = Area.objects.filter(kind=AreaType.objects.get(slug='cscom'))
+
+    ctx = locals()
+    return render_to_response('codes_campaign.html',  ctx,
+                              context_instance=RequestContext(request))
