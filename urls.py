@@ -14,7 +14,7 @@ urlpatterns = patterns('',
 
     # admin
     (r'^admin/', include(admin.site.urls)),
-    
+
     # rapidsms
     (r'^', include('rapidsms.urls.login_logout')),
     (r'^ajax/', include('rapidsms.contrib.ajax.urls')),
@@ -23,23 +23,23 @@ urlpatterns = patterns('',
     (r'^locations/', include('rapidsms.contrib.locations.urls')),
     (r'^messagelog/', include('logger_ng.urls')),
     (r'^messaging/', include('rapidsms.contrib.messaging.urls')),
-    (r'^registration/', include('auth.urls')),
+    (r'^registration/', include('rapidsms.contrib.auth.urls')),
     (r'^scheduler/', include('rapidsms.contrib.scheduler.urls')),
-    
-    url(r'^rapidsms-dashboard/$', 
-        'rapidsms.views.dashboard', 
+
+    url(r'^rapidsms-dashboard/$',
+        'rapidsms.views.dashboard',
         name='rapidsms-dashboard'),
-        
+
 )
 
 
 if settings.DEBUG:
 
     urlpatterns += patterns("", url("%s/who_base/(?P<path>.*)$" % settings.MEDIA_URL.strip('/'),
-                                "django.views.static.serve", 
-                                {"document_root": 
-                                  os.path.join(settings.PROJECT_DIR, 
-                                                'who_base', 'static'), 
+                                "django.views.static.serve",
+                                {"document_root":
+                                  os.path.join(settings.PROJECT_DIR,
+                                                'who_base', 'static'),
                                   'show_indexes': True}))
 
     urlpatterns += patterns('',
@@ -51,8 +51,8 @@ if settings.DEBUG:
 
 
 urlpatterns += patterns("",
-                        url(r'^', include('who_base.urls'), 
+                        url(r'^', include('who_base.urls'),
                                   name='who-dashboard'),)
 
-                                                    
-    
+
+

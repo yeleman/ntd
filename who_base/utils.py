@@ -12,7 +12,7 @@ import datetime
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
 
-from handlers_i18n.exceptions import ExitHandle
+from rapidsms.contrib.handlers.exceptions import ExitHandle
 
 from simple_locations.models import Area
 

@@ -1,7 +1,7 @@
 [
     {
         "pk": 1, 
-        "model": "auth.group", 
+        "model": "rapidsms.contrib.auth.group", 
         "fields": {
             "name": "CSCOM", 
             "permissions": []
@@ -9,7 +9,7 @@
     }, 
     {
         "pk": 1, 
-        "model": "auth.role", 
+        "model": "rapidsms.contrib.auth.role", 
         "fields": {
             "context_type": 35, 
             "context_id": 1, 

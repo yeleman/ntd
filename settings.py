@@ -59,10 +59,10 @@ INSTALLED_APPS = [
     #"django_nose",
     "djtables",
     "rapidsms",
-    
-    # not mandatory but handy, you may grab it from 
+
+    # not mandatory but handy, you may grab it from
     # http://github.com/adammck/djappsettings
-    # "djappsettings", 
+    # "djappsettings",
     # overwise, you'll have to copy app settings.py vars into this file
 
     # common dependencies (which don't clutter up the ui).
@@ -85,17 +85,17 @@ INSTALLED_APPS = [
     "rapidsms.contrib.locations",
     "rapidsms.contrib.messaging",
     "rapidsms.contrib.scheduler",
-    "handlers_i18n",
+    "rapidsms.contrib.handlers",
+    "rapidsms.contrib.auth",
     "direct_sms",
     "logger_ng",
     "healthmodels",
-    "auth",
     "django_simple_config",
     "who_base",
     "mptt",
-   "simple_locations",
-   "report_parts",
-   "eav"
+    "simple_locations",
+    "report_parts",
+    "eav"
 ]
 
 
@@ -108,7 +108,7 @@ RAPIDSMS_TABS = [
 
     ("who_base.views.dashboard", "Retour"),
     ("logger_ng.views.index", "Journal des messages"),
-    ("auth.views.registration", "Inscription des contacts"),
+    ("rapidsms.contrib.auth.views.registration", "Inscription des contacts"),
     ("rapidsms.contrib.messaging.views.messaging", "Envoyer des messages"),
     ("rapidsms.contrib.httptester.views.generate_identity", "Tester les SMS"),
 ]
@@ -201,9 +201,9 @@ import os, tempfile, sys
 if 'test' in sys.argv:
     for db_name in DATABASES:
         DATABASES[db_name]['TEST_NAME'] = os.path.join(
-            tempfile.gettempdir(), 
+            tempfile.gettempdir(),
             "%s.rapidsms.test.sqlite3" % db_name)
-            
+
 try:
     import local_settings.py
 except ImportError:

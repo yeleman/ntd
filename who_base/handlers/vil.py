@@ -6,10 +6,10 @@ import datetime
 
 from django.utils.translation import ugettext as _
 
-from auth.decorators import registration_required
+from rapidsms.contrib.auth.decorators import registration_required
 
-from handlers_i18n.handlers.keyword import KeywordHandler
-from handlers_i18n.helpers import require_args, check_exists, check_date
+from rapidsms.contrib.handlers.handlers.keyword import KeywordHandler
+from rapidsms.contrib.handlers.helpers import require_args, check_exists, check_date
 
 from ..models import DrugsPack, Results, DrugsStockMovement
 from ..utils import check_location, fix_date_year
