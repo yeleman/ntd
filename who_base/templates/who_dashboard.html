@@ -386,6 +386,60 @@
             </tr>
         </tfoot>
         {% endif %}
+        
+    <table>
+        <caption>{% trans "Stock movements" %}</caption>
+        <thead>
+        <tr>
+            <th rowspan="2" >{% trans "Zone" %}</th>
+            <th rowspan="2" >{% trans "Reported from" %}</th>
+            <th rowspan="2" >{% trans "Target area" %}</th>
+            
+            {% for drug in results.0.drugs_pack.drugs.all%}
+                <th colspan="2">{{ drug.name }}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        
+        <tbody>
+                
+        {% for r in results %}
+            <tr>
+                <td >{{ r.area.as_data_source.data_collection.parent.name }}</td>
+                <td >{{ r.area.as_data_source.data_collection.name }}</td>
+                <td>{{ r.area.name }}</td>
+                
+                {% if r.stock_movements.exists %}
+                    {% for mov in r.stock_movements.all %}
+                        <td>{{ mov.received }}</td>
+                        <td>{{ mov.returned }}</td>
+                    {% endfor %}
+                {% else %}
+                    {% for mov in r.drugs_pack.drugs.all %}
+                        <td></td>
+                        <td></td>
+                    {% endfor %}
+                {% endif %}
+                
+            </tr>
+    
+        {% endfor %}
+        
+        </tbody>
+        
+        {% if totals.stocks %}
+        <tfoot>
+            <tr>
+            <td class='total' colspan="3" "rowspan=2">{% trans "Total" %}</td>
+            {% with totals.stocks.values as stocks %}
+            {% for stock in stocks %}
+                <td>{{ stock.received }}</td>
+                <td>{{ stock.returned }}</td>
+            {% endfor %}
+            </tr>
+            {% endwith %}
+        </tfoot>
+        {% endif %}
     
     </div>
    

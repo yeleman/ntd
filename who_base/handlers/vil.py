@@ -11,7 +11,7 @@ from auth.decorators import registration_required
 from handlers_i18n.handlers.keyword import KeywordHandler
 from handlers_i18n.helpers import require_args, check_exists, check_date
 
-from ..models import DrugsPack, Results
+from ..models import DrugsPack, Results, DrugsStockMovement
 from ..utils import check_location, fix_date_year
 
 #todo: do a customRoleHandler that you can inherit from, that register the 
@@ -135,6 +135,10 @@ class VilHandler(KeywordHandler):
         result.report_manager.status.vil = True
         result.report_manager.save()
         result.save()
+        
+        # creating the empty drug stock movement
+        for drug in result.drugs_pack.drugs.all():
+            DrugsStockMovement.objects.create(drug=drug, for_results=result)
         
         # todo: maybe this is too long...
         self.respond(_(u"The results for the campaign %(campaign)s in "\

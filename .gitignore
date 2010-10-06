@@ -6,7 +6,6 @@
 private
 *.log
 *.log.*
-*.mo
 local_settings.py
 
 handlers_i18n
