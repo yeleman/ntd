@@ -2,7 +2,6 @@
 # encoding=utf-8
 
 import random
-import pprint
 from datetime import datetime
 
 def gen_data():
@@ -166,18 +165,18 @@ def gen_data():
     # equaly share remaining people.
     def equalize(remain, v1, v2, v3, v4, default):
 
-        print "equalizing: %d - %d %d %d %d" % (remain, v1, v2, v3, v4)
+        #print "equalizing: %d - %d %d %d %d" % (remain, v1, v2, v3, v4)
         split = remain / 4
         extra = remain % 4
         if remain < 0:
             split = -split
-        print "split: %d, extra: %d" % (split, extra)
+        #print "split: %d, extra: %d" % (split, extra)
         v1 += split
         v2 += split
         v3 += split
         v4 += split
         remain = 0
-        print "equalized: %d - %d %d %d %d" % (remain, v1, v2, v3, v4)
+        #print "equalized: %d - %d %d %d %d" % (remain, v1, v2, v3, v4)
 
     equalize(men5_remain, h1_5, h2_5, h3_5, h4_5, h1_5)
     equalize(men15_remain, h1_15, h2_15, h3_15, h4_15, h4_15)
@@ -212,18 +211,8 @@ def gen_data():
     st_mec_rend = mec_remain - mec_lost
 
     return locals()
-    try:
-        return (total_population, target_population, under6_treated, \
-            h1_5, h1_15, h2_5, h2_15, h3_5, h3_15, h4_5, h4_15, \
-            f1_5, f1_15, f2_5, f2_15, f3_5, f3_15, f4_5, f4_15, \
-            cph_abs5, cph_abs15, cph_ref5, cph_ref15, cph_eff5, cph_eff15, \
-            cpf_abs5, cpf_abs15, cpf_ref5, cpf_ref15, cpf_eff5, cpf_eff15, \
-            cpf_enc5, cpf_enc15, \
-            st_alb_rec, st_alb_rend, st_mec_rec, st_mec_rend)
-    except NameError:
-        return locals()
 
-def genpdf(name, code, sample):
+def genpdf(name, code, sample, parent=u""):
 
     from datetime import datetime, timedelta
     from subprocess import Popen, PIPE
@@ -269,15 +258,18 @@ def genpdf(name, code, sample):
         # the value of the data
         data = [
                 # Village
-                {"x": 20.2 * cm, "y": header_line_y,
+                {"x": 19.5 * cm, "y": header_line_y,
                  "value": name},
+                # Commune
+                {"x": 5.4 * cm, "y": header_line_y,
+                 "value": parent},
                 # Distributor
                 {"x": 9.8 * cm, "y": footer_line_y,
                  "value": u""},
-                # Dates
-                {"x": 23.8 * cm, "y": footer_line_y,
-                 "value": datetime.today().strftime(DATE_FORMAT)},
                 ]
+        '''# Dates
+            {"x": 23.8 * cm, "y": footer_line_y,
+             "value": datetime.today().strftime(DATE_FORMAT)},'''
 
         # draw the data onto the pdf overlay
         for field in data:
@@ -369,6 +361,8 @@ def genpdf(name, code, sample):
     fp.write(pdf)
     fp.close
 
+    return filename
+
 def gen_sms(code, sample, ds, dd):
 
     vil = u"VIL %(code)s %(ds)s %(de)s %(pop)d %(target)d %(u6)d" % { \
@@ -431,18 +425,52 @@ def gen_sms(code, sample, ds, dd):
 
     return (vil, hom, fem, cph, cpf, med)
 
+def gen_demo_set(campaign_id):
+
+    import os
+    import commands
+    from who_base.models import Results, Campaign
+
+    campaign=Campaign.objects.get(id=campaign_id)
+    results = Results\
+             .objects\
+             .filter(campaign=campaign)\
+             .select_related('area__as_data_source__data_collection__parent')\
+             .order_by('area__as_data_source__data_collection__parent',
+                       'area__as_data_source__data_collection',
+                       'area')
+    
+    files = []
+    for result in results:
+        print "Generating %s, %s" % (result.area, result.area.parent)
+        data = gen_data()
+        files.append(genpdf(result.area.name, result.area.code, data, result.area.parent.name))
+
+    output_file = 'all_sheets.pdf'
+    cmd = '/usr/bin/pdftk %s output %s' % (" ".join(files), output_file)
+    status, output = commands.getstatusoutput(cmd)
+
+    for f in files:
+        os.remove(f)
+
+    return output_file
 
 def main():
+
+    # generate a set of data
     sample = gen_data()
 
-    pprint.pprint(sample)
+    # display sample data
+    import pprint
+    #pprint.pprint(sample)
 
-
+    # Generate an SMS report from the sample data
     smses = gen_sms("A1560", sample, datetime.now(), datetime.now())
     for sms in smses:
         print sms
 
-    #genpdf("New York City", "nyc", sample)
+    # generate a PDF from the sample data
+    genpdf("New York City", "nyc", sample, parent="NY")
 
 if __name__ == '__main__':
     main()
