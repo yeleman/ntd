@@ -115,7 +115,7 @@ class Results(models.Model):
                                     blank=True, null=True)
     target_pop = models.IntegerField(verbose_name=__(u'target population'),
                                     blank=True, null=True)
-    treated_under_six = models.IntegerField(verbose_name=__(u'treated under 6 years old'),
+    treated_under_six = models.IntegerField(verbose_name=__(u'population under 6 months'),
                                     blank=True, null=True)
 
     distributor = models.CharField(max_length=64,

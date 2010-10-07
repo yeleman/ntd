@@ -2,7 +2,7 @@
 
 {% load i18n %}
 
-{% block page-id %}create-campaign{% endblock %}
+{% block page-id %}campaigns-list{% endblock %}
 
 {% block content %}
 
@@ -11,8 +11,16 @@
     {% if campaigns_list %}
     <ul>
         {% for campaign in campaigns_list %}
-            <li><a href="{{ campaign.get_absolute_url }}">{{ campaign.code }} - {{ campaign }}</a>
-             | <a href="{% url delete-campaign campaign.pk %}">{% trans "delete" %}</a></li>
+            <li>
+                <a class='campaign-link' href="{{ campaign.get_absolute_url }}">
+                    {{ campaign.code }} - {{ campaign }}
+                </a>
+                <span class='delete'>
+                    <a  href="{% url delete-campaign campaign.pk %}">
+                        {% trans "delete" %}
+                    </a>
+                </span>
+             </li>
         {% endfor  %}
     </ul>
     {% endif %}
