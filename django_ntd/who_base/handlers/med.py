@@ -53,11 +53,14 @@ class MedHandler(KeywordHandler):
         require_args(args, min=drugs_args_count, max=drugs_args_count)
         try:
             args = [int(x) for x in args]
+            for x in args: 
+                if x < 0:
+                    raise ValueError()
         except ValueError:
-            return self.respond(_(u"All %(count)s values must be numbers") % {
+            return self.respond(_(u"All %(count)s values must be positive numbers") % {
                                   'count': drugs_args_count})
 
-        for movement in results.drugs_pack.drugs.all():
+        for movement in results.stock_movements.all():
             movement.received = args.pop(0)
             movement.returned = args.pop(0)
             if movement.returned > movement.received:

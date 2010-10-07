@@ -56,8 +56,11 @@ class MscHandler(KeywordHandler):
         
         try:
             args = [int(x) for x in args]
+            for x in args: 
+                if x < 0:
+                    raise ValueError()
         except ValueError:
-            return self.respond(_(u"All 6 values must be numbers"))
+            return self.respond(_(u"All 6 values must be positive numbers"))
 
         total_msc = sum(args)
 
