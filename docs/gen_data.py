@@ -405,7 +405,7 @@ def gen_sms(code, sample, ds, dd):
             'cph_eff15': sample['cph_eff15'], \
         }
 
-    cpf = u"CPH %(cpf_abs5)d %(cpf_abs15)d %(cpf_ref5)d %(cpf_ref15)d %(cpf_eff5)d %(cpf_eff15)d %(cpf_enc5)d %(cpf_enc15)d" % { \
+    cpf = u"CPF %(cpf_abs5)d %(cpf_abs15)d %(cpf_ref5)d %(cpf_ref15)d %(cpf_eff5)d %(cpf_eff15)d %(cpf_enc5)d %(cpf_enc15)d" % { \
             'cpf_abs5': sample['cpf_abs5'], \
             'cpf_abs15': sample['cpf_abs15'], \
             'cpf_ref5': sample['cpf_ref5'], \
@@ -470,7 +470,7 @@ def main():
         print sms
 
     # generate a PDF from the sample data
-    genpdf("New York City", "nyc", sample, parent="NY")
+    #genpdf("New York City", "nyc", sample, parent="NY")
 
 if __name__ == '__main__':
     main()
