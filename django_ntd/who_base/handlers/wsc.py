@@ -52,8 +52,6 @@ class WscHandler(KeywordHandler):
         # make update the manager date so
         report_manager.save()
 
-        report_was_completed = report_manager.is_completed()
-
         results = report_manager.results
 
         try:
@@ -102,8 +100,9 @@ class WscHandler(KeywordHandler):
                    'campaign': results.campaign, 'location': results.area}
 
         # refactor this
-        if not report_was_completed and report_manager.is_completed():
-            msg += _(u" All reports for this location are completed!")
+        if report_manager.is_completed():
+            msg += _(u" All reports for this location are completed! Receipt: "\
+                     u"%(receipt)s") % {'receipt': results.receipt}
         else:
             progress = results.report_manager.progress
             msg += _(u" You have sent %(completed)s over %(to_complete)s "\

@@ -216,7 +216,9 @@ class Results(models.Model):
         total_men = (self.child_males_not_available,
                      self.adult_males_not_available,
                      self.child_males_refusing,
-                     self.adult_males_refusing)
+                     self.adult_males_refusing,
+                     self.pregnant_child_females,
+                     self.pregnant_adult_females)
         return sum(x or 0 for x in total_men)
 
 
@@ -254,10 +256,10 @@ class Results(models.Model):
 
     @property
     def receipt(self):
-        if self.completed and self.report_date:
+        if self.report_manager.completed:
             return _(u"%(campaign)sD%(day)s/%(reportid)s") % \
                      {'campaign': self.campaign.id, \
-                      'day': self.report_date.timetuple().tm_yday,
+                      'day': self.report_manager.completed.timetuple().tm_yday,
                       'reportid': self.id}
         else:
             return None

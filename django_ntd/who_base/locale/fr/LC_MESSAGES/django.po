@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 19:33+0200\n"
+"POT-Creation-Date: 2010-10-07 20:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,30 @@ msgstr ""
 msgid "You must select at least one location"
 msgstr "Vous devez choisir au moins un lieu"
 
+#: models.py:23 models.py:94
+msgid "campaign"
+msgstr "campagne"
+
+#: models.py:26 models.py:57 models.py:71
+msgid "name"
+msgstr "nom"
+
+#: models.py:27 models.py:72
+msgid "code"
+msgstr "code"
+
+#: models.py:29
+msgid "start date"
+msgstr "date de début"
+
+#: models.py:31
+msgid "end date"
+msgstr "date de fin"
+
+#: models.py:32 models.py:67 models.py:106
+msgid "drugs pack"
+msgstr "lot de médicaments"
+
 #: models.py:36
 #, python-format
 msgid "%(name)s (starts on %(date)s)"
@@ -31,27 +55,231 @@ msgstr "%(name)s (démarrée le %(date)s)"
 msgid "%m/%d/%Y"
 msgstr "%d/%m/%Y"
 
+#: models.py:54
+msgid "drug"
+msgstr "médicament"
+
+#: models.py:68
+msgid "drugs packs"
+msgstr "lots de médicaments"
+
+#: models.py:74
+msgid "drugs"
+msgstr "médicaments"
+
 #: models.py:79
 #, python-format
 msgid "[%(code)s] %(name)s"
 msgstr "[%(code)s] %(name)s"
 
-#: models.py:252
+#: models.py:90 models.py:91
+msgid "results"
+msgstr "résultats"
+
+#: models.py:97
+msgid "area"
+msgstr "lieu"
+
+#: models.py:104 models.py:287
+msgid "data collection location"
+msgstr "lieu de collecte des données"
+
+#: models.py:109
+msgid "treatment start date"
+msgstr "date de début de traitement"
+
+#: models.py:111
+msgid "treatment end date"
+msgstr "date de fin de traitement"
+
+#: models.py:114
+msgid "total population"
+msgstr "population totale"
+
+#: models.py:116
+msgid "target population"
+msgstr "population cible"
+
+#: models.py:118
+msgid "population under 6 months"
+msgstr "population de moins de 6 months"
+
+#: models.py:122 models.py:296
+msgid "distributor"
+msgstr "distributeur"
+
+#: models.py:125
+msgid "5-15 years old males given one dose"
+msgstr "Garçons de 5-15 ans ayant reçu une dose"
+
+#: models.py:127
+msgid "15+ years old males given one dose"
+msgstr "Hommes de plus de 15 ans ayant reçu une dose"
+
+#: models.py:129
+msgid "5-15 years old males given two doses"
+msgstr "Garçons de 5-15 ans ayant reçu deux doses"
+
+#: models.py:131
+msgid "15+ years old males given two doses"
+msgstr "Hommes de plus de 15 ans ayant reçu deux doses"
+
+#: models.py:133
+msgid "5-15 years old males given three doses"
+msgstr "Garçons de 5-15 ans ayant reçu trois doses"
+
+#: models.py:135
+msgid "15+ years old males given three doses"
+msgstr "Hommes de plus de 15 ans ayant reçu trois doses"
+
+#: models.py:137
+msgid "5-15 years old males given four doses"
+msgstr "Garçons 5-15 ans ayant reçu quatre doses"
+
+#: models.py:139
+msgid "15+ years old males given four doses"
+msgstr "Hommes de plus de 15 ans ayant reçu quatre doses"
+
+#: models.py:142
+msgid "5-15 years old females given one dose"
+msgstr "Filles de 5-15 ans ayant reçu une dose"
+
+#: models.py:144
+msgid "15+ years old females given one dose"
+msgstr "Femmes de plus de 15 ans ayant reçu une dose"
+
+#: models.py:146
+msgid "5-15 years old females given two doses"
+msgstr "Filles 5-15 ans ayant reçu deux doses"
+
+#: models.py:148
+msgid "15+ years old females given two doses"
+msgstr "Femmes de plus de 15 ans ayant reçu deux doses"
+
+#: models.py:150
+msgid "5-15 years old females given three doses"
+msgstr "Filles de 5-15 ans ayant reçu trois doses"
+
+#: models.py:152
+msgid "15+ years old females given three doses"
+msgstr "Femmes de plus de 15 ans ayant reçu trois doses"
+
+#: models.py:154
+msgid "5-15 years old females given four doses"
+msgstr "Filles de 5-15 ans ayant reçu quatre doses"
+
+#: models.py:156
+msgid "15+ years old females given four doses"
+msgstr "Femmes de plus de 15 ans ayant reçu quatre doses"
+
+#: models.py:160
+msgid "not available 5-15 ans years old males"
+msgstr "Garçons de 5-15 ans indisponibles"
+
+#: models.py:162
+msgid "not available 15+ years old males"
+msgstr "Hommes de plus de 15 ans indisponibles"
+
+#: models.py:164
+msgid "5-15 years old males refusing treatment"
+msgstr "Garçons de 5-15 ans refusant le traitement"
+
+#: models.py:166
+msgid "15+ years old males refusing treatment"
+msgstr "Hommes de plus de 15 ans refusant le traitement"
+
+#: models.py:168
+msgid "5-15 years old males having side effects"
+msgstr "Garçons de 5-15 ans souffrant d'effets secondaires"
+
+#: models.py:170
+msgid "15+ years old males having side effects"
+msgstr "Hommes de plus de 15 ans souffrant d'effets secondaires"
+
+#: models.py:173
+msgid "not available 5-15 ans years old females"
+msgstr "Filles de 5-15 ans indisponibles"
+
+#: models.py:175
+msgid "not available 15+ years old females"
+msgstr "Femmes de plus de 15 ans indisponibles"
+
+#: models.py:177
+msgid "5-15 years old females refusing treatment"
+msgstr "Filles de 5-15 ans refusant le traitement"
+
+#: models.py:179
+msgid "15+ years old females refusing treatment"
+msgstr "Femmes de plus de 15 ans refusant le traitement"
+
+#: models.py:181
+msgid "5-15 years old females having side effects"
+msgstr "Filles de 5-15 ans souffrant d'effets secondaires"
+
+#: models.py:183
+msgid "15+ years old females having side effects"
+msgstr "Femmes de plus de 15 ans souffrant d'effets secondaires"
+
+#: models.py:185
+msgid "pregnant 5-15 years old females"
+msgstr "Filles de 5-15 ans enceintes"
+
+#: models.py:187
+msgid "pregnant 15+ years old females"
+msgstr "Femmes de plus de 15 ans enceintes"
+
+#: models.py:192
+msgid "disabled"
+msgstr "désactivé"
+
+#: models.py:254
 #, python-format
 msgid "Results of campaign %(campaign)s at %(area)s"
 msgstr "Résultats de la campagne %(campaign)s à %(area)s"
 
-#: models.py:258
+#: models.py:260
 #, python-format
 msgid "%(campaign)sD%(day)s/%(reportid)s"
 msgstr "%(campaign)sD%(day)s/%(reportid)s"
 
-#: models.py:318
+#: models.py:283
+msgid "locations hierarchy"
+msgstr "Hiérarchie de lieux"
+
+#: models.py:284
+msgid "locations hierarchies"
+msgstr "hiérarchies de lieux"
+
+#: models.py:289
+msgid "data source location"
+msgstr "lieu source de données"
+
+#: models.py:305
+msgid "drugs stock movement"
+msgstr "mouvement de stock de médicaments"
+
+#: models.py:306
+msgid "drugs stock movements"
+msgstr "mouvements de stock de médicaments"
+
+#: models.py:311
+msgid "for results"
+msgstr "pour les résultats"
+
+#: models.py:313
+msgid "received"
+msgstr "reçus"
+
+#: models.py:315
+msgid "returned"
+msgstr "rendus"
+
+#: models.py:320
 #, python-format
 msgid "received %(received)s and returned %(returned)s"
 msgstr "reçus %(received)s et rendus %(returned)s"
 
-#: models.py:320
+#: models.py:322
 msgid "nothing for the moment"
 msgstr "rien pour le moment"
 
@@ -99,12 +327,12 @@ msgid "To report, send 'MED', followed by an even number of values."
 msgstr ""
 "Pour faire le rapport, envoyez 'MED', suivit d'un nombre pair de valeurs."
 
-#: handlers/med.py:60
+#: handlers/med.py:57
 #, python-format
 msgid "All %(count)s values must be numbers"
 msgstr "Les %(count)s valeurs doivent êtres des nombres"
 
-#: handlers/med.py:67
+#: handlers/med.py:64
 #, python-format
 msgid ""
 "The number of doses returned (%(returned)s) for %(drug)s can not be greater "
@@ -113,19 +341,20 @@ msgstr ""
 "Le nombre de doses rendues (%(returned)s) pour %(drug)s ne peut être plus "
 "grand que le nombre de doses reçues (%(received)s)."
 
-#: handlers/med.py:84
+#: handlers/med.py:81
 #, python-format
 msgid "The stocks for the campaign %(campaign)s in %(location)s are saved."
 msgstr ""
 "Les stocks pour la campagne %(campaign)s à %(location)s ont été sauvergardés."
 
-#: handlers/med.py:89 handlers/men.py:107 handlers/msc.py:104
+#: handlers/med.py:86 handlers/men.py:107 handlers/msc.py:104
 #: handlers/wmen.py:108 handlers/wsc.py:106
-msgid " All reports for this location are completed!"
-msgstr "Tous les rapport pour ce lieu sont complets !"
+#, python-format
+msgid " All reports for this location are completed! Receipt: %(receipt)s"
+msgstr " Tous les rapport pour ce lieu sont complets ! Reçu : %(receipt)s"
 
-#: handlers/med.py:92 handlers/men.py:110 handlers/msc.py:107
-#: handlers/wmen.py:111 handlers/wsc.py:109
+#: handlers/med.py:90 handlers/men.py:111 handlers/msc.py:108
+#: handlers/wmen.py:112 handlers/wsc.py:110
 #, python-format
 msgid ""
 " You have sent %(completed)s over %(to_complete)s reports for this location."
@@ -256,8 +485,9 @@ msgid ""
 "The sum of patients under six months and the target population %(sum)s can "
 "not be greater than the population value (%(total_pop)s)."
 msgstr ""
-"La somme des de la population de moins de 6 mois et de la population cible (%(sum)s) ne peut "
-"pas être plus grande que la valeur de la population totale (%(total_pop)s)."
+"La somme des de la population de moins de 6 mois et de la population cible (%"
+"(sum)s) ne peut pas être plus grande que la valeur de la population totale (%"
+"(total_pop)s)."
 
 #: handlers/vil.py:141
 #, python-format
@@ -578,177 +808,6 @@ msgstr "Mouvements de stock"
 #~ "La valeur de la population cible (%(target_pop)s) ne peut pas être plus "
 #~ "grande que celle de la population totale (%(total_pop)s)."
 
-#~ msgid "campaign"
-#~ msgstr "campagne"
-
-#~ msgid "name"
-#~ msgstr "nom"
-
-#~ msgid "code"
-#~ msgstr "code"
-
-#~ msgid "start date"
-#~ msgstr "date de début"
-
-#~ msgid "end date"
-#~ msgstr "date de fin"
-
-#~ msgid "drugs pack"
-#~ msgstr "lot de médicaments"
-
-#~ msgid "drug"
-#~ msgstr "médicament"
-
-#~ msgid "drugs packs"
-#~ msgstr "lots de médicaments"
-
-#~ msgid "drugs"
-#~ msgstr "médicaments"
-
-#~ msgid "results"
-#~ msgstr "résultats"
-
-#~ msgid "area"
-#~ msgstr "lieu"
-
-#~ msgid "data collection location"
-#~ msgstr "lieu de collecte des données"
-
-#~ msgid "treatment start date"
-#~ msgstr "date de début de traitement"
-
-#~ msgid "treatment end date"
-#~ msgstr "date de fin de traitement"
-
-#~ msgid "total population"
-#~ msgstr "population totale"
-
-#~ msgid "target population"
-#~ msgstr "population cible"
-
-#~ msgid "population under 6 months"
-#~ msgstr "population de moins de 6 months"
-
-#~ msgid "distributor"
-#~ msgstr "distributeur"
-
-#~ msgid "5-15 years old males given one dose"
-#~ msgstr "Garçons de 5-15 ans ayant reçu une dose"
-
-#~ msgid "15+ years old males given one dose"
-#~ msgstr "Hommes de plus de 15 ans ayant reçu une dose"
-
-#~ msgid "5-15 years old males given two doses"
-#~ msgstr "Garçons de 5-15 ans ayant reçu deux doses"
-
-#~ msgid "15+ years old males given two doses"
-#~ msgstr "Hommes de plus de 15 ans ayant reçu deux doses"
-
-#~ msgid "5-15 years old males given three doses"
-#~ msgstr "Garçons de 5-15 ans ayant reçu trois doses"
-
-#~ msgid "15+ years old males given three doses"
-#~ msgstr "Hommes de plus de 15 ans ayant reçu trois doses"
-
-#~ msgid "5-15 years old males given four doses"
-#~ msgstr "Garçons 5-15 ans ayant reçu quatre doses"
-
-#~ msgid "15+ years old males given four doses"
-#~ msgstr "Hommes de plus de 15 ans ayant reçu quatre doses"
-
-#~ msgid "5-15 years old females given one dose"
-#~ msgstr "Filles de 5-15 ans ayant reçu une dose"
-
-#~ msgid "15+ years old females given one dose"
-#~ msgstr "Femmes de plus de 15 ans ayant reçu une dose"
-
-#~ msgid "5-15 years old females given two doses"
-#~ msgstr "Filles 5-15 ans ayant reçu deux doses"
-
-#~ msgid "15+ years old females given two doses"
-#~ msgstr "Femmes de plus de 15 ans ayant reçu deux doses"
-
-#~ msgid "5-15 years old females given three doses"
-#~ msgstr "Filles de 5-15 ans ayant reçu trois doses"
-
-#~ msgid "15+ years old females given three doses"
-#~ msgstr "Femmes de plus de 15 ans ayant reçu trois doses"
-
-#~ msgid "5-15 years old females given four doses"
-#~ msgstr "Filles de 5-15 ans ayant reçu quatre doses"
-
-#~ msgid "15+ years old females given four doses"
-#~ msgstr "Femmes de plus de 15 ans ayant reçu quatre doses"
-
-#~ msgid "not available 5-15 ans years old males"
-#~ msgstr "Garçons de 5-15 ans indisponibles"
-
-#~ msgid "not available 15+ years old males"
-#~ msgstr "Hommes de plus de 15 ans indisponibles"
-
-#~ msgid "5-15 years old males refusing treatment"
-#~ msgstr "Garçons de 5-15 ans refusant le traitement"
-
-#~ msgid "15+ years old males refusing treatment"
-#~ msgstr "Hommes de plus de 15 ans refusant le traitement"
-
-#~ msgid "5-15 years old males having side effects"
-#~ msgstr "Garçons de 5-15 ans souffrant d'effets secondaires"
-
-#~ msgid "15+ years old males having side effects"
-#~ msgstr "Hommes de plus de 15 ans souffrant d'effets secondaires"
-
-#~ msgid "not available 5-15 ans years old females"
-#~ msgstr "Filles de 5-15 ans indisponibles"
-
-#~ msgid "not available 15+ years old females"
-#~ msgstr "Femmes de plus de 15 ans indisponibles"
-
-#~ msgid "5-15 years old females refusing treatment"
-#~ msgstr "Filles de 5-15 ans refusant le traitement"
-
-#~ msgid "15+ years old females refusing treatment"
-#~ msgstr "Femmes de plus de 15 ans refusant le traitement"
-
-#~ msgid "5-15 years old females having side effects"
-#~ msgstr "Filles de 5-15 ans souffrant d'effets secondaires"
-
-#~ msgid "15+ years old females having side effects"
-#~ msgstr "Femmes de plus de 15 ans souffrant d'effets secondaires"
-
-#~ msgid "pregnant 5-15 years old females"
-#~ msgstr "Filles de 5-15 ans enceintes"
-
-#~ msgid "pregnant 15+ years old females"
-#~ msgstr "Femmes de plus de 15 ans enceintes"
-
-#~ msgid "disabled"
-#~ msgstr "désactivé"
-
-#~ msgid "locations hierarchy"
-#~ msgstr "Hiérarchie de lieux"
-
-#~ msgid "locations hierarchies"
-#~ msgstr "hiérarchies de lieux"
-
-#~ msgid "data source location"
-#~ msgstr "lieu source de données"
-
-#~ msgid "drugs stock movement"
-#~ msgstr "mouvement de stock de médicaments"
-
-#~ msgid "drugs stock movements"
-#~ msgstr "mouvements de stock de médicaments"
-
-#~ msgid "for results"
-#~ msgstr "pour les résultats"
-
-#~ msgid "received"
-#~ msgstr "reçus"
-
-#~ msgid "returned"
-#~ msgstr "rendus"
-
 #~ msgid "Add a campaign"
 #~ msgstr "Ajouter une campagne"
 
@@ -784,11 +843,11 @@ msgstr "Mouvements de stock"
 #~ msgid "Download"
 #~ msgstr "Télécharger"
 
-#~ msgid "French"
-#~ msgstr "Français"
+msgid "French"
+msgstr "Français"
 
-#~ msgid "English"
-#~ msgstr "Anglais"
+msgid "English"
+msgstr "Anglais"
 
-#~ msgid "dm"
-#~ msgstr "jm"
+msgid "dm"
+msgstr "jm"
