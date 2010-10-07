@@ -844,3 +844,9 @@ msgstr "Mouvements de stock"
 
 #~ msgid "Download"
 #~ msgstr "Télécharger"
+
+msgid "French"
+msgstr "Français"
+
+msgid "English"
+msgstr "Anglais"

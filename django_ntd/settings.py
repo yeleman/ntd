@@ -11,7 +11,7 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 # -------------------------------------------------------------------- #
 
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'fr'
 USE_L10N = True
 FORMAT_MODULE_PATH = 'formats'
 TIME_ZONE = None
