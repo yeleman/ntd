@@ -37,10 +37,26 @@ text-decoration:none;
 background-position:0 -37px;
 }
 
-ul {
+#who ul {
 list-style-type:square
 }
 
+#who .delete a {
+display:block;
+height:24px;
+width:24px;
+background:url("../images/delete.gif") no-repeat;
+text-indent:-999px;
+overflow:hidden;
+}
+
+#who .delete a:hover {
+display:block;
+height:24px;
+width:24px;
+background:url("../images/delete.gif") no-repeat;
+background-position:0 -24px;
+}
 
 /*** HEADER ***/
 
@@ -152,6 +168,10 @@ table td {
     border: 1px solid #DDDDDD;
 }
 
+table ul {
+    padding-top:1em;
+}
+
 #dashboard table th,
 #dashboard table td {
 text-align: center;
@@ -185,4 +205,26 @@ font-style: italic;
 
 /*** MANAGE CAMPAIGN ***/
 
+#who #campaigns-list #content ul li {
+height:2em;
+margin:0.5em;
+}
+
+
+#who #campaigns-list #content ul .campaign-link {
+display: block;
+float:left;
+margin-right: 1em;
+color: black;
+text-decoration: none;
+}
+
+#who #campaigns-list #content ul .campaign-link:hover {
+text-decoration: underline;
+}
+
+#who #campaigns-list #content ul li .delete {
+display: block;
+margin-top:-2px;
+}
 

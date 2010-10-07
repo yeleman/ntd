@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-06 16:07+0200\n"
+"POT-Creation-Date: 2010-10-07 16:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,8 +101,8 @@ msgid "target population"
 msgstr "population cible"
 
 #: models.py:118
-msgid "treated under 6 years old"
-msgstr "traité avant l'age de 6 ans"
+msgid "population under 6 months"
+msgstr "population de moins de 6 months"
 
 #: models.py:122 models.py:294
 msgid "distributor"
@@ -324,7 +324,8 @@ msgstr "La campagne %(campaign)s est terminée"
 
 #: handlers/med.py:33
 msgid "To report, send 'MED', followed by an even number of values."
-msgstr "Pour faire le rapport, envoyez 'MED', suivit d'un nombre pair de valeurs."
+msgstr ""
+"Pour faire le rapport, envoyez 'MED', suivit d'un nombre pair de valeurs."
 
 #: handlers/med.py:60
 #, python-format
@@ -337,8 +338,8 @@ msgid ""
 "The number of doses returned (%(returned)s) for %(drug)s can not be greater "
 "than the number of doses received (%(received)s)."
 msgstr ""
-"Le nombre de doses rendues (%(returned)s) pour %(drug)s ne peut être plus grand "
-"que le nombre de doses reçues (%(received)s)."
+"Le nombre de doses rendues (%(returned)s) pour %(drug)s ne peut être plus "
+"grand que le nombre de doses reçues (%(received)s)."
 
 #: handlers/med.py:84
 #, python-format
@@ -559,19 +560,23 @@ msgstr ""
 "Les résultats de la campagne %(campaign)s à %(location)s concernant les cas "
 "particulier femme ont été sauvergardés."
 
-#: templates/base.html:46 templates/base.html.py:53
+#: templates/base.html:23
+msgid "NTD management"
+msgstr "Gestion des MTN"
+
+#: templates/base.html:54 templates/base.html.py:63
 msgid "Home"
 msgstr "Acceuil"
 
-#: templates/base.html:49 templates/base.html.py:54
+#: templates/base.html:58 templates/base.html.py:66
 msgid "Manage campaigns"
-msgstr "Gérer les campagne"
+msgstr "Gérer les campagnes"
 
-#: templates/base.html:58
+#: templates/base.html:71
 msgid "RapidSMS admin"
 msgstr "RapidSMS admin"
 
-#: templates/base.html:63
+#: templates/base.html:76
 msgid "Django admin"
 msgstr "Django admin"
 
@@ -579,39 +584,47 @@ msgstr "Django admin"
 msgid "Campaigns"
 msgstr "Campagnes"
 
-#: templates/campaigns-list.html:16
+#: templates/campaigns-list.html:20
 msgid "delete"
 msgstr "supprimer"
 
-#: templates/campaigns-list.html:21
+#: templates/campaigns-list.html:30
 msgid "Create a campaign"
 msgstr "Ajouter une campagne"
 
-#: templates/create_campaign.html:9
+#: templates/codes_campaign.html:20
+msgid "Villages Codes"
+msgstr ""
+
+#: templates/create_campaign.html:9 templates/edit_campaign.html:9
+msgid "Campaigns list"
+msgstr "Liste des campagnes"
+
+#: templates/create_campaign.html:11
 msgid "Create a new campaign"
 msgstr "Ajouter une nouvelle campagne"
 
-#: templates/create_campaign.html:22 templates/edit_campaign.html:22
+#: templates/create_campaign.html:24 templates/edit_campaign.html:22
 msgid "Name"
 msgstr "Nom"
 
-#: templates/create_campaign.html:23 templates/edit_campaign.html:23
+#: templates/create_campaign.html:25 templates/edit_campaign.html:23
 msgid "Start date"
 msgstr "Date de début"
 
-#: templates/create_campaign.html:26 templates/edit_campaign.html:26
+#: templates/create_campaign.html:28 templates/edit_campaign.html:26
 msgid "Drug pack"
 msgstr "Lot de médicaments"
 
-#: templates/create_campaign.html:28 templates/edit_campaign.html:28
+#: templates/create_campaign.html:30 templates/edit_campaign.html:28
 msgid "Areas"
 msgstr "Lieux"
 
-#: templates/create_campaign.html:41
+#: templates/create_campaign.html:43
 msgid "Create"
 msgstr "Créer"
 
-#: templates/create_campaign.html:47
+#: templates/create_campaign.html:49
 msgid "There are no areas. Please create some before starting a campaign"
 msgstr "Il n'y a pas de zone. Créez en avant de commencer une campagne"
 
@@ -638,10 +651,6 @@ msgstr "Oui, supprimer"
 msgid "Cancel"
 msgstr "Annuler"
 
-#: templates/edit_campaign.html:9
-msgid "Campaigns list"
-msgstr "Liste des campagnes"
-
 #: templates/edit_campaign.html:11
 msgid "Edit a campaign"
 msgstr "Modifier une campagne"
@@ -662,147 +671,150 @@ msgstr "Ajouter une campagne"
 msgid "Campaign"
 msgstr "Campagne"
 
-#: templates/who_dashboard.html:28
+#: templates/who_dashboard.html:30
 msgid "Previous"
 msgstr "Précédente"
 
-#: templates/who_dashboard.html:34
+#: templates/who_dashboard.html:40
 msgid "Next"
 msgstr "Suivante"
 
-#: templates/who_dashboard.html:40
+#: templates/who_dashboard.html:48
 msgid "starts on"
 msgstr "débute le"
 
-#: templates/who_dashboard.html:49
+#: templates/who_dashboard.html:57
 msgid "Population"
 msgstr "Population"
 
-#: templates/who_dashboard.html:52 templates/who_dashboard.html.py:109
-#: templates/who_dashboard.html:185 templates/who_dashboard.html.py:261
-#: templates/who_dashboard.html:324 templates/who_dashboard.html.py:394
+#: templates/who_dashboard.html:60 templates/who_dashboard.html.py:119
+#: templates/who_dashboard.html:197 templates/who_dashboard.html.py:275
+#: templates/who_dashboard.html:340 templates/who_dashboard.html.py:412
 msgid "Zone"
 msgstr "Zone"
 
-#: templates/who_dashboard.html:53 templates/who_dashboard.html.py:110
-#: templates/who_dashboard.html:186 templates/who_dashboard.html.py:262
-#: templates/who_dashboard.html:325 templates/who_dashboard.html.py:395
+#: templates/who_dashboard.html:61 templates/who_dashboard.html.py:120
+#: templates/who_dashboard.html:198 templates/who_dashboard.html.py:276
+#: templates/who_dashboard.html:341 templates/who_dashboard.html.py:413
 msgid "Reported from"
-msgstr "Reporté le"
+msgstr "Report fait à"
 
-#: templates/who_dashboard.html:54 templates/who_dashboard.html.py:111
-#: templates/who_dashboard.html:187 templates/who_dashboard.html.py:263
-#: templates/who_dashboard.html:326 templates/who_dashboard.html.py:396
+#: templates/who_dashboard.html:62 templates/who_dashboard.html.py:121
+#: templates/who_dashboard.html:199 templates/who_dashboard.html.py:277
+#: templates/who_dashboard.html:342 templates/who_dashboard.html.py:414
 msgid "Target area"
 msgstr "Lieu ciblé"
 
-#: templates/who_dashboard.html:55 templates/who_dashboard.html.py:112
-#: templates/who_dashboard.html:188 templates/who_dashboard.html.py:264
-#: templates/who_dashboard.html:327
+#: templates/who_dashboard.html:63 templates/who_dashboard.html.py:122
+#: templates/who_dashboard.html:200 templates/who_dashboard.html.py:278
+#: templates/who_dashboard.html:343
 msgid "Drugs"
 msgstr "Médicaments"
 
-#: templates/who_dashboard.html:56
+#: templates/who_dashboard.html:64
 msgid "Distributor"
 msgstr "Distributeur"
 
-#: templates/who_dashboard.html:57
+#: templates/who_dashboard.html:65
 msgid "Treatment started on"
 msgstr "Début du traitement"
 
-#: templates/who_dashboard.html:58
+#: templates/who_dashboard.html:66
 msgid "Treatment ended on"
-msgstr "Fin du traitement traitement"
+msgstr "Fin du traitement"
 
-#: templates/who_dashboard.html:59
+#: templates/who_dashboard.html:67
 msgid "Total population"
 msgstr "Population totale"
 
-#: templates/who_dashboard.html:60
+#: templates/who_dashboard.html:68
 msgid "Target population"
 msgstr "Population cible"
 
-#: templates/who_dashboard.html:61
-msgid "Target population under 6"
-msgstr "Population cible de moins de 6 ans"
+#: templates/who_dashboard.html:69
+msgid "Population under 6 months"
+msgstr "Population de moins de 6 mois"
 
-#: templates/who_dashboard.html:95 templates/who_dashboard.html.py:159
-#: templates/who_dashboard.html:235 templates/who_dashboard.html.py:309
-#: templates/who_dashboard.html:377 templates/who_dashboard.html.py:433
+#: templates/who_dashboard.html:105 templates/who_dashboard.html.py:171
+#: templates/who_dashboard.html:249 templates/who_dashboard.html.py:325
+#: templates/who_dashboard.html:395 templates/who_dashboard.html.py:453
 msgid "Total"
 msgstr "Total"
 
-#: templates/who_dashboard.html:106
+#: templates/who_dashboard.html:116
 msgid "Treatment distribution for males"
 msgstr "Distribution du traitement pour les hommes"
 
-#: templates/who_dashboard.html:113 templates/who_dashboard.html.py:189
-#: templates/who_dashboard.html:271 templates/who_dashboard.html.py:273
-#: templates/who_dashboard.html:275 templates/who_dashboard.html.py:335
-#: templates/who_dashboard.html:337 templates/who_dashboard.html.py:339
-#: templates/who_dashboard.html:341
+#: templates/who_dashboard.html:123 templates/who_dashboard.html.py:201
+#: templates/who_dashboard.html:285 templates/who_dashboard.html.py:287
+#: templates/who_dashboard.html:289 templates/who_dashboard.html.py:351
+#: templates/who_dashboard.html:353 templates/who_dashboard.html.py:355
+#: templates/who_dashboard.html:357
 msgid "5-15 years old"
 msgstr "5-15 ans"
 
-#: templates/who_dashboard.html:114 templates/who_dashboard.html.py:190
-#: templates/who_dashboard.html:272 templates/who_dashboard.html.py:274
-#: templates/who_dashboard.html:276 templates/who_dashboard.html.py:336
-#: templates/who_dashboard.html:338 templates/who_dashboard.html.py:340
-#: templates/who_dashboard.html:342
+#: templates/who_dashboard.html:124 templates/who_dashboard.html.py:202
+#: templates/who_dashboard.html:286 templates/who_dashboard.html.py:288
+#: templates/who_dashboard.html:290 templates/who_dashboard.html.py:352
+#: templates/who_dashboard.html:354 templates/who_dashboard.html.py:356
+#: templates/who_dashboard.html:358
 msgid "15+ years old"
 msgstr "15 ans et +"
 
-#: templates/who_dashboard.html:117 templates/who_dashboard.html.py:121
-#: templates/who_dashboard.html:193 templates/who_dashboard.html.py:197
+#: templates/who_dashboard.html:127 templates/who_dashboard.html.py:131
+#: templates/who_dashboard.html:205 templates/who_dashboard.html.py:209
 msgid "1 dose"
 msgstr ""
 
-#: templates/who_dashboard.html:118 templates/who_dashboard.html.py:122
-#: templates/who_dashboard.html:194 templates/who_dashboard.html.py:198
+#: templates/who_dashboard.html:128 templates/who_dashboard.html.py:132
+#: templates/who_dashboard.html:206 templates/who_dashboard.html.py:210
 msgid "2 doses"
 msgstr ""
 
-#: templates/who_dashboard.html:119 templates/who_dashboard.html.py:123
-#: templates/who_dashboard.html:195 templates/who_dashboard.html.py:199
+#: templates/who_dashboard.html:129 templates/who_dashboard.html.py:133
+#: templates/who_dashboard.html:207 templates/who_dashboard.html.py:211
 msgid "3 doses"
 msgstr ""
 
-#: templates/who_dashboard.html:120 templates/who_dashboard.html.py:124
-#: templates/who_dashboard.html:196 templates/who_dashboard.html.py:200
+#: templates/who_dashboard.html:130 templates/who_dashboard.html.py:134
+#: templates/who_dashboard.html:208 templates/who_dashboard.html.py:212
 msgid "4 doses"
 msgstr ""
 
-#: templates/who_dashboard.html:182
+#: templates/who_dashboard.html:194
 msgid "Treatment distribution for females"
 msgstr "Distribution du traitement pour les femmes"
 
-#: templates/who_dashboard.html:258
+#: templates/who_dashboard.html:272
 msgid "Males special cases"
 msgstr "Cas particuliers homme"
 
-#: templates/who_dashboard.html:266 templates/who_dashboard.html.py:329
+#: templates/who_dashboard.html:280 templates/who_dashboard.html.py:345
 msgid "Not available"
 msgstr "Indisponibles"
 
-#: templates/who_dashboard.html:267 templates/who_dashboard.html.py:330
+#: templates/who_dashboard.html:281 templates/who_dashboard.html.py:346
 msgid "Refused treatment"
 msgstr "A refusé le traitement"
 
-#: templates/who_dashboard.html:268 templates/who_dashboard.html.py:331
+#: templates/who_dashboard.html:282 templates/who_dashboard.html.py:347
 msgid "Experienced side effects"
 msgstr "A souffert d'effets secondaires"
 
-#: templates/who_dashboard.html:321
+#: templates/who_dashboard.html:337
 msgid "Females special cases"
 msgstr "Cas particuliers femme"
 
-#: templates/who_dashboard.html:332
+#: templates/who_dashboard.html:348
 msgid "Pregnant"
 msgstr "Enceintes"
 
-#: templates/who_dashboard.html:391
+#: templates/who_dashboard.html:409
 msgid "Stock movements"
 msgstr "Mouvements de stock"
+
+#~ msgid "treated under 6 years old"
+#~ msgstr "traité avant l'age de 6 ans"
 
 # python-format
 #~ msgid ""
