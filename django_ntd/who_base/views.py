@@ -168,12 +168,11 @@ def dashboard(request):
 
         # stock movements
         totals['stocks'] = DrugsStockMovement.objects\
-                                             .filter(for_results=results)\
+                                             .filter(for_results__campaign=campaign)\
                                              .values('drug__name')\
                                              .annotate(
                                                 total_received=Sum('received'),
                                                 total_returned=Sum('returned'))
-
     ctx = locals()
 
     return render_to_response('who_dashboard.html',  ctx,

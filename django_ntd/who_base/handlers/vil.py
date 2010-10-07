@@ -44,6 +44,7 @@ class VilHandler(KeywordHandler):
                + unicode(self.__class__.ARGUMENTS))
 
 
+    # todo: reset other metrics if the report is complete and they try to change the target population
     @registration_required()
     def handle(self, text, keyword, lang_code, campaign=None):
 
@@ -112,8 +113,11 @@ class VilHandler(KeywordHandler):
 
         try:
             data = [int(x) for x in args[4:]]
+            for x in data: 
+                if x < 0:
+                    raise ValueError()
         except ValueError:
-            return self.respond(_(u"The last 3 values must be 3 numbers"))
+            return self.respond(_(u"The last 3 values must be 3 positive numbers"))
 
 
         if data[2] + data[1] > data[0]:
@@ -133,9 +137,11 @@ class VilHandler(KeywordHandler):
         result.report_manager.save()
         result.save()
 
+        # todo: move that in form creation
         # creating the empty drug stock movement
-        for drug in result.drugs_pack.drugs.all():
-            DrugsStockMovement.objects.create(drug=drug, for_results=result)
+        if not result.stock_movements.exists():
+            for drug in result.drugs_pack.drugs.all():
+                DrugsStockMovement.objects.create(drug=drug, for_results=result)
 
         # todo: maybe this is too long...
         self.respond(_(u"The results for the campaign %(campaign)s in "\
