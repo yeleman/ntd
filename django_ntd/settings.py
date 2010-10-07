@@ -76,7 +76,6 @@ INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.sessions",
     "django.contrib.contenttypes",
-    "rapidsms.contrib.djangoadmin",
 
     # the rapidsms contrib apps.
     "rapidsms.contrib.default",
@@ -89,7 +88,6 @@ INSTALLED_APPS = [
     "rapidsms.contrib.auth",
     "direct_sms",
     "logger_ng",
-    "healthmodels",
     "django_simple_config",
     "who_base",
     "mptt",
