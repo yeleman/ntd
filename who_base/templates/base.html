@@ -7,65 +7,82 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="{{ MEDIA_URL }}static/who_base/stylesheets/blueprint/screen.css" type="text/css" media="screen"  />
         <link rel="stylesheet" href="{{ MEDIA_URL }}static/who_base/stylesheets/style.css" type="text/css" media="screen"  />
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
     </head>
     
-    <body>
+    <body id='who'>
         
         {% load i18n %}
         
-        <div id="{% block page-id %}{% endblock %}" class="container"> 
+        <div id="{% block page-id %}{% endblock %}" > 
         
-            <ul id="lang-switcher">
-                {% if 'dashboard' in request.view_name %}
-                    {% if LANGUAGE_CODE == 'fr'%}
-                    <li>
-                        Français
+            <div id='header'>
+            
+                <div id='header-top' />
+                
+                    <h1>{% trans "NTD management" %}</h1>
+            
+                    <ul id="lang-switcher">
+                        {% if 'dashboard' in request.view_name %}
+                            {% if LANGUAGE_CODE == 'fr'%}
+                            <li>
+                                Français
+                            </li>
+                            <li>
+                                <a href="{% url switch-lang %}?lang_code=en">
+                                Anglais
+                                </a>
+                            </li>
+                            {% else %}
+                            <li>
+                                <a href="{% url switch-lang %}?lang_code=fr">
+                                Français
+                                </a>
+                            </li>
+                            <li>
+                                Anglais
+                            </li>
+                            {% endif %}
+                        {% endif %}
+                    </ul>
+                
+                </div>
+            
+                <ul id="menu">
+                    {% if 'dashboard' in request.view_name %}
+                    <li class='selected' >
+                        <span>{% trans "Home" %}</span>
                     </li>
                     <li>
-                        <a href="{% url switch-lang %}?lang_code=en">
-                        Anglais
+                        <a href="{% url campaigns-list %}">
+                        {% trans "Manage campaigns" %}
                         </a>
                     </li>
                     {% else %}
                     <li>
-                        <a href="{% url switch-lang %}?lang_code=fr">
-                        Français
+                        <a href="{% url who-dashboard %}">{% trans "Home" %}</a>
+                    </li>
+                    <li class='selected' >
+                        <span>{% trans "Manage campaigns" %}</span>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a href="{% url rapidsms-dashboard %}">
+                        {% trans "RapidSMS admin" %}
                         </a>
                     </li>
                     <li>
-                        Anglais
+                        <a href="{% url admin:index %}">
+                        {% trans "Django admin" %}
+                        </a>
                     </li>
-                    {% endif %}
-                {% endif %}
-            </ul>
+                </ul>
+            
+            </div>
         
-            <ul id="menu">
-                {% if 'dashboard' in request.view_name %}
-                <li>{% trans "Home" %}</li>
-                <li>
-                    <a href="{% url campaigns-list %}">
-                    {% trans "Manage campaigns" %}
-                    </a>
-                </li>
-                {% else %}
-                <li><a href="{% url who-dashboard %}">{% trans "Home" %}</a></li>
-                <li>{% trans "Manage campaigns" %}</li>
-                {% endif %}
-                <li>
-                    <a href="{% url rapidsms-dashboard %}">
-                    {% trans "RapidSMS admin" %}
-                    </a>
-                </li>
-                <li>
-                    <a href="{% url admin:index %}">
-                    {% trans "Django admin" %}
-                    </a>
-                </li>
-            </ul>
-        
+            <div id='content' class="container">
             {% block content %}{% endblock %}
+            </div>
         </div>
         
     </body>

@@ -8,7 +8,6 @@
 
     <h2>{% trans "Campaigns" %}</h2>
 
-
     {% if campaigns_list %}
     <ul>
         {% for campaign in campaigns_list %}
@@ -18,6 +17,10 @@
     </ul>
     {% endif %}
 
-    <p><a href="{% url create-campaign %}">{% trans "Create a campaign" %}</a></p>
+    <p class="create-button">
+        <a href="{% url create-campaign %}">
+            <span>{% trans "Create a campaign" %}</span>
+        </a>
+    </p>
 
 {% endblock %}

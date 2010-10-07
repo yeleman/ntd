@@ -1,3 +1,153 @@
+/*** GLOBAL ***/
+
+#who thead tr th {
+	background: url(../images/table_header_repeat.jpg) repeat-x;
+}
+
+#who thead th {
+	border-right: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+	color: #DDDDDD;
+	font-family: Tahoma;
+}
+
+
+#who .create-button a {
+float:left; 
+padding-left:27px; 
+height:37px; 
+overflow:hidden;
+background:url("../images/btn-create-left.gif") 0 0 no-repeat; 
+text-decoration:none; 
+font-weight:bold; 
+cursor:pointer;
+}
+
+#who .create-button span  {
+float:left; 
+display:block; 
+width:163px; 
+padding:8px 0 10px 10px; 
+background:url("../images/btn-create-right.gif") -2px 0 no-repeat;
+color:black;
+text-decoration:none;
+}
+
+#who .create-button a:hover {
+background-position:0 -37px;
+}
+
+ul {
+list-style-type:square
+}
+
+
+/*** HEADER ***/
+
+#who #header {
+margin-bottom: 1em;
+}
+
+#who #header-top {
+    background: url(../images/top_bg.jpg) top center repeat-x;
+    height: 92px;
+    color: white;
+    overflow: hidden:
+}
+
+
+#who #header-top h1 {
+    padding:1em;
+    padding-left: 150px;
+    margin-bottom: -50px;
+    color: white;
+    background: url(../images/Logo_OMS_bnw_small.png) no-repeat;
+}
+
+#who #header-top a {
+    color: white;
+}
+
+
+#who #menu	{
+    border-top: 1px solid #7e7e7e;
+	font-family: Tahoma;
+	font-size: 13px;
+    height: 40px;
+	z-index: 500;
+	background: url(../images/nav/repeat.jpg) repeat-x;
+	/* height: 77px; /* set this for having the double sized menu */
+	margin:0;
+}
+
+#who #menu li {
+display: inline;
+padding-right:1em;
+float: left;
+color:  #fff;
+font-weight:bold;
+height: 37px;
+margin-right:1em; 
+}
+
+#who #menu a,
+#who #menu span	{
+	display: block;
+	color: #fff;
+	height:100%;
+	text-decoration: none;
+    font-weight:bold;
+    padding: 8px 0px 0 16px;
+    
+}
+
+#who #menu .selected span,
+#who #menu a:hover 	{
+    background: url(../images/nav/pro_line_1.gif) no-repeat;
+}
+
+#who #menu .selected,
+#who #menu li:hover 	{
+    padding-right:16px;
+    background: url(../images/nav/pro_line_1.gif) center right ;
+}
+
+#who .nav-divider	{
+	background: url(../images/nav/divider.jpg) top no-repeat;
+	height:37px;
+}
+
+/*** DASHBOARD ***/
+
+
+#dashboard #pagination h3, 
+#dashboard #pagination p {
+float: left;
+}
+
+#who #pagination .previous a {
+display: block;
+margin-top: -3px; 
+height:24px;
+width:24px;
+margin-right: 1em;
+text-indent: -999px;
+overflow:hidden;
+background: url(../images/paging_left.gif) no-repeat;
+}
+
+#who #pagination .next a {
+display: block;
+width:24px;
+height:24px;
+text-indent: -999px;
+overflow:hidden;
+margin-top: -3px; 
+margin-left: 1em;
+background: url(../images/paging_right.gif) no-repeat;
+}
+
+
 table td {
     border: 1px solid #DDDDDD;
 }
@@ -24,29 +174,15 @@ display: inline;
 padding-right:1em;
 }
 
-#menu {
-margin-top:1em;
-}
-
-#menu li {
-display: inline;
-padding-right:1em;
-}
-
-#dashboard #pagination h2 {
-display: inline;
-margin: 1em;
-}
 
 #dashboard-header {
 margin: 1em;
 }
 
-#dashboard #title-prefix {
-font-size:1.2em;
-margin-bottom:0;
-}
-
 #dashboard #campaign-date {
 font-style: italic;
 }
+
+/*** MANAGE CAMPAIGN ***/
+
+

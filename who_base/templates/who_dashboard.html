@@ -20,18 +20,26 @@
 
     <div id="dashboard-header" class="span-24 last">
 
-        <p id="title-prefix" class="span-24 last">{% trans "Campaign" %}:</p>
+        <h2 id="title-prefix" class="span-24 last">{% trans "Campaign" %}:</h2>
         
         <div id="pagination" class="span-20" >
         
         {% if page.has_next %}
-                <a class="previous" href="?page={{ page.next_page_number }}">&lt; {% trans "Previous" %}</a>
+         <p  class="previous" >
+            <a href="?page={{ page.next_page_number }}">
+                &lt; {% trans "Previous" %}
+            </a>
+         </p>
         {% endif %}
         
-        <h2 title={{ campaign.code }}>{{ campaign.name }}</h2> 
+        <h3 title={{ campaign.code }}>{{ campaign.name }}</h3> 
          
         {% if page.has_previous %}
-            <a href="?page={{ page.previous_page_number }}">{% trans "Next" %} &gt;</a>
+        <p  class="next" >
+            <a href="?page={{ page.previous_page_number }}">
+                {% trans "Next" %} &gt;
+            </a>
+        </p>
         {% endif %}
         
          </div>
