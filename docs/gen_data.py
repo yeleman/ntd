@@ -199,7 +199,7 @@ def gen_data():
     women15_treated = f1_15 + f2_15 + f3_15 + f4_15
 
     # data check
-    print u"TARGET POP: %d" % target_population
+    #print u"TARGET POP: %d" % target_population
     hom_fem = men5_treated + men15_treated + women5_treated + women15_treated
     cp = cph_abs5 + cph_abs15 + cpf_abs5 + cpf_abs15 + cph_ref5 + cph_ref15 + cpf_ref5 + cpf_ref15 + cpf_enc5 + cpf_enc15
     my_target = hom_fem + cp
@@ -208,10 +208,10 @@ def gen_data():
         #print u"OOOps: %d" % diff
         h1_5 -= diff if diff > 0 else -diff
         men5_treated = h1_5 + h2_5 + h3_5 + h4_5
-    print u"HOM + FEM + CP = %d" % my_target
-    print u"DIFF = %d" % diff
-    print u"HOM + FEM: %d" % hom_fem
-    print u"CP: %d" % cp
+    #print u"HOM + FEM + CP = %d" % my_target
+    #print u"DIFF = %d" % diff
+    #print u"HOM + FEM: %d" % hom_fem
+    #print u"CP: %d" % cp
 
 
     # effets secondaires
@@ -311,16 +311,16 @@ def genpdf(name, code, sample, parent=u""):
 
         # The y coordinates for each line of fields on the form
         lines_y = {
-            1: 12.90 * cm,
-            2: 12.35 * cm,
-            3: 11.7 * cm,
-            4: 11.0 * cm,
-            5: 6.05 * cm,
-            6: 5.05 * cm,
-            7: 4.05 * cm,
-            8: 3.05 * cm,
-            9: 9.7 * cm,
-            10: 8.6 * cm,
+            1: 13.10 * cm,
+            2: 12.20 * cm,
+            3: 11.3 * cm,
+            4: 10.5 * cm,
+            5: 5.3 * cm,
+            6: 4.7 * cm,
+            7: 4.0 * cm,
+            8: 3.35 * cm,
+            9: 9.15 * cm,
+            10: 7.7 * cm,
             }
         columns_x = {
             1: 8.0 * cm,
@@ -356,10 +356,10 @@ def genpdf(name, code, sample, parent=u""):
     report_data(3, [sample['h3_5'], sample['h3_15'], sample['f3_5'], sample['f3_15']])
     report_data(4, [sample['h4_5'], sample['h4_15'], sample['f4_5'], sample['f4_15']])
 
-    report_data(5, ['', '', sample['cpf_enc5'], sample['cpf_enc15']])
-    report_data(6, [sample['cph_abs5'], sample['cph_abs15'], sample['cpf_abs5'], sample['cpf_abs15']])
-    report_data(7, [sample['cph_ref5'], sample['cph_ref15'], sample['cpf_ref5'], sample['cpf_ref15']])
-    report_data(8, [sample['cph_eff5'], sample['cph_eff15'], sample['cpf_eff5'], sample['cpf_eff15']])
+    report_data(5, [sample['cph_abs5'], sample['cph_abs15'], sample['cpf_abs5'], sample['cpf_abs15']])
+    report_data(6, [sample['cph_ref5'], sample['cph_ref15'], sample['cpf_ref5'], sample['cpf_ref15']])
+    report_data(7, [sample['cph_eff5'], sample['cph_eff15'], sample['cpf_eff5'], sample['cpf_eff15']])
+    report_data(8, ['', '', sample['cpf_enc5'], sample['cpf_enc15']])
 
     report_data(9, [sample['total_population'], sample['target_population'], sample['under6_treated']])
     report_data(10, [sample['st_alb_rec'], sample['st_alb_rend'], sample['st_mec_rec'], sample['st_mec_rend']])
@@ -495,7 +495,7 @@ def main():
         print sms
 
     # generate a PDF from the sample data
-    #genpdf("New York City", "nyc", sample, parent="NY")
+    genpdf("New York City", "nyc", sample, parent="NY")
 
 if __name__ == '__main__':
     main()
