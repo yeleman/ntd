@@ -33,15 +33,15 @@ def gen_data():
     EFF15_PERCENTAGE = (0, 20)
 
     # percentages 
-    MECT1_U5_PERCENTAGE = (30, 36)
-    MECT2_U5_PERCENTAGE = (30, 36)
-    MECT3_U5_PERCENTAGE = (30, 36)
-    MECT4_U5_PERCENTAGE = (30, 36)
+    MECT1_U5_PERCENTAGE = (20, 25)
+    MECT2_U5_PERCENTAGE = (20, 25)
+    MECT3_U5_PERCENTAGE = (20, 25)
+    MECT4_U5_PERCENTAGE = (20, 25)
 
     MECT1_15_PERCENTAGE = (0,2)
-    MECT2_15_PERCENTAGE = (0,10)
-    MECT3_15_PERCENTAGE = (10, 20)
-    MECT4_15_PERCENTAGE = (70, 90)
+    MECT2_15_PERCENTAGE = (0,5)
+    MECT3_15_PERCENTAGE = (10, 15)
+    MECT4_15_PERCENTAGE = (70, 75)
 
     MED_OVERHEAD_PERCENTAGE = (10, 30)
     MED_LOST_PERCENTAGE = (1, 30)
@@ -70,7 +70,8 @@ def gen_data():
     women_5 = (women * random.randint(*FIVE15_PERCENTAGE)) / 100
     women_15 = women - women_5
 
-    st_hom_fem = men + women
+    men_reg = (men * random.randint(*FIVE15_PERCENTAGE)) / 100
+    men_cp = men - men_reg
 
     # setup some containers to help pop people out
     men5_remain = men_5
@@ -84,29 +85,29 @@ def gen_data():
 
     # pregnant women
     cpf_enc5 = (women5_remain * random.randint(*PREG5_PERCENTAGE)) /100
-    cpf_enc15 = (women5_remain * random.randint(*PREG15_PERCENTAGE)) /100
+    cpf_enc15 = (women15_remain * random.randint(*PREG15_PERCENTAGE)) /100
     women5_remain -= cpf_enc5
     women15_remain -= cpf_enc15
 
     # person not present
     cph_abs5 = (men5_remain * random.randint(*ABS5_PERCENTAGE)) /100
-    cph_abs15 = (men5_remain * random.randint(*ABS15_PERCENTAGE)) /100
+    cph_abs15 = (men15_remain * random.randint(*ABS15_PERCENTAGE)) /100
     men5_remain -= cph_abs5
     men15_remain -= cph_abs15
 
     cpf_abs5 = (women5_remain * random.randint(*ABS5_PERCENTAGE)) /100
-    cpf_abs15 = (women5_remain * random.randint(*ABS15_PERCENTAGE)) /100
+    cpf_abs15 = (women15_remain * random.randint(*ABS15_PERCENTAGE)) /100
     women5_remain -= cpf_abs5
     women15_remain -= cpf_abs15
 
     # person refusing medecine
     cph_ref5 = (men5_remain * random.randint(*REF5_PERCENTAGE)) /100
-    cph_ref15 = (men5_remain * random.randint(*REF15_PERCENTAGE)) /100
+    cph_ref15 = (men15_remain * random.randint(*REF15_PERCENTAGE)) /100
     men5_remain -= cph_ref5
     men15_remain -= cph_ref15
 
     cpf_ref5 = (women5_remain * random.randint(*REF5_PERCENTAGE)) /100
-    cpf_ref15 = (women5_remain * random.randint(*REF15_PERCENTAGE)) /100
+    cpf_ref15 = (women15_remain * random.randint(*REF15_PERCENTAGE)) /100
     women5_remain -= cpf_ref5
     women15_remain -= cpf_ref15
 
@@ -137,6 +138,7 @@ def gen_data():
     women5_remain -= f2_5
     f2_15 = (women15_remain * random.randint(*MECT2_15_PERCENTAGE)) /100
     women15_remain -= f2_15
+
 
     # 3 mectizan - kids between 141 - 158cm
     # should target mostly 5-7yo.
@@ -197,7 +199,7 @@ def gen_data():
     women15_treated = f1_15 + f2_15 + f3_15 + f4_15
 
     # data check
-    #print u"TARGET POP: %d" % target_population
+    print u"TARGET POP: %d" % target_population
     hom_fem = men5_treated + men15_treated + women5_treated + women15_treated
     cp = cph_abs5 + cph_abs15 + cpf_abs5 + cpf_abs15 + cph_ref5 + cph_ref15 + cpf_ref5 + cpf_ref15 + cpf_enc5 + cpf_enc15
     my_target = hom_fem + cp
@@ -206,11 +208,11 @@ def gen_data():
         #print u"OOOps: %d" % diff
         h1_5 -= diff if diff > 0 else -diff
         men5_treated = h1_5 + h2_5 + h3_5 + h4_5
-    '''print u"HOM + FEM + CP = %d" % my_target
+    print u"HOM + FEM + CP = %d" % my_target
     print u"DIFF = %d" % diff
     print u"HOM + FEM: %d" % hom_fem
     print u"CP: %d" % cp
-    '''
+
 
     # effets secondaires
     cph_eff5 = (men5_treated * random.randint(*EFF5_PERCENTAGE)) /100
