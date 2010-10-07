@@ -25,8 +25,8 @@ class MedHandler(KeywordHandler):
 
     keyword = "med"
 
-    aliases = (('fr', ("med", )),
-               ('en', ("med", "drug")),)
+    aliases = (('fr', ("med", "stock", "stocks")),
+               ('en', ("med", "drug", "stock", "stocks")),)
 
 
     def help(self, keyword, lang_code):
@@ -46,21 +46,18 @@ class MedHandler(KeywordHandler):
         # make update the manager date so
         report_manager.save()
 
-        report_was_completed = report_manager.is_completed()
-
         results = report_manager.results
 
         drugs_args_count = results.drugs_pack.drugs.count() * 2
 
         require_args(args, min=drugs_args_count, max=drugs_args_count)
-
         try:
             args = [int(x) for x in args]
         except ValueError:
             return self.respond(_(u"All %(count)s values must be numbers") % {
                                   'count': drugs_args_count})
 
-        for movement in results.stock_movements.all():
+        for movement in results.drugs_pack.drugs.all():
             movement.received = args.pop(0)
             movement.returned = args.pop(0)
             if movement.returned > movement.received:
@@ -85,8 +82,9 @@ class MedHandler(KeywordHandler):
                    u"%(location)s are saved.") % {
                    'campaign': results.campaign, 'location': results.area}
 
-        if not report_was_completed and report_manager.is_completed():
-            msg += _(u" All reports for this location are completed!")
+        if report_manager.is_completed():
+            msg += _(u" All reports for this location are completed! Receipt: "\
+                     u"%(receipt)s") % {'receipt': results.receipt}
         else:
             progress = results.report_manager.progress
             msg += _(u" You have sent %(completed)s over %(to_complete)s "\

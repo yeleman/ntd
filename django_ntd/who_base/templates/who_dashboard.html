@@ -12,8 +12,10 @@
 
     <h2>{% trans "No campaign yet" %}</h2>
     
-    <p>
-        <a href="{% url create-campaign %}">{% trans "Add a campaign" %}</a>
+    <p class="create-button">
+        <a href="{% url create-campaign %}">
+            <span>{% trans "Create a campaign" %}</span>
+        </a>
     </p>
     
 {% else %}

@@ -1,5 +1,9 @@
 /*** GLOBAL ***/
 
+a {
+color: grey;
+}
+
 #who thead tr th {
 	background: url(../images/table_header_repeat.jpg) repeat-x;
 }

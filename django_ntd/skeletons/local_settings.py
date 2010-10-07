@@ -7,8 +7,6 @@ import os
 settings.DEBUG = settings.TEMPLATE_DEBUG = True
 settings.LOG_FILE    = "/tmp/rapidsms.log"
 
-settings.INSTALLED_APPS += ['django_extensions', 'template_repl']
-
 settings.DATABASES.update({
     "default": {
         "ENGINE": "django.db.backends.sqlite3",

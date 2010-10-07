@@ -11,7 +11,7 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 # -------------------------------------------------------------------- #
 
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'fr'
 USE_L10N = True
 FORMAT_MODULE_PATH = 'formats'
 TIME_ZONE = None
@@ -76,7 +76,6 @@ INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.sessions",
     "django.contrib.contenttypes",
-    "rapidsms.contrib.djangoadmin",
 
     # the rapidsms contrib apps.
     "rapidsms.contrib.default",
@@ -89,7 +88,6 @@ INSTALLED_APPS = [
     "rapidsms.contrib.auth",
     "direct_sms",
     "logger_ng",
-    "healthmodels",
     "django_simple_config",
     "who_base",
     "mptt",
