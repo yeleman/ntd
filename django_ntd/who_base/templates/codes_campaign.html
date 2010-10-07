@@ -21,21 +21,28 @@ table td {
 
     <table>
 
-    {% for cscom in locations %}
+    {% for location in locations %}
 
-        {% ifchanged %}
-        <tr>
-            <td colspan="4"><strong>{{ cscom }}</strong></td>
-        </tr>
-        {% endifchanged %}
+                {% ifchanged %}
+                <tr>
+                    <td colspan="4"><strong>{{ location.as_data_source.data_collection }}</strong></td>
+                </tr>
+                {% endifchanged %}
 
-        {% for village in cscom.as_data_collector.all %}
-        <tr>
-            <td>{{ village.data_source.code }}</td>
-            <td>{{ village.data_source }}</td>
-            <td>{{ village.data_source.parent }}</td>
-        </tr>
-        {%endfor %}
+        {% for result in results %}
+
+            {% if result.area == location and not result.disabled %}
+
+
+
+                <tr>
+                    <td>{{ location.code }}</td>
+                    <td>{{ location }}</td>
+                    <td>{{ location.as_data_source.data_collection.parent }}</td>
+                </tr>
+
+            {% endif %}
+        {% endfor %}    
 
     {%endfor %}
 

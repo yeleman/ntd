@@ -249,7 +249,9 @@ def switch_lang(request):
 @login_required
 def codes_campaign(request, pk):
 
-    locations = Area.objects.filter(kind=AreaType.objects.get(slug='cscom'))
+    campaign = Campaign.objects.get(pk=int(pk))
+    results = Results.objects.filter(campaign=campaign)
+    locations = Area.objects.filter(as_data_source__isnull=False)
 
     ctx = locals()
     return render_to_response('codes_campaign.html',  ctx,
