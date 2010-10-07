@@ -63,7 +63,7 @@ class WscHandler(KeywordHandler):
             return self.respond(_(u"All 8 values must be positive numbers"))
 
         total_wsc = sum(args)
-
+        '''
         if report_manager.status.wmen\
             and report_manager.status.men\
             and report_manager.status.msc:
@@ -83,7 +83,7 @@ class WscHandler(KeywordHandler):
                                   u" the target population (%(target_pop)s)") % {
                                   'total': total_wsc,
                                   'target_pop': results.target_pop})
-
+        '''
         results.child_females_not_available = args[0]
         results.adult_females_not_available = args[1]
         results.child_females_refusing = args[2]

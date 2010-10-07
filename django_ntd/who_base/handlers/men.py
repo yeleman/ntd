@@ -66,6 +66,7 @@ class MenHandler(KeywordHandler):
 
         total_men = sum(args)
 
+        '''
         if report_manager.status.wmen\
             and report_manager.status.msc\
             and report_manager.status.wsc:
@@ -85,7 +86,8 @@ class MenHandler(KeywordHandler):
                                   u" the target population (%(target_pop)s)") % {
                                   'total': total_men, 
                                   'target_pop': results.target_pop})
-
+        '''
+        
         results.one_dose_child_males = args[0]
         results.one_dose_adult_males = args[1]
         results.two_doses_child_males = args[2]

@@ -64,6 +64,7 @@ class MscHandler(KeywordHandler):
 
         total_msc = sum(args)
 
+        '''
         if report_manager.status.wmen\
             and report_manager.status.men\
             and report_manager.status.wsc:
@@ -84,6 +85,7 @@ class MscHandler(KeywordHandler):
                                   'total': total_msc, 
                                   'target_pop': results.target_pop})
 
+        '''
         results.child_males_not_available = args[0]
         results.adult_males_not_available = args[1]
         results.child_males_refusing = args[2]
