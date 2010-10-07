@@ -15,12 +15,12 @@ from report_parts.models import Report
 
 from ..utils import check_against_last_report
 
-#todo: do a customRoleHandler that you can inherit from, that register the 
+#todo: do a customRoleHandler that you can inherit from, that register the
 # role you want
 
 class WscHandler(KeywordHandler):
     u"""
-        EXAMPLE SMS FORMAT: spm 32 56 76 87 2 5 
+        EXAMPLE SMS FORMAT: spm 32 56 76 87 2 5
         32: 5-15 years old males not available
         56: 15+ years old males not available
         76: 5-15 years old malesr refusing treatment
@@ -30,8 +30,8 @@ class WscHandler(KeywordHandler):
     """
 
     keyword = "wsc"
-    
-    aliases = (('fr', ("cpf",)), 
+
+    aliases = (('fr', ("cpf",)),
                ('en', ("wsc",)),)
 
 
@@ -41,21 +41,21 @@ class WscHandler(KeywordHandler):
 
     @registration_required()
     def handle(self, text, keyword, lang_code):
-    
+
         # todo: factorize this
         args = [self.flatten_string(arg) for arg in text.split()]
         require_args(args, min=8, max=8)
-        
+
         #todo: rename the report model in report manager
         report_manager = check_against_last_report(self.msg.contact)
-        
-        # make update the manager date so 
+
+        # make update the manager date so
         report_manager.save()
-        
+
         report_was_completed = report_manager.is_completed()
-        
+
         results = report_manager.results
-        
+
         try:
             args = [int(x) for x in args]
         except ValueError:
@@ -67,20 +67,20 @@ class WscHandler(KeywordHandler):
             and report_manager.status.men\
             and report_manager.status.msc:
             tot = total_wsc + results.total_treated_females +\
-                  results.total_treated_males + results.total_untreated_males             
+                  results.total_treated_males + results.total_untreated_males
 
             if results.target_pop != tot:
                 return self.respond(_(u"The sum of all the results for males and"\
                                       u" females (%(total)s) must be equal to "\
                                       u" the target population (%(target_pop)s)") % {
-                                      'total': tot, 
-                                      'target_pop': results.target_pop})      
+                                      'total': tot,
+                                      'target_pop': results.target_pop})
 
         if results.target_pop < total_wsc:
             return self.respond(_(u"The sum of all the results for females special"\
                                   u" cases (%(total)s) can not be bigger than"\
                                   u" the target population (%(target_pop)s)") % {
-                                  'total': total_wsc, 
+                                  'total': total_wsc,
                                   'target_pop': results.target_pop})
 
         results.child_females_not_available = args[0]
@@ -91,27 +91,27 @@ class WscHandler(KeywordHandler):
         results.adult_females_side_effects = args[5]
         results.pregnant_child_females = args[6]
         results.pregnant_adult_females = args[7]
-        
+
         results.report_manager.status.wsc = True
         results.report_manager.save()
         results.save()
-        
+
         # todo: prefix successeful messages by 'OK'
         msg = _(u"The results for the campaign %(campaign)s in "\
                    u"%(location)s related to females special cases are saved.") % {
                    'campaign': results.campaign, 'location': results.area}
-        
+
         # refactor this
         if not report_was_completed and report_manager.is_completed():
-            msg += _(u" All reports for this location are completed!") 
+            msg += _(u" All reports for this location are completed!")
         else:
             progress = results.report_manager.progress
             msg += _(u" You have sent %(completed)s over %(to_complete)s "\
                      u"reports for this location.") % {'completed': progress[0],
-                                                     'to_complete': progress[1]} 
-            
+                                                     'to_complete': progress[1]}
+
         return self.respond(msg)
-        
 
 
-            
+
+
