@@ -60,11 +60,6 @@ INSTALLED_APPS = [
     "djtables",
     "rapidsms",
 
-    # not mandatory but handy, you may grab it from
-    # http://github.com/adammck/djappsettings
-    # "djappsettings",
-    # overwise, you'll have to copy app settings.py vars into this file
-
     # common dependencies (which don't clutter up the ui).
     "rapidsms.contrib.ajax",
 
@@ -137,12 +132,11 @@ DEBUG = TEMPLATE_DEBUG = False
 SITE_ID = 1
 
 
-# the default log settings are very noisy.
 LOG_LEVEL   = "DEBUG"
 LOG_FILE    = "/var/log/rapidsms/rapidsms.log"
 LOG_FORMAT  = "[%(name)s]: %(message)s"
-LOG_SIZE    = 8192 # 8192 bytes = 64 kb
-LOG_BACKUPS = 256 # number of logs to keep
+LOG_SIZE    = 1048576 # 1 Mb
+LOG_BACKUPS = 4 # number of logs to keep
 
 
 
