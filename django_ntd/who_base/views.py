@@ -18,7 +18,7 @@ from .forms import CampaignForm
 
 
 @login_required
-def dashboard(request):
+def campaigns_results(request):
 
     paginator = Paginator(Campaign.objects.order_by('-start_date'), 1)
 
@@ -243,7 +243,7 @@ def switch_lang(request):
         lang_code = settings.LANGUAGE_CODE
     request.session['django_language'] = lang_code
 
-    return redirect('who-dashboard')
+    return redirect('campaigns-results')
 
 
 @login_required

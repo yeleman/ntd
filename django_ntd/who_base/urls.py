@@ -11,7 +11,7 @@ from .models import Campaign
 
 urlpatterns = patterns("",
 
-    url(r'campaigns/$',  object_list, {'queryset': Campaign.objects.all(),
+    url(r'campaigns/manage/$', object_list, {'queryset': Campaign.objects.all(),
                                        'template_name': 'campaigns-list.html', 
                                        'template_object_name': 'campaigns'}, 
         name="campaigns-list"),
@@ -24,9 +24,12 @@ urlpatterns = patterns("",
     url(r'campaign/codes/(?P<pk>\d+)/$',  "who_base.views.codes_campaign", 
         name="codes-campaign"),
     
-    url(r'switch-language/$',  "who_base.views.switch_lang", name='switch-lang'),    
+    url(r'switch-language/$',  "who_base.views.switch_lang", name='switch-lang'), 
     
-    url(r'dashboard/$',  "who_base.views.dashboard", name='who-dashboard'),
+    url(r'campaigns/results/$',  
+       "who_base.views.campaigns_results", name='campaigns-results'),   
+    
+    url(r'dashboard/$',  "who_base.views.campaigns_results", name='who-dashboard'),
     url(r'$',  redirect_to, { 'url': "/dashboard/" }),
 )
 

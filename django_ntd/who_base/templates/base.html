@@ -22,6 +22,10 @@
             
                 <div id='header-top' />
                 
+                    <p class='logout-link'>
+                        <a href="{% url ntd-logout %}">{% trans "Logout "%}</a>
+                     </p>
+                
                     <h1>{% trans "NTD management" %}</h1>
             
                     <ul id="lang-switcher">
@@ -51,23 +55,23 @@
                 </div>
             
                 <ul id="menu">
-                    {% if 'dashboard' in request.view_name %}
-                    <li class='selected' >
-                        <span>{% trans "Home" %}</span>
+                
+                    
+                    <li {% if request.view_name == 'who-dashboard' %}class='selected'{% endif %} >
+                        <a href="{% url who-dashboard %}">{% trans "Home" %}</a>
                     </li>
-                    <li>
+                    <li {% if request.view_name == 'campaigns-stats' %}class='selected'{% endif %} >
+                        <a href="{% url campaigns-results %}">
+                        {% trans "Campaigns results" %}
+                        </a>
+                    </li>
+                    <li {% if request.view_name == 'campaigns-list' %}class='selected'{% endif %} >
                         <a href="{% url campaigns-list %}">
                         {% trans "Manage campaigns" %}
                         </a>
                     </li>
-                    {% else %}
-                    <li>
-                        <a href="{% url who-dashboard %}">{% trans "Home" %}</a>
-                    </li>
-                    <li class='selected' >
-                        <span>{% trans "Manage campaigns" %}</span>
-                    </li>
-                    {% endif %}
+
+                    {% if user.is_superuser %}
                     <li>
                         <a href="{% url rapidsms-dashboard %}">
                         {% trans "RapidSMS admin" %}
@@ -78,6 +82,8 @@
                         {% trans "Django admin" %}
                         </a>
                     </li>
+                    {% endif %}
+                
                 </ul>
             
             </div>

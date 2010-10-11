@@ -5,6 +5,7 @@
 from django.conf.urls.defaults import *
 from django.conf import settings
 from django.contrib import admin
+from django.contrib.auth.views import login , logout_then_login
 
 admin.autodiscover()
 
@@ -51,8 +52,13 @@ if settings.DEBUG:
 
 
 urlpatterns += patterns("",
-                        url(r'^', include('who_base.urls'),
-                                  name='who-dashboard'),)
+    
+    url(r'^login/$', login, name='ntd-login', 
+        kwargs={"template_name" : 'login.html'}),
+    url(r'^logout/$', logout_then_login, name='ntd-logout'),
+    url(r'^', include('who_base.urls'), name='who-dashboard'),    
+    
+)
 
 
 

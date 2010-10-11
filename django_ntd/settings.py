@@ -104,7 +104,7 @@ INSTALLED_APPS = [
 # todo: make that translatable
 RAPIDSMS_TABS = [
 
-    ("who_base.views.dashboard", "Retour"),
+    ("who_base.views.campaigns_results", "Retour"),
     ("logger_ng.views.index", "Journal des messages"),
     ("rapidsms.contrib.auth.views.registration", "Inscription des contacts"),
     ("rapidsms.contrib.messaging.views.messaging", "Envoyer des messages"),
@@ -162,6 +162,10 @@ MIDDLEWARE_CLASSES = (
     'who_base.middleware.ViewNameMiddleware',
 )
 
+TEMPLATE_DIRS = (
+    os.path.join(PROJECT_DIR, 'templates'),
+)
+
 # -------------------------------------------------------------------- #
 #                           HERE BE DRAGONS!                           #
 #        these settings are pure hackery, and will go away soon        #
@@ -182,13 +186,9 @@ TEST_EXCLUDED_APPS = [
 
 ROOT_URLCONF = "urls"
 
-# rapidsms provide a custom login page
-# you can override it by setting this variable and matching patters in urls.py
-LOGIN_URL = "/accounts/login/"
-
-# after login (which is handled by django.contrib.auth), redirect to the
-# dashboard rather than 'accounts/profile' (the default).
+LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URL = "/"
+
 
 # since we might hit the database from any thread during testing, the
 # in-memory sqlite database isn't sufficient. it spawns a separate
