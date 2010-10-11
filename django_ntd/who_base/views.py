@@ -2,7 +2,9 @@
 # encoding=utf-8
 # vim: ai ts=4 sts=4 et sw=4
 
+from datetime import datetime
 
+from django.http import HttpResponse
 from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
@@ -15,6 +17,7 @@ from .models import Campaign, Results, DrugsStockMovement
 from simple_locations.models import Area, AreaType
 
 from .forms import CampaignForm
+from utils import campaign_to_excel
 
 
 @login_required
@@ -256,3 +259,17 @@ def codes_campaign(request, pk):
     ctx = locals()
     return render_to_response('codes_campaign.html',  ctx,
                               context_instance=RequestContext(request))
+
+@login_required
+def xls_campaign(request, pk):
+
+    campaign = Campaign.objects.get(pk=int(pk))
+
+    filename = 'campaign%(id)d-%(date)s.xls' % {'id': campaign.id, \
+                                'date': datetime.today().strftime('%Y-%b-%d')}
+
+    excel = campaign_to_excel(campaign)
+
+    response = HttpResponse(excel, mimetype="application/vnd.ms-excel")
+    response['Content-Disposition'] = 'attachment;filename="%s"' % filename
+    return response

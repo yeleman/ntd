@@ -8,7 +8,9 @@
 
 import string
 import datetime
+from StringIO import StringIO
 
+from xlwt import *
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
 
@@ -17,6 +19,7 @@ from rapidsms.contrib.handlers.exceptions import ExitHandle
 from simple_locations.models import Area
 
 from report_parts.models import Report
+from models import Results
 
 
 def check_location(location_code, location_type=None):
@@ -87,3 +90,47 @@ def check_against_last_report(contact):
                            u"population report with 'VIL' first."))
                            
     return report_manager
+
+
+def campaign_to_excel(campaign):
+    ''' returns an excel-file buffer containing results for a campaign '''
+
+    results = Results.completed.filter(campaign=campaign)
+
+    timesb = Font()
+    timesb.name = 'Times New Roman'
+    timesb.bold = True
+
+    header = XFStyle()
+    header.font = timesb
+
+
+    wb = Workbook(encoding='utf-8')
+    ws0 = wb.add_sheet('FILARIOSE')
+
+    ws0.write(0, 0, 'Village', header)
+    ws0.col(0).width = 0x0d00 * 4
+
+    rownum = 1
+    for rownum, result in enumerate(results):
+        rownum += 1
+        borders = Borders()
+        borders.left = 1
+        borders.right = 1
+        borders.top = 1
+        borders.bottom = 1
+
+        style = XFStyle()
+        style.borders = borders
+
+        data = [result.area.as_data_source.data_collection.__unicode__(), \
+                result.area.as_data_source.data_collection.code, \
+                result.pregnant_child_females]
+
+        for i, value in enumerate(data):
+            ws0.write(rownum, i, value, style)
+
+    buf = StringIO()
+    wb.save(buf)
+
+    return buf.getvalue()

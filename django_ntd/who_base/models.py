@@ -83,6 +83,11 @@ class DrugsPack(models.Model):
         return u"[%(code)s] %(drugs)s" % {'code': self.code, 'drugs': drugs}
 
 
+class CompletedResultsManager(models.Manager):
+
+    def get_query_set(self):
+        return super(CompletedResultsManager, self).get_query_set().filter(report_manager__completed__isnull=False)
+
 # TODO: we may want to use the EAV for this eventually
 class Results(models.Model):
 
@@ -190,6 +195,9 @@ class Results(models.Model):
     report_manager = models.OneToOneField(Report, related_name='results',
                                           editable=False)
     disabled = models.BooleanField(default=False, verbose_name=__(u'disabled'))
+
+    objects = models.Manager()
+    completed = CompletedResultsManager()
 
 
     @property
