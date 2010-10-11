@@ -93,7 +93,9 @@ INSTALLED_APPS = [
     "mptt",
     "simple_locations",
     "report_parts",
-    "eav"
+    "eav",
+    "uni_form",
+    "rapidsms_xforms"
 ]
 
 

@@ -30,6 +30,8 @@ urlpatterns = patterns('',
         'rapidsms.views.dashboard',
         name='rapidsms-dashboard'),
 
+    (r'^', include('rapidsms_xforms.urls')),
+
 )
 
 
