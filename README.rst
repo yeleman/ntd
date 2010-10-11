@@ -46,6 +46,10 @@ It is based on rapidsms (0.9.x) and depends on the following packages:
 
     pip install -e git+git://github.com/mvpdev/django-eav.git#egg=django-eav
 
+Optionnaly, if you wish to use an modem:
+
+* install PyGSM: http://github.com/rapidsms/pygsm
+* and it's dependancies: pip install pytz pyserial
 
 Setup
 ======
