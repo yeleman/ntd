@@ -42,7 +42,7 @@ background-position:0 -37px;
 }
 
 #who ul {
-list-style-type:square
+list-style-type:square;
 }
 
 #who .delete a {
@@ -126,7 +126,7 @@ margin-right:1em;
     
 }
 
-#who #menu .selected span,
+#who #menu .selected a,
 #who #menu a:hover 	{
     background: url(../images/nav/pro_line_1.gif) no-repeat;
 }

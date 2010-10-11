@@ -29,7 +29,7 @@ urlpatterns = patterns("",
     url(r'campaigns/results/$',  
        "who_base.views.campaigns_results", name='campaigns-results'),   
     
-    url(r'dashboard/$',  "who_base.views.campaigns_results", name='who-dashboard'),
+    url(r'dashboard/$',  "who_base.views.dashboard", name='who-dashboard'),
     url(r'$',  redirect_to, { 'url': "/dashboard/" }),
 )
 

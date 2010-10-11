@@ -18,6 +18,48 @@ from .forms import CampaignForm
 
 
 @login_required
+def dashboard(request):
+
+    paginator = Paginator(Campaign.objects.order_by('-start_date'), 1)
+
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    campaign = None
+    try:
+        page = paginator.page(page)
+        campaign = page.object_list[0]
+    except (EmptyPage, InvalidPage, IndexError):
+        page = paginator.page(paginator.num_pages)
+        if page.object_list:
+            campaign = page.object_list[0]
+
+    if campaign:
+        results = Results.objects.filter(campaign=campaign)\
+                .select_related('area__as_data_source__data_collection__parent',
+                                'report_manager')
+    
+        stats = {}
+        for result in results:
+            zone = result.area.as_data_source.data_collection.parent
+            s = stats.setdefault(zone, {})
+            s['total'] = s.get('total', 0) + 1
+            if result.report_manager.completed:
+                s['completed'] = s.get('total', 0) + 1
+            else:
+                if result.report_manager.status.vil:
+                    s['in_progess'] = s.get('total', 0) + 1
+        
+        
+    ctx = locals()
+
+    return render_to_response('who_dashboard.html',  ctx,
+                              context_instance=RequestContext(request))  
+
+
+@login_required
 def campaigns_results(request):
 
     paginator = Paginator(Campaign.objects.order_by('-start_date'), 1)
@@ -175,7 +217,7 @@ def campaigns_results(request):
                                                 total_returned=Sum('returned'))
     ctx = locals()
 
-    return render_to_response('who_dashboard.html',  ctx,
+    return render_to_response('campaigns_results.html',  ctx,
                               context_instance=RequestContext(request))
 
 

@@ -7,6 +7,7 @@
 
 {% block content %}
 
+{% load custom_tags %}
 
 {% if not campaign %}
 
@@ -19,8 +20,6 @@
     </p>
     
 {% else %}
-
-    <!-- todo: improve headers : factorize common fields and shorten -->
 
     <div id="dashboard-header" class="span-24 last">
 
@@ -36,7 +35,11 @@
          </p>
         {% endif %}
         
-        <h3 title={{ campaign.code }}>{{ campaign.name }}</h3> 
+        <h3 title={{ campaign.code }}>
+            <a href="{% url campaigns-results %}"?page={{ page }}>
+            {{ campaign.name }}
+            </a>
+        </h3> 
          
         {% if page.has_previous %}
         <p  class="next" >
@@ -54,416 +57,45 @@
     
     </div>
     
-    
     <div id="data" class="span-24 last">
     
     <table>
-        <caption>{% trans "Population" %}</caption>
+        <caption>{% trans "Progress" %}</caption>
         <thead>
         <tr>
             <th>{% trans "Zone" %}</th>
-            <th>{% trans "Reported from" %}</th>
-            <th>{% trans "Target area" %}</th>
-            <th>{% trans "Drugs" %}</th>
-            <th>{% trans "Distributor" %}</th>
-            <th>{% trans "Treatment started on" %}</th>
-            <th>{% trans "Treatment ended on" %}</th>
-            <th>{% trans "Total population" %}</th>
-            <th>{% trans "Target population" %}</th>
-            <th>{% trans "Population under 6 months" %}</th>
+            <th>{% trans "Target areas" %}</th>
+            <th>{% trans "Areas with a completed reported" %}</th>
+            <th>{% trans "Areas with reports in progress" %}</th>
         </tr>
         </thead>
         
         <tbody>
                 
-        {% for r in results %}
+        {% for loc, stats in stats.iteritems %}
             <tr>
-                {% with r.area.as_data_source.data_collection as d_col %}
-                <td title='{{ d_col.parent.code }}' >{{ d_col.parent.name }}</td>
-                <td title='{{ d_col.code }}'>{{ d_col.name }}</td>
-                {% endwith %}
-                <td title='{{ r.area.code }}'>{{ r.area.name }}</td>
-               <td class="drugs">
-                    <ul title='{{ r.drugs_pack.code }}'>
-                    {% for drug in r.drugs_pack.drugs.all %}
-                        <li>{{ drug }}</li>
-                    {% endfor %}
-                    </ul>
+                <td>{{ loc }}</td>
+                <td>{{ stats.total }}</td>
+                {% with stats.completed|default:0 as completed %}
+                <td>
+                    {{ completed }}
+                    ({% pourcent completed stats.total %} %)
                 </td>
-                <td>{{ r.distributor|default_if_none:"" }}</td>
-                <td>{{ r.treatment_start_date|default_if_none:""|date:"SHORT_DATE_FORMAT" }}</td>
-                <td>{{ r.treatment_end_date|default_if_none:""|date:"SHORT_DATE_FORMAT" }}</td>
-                <td>{{ r.total_pop|default_if_none:"" }}</td>
-                <td>{{ r.target_pop|default_if_none:"" }}</td>
-                <td>{{ r.treated_under_six|default_if_none:"" }}</td>
+                {% endwith %}
+                {% with stats.in_progess|default:0 as in_progess %}
+                <td>
+                    {{ in_progess }}
+                    ({% pourcent in_progess stats.total %} %)
+                </td>
+                {% endwith %}
             </tr>
     
         {% endfor %}
         
         </tbody>
-        
-        {% if totals.total_pop %}
-        <tfoot>
- 
-            <tr>
-                <td class='total' colspan="7" >{% trans "Total" %}</td>
-                <td>{{ totals.total_pop|default_if_none:'' }}</td>
-                <td>{{ totals.target_pop|default_if_none:'' }}</td>
-                <td>{{ totals.treated_under_six|default_if_none:'' }}</td>
-            </tr>
-        </tfoot>
-        {% endif %}
     
     </table>
-    
-    <table>
-        <caption>{% trans "Treatment distribution for males" %}</caption>
-        <thead>
-        <tr>
-            <th rowspan="2" >{% trans "Zone" %}</th>
-            <th rowspan="2" >{% trans "Reported from" %}</th>
-            <th rowspan="2" >{% trans "Target area" %}</th>
-            <th rowspan="2" >{% trans "Drugs" %}</th>
-            <th colspan="4" >{% trans "5-15 years old" %}</th>
-            <th colspan="4" >{% trans "15+ years old" %}</th>
-        </tr>
-        <tr>
-            <th>{% trans "1 dose" %}</th>
-            <th>{% trans "2 doses" %}</th>
-            <th>{% trans "3 doses" %}</th>
-            <th>{% trans "4 doses" %}</th>
-            <th>{% trans "1 dose" %}</th>
-            <th>{% trans "2 doses" %}</th>
-            <th>{% trans "3 doses" %}</th>
-            <th>{% trans "4 doses" %}</th>
-        </tr>
-        </thead>
-        
-        <tbody>
-                
-        {% for r in results %}
-            <tr>
-                {% with r.area.as_data_source.data_collection as d_col %}
-                <td title='{{ d_col.parent.code }}' >{{ d_col.parent.name }}</td>
-                <td title='{{ d_col.code }}'>{{ d_col.name }}</td>
-                {% endwith %}
-                <td title='{{ r.area.code }}'>{{ r.area.name }}</td>
-               <td class="drugs">
-                    <ul title='{{ r.drugs_pack.code }}'>
-                    {% for drug in r.drugs_pack.drugs.all %}
-                        <li>{{ drug }}</li>
-                    {% endfor %}
-                    </ul>
-                </td>
-                <td>{{ r.one_dose_child_males|default_if_none:"" }}</td>
-                <td>{{ r.two_doses_child_males|default_if_none:"" }}</td>
-                <td>{{ r.three_doses_child_males|default_if_none:"" }}</td>
-                <td>{{ r.four_doses_child_males|default_if_none:"" }}</td>
-                <td>{{ r.one_dose_adult_males|default_if_none:"" }}</td>
-                <td>{{ r.two_doses_adult_males|default_if_none:"" }}</td>
-                <td>{{ r.three_doses_adult_males|default_if_none:"" }}</td>
-                <td>{{ r.four_doses_adult_males|default_if_none:"" }}</td>
-            </tr>
-    
-        {% endfor %}
-        
-        </tbody>
-        
-        {% if totals.total_males %}
-        <tfoot>
-            <tr>
-                <td class='total' colspan="4" "rowspan=3">{% trans "Total" %}</td>
-                <td>{{ totals.total_one_dose_child_males|default_if_none:'' }}</td>
-                <td>{{ totals.total_two_doses_child_males|default_if_none:'' }}</td>
-                <td>{{ totals.total_three_doses_child_males|default_if_none:'' }}</td>
-                <td>{{ totals.total_four_doses_child_males|default_if_none:'' }}</td>
-                <td>{{ totals.total_one_dose_adult_males|default_if_none:'' }}</td>
-                <td>{{ totals.total_two_doses_adult_males|default_if_none:'' }}</td>
-                <td>{{ totals.total_three_doses_adult_males|default_if_none:'' }}</td>
-                <td>{{ totals.total_four_doses_adult_males|default_if_none:'' }}</td>
-            </tr>
-            <tr>
-                <td colspan="4" >{{ totals.total_child_males|default_if_none:'' }}</td>
-                <td colspan="4" >{{ totals.total_adult_males|default_if_none:'' }}</td>
-            </tr>
-            <tr>
-                <td colspan="8" >{{ totals.total_males|default_if_none:'' }}</td>
-            </tr>
-        </tfoot>
-        {% endif %}
-    
-    </table>
-
-    <table>
-        <caption>{% trans "Treatment distribution for females" %}</caption>
-        <thead>
-        <tr>
-            <th rowspan="2" >{% trans "Zone" %}</th>
-            <th rowspan="2" >{% trans "Reported from" %}</th>
-            <th rowspan="2" >{% trans "Target area" %}</th>
-            <th rowspan="2" >{% trans "Drugs" %}</th>
-            <th colspan="4" >{% trans "5-15 years old" %}</th>
-            <th colspan="4" >{% trans "15+ years old" %}</th>
-        </tr>
-        <tr>
-            <th>{% trans "1 dose" %}</th>
-            <th>{% trans "2 doses" %}</th>
-            <th>{% trans "3 doses" %}</th>
-            <th>{% trans "4 doses" %}</th>
-            <th>{% trans "1 dose" %}</th>
-            <th>{% trans "2 doses" %}</th>
-            <th>{% trans "3 doses" %}</th>
-            <th>{% trans "4 doses" %}</th>
-        </tr>
-        </thead>
-        
-        <tbody>
-                
-        {% for r in results %}
-            <tr>
-                {% with r.area.as_data_source.data_collection as d_col %}
-                <td title='{{ d_col.parent.code }}' >{{ d_col.parent.name }}</td>
-                <td title='{{ d_col.code }}'>{{ d_col.name }}</td>
-                {% endwith %}
-                <td title='{{ r.area.code }}'>{{ r.area.name }}</td>
-               <td class="drugs">
-                    <ul title='{{ r.drugs_pack.code }}'>
-                    {% for drug in r.drugs_pack.drugs.all %}
-                        <li>{{ drug }}</li>
-                    {% endfor %}
-                    </ul>
-                </td>
-                <td>{{ r.one_dose_child_females|default_if_none:"" }}</td>
-                <td>{{ r.two_doses_child_females|default_if_none:"" }}</td>
-                <td>{{ r.three_doses_child_females|default_if_none:"" }}</td>
-                <td>{{ r.four_doses_child_females|default_if_none:"" }}</td>
-                <td>{{ r.one_dose_adult_females|default_if_none:"" }}</td>
-                <td>{{ r.two_doses_adult_females|default_if_none:"" }}</td>
-                <td>{{ r.three_doses_adult_females|default_if_none:"" }}</td>
-                <td>{{ r.four_doses_adult_females|default_if_none:"" }}</td>
-            </tr>
-    
-        {% endfor %}
-        
-        </tbody>
-        
-        {% if totals.total_females %}
-        <tfoot>
-            <tr>
-                <td class='total' colspan="4" "rowspan=3">{% trans "Total" %}</td>
-                <td>{{ totals.total_one_dose_child_females|default_if_none:'' }}</td>
-                <td>{{ totals.total_two_doses_child_females|default_if_none:'' }}</td>
-                <td>{{ totals.total_three_doses_child_females|default_if_none:'' }}</td>
-                <td>{{ totals.total_four_doses_child_females|default_if_none:'' }}</td>
-                <td>{{ totals.total_one_dose_adult_females|default_if_none:'' }}</td>
-                <td>{{ totals.total_two_doses_adult_females|default_if_none:'' }}</td>
-                <td>{{ totals.total_three_doses_adult_females|default_if_none:'' }}</td>
-                <td>{{ totals.total_four_doses_adult_females|default_if_none:'' }}</td>
-            </tr>
-            <tr>
-                <td colspan="4" >{{ totals.total_child_females|default_if_none:'' }}</td>
-                <td colspan="4" >{{ totals.total_adult_females|default_if_none:'' }}</td>
-            </tr>
-            <tr>
-                <td colspan="8" >{{ totals.total_females|default_if_none:'' }}</td>
-            </tr>
-        </tfoot>
-    
-    </table>
-    {% endif %}
-    
-    <table>
-        <caption>{% trans "Males special cases" %}</caption>
-        <thead>
-        <tr>
-            <th rowspan="2" >{% trans "Zone" %}</th>
-            <th rowspan="2" >{% trans "Reported from" %}</th>
-            <th rowspan="2" >{% trans "Target area" %}</th>
-            <th rowspan="2" >{% trans "Drugs" %}</th>
-            
-            <th colspan="2">{% trans "Not available" %}</th>
-            <th colspan="2">{% trans "Refused treatment" %}</th>
-            <th colspan="2">{% trans "Experienced side effects" %}</th>
-        </tr>
-        <tr>
-            <th>{% trans "5-15 years old" %}</th>
-            <th>{% trans "15+ years old" %}</th>
-            <th>{% trans "5-15 years old" %}</th>
-            <th>{% trans "15+ years old" %}</th>
-            <th>{% trans "5-15 years old" %}</th>
-            <th>{% trans "15+ years old" %}</th>
-        </tr>
-        </thead>
-        
-        <tbody>
-                
-        {% for r in results %}
-            <tr>
-                {% with r.area.as_data_source.data_collection as d_col %}
-                <td title='{{ d_col.parent.code }}' >{{ d_col.parent.name }}</td>
-                <td title='{{ d_col.code }}'>{{ d_col.name }}</td>
-                {% endwith %}
-                <td title='{{ r.area.code }}'>{{ r.area.name }}</td>
-               <td class="drugs">
-                    <ul title='{{ r.drugs_pack.code }}'>
-                    {% for drug in r.drugs_pack.drugs.all %}
-                        <li>{{ drug }}</li>
-                    {% endfor %}
-                    </ul>
-                </td>
-                <td>{{ r.child_males_not_available|default_if_none:"" }}</td>
-                <td>{{ r.adult_males_not_available|default_if_none:"" }}</td>
-                <td>{{ r.child_males_refusing|default_if_none:"" }}</td>
-                <td>{{ r.adult_males_refusing|default_if_none:"" }}</td>
-                <td>{{ r.child_males_side_effects|default_if_none:"" }}</td>
-                <td>{{ r.adult_males_side_effects|default_if_none:"" }}</td>
-            </tr>
-    
-        {% endfor %}
-        
-        </tbody>
-        
-        {% if totals.total_untreated_males %}
-        <tfoot>
-            <tr>
-                <td class='total' colspan="4" "rowspan=3">{% trans "Total" %}</td>
-                <td colspan="2">{{ totals.total_males_not_available|default_if_none:'' }}</td>
-                <td colspan="2" >{{ totals.total_males_refusing|default_if_none:'' }}</td>
-                <td colspan="2" >{{ totals.total_males_side_effects|default_if_none:'' }}</td>
-            </tr>
-            <tr>
-                <td colspan="6" >{{ totals.total_untreated_males|default_if_none:'' }}</td>
-            </tr>
-        </tfoot>
-        {% endif %} 
-    
-    <table>
-        <caption>{% trans "Females special cases" %}</caption>
-        <thead>
-        <tr>
-            <th rowspan="2" >{% trans "Zone" %}</th>
-            <th rowspan="2" >{% trans "Reported from" %}</th>
-            <th rowspan="2" >{% trans "Target area" %}</th>
-            <th rowspan="2" >{% trans "Drugs" %}</th>
-            
-            <th colspan="2">{% trans "Not available" %}</th>
-            <th colspan="2">{% trans "Refused treatment" %}</th>
-            <th colspan="2">{% trans "Experienced side effects" %}</th>
-            <th colspan="2">{% trans "Pregnant" %}</th>
-        </tr>
-        <tr>
-            <th>{% trans "5-15 years old" %}</th>
-            <th>{% trans "15+ years old" %}</th>
-            <th>{% trans "5-15 years old" %}</th>
-            <th>{% trans "15+ years old" %}</th>
-            <th>{% trans "5-15 years old" %}</th>
-            <th>{% trans "15+ years old" %}</th>
-            <th>{% trans "5-15 years old" %}</th>
-            <th>{% trans "15+ years old" %}</th>
-        </tr>
-        </thead>
-        
-        <tbody>
-                
-        {% for r in results %}
-            <tr>
-                {% with r.area.as_data_source.data_collection as d_col %}
-                <td title='{{ d_col.parent.code }}' >{{ d_col.parent.name }}</td>
-                <td title='{{ d_col.code }}'>{{ d_col.name }}</td>
-                {% endwith %}
-                <td title='{{ r.area.code }}'>{{ r.area.name }}</td>
-               <td class="drugs">
-                    <ul title='{{ r.drugs_pack.code }}'>
-                    {% for drug in r.drugs_pack.drugs.all %}
-                        <li>{{ drug }}</li>
-                    {% endfor %}
-                    </ul>
-                </td>
-                <td>{{ r.child_females_not_available|default_if_none:"" }}</td>
-                <td>{{ r.adult_females_not_available|default_if_none:"" }}</td>
-                <td>{{ r.child_females_refusing|default_if_none:"" }}</td>
-                <td>{{ r.adult_females_refusing|default_if_none:"" }}</td>
-                <td>{{ r.child_females_side_effects|default_if_none:"" }}</td>
-                <td>{{ r.adult_females_side_effects|default_if_none:"" }}</td>
-                <td>{{ r.pregnant_adult_females|default_if_none:"" }}</td>
-                <td>{{ r.pregnant_child_females|default_if_none:"" }}</td>
-            </tr>
-    
-        {% endfor %}
-        
-        </tbody>
-        
-        {% if totals.total_untreated_females %}
-        <tfoot>
-            <tr>
-                <td class='total' colspan="4" "rowspan=3">{% trans "Total" %}</td>
-                <td colspan="2">{{ totals.total_females_not_available|default_if_none:'' }}</td>
-                <td colspan="2" >{{ totals.total_females_refusing|default_if_none:'' }}</td>
-                <td colspan="2" >{{ totals.total_females_side_effects|default_if_none:'' }}</td>
-                <td colspan="2" >{{ totals.total_pregnant_females|default_if_none:'' }}</td>
-            </tr>
-            <tr>
-                <td colspan="6" >{{ totals.total_untreated_females|default_if_none:'' }}</td>
-                <td colspan="2" class="empty"></td>
-            </tr>
-        </tfoot>
-        {% endif %}
-        
-    <table>
-        <caption>{% trans "Stock movements" %}</caption>
-        <thead>
-        <tr>
-            <th rowspan="2" >{% trans "Zone" %}</th>
-            <th rowspan="2" >{% trans "Reported from" %}</th>
-            <th rowspan="2" >{% trans "Target area" %}</th>
-            
-            {% for drug in results.0.drugs_pack.drugs.all%}
-                <th colspan="2">{{ drug.name }}</th>
-            {% endfor %}
-        </tr>
-        </thead>
-        
-        <tbody>
-                
-        {% for r in results %}
-            <tr>
-                {% with r.area.as_data_source.data_collection as d_col %}
-                <td title='{{ d_col.parent.code }}' >{{ d_col.parent.name }}</td>
-                <td title='{{ d_col.code }}'>{{ d_col.name }}</td>
-                {% endwith %}
-                <td title='{{ r.area.code }}'>{{ r.area.name }}</td>
-                
-                {% if r.stock_movements.exists %}
-                    {% for mov in r.stock_movements.all %}
-                        <td>{{ mov.received }}</td>
-                        <td>{{ mov.returned }}</td>
-                    {% endfor %}
-                {% else %}
-                    {% for mov in r.drugs_pack.drugs.all %}
-                        <td></td>
-                        <td></td>
-                    {% endfor %}
-                {% endif %}
-                
-            </tr>
-    
-        {% endfor %}
-        
-        </tbody>
-        
-        {% if totals.stocks %}
-        <tfoot>
-            <tr>
-            <td class='total' colspan="3" "rowspan=2">{% trans "Total" %}</td>
-            {% with totals.stocks.values as stocks %}
-            {% for stock in stocks %}
-                <td>{{ stock.received }}</td>
-                <td>{{ stock.returned }}</td>
-            {% endfor %}
-            </tr>
-            {% endwith %}
-        </tfoot>
-        {% endif %}
+  
     
     </div>
    

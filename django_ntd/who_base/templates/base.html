@@ -7,9 +7,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="{{ MEDIA_URL }}static/who_base/stylesheets/blueprint/screen.css" type="text/css" media="screen"  />
         <link rel="stylesheet" href="{{ MEDIA_URL }}static/who_base/stylesheets/style.css" type="text/css" media="screen"  />
-<script type="text/javascript"
- src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-
     </head>
     
     <body id='who'>
@@ -57,15 +54,15 @@
                 <ul id="menu">
                 
                     
-                    <li {% if request.view_name == 'who-dashboard' %}class='selected'{% endif %} >
+                    <li {% if 'dashboard' in request.view_name %}class='selected'{% endif %} >
                         <a href="{% url who-dashboard %}">{% trans "Home" %}</a>
                     </li>
-                    <li {% if request.view_name == 'campaigns-stats' %}class='selected'{% endif %} >
+                    <li {% if 'results' in request.view_name %}class='selected'{% endif %} >
                         <a href="{% url campaigns-results %}">
                         {% trans "Campaigns results" %}
                         </a>
                     </li>
-                    <li {% if request.view_name == 'campaigns-list' %}class='selected'{% endif %} >
+                    <li {% if 'list' in request.view_name %}class='selected'{% endif %} >
                         <a href="{% url campaigns-list %}">
                         {% trans "Manage campaigns" %}
                         </a>
