@@ -86,7 +86,8 @@ class DrugsPack(models.Model):
 class CompletedResultsManager(models.Manager):
 
     def get_query_set(self):
-        return super(CompletedResultsManager, self).get_query_set().filter(report_manager__completed__isnull=False)
+        return super(CompletedResultsManager, self).get_query_set()\
+               .filter(report_manager__completed__isnull=False)
 
 # TODO: we may want to use the EAV for this eventually
 class Results(models.Model):

@@ -17,7 +17,7 @@ from .models import Campaign, Results, DrugsStockMovement
 from simple_locations.models import Area, AreaType
 
 from .forms import CampaignForm
-from utils import campaign_to_excel
+from utils import rowdata_to_excel, campaign_all_datas
 
 
 @login_required
@@ -268,7 +268,8 @@ def xls_campaign(request, pk):
     filename = 'campaign%(id)d-%(date)s.xls' % {'id': campaign.id, \
                                 'date': datetime.today().strftime('%Y-%b-%d')}
 
-    excel = campaign_to_excel(campaign)
+    data = campaign_all_datas(campaign)
+    excel = rowdata_to_excel(data)
 
     response = HttpResponse(excel, mimetype="application/vnd.ms-excel")
     response['Content-Disposition'] = 'attachment;filename="%s"' % filename
