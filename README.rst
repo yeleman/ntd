@@ -48,7 +48,7 @@ It is based on rapidsms (0.9.x) and depends on the following packages:
 
 * `rapidsms-xforms <http://github.com/nicpottier/rapidsms-xforms>`_
 
-    pip install rapidsms-xforms
+    pip install -e git+git://github.com/rgaudin/rapidsms-xforms.git#egg=rapidsms_xforms
 
 Optionnaly, if you wish to use an modem:
 
