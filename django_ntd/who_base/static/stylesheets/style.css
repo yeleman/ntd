@@ -72,7 +72,7 @@ margin-bottom: 1em;
     background: url(../images/top_bg.jpg) top center repeat-x;
     height: 92px;
     color: white;
-    overflow: hidden:
+    overflow: hidden;
 }
 
 #who #header .logout-link {
@@ -211,6 +211,35 @@ margin: 1em;
 #dashboard #campaign-date {
 font-style: italic;
 }
+
+
+/** needed for tabs **/
+
+#who .ui-tabs .ui-tabs-hide {
+    position: absolute;
+    left: -10000px;
+}
+
+#who .ui-tabs ul a {
+color: black;
+}
+
+#who .ui-tabs ul a:visited {
+color: black;
+}
+
+#who .ui-tabs-selected {
+list-style-type: circle;
+}
+
+#who ul .ui-tabs-selected a {
+color:grey;
+}
+
+#who .ui-tabs ul a:hover {
+color:grey;
+}
+
 
 /*** MANAGE CAMPAIGN ***/
 

@@ -35,21 +35,24 @@ urlpatterns = patterns('',
 
 )
 
-
 if settings.DEBUG:
 
-    urlpatterns += patterns("", url("%s/who_base/(?P<path>.*)$" % settings.MEDIA_URL.strip('/'),
-                                "django.views.static.serve",
-                                {"document_root":
-                                  os.path.join(settings.PROJECT_DIR,
-                                                'who_base', 'static'),
-                                  'show_indexes': True}))
+    urlpatterns += patterns("", 
 
-    urlpatterns += patterns('',
-        # helper URLs file that automatically serves the 'static' folder in
-        # INSTALLED_APPS via the Django static media server (NOT for use in
-        # production)
-        (r'^', include('rapidsms.urls.static_media')),
+        url("%s/common/(?P<path>.*)$" % settings.MEDIA_URL.strip('/'),
+            "django.views.static.serve",
+            {"document_root": os.path.join(settings.PROJECT_DIR, 'static'),
+              'show_indexes': True}
+            ),
+ 
+        url("%s/who_base/(?P<path>.*)$" % settings.MEDIA_URL.strip('/'),
+            "django.views.static.serve",
+            {"document_root":
+              os.path.join(settings.PROJECT_DIR, 'who_base', 'static'),
+              'show_indexes': True}
+            ),
+
+        url(r'^', include('rapidsms.urls.static_media')),
     )
 
 

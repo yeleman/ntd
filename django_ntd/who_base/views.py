@@ -15,6 +15,8 @@ from django.utils.translation import check_for_language
 
 from .models import Campaign, Results, DrugsStockMovement
 
+from report_parts.models import Report
+
 from simple_locations.models import Area, AreaType
 
 from .forms import CampaignForm
@@ -93,10 +95,18 @@ def campaigns_results(request):
                        'area__as_data_source__data_collection',
                        'area')
 
+        totals = {}
+        
+        report_count = Report.objects.filter(results__campaign=campaign).count()
+        totals['pop_progress'] = Report.objects\
+                                       .filter(results__campaign=campaign,
+                                                status__vil=True)\
+                                       .count() * 100 / report_count 
+
         sumup = lambda x: sum(y or 0 for y in x)
 
         # men totals
-        totals = results.aggregate(
+        totals.update(results.aggregate(
                total_pop=Sum('total_pop'),
                target_pop=Sum('target_pop'),
                total_one_dose_child_males=Sum('one_dose_child_males'),
@@ -107,7 +117,7 @@ def campaigns_results(request):
                total_two_doses_adult_males=Sum('two_doses_adult_males'),
                total_three_doses_adult_males=Sum('three_doses_adult_males'),
                total_four_doses_adult_males=Sum('four_doses_adult_males'),
-               treated_under_six=Sum('treated_under_six'))
+               treated_under_six=Sum('treated_under_six')))
 
         total_child_males = (totals['total_one_dose_child_males'],
                              totals['total_two_doses_child_males'],
@@ -124,6 +134,11 @@ def campaigns_results(request):
         total_males = (totals['total_child_males'],
                        totals['total_adult_males'])
         totals['total_males'] = sumup(total_males)
+        
+        totals['males_progress'] = Report.objects\
+                                         .filter(results__campaign=campaign,
+                                                status__men=True)\
+                                         .count() * 100 / report_count 
 
         # women totals
         totals.update(results.aggregate(
@@ -151,6 +166,12 @@ def campaigns_results(request):
         total_females = (totals['total_child_females'],
                        totals['total_adult_females'])
         totals['total_females'] = sumup(total_females)
+        
+        totals['females_progress'] = Report.objects\
+                                           .filter(results__campaign=campaign,
+                                                    status__wmen=True)\
+                                           .count() * 100 / report_count 
+        
 
         # men special case totals
         totals.update(results.aggregate(
@@ -177,6 +198,12 @@ def campaigns_results(request):
                                  totals['total_males_refusing'],
                                  totals['total_males_side_effects'])
         totals['total_untreated_males'] = sumup(total_untreated_males)
+
+    
+        totals['msc_progress'] = Report.objects\
+                                       .filter(results__campaign=campaign,
+                                               status__msc=True)\
+                                       .count() * 100 / report_count 
 
         # women special case totals
         totals.update(results.aggregate(
@@ -213,6 +240,11 @@ def campaigns_results(request):
                             totals['total_females_side_effects'])
         totals['total_untreated_females'] = sumup(total_untreated_females)
 
+        totals['fsc_progress'] = Report.objects\
+                                       .filter(results__campaign=campaign,
+                                               status__msc=True)\
+                                       .count() * 100 / report_count 
+
         # stock movements
         totals['stocks'] = DrugsStockMovement.objects\
                                              .filter(for_results__campaign=campaign)\
@@ -220,6 +252,11 @@ def campaigns_results(request):
                                              .annotate(
                                                 total_received=Sum('received'),
                                                 total_returned=Sum('returned'))
+                                                
+        totals['stock_progress'] = Report.objects\
+                                         .filter(results__campaign=campaign,
+                                                 status__drug=True)\
+                                         .count() * 100 / report_count 
     ctx = locals()
 
     return render_to_response('campaigns_results.html',  ctx,

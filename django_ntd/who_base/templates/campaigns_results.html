@@ -59,9 +59,18 @@
     </div>
     
     
-    <div id="data" class="span-24 last">
+    <div  id="tabs" class="span-24 last">
     
-    <table>
+    <ul class='menu'>
+        <li><a href="#tabs-1">{% trans "Population" %}: {{ totals.pop_progress }}%</a></li>
+        <li><a href="#tabs-2">{% trans "Treatment distribution for males" %}: {{ totals.males_progress }}%</a></li>
+        <li><a href="#tabs-3">{% trans "Treatment distribution for females" %}: {{ totals.females_progress }}%</a></li>
+        <li><a href="#tabs-4">{% trans "Males special cases" %}: {{ totals.msc_progress }}%</a></li>
+        <li><a href="#tabs-5">{% trans "Females special cases" %}: {{ totals.fsc_progress }}%</a></li>
+        <li><a href="#tabs-6">{% trans "Stock movements" %}: {{ totals.stock_progress }}%</a></li>
+    </ul>
+    
+    <table id='tabs-1'>
         <caption>{% trans "Population" %}</caption>
         <thead>
         <tr>
@@ -120,7 +129,7 @@
     
     </table>
     
-    <table>
+    <table id='tabs-2'>
         <caption>{% trans "Treatment distribution for males" %}</caption>
         <thead>
         <tr>
@@ -197,8 +206,8 @@
         {% endif %}
     
     </table>
-
-    <table>
+    
+    <table id="tabs-3">
         <caption>{% trans "Treatment distribution for females" %}</caption>
         <thead>
         <tr>
@@ -276,7 +285,7 @@
     </table>
     {% endif %}
     
-    <table>
+    <table id='tabs-4'>
         <caption>{% trans "Males special cases" %}</caption>
         <thead>
         <tr>
@@ -341,7 +350,7 @@
         </tfoot>
         {% endif %} 
     
-    <table>
+    <table id='tabs-5'>
         <caption>{% trans "Females special cases" %}</caption>
         <thead>
         <tr>
@@ -413,7 +422,7 @@
         </tfoot>
         {% endif %}
         
-    <table>
+    <table id='tabs-6'>
         <caption>{% trans "Stock movements" %}</caption>
         <thead>
         <tr>
