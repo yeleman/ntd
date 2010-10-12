@@ -5,6 +5,8 @@
 {% block page-id %}dashboard{% endblock %}
 
 
+{% block title %}{% trans "Campaigns results" %}{% endblock %}
+
 {% block content %}
 
 
@@ -62,12 +64,42 @@
     <div  id="tabs" class="span-24 last">
     
     <ul class='menu'>
-        <li><a href="#tabs-1">{% trans "Population" %}: {{ totals.pop_progress }}%</a></li>
-        <li><a href="#tabs-2">{% trans "Treatment distribution for males" %}: {{ totals.males_progress }}%</a></li>
-        <li><a href="#tabs-3">{% trans "Treatment distribution for females" %}: {{ totals.females_progress }}%</a></li>
-        <li><a href="#tabs-4">{% trans "Males special cases" %}: {{ totals.msc_progress }}%</a></li>
-        <li><a href="#tabs-5">{% trans "Females special cases" %}: {{ totals.fsc_progress }}%</a></li>
-        <li><a href="#tabs-6">{% trans "Stock movements" %}: {{ totals.stock_progress }}%</a></li>
+        <li>
+            <a href="#tabs-1">
+            {% trans "Population" %} 
+            ({{ totals.pop_progress }}% {% trans "completed" %})
+            </a>
+        </li>
+        <li>
+            <a href="#tabs-2">
+            {% trans "Treatment distribution for males" %} 
+            ({{ totals.males_progress }}% {% trans "completed" %})
+            </a>
+        </li>
+        <li>
+            <a href="#tabs-3">
+            {% trans "Treatment distribution for females" %} 
+            ({{ totals.females_progress }}% {% trans "completed" %})
+            </a>
+        </li>
+        <li>
+            <a href="#tabs-4">
+            {% trans "Males special cases" %} 
+            ({{ totals.msc_progress }}% {% trans "completed" %})
+            </a>
+        </li>
+        <li>
+            <a href="#tabs-5">
+            {% trans "Females special cases" %} 
+            ({{ totals.fsc_progress }}% {% trans "completed" %})
+            </a>
+        </li>
+        <li>
+            <a href="#tabs-6">
+            {% trans "Stock movements" %} 
+            ({{ totals.stock_progress }}% {% trans "completed" %})
+            </a>
+        </li>
     </ul>
     
     <table id='tabs-1'>

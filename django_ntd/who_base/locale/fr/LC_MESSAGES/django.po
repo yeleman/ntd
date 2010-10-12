@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-12 10:53+0200\n"
-"PO-Revision-Date: 2010-10-12 11:09+0200\n"
+"POT-Creation-Date: 2010-10-12 19:42+0200\n"
+"PO-Revision-Date: 2010-10-12 19:42+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -562,243 +562,253 @@ msgstr ""
 "Les résultats de la campagne %(campaign)s à %(location)s concernant les cas "
 "particulier femme ont été sauvergardés."
 
-#: templates/base.html:23
-msgid "Logout "
-msgstr "Se déconnecter"
-
-#: templates/base.html:26
+#: templates/base.html:6 templates/base.html.py:30
 msgid "NTD management"
 msgstr "Gestion des MTN"
 
-#: templates/base.html:58
+#: templates/base.html:27
+msgid "Logout "
+msgstr "Se déconnecter"
+
+#: templates/base.html:60
 msgid "Home"
 msgstr "Acceuil"
 
-#: templates/base.html:62
+#: templates/base.html:64 templates/campaigns_results.html:8
 msgid "Campaigns results"
 msgstr "Résultats des campagnes"
 
-#: templates/base.html:67
+#: templates/base.html:69 templates/campaigns-list.html:5
 msgid "Manage campaigns"
 msgstr "Gérer les campagnes"
 
-#: templates/base.html:74
+#: templates/base.html:76
 msgid "RapidSMS admin"
 msgstr "RapidSMS admin"
 
-#: templates/base.html:79
+#: templates/base.html:81
 msgid "Django admin"
 msgstr "Django admin"
 
-#: templates/base.html:84
+#: templates/base.html:86
 msgid "Xforms admin"
 msgstr "Xforms admin"
 
-#: templates/campaigns-list.html:9
+#: templates/campaigns-list.html:11
 msgid "Campaigns"
 msgstr "Campagnes"
 
-#: templates/campaigns-list.html:20
+#: templates/campaigns-list.html:22
 msgid "delete"
 msgstr "supprimer"
 
-#: templates/campaigns-list.html:30 templates/campaigns_results.html:17
-#: templates/who_dashboard.html:18
+#: templates/campaigns-list.html:32 templates/campaigns_results.html:19
+#: templates/create_campaign.html:7 templates/who_dashboard.html:19
 msgid "Create a campaign"
 msgstr "Ajouter une campagne"
 
-#: templates/campaigns_results.html:13 templates/who_dashboard.html:14
+#: templates/campaigns_results.html:15 templates/who_dashboard.html:15
 msgid "No campaign yet"
 msgstr "Aucune campagne pour le moment"
 
-#: templates/campaigns_results.html:27 templates/who_dashboard.html:26
+#: templates/campaigns_results.html:29 templates/who_dashboard.html:27
 msgid "Campaign"
 msgstr "Campagne"
 
-#: templates/campaigns_results.html:34 templates/who_dashboard.html:33
+#: templates/campaigns_results.html:36 templates/who_dashboard.html:34
 msgid "Previous"
 msgstr "Précédente"
 
-#: templates/campaigns_results.html:48 templates/who_dashboard.html:47
+#: templates/campaigns_results.html:50 templates/who_dashboard.html:48
 msgid "Next"
 msgstr "Suivante"
 
-#: templates/campaigns_results.html:56 templates/who_dashboard.html:55
+#: templates/campaigns_results.html:58 templates/who_dashboard.html:56
 msgid "starts on"
 msgstr "débute le"
 
-#: templates/campaigns_results.html:65
+#: templates/campaigns_results.html:69 templates/campaigns_results.html:106
 msgid "Population"
 msgstr "Population"
 
-#: templates/campaigns_results.html:68 templates/campaigns_results.html:127
-#: templates/campaigns_results.html:205 templates/campaigns_results.html:283
-#: templates/campaigns_results.html:348 templates/campaigns_results.html:420
-#: templates/who_dashboard.html:66
-msgid "Zone"
-msgstr "Zone"
+#: templates/campaigns_results.html:70 templates/campaigns_results.html:76
+#: templates/campaigns_results.html:82 templates/campaigns_results.html:88
+#: templates/campaigns_results.html:94 templates/campaigns_results.html:100
+msgid "completed"
+msgstr "complété"
 
-#: templates/campaigns_results.html:69 templates/campaigns_results.html:128
-#: templates/campaigns_results.html:206 templates/campaigns_results.html:284
-#: templates/campaigns_results.html:349 templates/campaigns_results.html:421
-msgid "Reported from"
-msgstr "Report fait à"
-
-#: templates/campaigns_results.html:70 templates/campaigns_results.html:129
-#: templates/campaigns_results.html:207 templates/campaigns_results.html:285
-#: templates/campaigns_results.html:350 templates/campaigns_results.html:422
-msgid "Target area"
-msgstr "Lieu ciblé"
-
-#: templates/campaigns_results.html:71 templates/campaigns_results.html:130
-#: templates/campaigns_results.html:208 templates/campaigns_results.html:286
-#: templates/campaigns_results.html:351
-msgid "Drugs"
-msgstr "Médicaments"
-
-#: templates/campaigns_results.html:72
-msgid "Distributor"
-msgstr "Distributeur"
-
-#: templates/campaigns_results.html:73
-msgid "Treatment started on"
-msgstr "Début du traitement"
-
-#: templates/campaigns_results.html:74
-msgid "Treatment ended on"
-msgstr "Fin du traitement"
-
-#: templates/campaigns_results.html:75
-msgid "Total population"
-msgstr "Population totale"
-
-#: templates/campaigns_results.html:76
-msgid "Target population"
-msgstr "Population cible"
-
-#: templates/campaigns_results.html:77
-msgid "Population under 6 months"
-msgstr "Population de moins de 6 mois"
-
-#: templates/campaigns_results.html:113 templates/campaigns_results.html:179
-#: templates/campaigns_results.html:257 templates/campaigns_results.html:333
-#: templates/campaigns_results.html:403 templates/campaigns_results.html:461
-msgid "Total"
-msgstr "Total"
-
-#: templates/campaigns_results.html:124
+#: templates/campaigns_results.html:75 templates/campaigns_results.html:165
 msgid "Treatment distribution for males"
 msgstr "Distribution du traitement pour les hommes"
 
-#: templates/campaigns_results.html:131 templates/campaigns_results.html:209
-#: templates/campaigns_results.html:293 templates/campaigns_results.html:295
-#: templates/campaigns_results.html:297 templates/campaigns_results.html:359
-#: templates/campaigns_results.html:361 templates/campaigns_results.html:363
-#: templates/campaigns_results.html:365
-msgid "5-15 years old"
-msgstr "5-15 ans"
-
-#: templates/campaigns_results.html:132 templates/campaigns_results.html:210
-#: templates/campaigns_results.html:294 templates/campaigns_results.html:296
-#: templates/campaigns_results.html:298 templates/campaigns_results.html:360
-#: templates/campaigns_results.html:362 templates/campaigns_results.html:364
-#: templates/campaigns_results.html:366
-msgid "15+ years old"
-msgstr "15 ans et +"
-
-#: templates/campaigns_results.html:135 templates/campaigns_results.html:139
-#: templates/campaigns_results.html:213 templates/campaigns_results.html:217
-msgid "1 dose"
-msgstr "1 dose"
-
-#: templates/campaigns_results.html:136 templates/campaigns_results.html:140
-#: templates/campaigns_results.html:214 templates/campaigns_results.html:218
-msgid "2 doses"
-msgstr "2 doses"
-
-#: templates/campaigns_results.html:137 templates/campaigns_results.html:141
-#: templates/campaigns_results.html:215 templates/campaigns_results.html:219
-msgid "3 doses"
-msgstr "3 doses"
-
-#: templates/campaigns_results.html:138 templates/campaigns_results.html:142
-#: templates/campaigns_results.html:216 templates/campaigns_results.html:220
-msgid "4 doses"
-msgstr "4 doses"
-
-#: templates/campaigns_results.html:202
+#: templates/campaigns_results.html:81 templates/campaigns_results.html:243
 msgid "Treatment distribution for females"
 msgstr "Distribution du traitement pour les femmes"
 
-#: templates/campaigns_results.html:280
+#: templates/campaigns_results.html:87 templates/campaigns_results.html:321
 msgid "Males special cases"
 msgstr "Cas particuliers homme"
 
-#: templates/campaigns_results.html:288 templates/campaigns_results.html:353
-msgid "Not available"
-msgstr "Indisponibles"
-
-#: templates/campaigns_results.html:289 templates/campaigns_results.html:354
-msgid "Refused treatment"
-msgstr "A refusé le traitement"
-
-#: templates/campaigns_results.html:290 templates/campaigns_results.html:355
-msgid "Experienced side effects"
-msgstr "A souffert d'effets secondaires"
-
-#: templates/campaigns_results.html:345
+#: templates/campaigns_results.html:93 templates/campaigns_results.html:386
 msgid "Females special cases"
 msgstr "Cas particuliers femme"
 
-#: templates/campaigns_results.html:356
-msgid "Pregnant"
-msgstr "Enceintes"
-
-#: templates/campaigns_results.html:417
+#: templates/campaigns_results.html:99 templates/campaigns_results.html:458
 msgid "Stock movements"
 msgstr "Mouvements de stock"
+
+#: templates/campaigns_results.html:109 templates/campaigns_results.html:168
+#: templates/campaigns_results.html:246 templates/campaigns_results.html:324
+#: templates/campaigns_results.html:389 templates/campaigns_results.html:461
+#: templates/who_dashboard.html:67
+msgid "Zone"
+msgstr "Zone"
+
+#: templates/campaigns_results.html:110 templates/campaigns_results.html:169
+#: templates/campaigns_results.html:247 templates/campaigns_results.html:325
+#: templates/campaigns_results.html:390 templates/campaigns_results.html:462
+msgid "Reported from"
+msgstr "Report fait à"
+
+#: templates/campaigns_results.html:111 templates/campaigns_results.html:170
+#: templates/campaigns_results.html:248 templates/campaigns_results.html:326
+#: templates/campaigns_results.html:391 templates/campaigns_results.html:463
+msgid "Target area"
+msgstr "Lieu ciblé"
+
+#: templates/campaigns_results.html:112 templates/campaigns_results.html:171
+#: templates/campaigns_results.html:249 templates/campaigns_results.html:327
+#: templates/campaigns_results.html:392
+msgid "Drugs"
+msgstr "Médicaments"
+
+#: templates/campaigns_results.html:113
+msgid "Distributor"
+msgstr "Distributeur"
+
+#: templates/campaigns_results.html:114
+msgid "Treatment started on"
+msgstr "Début du traitement"
+
+#: templates/campaigns_results.html:115
+msgid "Treatment ended on"
+msgstr "Fin du traitement"
+
+#: templates/campaigns_results.html:116
+msgid "Total population"
+msgstr "Population totale"
+
+#: templates/campaigns_results.html:117
+msgid "Target population"
+msgstr "Population cible"
+
+#: templates/campaigns_results.html:118
+msgid "Population under 6 months"
+msgstr "Population de moins de 6 mois"
+
+#: templates/campaigns_results.html:154 templates/campaigns_results.html:220
+#: templates/campaigns_results.html:298 templates/campaigns_results.html:374
+#: templates/campaigns_results.html:444 templates/campaigns_results.html:502
+msgid "Total"
+msgstr "Total"
+
+#: templates/campaigns_results.html:172 templates/campaigns_results.html:250
+#: templates/campaigns_results.html:334 templates/campaigns_results.html:336
+#: templates/campaigns_results.html:338 templates/campaigns_results.html:400
+#: templates/campaigns_results.html:402 templates/campaigns_results.html:404
+#: templates/campaigns_results.html:406
+msgid "5-15 years old"
+msgstr "5-15 ans"
+
+#: templates/campaigns_results.html:173 templates/campaigns_results.html:251
+#: templates/campaigns_results.html:335 templates/campaigns_results.html:337
+#: templates/campaigns_results.html:339 templates/campaigns_results.html:401
+#: templates/campaigns_results.html:403 templates/campaigns_results.html:405
+#: templates/campaigns_results.html:407
+msgid "15+ years old"
+msgstr "15 ans et +"
+
+#: templates/campaigns_results.html:176 templates/campaigns_results.html:180
+#: templates/campaigns_results.html:254 templates/campaigns_results.html:258
+msgid "1 dose"
+msgstr "1 dose"
+
+#: templates/campaigns_results.html:177 templates/campaigns_results.html:181
+#: templates/campaigns_results.html:255 templates/campaigns_results.html:259
+msgid "2 doses"
+msgstr "2 doses"
+
+#: templates/campaigns_results.html:178 templates/campaigns_results.html:182
+#: templates/campaigns_results.html:256 templates/campaigns_results.html:260
+msgid "3 doses"
+msgstr "3 doses"
+
+#: templates/campaigns_results.html:179 templates/campaigns_results.html:183
+#: templates/campaigns_results.html:257 templates/campaigns_results.html:261
+msgid "4 doses"
+msgstr "4 doses"
+
+#: templates/campaigns_results.html:329 templates/campaigns_results.html:394
+msgid "Not available"
+msgstr "Indisponibles"
+
+#: templates/campaigns_results.html:330 templates/campaigns_results.html:395
+msgid "Refused treatment"
+msgstr "A refusé le traitement"
+
+#: templates/campaigns_results.html:331 templates/campaigns_results.html:396
+msgid "Experienced side effects"
+msgstr "A souffert d'effets secondaires"
+
+#: templates/campaigns_results.html:397
+msgid "Pregnant"
+msgstr "Enceintes"
 
 #: templates/codes_campaign.html:20
 msgid "Villages Codes"
 msgstr "Codes des villages"
 
-#: templates/create_campaign.html:9 templates/edit_campaign.html:9
+#: templates/create_campaign.html:11 templates/edit_campaign.html:11
 msgid "Campaigns list"
 msgstr "Liste des campagnes"
 
-#: templates/create_campaign.html:11
+#: templates/create_campaign.html:13
 msgid "Create a new campaign"
 msgstr "Ajouter une nouvelle campagne"
 
-#: templates/create_campaign.html:26 templates/edit_campaign.html:22
+#: templates/create_campaign.html:28 templates/edit_campaign.html:24
 msgid "Name"
 msgstr "Nom"
 
-#: templates/create_campaign.html:27 templates/edit_campaign.html:23
+#: templates/create_campaign.html:29 templates/edit_campaign.html:25
 msgid "Start date"
 msgstr "Date de début"
 
-#: templates/create_campaign.html:30 templates/edit_campaign.html:26
+#: templates/create_campaign.html:32 templates/edit_campaign.html:28
 msgid "Drug pack"
 msgstr "Lot de médicaments"
 
-#: templates/create_campaign.html:32 templates/edit_campaign.html:28
+#: templates/create_campaign.html:34 templates/edit_campaign.html:30
 msgid "Areas"
 msgstr "Lieux"
 
-#: templates/create_campaign.html:45
+#: templates/create_campaign.html:47
 msgid "Create"
 msgstr "Créer"
 
-#: templates/create_campaign.html:51
+#: templates/create_campaign.html:53
 msgid "There are no areas. Please create some before starting a campaign"
 msgstr "Il n'y a pas de zone. Créez en avant de commencer une campagne"
 
-#: templates/delete_campaign.html:9
+#: templates/delete_campaign.html:7
+msgid "Delete a campaign"
+msgstr "Supprimer une campagne"
+
+#: templates/delete_campaign.html:11
 msgid "Delete campaign"
 msgstr "Supprimer une campagne"
 
-#: templates/delete_campaign.html:13
+#: templates/delete_campaign.html:15
 #, python-format
 msgid ""
 " \n"
@@ -809,38 +819,43 @@ msgstr ""
 "    Êtes vous sûr(e) de vouloir supprimer %(campaign)s ?\n"
 "    "
 
-#: templates/delete_campaign.html:18
+#: templates/delete_campaign.html:20
 msgid "Yes, delete"
 msgstr "Oui, supprimer"
 
-#: templates/delete_campaign.html:19
+#: templates/delete_campaign.html:21
 msgid "Cancel"
 msgstr "Annuler"
 
-#: templates/edit_campaign.html:11
+#: templates/edit_campaign.html:7 templates/edit_campaign.html.py:13
 msgid "Edit a campaign"
 msgstr "Modifier une campagne"
 
-#: templates/edit_campaign.html:50
+#: templates/edit_campaign.html:52
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: templates/who_dashboard.html:63
+#: templates/who_dashboard.html:7
+msgid "Dashboard"
+msgstr "Résumé"
+
+#: templates/who_dashboard.html:64
 msgid "Progress"
 msgstr "Avancement"
 
-#: templates/who_dashboard.html:67
+#: templates/who_dashboard.html:68
 msgid "Target areas"
 msgstr "Lieux ciblés"
 
-#: templates/who_dashboard.html:68
-msgid "Areas with a completed reporte"
+#: templates/who_dashboard.html:69
+msgid "Areas with a completed report"
 msgstr "Lieux avec un rapport complet"
 
-#: templates/who_dashboard.html:69
+#: templates/who_dashboard.html:70
 msgid "Areas with reports in progress"
 msgstr "Lieux avec un rapport en cours"
 
+#: templates/who_dashboard.html:71
 msgid "Areas with reports on hold"
 msgstr "Lieux avec un rapport en attente"
 
