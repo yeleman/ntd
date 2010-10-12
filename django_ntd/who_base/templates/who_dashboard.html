@@ -65,8 +65,9 @@
         <tr>
             <th>{% trans "Zone" %}</th>
             <th>{% trans "Target areas" %}</th>
-            <th>{% trans "Areas with a completed reported" %}</th>
+            <th>{% trans "Areas with a completed report" %}</th>
             <th>{% trans "Areas with reports in progress" %}</th>
+            <th>{% trans "Areas with reports on hold" %}</th>
         </tr>
         </thead>
         
@@ -86,6 +87,12 @@
                 <td>
                     {{ in_progess }}
                     ({% pourcent in_progess stats.total %} %)
+                </td>
+                {% endwith %}
+                {% with stats.on_hold|default:0 as on_hold %}
+                <td>
+                    {{ in_progess }}
+                    ({% pourcent on_hold stats.total %} %)
                 </td>
                 {% endwith %}
             </tr>

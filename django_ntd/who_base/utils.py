@@ -133,6 +133,7 @@ def rowdata_to_excel(data):
 
     return buf.getvalue()
 
+# todo : make that a manager method
 def campaign_all_datas(campaign):
 
     ''' returns an array of all campaign data.
@@ -226,24 +227,24 @@ def campaign_all_datas(campaign):
         vname('target_pop'),
 
         _(u"Programme Coverage"),
-        _(u"Male Treated"),
-        _(u"5-15 years old Male Treated"),
-        _(u"15+ years old Male Treated"),
-        _(u"Female Treated"),
-        _(u"5-15 years old Female Treated"),
-        _(u"15+ years old Female Treated"),
+        _(u"Treated males"),
+        _(u"5-15 years old treated males"),
+        _(u"15+ years old treated males"),
+        _(u"Treated females"),
+        _(u"5-15 years old treated females"),
+        _(u"15+ years old treated females"),
 
-        _(u"Drugs Lost Rate"),
+        _(u"Drugs loss rate"),
 
-        _(u"Albendazole Received"),
-        _(u"Albendazole Used"),
-        _(u"Albendazole Lost"),
-        _(u"Albendazole Returned"),
+        _(u"Albendazole received"),
+        _(u"Albendazole used"),
+        _(u"Albendazole lost"),
+        _(u"Albendazole returned"),
 
-        _(u"Mectizan Received"),
-        _(u"Mectizan Used"),
-        _(u"Mectizan Lost"),
-        _(u"Mectizan Returned"),
+        _(u"Mectizan received"),
+        _(u"Mectizan used"),
+        _(u"Mectizan lost"),
+        _(u"Mectizan returned"),
 
         vname('treated_under_six'),
         vname('one_dose_child_males'),

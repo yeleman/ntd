@@ -5,12 +5,13 @@
 from datetime import datetime
 
 from django.http import HttpResponse
-from django.shortcuts import render_to_response, redirect
+from django.shortcuts import render_to_response, redirect, HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.db.models import Sum
 from django.conf import settings
+from django.utils.translation import check_for_language
 
 from .models import Campaign, Results, DrugsStockMovement
 
@@ -50,10 +51,11 @@ def dashboard(request):
             s = stats.setdefault(zone, {})
             s['total'] = s.get('total', 0) + 1
             if result.report_manager.completed:
-                s['completed'] = s.get('total', 0) + 1
+                s['completed'] = s.get('completed', 0) + 1
+            elif result.report_manager.status.vil:
+                s['in_progess'] = s.get('in_progess', 0) + 1
             else:
-                if result.report_manager.status.vil:
-                    s['in_progess'] = s.get('total', 0) + 1
+                s['on_hold'] = s.get('on_hold', 0) + 1
         
         
     ctx = locals()
@@ -281,14 +283,22 @@ def delete_campaign(request, pk):
      # todo: use the django view for this
 def switch_lang(request):
 
-    # todo: add more checks here
-    lang_code = (request.GET.get('lang_code',
-                                 settings.LANGUAGE_CODE)).lower().strip()
-    if lang_code not in ('en', 'fr'):
-        lang_code = settings.LANGUAGE_CODE
-    request.session['django_language'] = lang_code
+    next = request.REQUEST.get('next', None)
+    if not next:
+        next = request.META.get('HTTP_REFERER', None)
+    if not next:
+        next = '/'
 
-    return redirect('campaigns-results')
+    response = HttpResponseRedirect(next)
+    if request.method == 'GET':
+        lang_code = request.GET.get('lang_code', None)
+        if lang_code and check_for_language(lang_code):
+            if hasattr(request, 'session'):
+                request.session['django_language'] = lang_code
+            else:
+                response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang_code)
+    return response
+
 
 
 @login_required

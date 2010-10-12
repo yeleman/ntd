@@ -194,11 +194,11 @@ text-align: right;
 text-align: left;
 }
 
-#dashboard #lang-switcher {
+#who #lang-switcher {
 float: right;
 }
 
-#dashboard #lang-switcher li {
+#who #lang-switcher li {
 display: inline;
 padding-right:1em;
 }

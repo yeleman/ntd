@@ -26,26 +26,24 @@
                     <h1>{% trans "NTD management" %}</h1>
             
                     <ul id="lang-switcher">
-                        {% if 'dashboard' in request.view_name %}
-                            {% if LANGUAGE_CODE == 'fr'%}
-                            <li>
-                                Français
-                            </li>
-                            <li>
-                                <a href="{% url switch-lang %}?lang_code=en">
-                                Anglais
-                                </a>
-                            </li>
-                            {% else %}
-                            <li>
-                                <a href="{% url switch-lang %}?lang_code=fr">
-                                Français
-                                </a>
-                            </li>
-                            <li>
-                                Anglais
-                            </li>
-                            {% endif %}
+                        {% if LANGUAGE_CODE == 'fr'%}
+                        <li>
+                            Français
+                        </li>
+                        <li>
+                            <a href="{% url switch-lang %}?lang_code=en">
+                            Anglais
+                            </a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="{% url switch-lang %}?lang_code=fr">
+                            Français
+                            </a>
+                        </li>
+                        <li>
+                            Anglais
+                        </li>
                         {% endif %}
                     </ul>
                 

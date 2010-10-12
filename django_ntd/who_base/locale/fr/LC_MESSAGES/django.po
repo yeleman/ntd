@@ -2,16 +2,17 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FULL NAME <EMAIL@ADDRESS>, 2010.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 20:16+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2010-10-12 10:53+0200\n"
+"PO-Revision-Date: 2010-10-12 11:09+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,7 +22,7 @@ msgstr ""
 msgid "You must select at least one location"
 msgstr "Vous devez choisir au moins un lieu"
 
-#: models.py:23 models.py:94
+#: models.py:23 models.py:100
 msgid "campaign"
 msgstr "campagne"
 
@@ -41,7 +42,7 @@ msgstr "date de début"
 msgid "end date"
 msgstr "date de fin"
 
-#: models.py:32 models.py:67 models.py:106
+#: models.py:32 models.py:67 models.py:112
 msgid "drugs pack"
 msgstr "lot de médicaments"
 
@@ -50,8 +51,8 @@ msgstr "lot de médicaments"
 msgid "%(name)s (starts on %(date)s)"
 msgstr "%(name)s (démarrée le %(date)s)"
 
-#: models.py:37 handlers/vil.py:110 handlers/vil.py:111 handlers/vil.py:147
-#: handlers/vil.py:148
+#: models.py:37 handlers/vil.py:111 handlers/vil.py:112 handlers/vil.py:153
+#: handlers/vil.py:154
 msgid "%m/%d/%Y"
 msgstr "%d/%m/%Y"
 
@@ -72,218 +73,218 @@ msgstr "médicaments"
 msgid "[%(code)s] %(name)s"
 msgstr "[%(code)s] %(name)s"
 
-#: models.py:90 models.py:91
+#: models.py:96 models.py:97
 msgid "results"
 msgstr "résultats"
 
-#: models.py:97
+#: models.py:103
 msgid "area"
 msgstr "lieu"
 
-#: models.py:104 models.py:287
+#: models.py:110 models.py:296
 msgid "data collection location"
 msgstr "lieu de collecte des données"
 
-#: models.py:109
+#: models.py:115
 msgid "treatment start date"
 msgstr "date de début de traitement"
 
-#: models.py:111
+#: models.py:117
 msgid "treatment end date"
 msgstr "date de fin de traitement"
 
-#: models.py:114
+#: models.py:120
 msgid "total population"
 msgstr "population totale"
 
-#: models.py:116
+#: models.py:122
 msgid "target population"
 msgstr "population cible"
 
-#: models.py:118
+#: models.py:124
 msgid "population under 6 months"
 msgstr "population de moins de 6 months"
 
-#: models.py:122 models.py:296
+#: models.py:128 models.py:305
 msgid "distributor"
 msgstr "distributeur"
 
-#: models.py:125
+#: models.py:131
 msgid "5-15 years old males given one dose"
 msgstr "Garçons de 5-15 ans ayant reçu une dose"
 
-#: models.py:127
+#: models.py:133
 msgid "15+ years old males given one dose"
 msgstr "Hommes de plus de 15 ans ayant reçu une dose"
 
-#: models.py:129
+#: models.py:135
 msgid "5-15 years old males given two doses"
 msgstr "Garçons de 5-15 ans ayant reçu deux doses"
 
-#: models.py:131
+#: models.py:137
 msgid "15+ years old males given two doses"
 msgstr "Hommes de plus de 15 ans ayant reçu deux doses"
 
-#: models.py:133
+#: models.py:139
 msgid "5-15 years old males given three doses"
 msgstr "Garçons de 5-15 ans ayant reçu trois doses"
 
-#: models.py:135
+#: models.py:141
 msgid "15+ years old males given three doses"
 msgstr "Hommes de plus de 15 ans ayant reçu trois doses"
 
-#: models.py:137
+#: models.py:143
 msgid "5-15 years old males given four doses"
 msgstr "Garçons 5-15 ans ayant reçu quatre doses"
 
-#: models.py:139
+#: models.py:145
 msgid "15+ years old males given four doses"
 msgstr "Hommes de plus de 15 ans ayant reçu quatre doses"
 
-#: models.py:142
+#: models.py:148
 msgid "5-15 years old females given one dose"
 msgstr "Filles de 5-15 ans ayant reçu une dose"
 
-#: models.py:144
+#: models.py:150
 msgid "15+ years old females given one dose"
 msgstr "Femmes de plus de 15 ans ayant reçu une dose"
 
-#: models.py:146
+#: models.py:152
 msgid "5-15 years old females given two doses"
 msgstr "Filles 5-15 ans ayant reçu deux doses"
 
-#: models.py:148
+#: models.py:154
 msgid "15+ years old females given two doses"
 msgstr "Femmes de plus de 15 ans ayant reçu deux doses"
 
-#: models.py:150
+#: models.py:156
 msgid "5-15 years old females given three doses"
 msgstr "Filles de 5-15 ans ayant reçu trois doses"
 
-#: models.py:152
+#: models.py:158
 msgid "15+ years old females given three doses"
 msgstr "Femmes de plus de 15 ans ayant reçu trois doses"
 
-#: models.py:154
+#: models.py:160
 msgid "5-15 years old females given four doses"
 msgstr "Filles de 5-15 ans ayant reçu quatre doses"
 
-#: models.py:156
+#: models.py:162
 msgid "15+ years old females given four doses"
 msgstr "Femmes de plus de 15 ans ayant reçu quatre doses"
 
-#: models.py:160
+#: models.py:166
 msgid "not available 5-15 ans years old males"
 msgstr "Garçons de 5-15 ans indisponibles"
 
-#: models.py:162
+#: models.py:168
 msgid "not available 15+ years old males"
 msgstr "Hommes de plus de 15 ans indisponibles"
 
-#: models.py:164
+#: models.py:170
 msgid "5-15 years old males refusing treatment"
 msgstr "Garçons de 5-15 ans refusant le traitement"
 
-#: models.py:166
+#: models.py:172
 msgid "15+ years old males refusing treatment"
 msgstr "Hommes de plus de 15 ans refusant le traitement"
 
-#: models.py:168
+#: models.py:174
 msgid "5-15 years old males having side effects"
 msgstr "Garçons de 5-15 ans souffrant d'effets secondaires"
 
-#: models.py:170
+#: models.py:176
 msgid "15+ years old males having side effects"
 msgstr "Hommes de plus de 15 ans souffrant d'effets secondaires"
 
-#: models.py:173
+#: models.py:179
 msgid "not available 5-15 ans years old females"
 msgstr "Filles de 5-15 ans indisponibles"
 
-#: models.py:175
+#: models.py:181
 msgid "not available 15+ years old females"
 msgstr "Femmes de plus de 15 ans indisponibles"
 
-#: models.py:177
+#: models.py:183
 msgid "5-15 years old females refusing treatment"
 msgstr "Filles de 5-15 ans refusant le traitement"
 
-#: models.py:179
+#: models.py:185
 msgid "15+ years old females refusing treatment"
 msgstr "Femmes de plus de 15 ans refusant le traitement"
 
-#: models.py:181
+#: models.py:187
 msgid "5-15 years old females having side effects"
 msgstr "Filles de 5-15 ans souffrant d'effets secondaires"
 
-#: models.py:183
+#: models.py:189
 msgid "15+ years old females having side effects"
 msgstr "Femmes de plus de 15 ans souffrant d'effets secondaires"
 
-#: models.py:185
+#: models.py:191
 msgid "pregnant 5-15 years old females"
 msgstr "Filles de 5-15 ans enceintes"
 
-#: models.py:187
+#: models.py:193
 msgid "pregnant 15+ years old females"
 msgstr "Femmes de plus de 15 ans enceintes"
 
-#: models.py:192
+#: models.py:198
 msgid "disabled"
 msgstr "désactivé"
 
-#: models.py:254
+#: models.py:263
 #, python-format
 msgid "Results of campaign %(campaign)s at %(area)s"
 msgstr "Résultats de la campagne %(campaign)s à %(area)s"
 
-#: models.py:260
+#: models.py:269
 #, python-format
 msgid "%(campaign)sD%(day)s/%(reportid)s"
 msgstr "%(campaign)sD%(day)s/%(reportid)s"
 
-#: models.py:283
+#: models.py:292
 msgid "locations hierarchy"
 msgstr "Hiérarchie de lieux"
 
-#: models.py:284
+#: models.py:293
 msgid "locations hierarchies"
 msgstr "hiérarchies de lieux"
 
-#: models.py:289
+#: models.py:298
 msgid "data source location"
 msgstr "lieu source de données"
 
-#: models.py:305
+#: models.py:314
 msgid "drugs stock movement"
 msgstr "mouvement de stock de médicaments"
 
-#: models.py:306
+#: models.py:315
 msgid "drugs stock movements"
 msgstr "mouvements de stock de médicaments"
 
-#: models.py:311
+#: models.py:320
 msgid "for results"
 msgstr "pour les résultats"
 
-#: models.py:313
+#: models.py:322
 msgid "received"
 msgstr "reçus"
 
-#: models.py:315
+#: models.py:324
 msgid "returned"
 msgstr "rendus"
 
-#: models.py:320
+#: models.py:329
 #, python-format
 msgid "received %(received)s and returned %(returned)s"
 msgstr "reçus %(received)s et rendus %(returned)s"
 
-#: models.py:322
+#: models.py:331
 msgid "nothing for the moment"
 msgstr "rien pour le moment"
 
-#: utils.py:33
+#: utils.py:36
 #, python-format
 msgid ""
 "The code %(code)s doesn't match any known location. Ask your administrator "
@@ -292,16 +293,16 @@ msgstr ""
 "Le code %(code)s ne correspond à aucun lieu connu. Demandez à votre "
 "administrateur le code du lieu où vous vous trouvez"
 
-#: utils.py:40
+#: utils.py:43
 #, python-format
 msgid ""
-"You can only do this with a %(expected_type)s but %(location)s is a %"
-"(current_type)s."
+"You can only do this with a %(expected_type)s but %(location)s is a "
+"%(current_type)s."
 msgstr ""
-"Vous pouvez faire cela uniquement avec un(e) %(expected_type)s mais %"
-"(location)s est un(e) %(current_type)s."
+"Vous pouvez faire cela uniquement avec un(e) %(expected_type)s mais "
+"%(location)s est un(e) %(current_type)s."
 
-#: utils.py:81
+#: utils.py:84
 msgid ""
 "You must specify the campaign and location you are reporting for. Send 'VIL' "
 "first."
@@ -309,13 +310,77 @@ msgstr ""
 "Vous devez préciser la campagne et le lieu pour lesquels vous faites ce "
 "rapport. Envoyez 'VIL' d'abord."
 
-#: utils.py:85
+#: utils.py:88
 msgid ""
 "You must specify the population of the location your are reporting for. Send "
 "a complete population report with 'VIL' first."
 msgstr ""
 "Vous devez préciser la population du lieu pour lequel vous faites ce "
 "rapport. Envoyez un rapport de population complet avec 'VIL' d'abord."
+
+#: utils.py:229
+msgid "Programme Coverage"
+msgstr "Couverture du programme"
+
+#: utils.py:230
+msgid "Treated males"
+msgstr "Hommes traités"
+
+#: utils.py:231
+msgid "5-15 years old treated males"
+msgstr "Garçons de 5-15 ans traités"
+
+#: utils.py:232
+msgid "15+ years old treated males"
+msgstr "Hommes de plus de 15 ans traités"
+
+#: utils.py:233
+msgid "Treated females"
+msgstr "Femmes traitées"
+
+#: utils.py:234
+msgid "5-15 years old treated females"
+msgstr "Filles de 5-15 ans traitées"
+
+#: utils.py:235
+msgid "15+ years old treated females"
+msgstr "Femmes de plus de 15 ans traitées"
+
+#: utils.py:237
+msgid "Drugs loss rate"
+msgstr "Taux de perte de médicaments"
+
+#: utils.py:239
+msgid "Albendazole received"
+msgstr "Albendazole reçu"
+
+#: utils.py:240
+msgid "Albendazole used"
+msgstr "Albendazole utilisé"
+
+#: utils.py:241
+msgid "Albendazole lost"
+msgstr "Albendazole perdu"
+
+#: utils.py:242
+msgid "Albendazole returned"
+msgstr "Albendazole rendu"
+
+#: utils.py:244
+msgid "Mectizan received"
+msgstr "Mectizan reçu"
+
+#: utils.py:245
+msgid "Mectizan used"
+msgstr "Mectizan utilisé"
+
+#: utils.py:246
+msgid "Mectizan lost"
+msgstr "Mectizan perdu"
+
+#: utils.py:247
+msgid "Mectizan returned"
+msgstr "Mectizan rendu"
 
 #: handlers/campaign_code.py:47
 #, python-format
@@ -327,12 +392,12 @@ msgid "To report, send 'MED', followed by an even number of values."
 msgstr ""
 "Pour faire le rapport, envoyez 'MED', suivit d'un nombre pair de valeurs."
 
-#: handlers/med.py:57
+#: handlers/med.py:60
 #, python-format
-msgid "All %(count)s values must be numbers"
-msgstr "Les %(count)s valeurs doivent êtres des nombres"
+msgid "All %(count)s values must be positive numbers"
+msgstr "Toutes les %(count)s valeurs doivent êtres des nombres positifs"
 
-#: handlers/med.py:64
+#: handlers/med.py:67
 #, python-format
 msgid ""
 "The number of doses returned (%(returned)s) for %(drug)s can not be greater "
@@ -341,20 +406,20 @@ msgstr ""
 "Le nombre de doses rendues (%(returned)s) pour %(drug)s ne peut être plus "
 "grand que le nombre de doses reçues (%(received)s)."
 
-#: handlers/med.py:81
+#: handlers/med.py:84
 #, python-format
 msgid "The stocks for the campaign %(campaign)s in %(location)s are saved."
 msgstr ""
 "Les stocks pour la campagne %(campaign)s à %(location)s ont été sauvergardés."
 
-#: handlers/med.py:86 handlers/men.py:107 handlers/msc.py:104
-#: handlers/wmen.py:108 handlers/wsc.py:106
+#: handlers/med.py:89 handlers/men.py:110 handlers/msc.py:107
+#: handlers/wmen.py:109 handlers/wsc.py:107
 #, python-format
 msgid " All reports for this location are completed! Receipt: %(receipt)s"
 msgstr " Tous les rapport pour ce lieu sont complets ! Reçu : %(receipt)s"
 
-#: handlers/med.py:90 handlers/men.py:111 handlers/msc.py:108
-#: handlers/wmen.py:112 handlers/wsc.py:110
+#: handlers/med.py:93 handlers/men.py:114 handlers/msc.py:111
+#: handlers/wmen.py:113 handlers/wsc.py:111
 #, python-format
 msgid ""
 " You have sent %(completed)s over %(to_complete)s reports for this location."
@@ -365,31 +430,11 @@ msgstr ""
 msgid "To report, send 'MEN', followed by 8 numbers."
 msgstr "Pour faire le rapport, envoyez 'HOM', suivit de 8 nombres."
 
-#: handlers/men.py:64 handlers/wmen.py:65 handlers/wsc.py:62
-msgid "All 8 values must be numbers"
-msgstr "Les 8 valeurs doivent êtres des nombres"
+#: handlers/men.py:65 handlers/wmen.py:66 handlers/wsc.py:63
+msgid "All 8 values must be positive numbers"
+msgstr "Les 8 valeurs doivent êtres des nombres positifs"
 
-# python-format
-#: handlers/men.py:75 handlers/msc.py:73 handlers/wmen.py:76
-#: handlers/wsc.py:73
-#, python-format
-msgid ""
-"The sum of all the results for males and females (%(total)s) must be equal "
-"to  the target population (%(target_pop)s)"
-msgstr ""
-"La somme des résultats pour les hommes et les femmes (%(total)s) doit être "
-"égale à la population cible (%(target_pop)s)"
-
-#: handlers/men.py:82
-#, python-format
-msgid ""
-"The sum of all the results for all males (%(total)s) can not be bigger than "
-"the target population (%(target_pop)s)"
-msgstr ""
-"La somme des résultats pour tous les hommes (%(total)s) ne peut être plus "
-"grande que la population cible (%(target_pop)s)"
-
-#: handlers/men.py:102
+#: handlers/men.py:105
 #, python-format
 msgid ""
 "The results for the campaign %(campaign)s in %(location)s related to men are "
@@ -402,20 +447,11 @@ msgstr ""
 msgid "To report, send 'MSC', followed by 6 numbers."
 msgstr "Pour faire le rapport, envoyez 'CPH', suivit de 6 nombres."
 
-#: handlers/msc.py:62
-msgid "All 6 values must be numbers"
-msgstr "Les 6 valeurs doivent êtres des nombres"
+#: handlers/msc.py:63
+msgid "All 6 values must be positive numbers"
+msgstr "Les 6 valeurs doivent êtres des nombres positifs"
 
-#: handlers/msc.py:80
-#, python-format
-msgid ""
-"The sum of all the results for males special cases (%(total)s) can not be "
-"bigger than the target population (%(target_pop)s)"
-msgstr ""
-"La somme des résultats pour les cas particuliers homme (%(total)s) ne peut "
-"être plus grande que la population cible (%(target_pop)s)"
-
-#: handlers/msc.py:98
+#: handlers/msc.py:101
 #, python-format
 msgid ""
 "The results for the campaign %(campaign)s in %(location)s related to males "
@@ -428,17 +464,17 @@ msgstr ""
 msgid "To report, send: VIL "
 msgstr "Pour faire un rapport, envoyez: VIL"
 
-#: handlers/vil.py:61
+#: handlers/vil.py:62
 #, python-format
 msgid "The location %(location)s is not part of the campaign %(campaign)s."
 msgstr "Le lieu %(location)s n'est pas concerné par la campagne %(campaign)s."
 
-#: handlers/vil.py:73
+#: handlers/vil.py:74
 #, python-format
 msgid "There are no active campaigns for %(location)s right now."
 msgstr "Il n'y a pas de campaign active pour %(location)s en ce moment."
 
-#: handlers/vil.py:77
+#: handlers/vil.py:78
 #, python-format
 msgid ""
 "There are several active campaigns for %(location)s right now. Replace 'VIL' "
@@ -447,14 +483,14 @@ msgstr ""
 "Il y a plusieurs campagnes active pour %(location)s en ce moment. Remplacez "
 "'VIL' par le code de la campagne et renvoyez votre message."
 
-#: handlers/vil.py:87
+#: handlers/vil.py:88
 #, python-format
 msgid ""
 "You are now reporting results for the campaign %(campaign)s in %(location)s."
 msgstr ""
 "Votre rapport porte maintenant sur la campagne %(campaign)s, %(location)s."
 
-#: handlers/vil.py:93
+#: handlers/vil.py:94
 msgid ""
 "You must provide a drug package with these results. It should be the second "
 "value alfter 'VIL'."
@@ -462,39 +498,39 @@ msgstr ""
 "Vous devez précisez le lot de médicaments avec ces résultats. Ce devrait "
 "être la seconde valeur après 'VIL'."
 
-#: handlers/vil.py:100 handlers/vil.py:103
+#: handlers/vil.py:101 handlers/vil.py:104
 msgid "%d%m"
 msgstr "%d%m"
 
-#: handlers/vil.py:107
+#: handlers/vil.py:108
 #, python-format
 msgid ""
-"Start treatment date (%(start)s) can not be after end treatment date (%(end)"
-"s)."
+"Start treatment date (%(start)s) can not be after end treatment date "
+"(%(end)s)."
 msgstr ""
 "La date de début de traitement (%(start)s) ne peut pas être après la date de "
 "fin de traitement (%(end)s)."
 
-#: handlers/vil.py:116
-msgid "The last 3 values must be 3 numbers"
-msgstr "Les trois dernières valeurs doivent êtres des nombres"
-
 #: handlers/vil.py:120
+msgid "The last 3 values must be 3 positive numbers"
+msgstr "Les trois dernières valeurs doivent êtres des nombres positifs"
+
+#: handlers/vil.py:124
 #, python-format
 msgid ""
 "The sum of patients under six months and the target population %(sum)s can "
 "not be greater than the population value (%(total_pop)s)."
 msgstr ""
-"La somme des de la population de moins de 6 mois et de la population cible (%"
-"(sum)s) ne peut pas être plus grande que la valeur de la population totale (%"
-"(total_pop)s)."
+"La somme des de la population de moins de 6 mois et de la population cible "
+"(%(sum)s) ne peut pas être plus grande que la valeur de la population totale "
+"(%(total_pop)s)."
 
-#: handlers/vil.py:141
+#: handlers/vil.py:147
 #, python-format
 msgid ""
-"The results for the campaign %(campaign)s in %(location)s are saved. From %"
-"(start)s, to %(end)s targetting %(target_pop)s/%(total_pop)s people and %"
-"(under_six_pop)s under six months."
+"The results for the campaign %(campaign)s in %(location)s are saved. From "
+"%(start)s, to %(end)s targetting %(target_pop)s/%(total_pop)s people and "
+"%(under_six_pop)s under six months."
 msgstr ""
 "Les résultats de la campagne %(campaign)s pour %(location)s sont "
 "sauvegardés. De %(start)s, à %(end)s elle cible %(target_pop)s/%(total_pop)s "
@@ -504,16 +540,7 @@ msgstr ""
 msgid "To report, send 'WMEN', followed by 8 numbers."
 msgstr "Pour faire un rapport, envoyez 'FEM', suivi de 8 nombres."
 
-#: handlers/wmen.py:83
-#, python-format
-msgid ""
-"The sum of all the results for all females (%(total)s) can not be bigger "
-"than the target population (%(target_pop)s)"
-msgstr ""
-"La somme des résultats pour toutes les femmes (%(total)s) ne peut être plus "
-"grande que la population cible (%(target_pop)s)"
-
-#: handlers/wmen.py:103
+#: handlers/wmen.py:104
 #, python-format
 msgid ""
 "The results for the campaign %(campaign)s in %(location)s related to women "
@@ -526,16 +553,7 @@ msgstr ""
 msgid "To report, send 'WSC', followed by 8 numbers."
 msgstr "Pour faire un rapport, envoyez 'CPF', suivi de 8 nombres."
 
-#: handlers/wsc.py:80
-#, python-format
-msgid ""
-"The sum of all the results for females special cases (%(total)s) can not be "
-"bigger than the target population (%(target_pop)s)"
-msgstr ""
-"La somme des résultats pour les cas particuliers femme (%(total)s) ne peut "
-"être plus grande que la population cible (%(target_pop)s)"
-
-#: handlers/wsc.py:100
+#: handlers/wsc.py:101
 #, python-format
 msgid ""
 "The results for the campaign %(campaign)s in %(location)s related to females "
@@ -544,25 +562,37 @@ msgstr ""
 "Les résultats de la campagne %(campaign)s à %(location)s concernant les cas "
 "particulier femme ont été sauvergardés."
 
-#: templates/base.html:25
+#: templates/base.html:23
+msgid "Logout "
+msgstr "Se déconnecter"
+
+#: templates/base.html:26
 msgid "NTD management"
 msgstr "Gestion des MTN"
 
-#: templates/base.html:56 templates/base.html.py:65
+#: templates/base.html:58
 msgid "Home"
 msgstr "Acceuil"
 
-#: templates/base.html:60 templates/base.html.py:68
+#: templates/base.html:62
+msgid "Campaigns results"
+msgstr "Résultats des campagnes"
+
+#: templates/base.html:67
 msgid "Manage campaigns"
 msgstr "Gérer les campagnes"
 
-#: templates/base.html:73
+#: templates/base.html:74
 msgid "RapidSMS admin"
 msgstr "RapidSMS admin"
 
-#: templates/base.html:78
+#: templates/base.html:79
 msgid "Django admin"
 msgstr "Django admin"
+
+#: templates/base.html:84
+msgid "Xforms admin"
+msgstr "Xforms admin"
 
 #: templates/campaigns-list.html:9
 msgid "Campaigns"
@@ -572,13 +602,165 @@ msgstr "Campagnes"
 msgid "delete"
 msgstr "supprimer"
 
-#: templates/campaigns-list.html:30 templates/who_dashboard.html:17
+#: templates/campaigns-list.html:30 templates/campaigns_results.html:17
+#: templates/who_dashboard.html:18
 msgid "Create a campaign"
 msgstr "Ajouter une campagne"
 
+#: templates/campaigns_results.html:13 templates/who_dashboard.html:14
+msgid "No campaign yet"
+msgstr "Aucune campagne pour le moment"
+
+#: templates/campaigns_results.html:27 templates/who_dashboard.html:26
+msgid "Campaign"
+msgstr "Campagne"
+
+#: templates/campaigns_results.html:34 templates/who_dashboard.html:33
+msgid "Previous"
+msgstr "Précédente"
+
+#: templates/campaigns_results.html:48 templates/who_dashboard.html:47
+msgid "Next"
+msgstr "Suivante"
+
+#: templates/campaigns_results.html:56 templates/who_dashboard.html:55
+msgid "starts on"
+msgstr "débute le"
+
+#: templates/campaigns_results.html:65
+msgid "Population"
+msgstr "Population"
+
+#: templates/campaigns_results.html:68 templates/campaigns_results.html:127
+#: templates/campaigns_results.html:205 templates/campaigns_results.html:283
+#: templates/campaigns_results.html:348 templates/campaigns_results.html:420
+#: templates/who_dashboard.html:66
+msgid "Zone"
+msgstr "Zone"
+
+#: templates/campaigns_results.html:69 templates/campaigns_results.html:128
+#: templates/campaigns_results.html:206 templates/campaigns_results.html:284
+#: templates/campaigns_results.html:349 templates/campaigns_results.html:421
+msgid "Reported from"
+msgstr "Report fait à"
+
+#: templates/campaigns_results.html:70 templates/campaigns_results.html:129
+#: templates/campaigns_results.html:207 templates/campaigns_results.html:285
+#: templates/campaigns_results.html:350 templates/campaigns_results.html:422
+msgid "Target area"
+msgstr "Lieu ciblé"
+
+#: templates/campaigns_results.html:71 templates/campaigns_results.html:130
+#: templates/campaigns_results.html:208 templates/campaigns_results.html:286
+#: templates/campaigns_results.html:351
+msgid "Drugs"
+msgstr "Médicaments"
+
+#: templates/campaigns_results.html:72
+msgid "Distributor"
+msgstr "Distributeur"
+
+#: templates/campaigns_results.html:73
+msgid "Treatment started on"
+msgstr "Début du traitement"
+
+#: templates/campaigns_results.html:74
+msgid "Treatment ended on"
+msgstr "Fin du traitement"
+
+#: templates/campaigns_results.html:75
+msgid "Total population"
+msgstr "Population totale"
+
+#: templates/campaigns_results.html:76
+msgid "Target population"
+msgstr "Population cible"
+
+#: templates/campaigns_results.html:77
+msgid "Population under 6 months"
+msgstr "Population de moins de 6 mois"
+
+#: templates/campaigns_results.html:113 templates/campaigns_results.html:179
+#: templates/campaigns_results.html:257 templates/campaigns_results.html:333
+#: templates/campaigns_results.html:403 templates/campaigns_results.html:461
+msgid "Total"
+msgstr "Total"
+
+#: templates/campaigns_results.html:124
+msgid "Treatment distribution for males"
+msgstr "Distribution du traitement pour les hommes"
+
+#: templates/campaigns_results.html:131 templates/campaigns_results.html:209
+#: templates/campaigns_results.html:293 templates/campaigns_results.html:295
+#: templates/campaigns_results.html:297 templates/campaigns_results.html:359
+#: templates/campaigns_results.html:361 templates/campaigns_results.html:363
+#: templates/campaigns_results.html:365
+msgid "5-15 years old"
+msgstr "5-15 ans"
+
+#: templates/campaigns_results.html:132 templates/campaigns_results.html:210
+#: templates/campaigns_results.html:294 templates/campaigns_results.html:296
+#: templates/campaigns_results.html:298 templates/campaigns_results.html:360
+#: templates/campaigns_results.html:362 templates/campaigns_results.html:364
+#: templates/campaigns_results.html:366
+msgid "15+ years old"
+msgstr "15 ans et +"
+
+#: templates/campaigns_results.html:135 templates/campaigns_results.html:139
+#: templates/campaigns_results.html:213 templates/campaigns_results.html:217
+msgid "1 dose"
+msgstr "1 dose"
+
+#: templates/campaigns_results.html:136 templates/campaigns_results.html:140
+#: templates/campaigns_results.html:214 templates/campaigns_results.html:218
+msgid "2 doses"
+msgstr "2 doses"
+
+#: templates/campaigns_results.html:137 templates/campaigns_results.html:141
+#: templates/campaigns_results.html:215 templates/campaigns_results.html:219
+msgid "3 doses"
+msgstr "3 doses"
+
+#: templates/campaigns_results.html:138 templates/campaigns_results.html:142
+#: templates/campaigns_results.html:216 templates/campaigns_results.html:220
+msgid "4 doses"
+msgstr "4 doses"
+
+#: templates/campaigns_results.html:202
+msgid "Treatment distribution for females"
+msgstr "Distribution du traitement pour les femmes"
+
+#: templates/campaigns_results.html:280
+msgid "Males special cases"
+msgstr "Cas particuliers homme"
+
+#: templates/campaigns_results.html:288 templates/campaigns_results.html:353
+msgid "Not available"
+msgstr "Indisponibles"
+
+#: templates/campaigns_results.html:289 templates/campaigns_results.html:354
+msgid "Refused treatment"
+msgstr "A refusé le traitement"
+
+#: templates/campaigns_results.html:290 templates/campaigns_results.html:355
+msgid "Experienced side effects"
+msgstr "A souffert d'effets secondaires"
+
+#: templates/campaigns_results.html:345
+msgid "Females special cases"
+msgstr "Cas particuliers femme"
+
+#: templates/campaigns_results.html:356
+msgid "Pregnant"
+msgstr "Enceintes"
+
+#: templates/campaigns_results.html:417
+msgid "Stock movements"
+msgstr "Mouvements de stock"
+
 #: templates/codes_campaign.html:20
 msgid "Villages Codes"
-msgstr ""
+msgstr "Codes des villages"
 
 #: templates/create_campaign.html:9 templates/edit_campaign.html:9
 msgid "Campaigns list"
@@ -643,155 +825,60 @@ msgstr "Modifier une campagne"
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: templates/who_dashboard.html:13
-msgid "No campaign yet"
-msgstr "Aucune campagne pour le moment"
+#: templates/who_dashboard.html:63
+msgid "Progress"
+msgstr "Avancement"
 
-#: templates/who_dashboard.html:27
-msgid "Campaign"
-msgstr "Campagne"
-
-#: templates/who_dashboard.html:34
-msgid "Previous"
-msgstr "Précédente"
-
-#: templates/who_dashboard.html:44
-msgid "Next"
-msgstr "Suivante"
-
-#: templates/who_dashboard.html:52
-msgid "starts on"
-msgstr "débute le"
-
-#: templates/who_dashboard.html:61
-msgid "Population"
-msgstr "Population"
-
-#: templates/who_dashboard.html:64 templates/who_dashboard.html.py:123
-#: templates/who_dashboard.html:201 templates/who_dashboard.html.py:279
-#: templates/who_dashboard.html:344 templates/who_dashboard.html.py:416
-msgid "Zone"
-msgstr "Zone"
-
-#: templates/who_dashboard.html:65 templates/who_dashboard.html.py:124
-#: templates/who_dashboard.html:202 templates/who_dashboard.html.py:280
-#: templates/who_dashboard.html:345 templates/who_dashboard.html.py:417
-msgid "Reported from"
-msgstr "Report fait à"
-
-#: templates/who_dashboard.html:66 templates/who_dashboard.html.py:125
-#: templates/who_dashboard.html:203 templates/who_dashboard.html.py:281
-#: templates/who_dashboard.html:346 templates/who_dashboard.html.py:418
-msgid "Target area"
-msgstr "Lieu ciblé"
-
-#: templates/who_dashboard.html:67 templates/who_dashboard.html.py:126
-#: templates/who_dashboard.html:204 templates/who_dashboard.html.py:282
-#: templates/who_dashboard.html:347
-msgid "Drugs"
-msgstr "Médicaments"
+#: templates/who_dashboard.html:67
+msgid "Target areas"
+msgstr "Lieux ciblés"
 
 #: templates/who_dashboard.html:68
-msgid "Distributor"
-msgstr "Distributeur"
+msgid "Areas with a completed reporte"
+msgstr "Lieux avec un rapport complet"
 
 #: templates/who_dashboard.html:69
-msgid "Treatment started on"
-msgstr "Début du traitement"
+msgid "Areas with reports in progress"
+msgstr "Lieux avec un rapport en cours"
 
-#: templates/who_dashboard.html:70
-msgid "Treatment ended on"
-msgstr "Fin du traitement"
+msgid "Areas with reports on hold"
+msgstr "Lieux avec un rapport en attente"
 
-#: templates/who_dashboard.html:71
-msgid "Total population"
-msgstr "Population totale"
+# python-format
+#~ msgid ""
+#~ "The sum of all the results for males and females (%(total)s) must be "
+#~ "equal to  the target population (%(target_pop)s)"
+#~ msgstr ""
+#~ "La somme des résultats pour les hommes et les femmes (%(total)s) doit "
+#~ "être égale à la population cible (%(target_pop)s)"
 
-#: templates/who_dashboard.html:72
-msgid "Target population"
-msgstr "Population cible"
+#~ msgid ""
+#~ "The sum of all the results for all males (%(total)s) can not be bigger "
+#~ "than the target population (%(target_pop)s)"
+#~ msgstr ""
+#~ "La somme des résultats pour tous les hommes (%(total)s) ne peut être plus "
+#~ "grande que la population cible (%(target_pop)s)"
 
-#: templates/who_dashboard.html:73
-msgid "Population under 6 months"
-msgstr "Population de moins de 6 mois"
+#~ msgid ""
+#~ "The sum of all the results for males special cases (%(total)s) can not be "
+#~ "bigger than the target population (%(target_pop)s)"
+#~ msgstr ""
+#~ "La somme des résultats pour les cas particuliers homme (%(total)s) ne "
+#~ "peut être plus grande que la population cible (%(target_pop)s)"
 
-#: templates/who_dashboard.html:109 templates/who_dashboard.html.py:175
-#: templates/who_dashboard.html:253 templates/who_dashboard.html.py:329
-#: templates/who_dashboard.html:399 templates/who_dashboard.html.py:457
-msgid "Total"
-msgstr "Total"
+#~ msgid ""
+#~ "The sum of all the results for all females (%(total)s) can not be bigger "
+#~ "than the target population (%(target_pop)s)"
+#~ msgstr ""
+#~ "La somme des résultats pour toutes les femmes (%(total)s) ne peut être "
+#~ "plus grande que la population cible (%(target_pop)s)"
 
-#: templates/who_dashboard.html:120
-msgid "Treatment distribution for males"
-msgstr "Distribution du traitement pour les hommes"
-
-#: templates/who_dashboard.html:127 templates/who_dashboard.html.py:205
-#: templates/who_dashboard.html:289 templates/who_dashboard.html.py:291
-#: templates/who_dashboard.html:293 templates/who_dashboard.html.py:355
-#: templates/who_dashboard.html:357 templates/who_dashboard.html.py:359
-#: templates/who_dashboard.html:361
-msgid "5-15 years old"
-msgstr "5-15 ans"
-
-#: templates/who_dashboard.html:128 templates/who_dashboard.html.py:206
-#: templates/who_dashboard.html:290 templates/who_dashboard.html.py:292
-#: templates/who_dashboard.html:294 templates/who_dashboard.html.py:356
-#: templates/who_dashboard.html:358 templates/who_dashboard.html.py:360
-#: templates/who_dashboard.html:362
-msgid "15+ years old"
-msgstr "15 ans et +"
-
-#: templates/who_dashboard.html:131 templates/who_dashboard.html.py:135
-#: templates/who_dashboard.html:209 templates/who_dashboard.html.py:213
-msgid "1 dose"
-msgstr ""
-
-#: templates/who_dashboard.html:132 templates/who_dashboard.html.py:136
-#: templates/who_dashboard.html:210 templates/who_dashboard.html.py:214
-msgid "2 doses"
-msgstr ""
-
-#: templates/who_dashboard.html:133 templates/who_dashboard.html.py:137
-#: templates/who_dashboard.html:211 templates/who_dashboard.html.py:215
-msgid "3 doses"
-msgstr ""
-
-#: templates/who_dashboard.html:134 templates/who_dashboard.html.py:138
-#: templates/who_dashboard.html:212 templates/who_dashboard.html.py:216
-msgid "4 doses"
-msgstr ""
-
-#: templates/who_dashboard.html:198
-msgid "Treatment distribution for females"
-msgstr "Distribution du traitement pour les femmes"
-
-#: templates/who_dashboard.html:276
-msgid "Males special cases"
-msgstr "Cas particuliers homme"
-
-#: templates/who_dashboard.html:284 templates/who_dashboard.html.py:349
-msgid "Not available"
-msgstr "Indisponibles"
-
-#: templates/who_dashboard.html:285 templates/who_dashboard.html.py:350
-msgid "Refused treatment"
-msgstr "A refusé le traitement"
-
-#: templates/who_dashboard.html:286 templates/who_dashboard.html.py:351
-msgid "Experienced side effects"
-msgstr "A souffert d'effets secondaires"
-
-#: templates/who_dashboard.html:341
-msgid "Females special cases"
-msgstr "Cas particuliers femme"
-
-#: templates/who_dashboard.html:352
-msgid "Pregnant"
-msgstr "Enceintes"
-
-#: templates/who_dashboard.html:413
-msgid "Stock movements"
-msgstr "Mouvements de stock"
+#~ msgid ""
+#~ "The sum of all the results for females special cases (%(total)s) can not "
+#~ "be bigger than the target population (%(target_pop)s)"
+#~ msgstr ""
+#~ "La somme des résultats pour les cas particuliers femme (%(total)s) ne "
+#~ "peut être plus grande que la population cible (%(target_pop)s)"
 
 #~ msgid ""
 #~ "<location code> <drugs package> <start treatment date> <end treatment "
@@ -822,12 +909,6 @@ msgstr "Mouvements de stock"
 #~ "La somme des résultats pour les hommes et les femmes (%(total)s) doit "
 #~ "être égale à la population cible (%(target_pop)s)"
 
-#~ msgid "5-15 years old females"
-#~ msgstr "Filles de 5-15 ans"
-
-#~ msgid "15+ years old females"
-#~ msgstr "Femmes de plus de 15 ans"
-
 #~ msgid "5-15 ans years old males given one dose"
 #~ msgstr "Garçons de 5-15 ans ayant reçu une dose"
 
@@ -843,11 +924,11 @@ msgstr "Mouvements de stock"
 #~ msgid "Download"
 #~ msgstr "Télécharger"
 
-msgid "French"
-msgstr "Français"
+#~ msgid "French"
+#~ msgstr "Français"
 
-msgid "English"
-msgstr "Anglais"
+#~ msgid "English"
+#~ msgstr "Anglais"
 
-msgid "dm"
-msgstr "jm"
+#~ msgid "dm"
+#~ msgstr "jm"
