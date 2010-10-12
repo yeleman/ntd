@@ -104,7 +104,6 @@ def rowdata_to_excel(data):
 
     regular = XFStyle()
 
-
     wb = Workbook(encoding='utf-8')
     ws0 = wb.add_sheet('FILARIOSE')
 
@@ -118,7 +117,8 @@ def rowdata_to_excel(data):
             style = header
             ws0.row(rownum).height = 0x0d00
         else:
-            style = regular
+            style = easyxf('pattern: pattern solid, fore_colour gray25;') \
+                    if rownum % 2 == 0 else regular
 
         for i, cell in enumerate(cells):
             if i == 0:
