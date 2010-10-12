@@ -170,6 +170,46 @@ def campaign_all_datas(campaign):
                r.three_doses_adult_females + \
                r.four_doses_adult_females
 
+    def med_received(r, di, coef=True):
+        return r.stock_movements.all()[di].received
+
+    def med_returned(r, di, coef=True):
+        return r.stock_movements.all()[di].returned
+
+    def med_used(r, di, coef=True):
+        c1 = 1
+        if coef:
+            c2 = 2
+            c3 = 3
+            c4 = 4
+        else:
+            c1 = c2 = c3 = c4 = 1
+        return \
+            c1 * (r.one_dose_child_males + \
+                  r.one_dose_adult_males + \
+                  r.one_dose_child_females + \
+                  r.one_dose_adult_females) + \
+            c2 * (r.two_doses_child_males + \
+                  r.two_doses_adult_males + \
+                  r.two_doses_child_females + \
+                  r.two_doses_adult_females) + \
+            c3 * (r.three_doses_child_males + \
+                  r.three_doses_adult_males + \
+                  r.three_doses_child_females + \
+                  r.three_doses_adult_females) + \
+            c4 * (r.four_doses_child_males + \
+                  r.four_doses_adult_males + \
+                  r.four_doses_child_females +
+                  r.four_doses_adult_females)
+
+    def med_lost(r, di, coef=True):
+        return med_received(r, di) - med_used(r, di, coef=coef) - med_returned(r, di)
+
+    def med_lost_rate(r):
+        total = med_received(r, 0) + med_received(r, 1)
+        lost = med_lost(r, 0, coef=False) + med_lost(r, 1, coef=True)
+        return (lost * 100) / total
+
 
     # data container
     data = []
@@ -262,17 +302,17 @@ def campaign_all_datas(campaign):
         child_females_treated(result),
         adult_females_treated(result),
 
-        0, #_(u"Drugs Lost Rate"),
+        med_lost_rate(result),
 
-        0, #_(u"Albendazole Received"),
-        0, #_(u"Albendazole Used"),
-        0, #_(u"Albendazole Lost"),
-        0, #_(u"Albendazole Returned"),
+        med_received(result, 0, coef=False),
+        med_used(result, 0, coef=False),
+        med_lost(result, 0, coef=False),
+        med_returned(result, 0, coef=False),
 
-        0, #_(u"Mectizan Received"),
-        0, #_(u"Mectizan Used"),
-        0, #_(u"Mectizan Lost"),
-        0, #_(u"Mectizan Returned"),
+        med_received(result, 1, coef=True),
+        med_used(result, 1, coef=True),
+        med_lost(result, 1, coef=True),
+        med_returned(result, 1, coef=True),
 
         result.treated_under_six,
         result.one_dose_child_males,
