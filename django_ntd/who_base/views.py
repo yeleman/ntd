@@ -58,6 +58,188 @@ def dashboard(request):
                 s['in_progess'] = s.get('in_progess', 0) + 1
             else:
                 s['on_hold'] = s.get('on_hold', 0) + 1
+
+        totals = {}
+        
+        report_count = Report.objects.filter(results__campaign=campaign).count()
+        totals['pop_progress'] = Report.objects\
+                                       .filter(results__campaign=campaign,
+                                                status__vil=True)\
+                                       .count() * 100 / report_count 
+
+        sumup = lambda x: sum(y or 0 for y in x)
+
+        # gettings stats by introspecting all integer fields and summing them
+        # according to their name, grouped by zone
+        # this is completly hacky, but so much quicker when the demo is for 
+        # tomorrow :-)
+        stats_by_zone = {}
+        drugs_set = set()
+        for result in results:
+            zone = result.area.as_data_source.data_collection.parent
+            zone_dict = stats_by_zone.setdefault(zone, {})
+            for field in result._meta.fields:
+                if field.__class__.__name__ == 'IntegerField':
+                     f = field.attname
+                     zone_dict[f] = zone_dict.get(f, 0)\
+                                    + (getattr(result, f) or 0)
+            zone_dict['drugs'] = zone_dict.get('drugs', {})
+            for mov in result.stock_movements.all():
+                drugs_set.add(mov.drug)
+                drug_dict = zone_dict['drugs'].setdefault(mov.drug, {})
+                drug_dict['used'] = drug_dict.get('used', 0) + (mov.used or 0)
+                drug_dict['lost'] = drug_dict.get('lost', 0) + (mov.lost or 0)
+                drug_dict['returned'] = drug_dict.get('returned', 0)\
+                                        + (mov.returned or 0)
+                drug_dict['received'] = drug_dict.get('received', 0)\
+                                        + (mov.received or 0)
+        
+        
+                
+        
+        # todo, make one big aggregation 
+        # men totals   
+        totals.update(results.aggregate(
+               total_pop=Sum('total_pop'),
+               target_pop=Sum('target_pop'),
+               total_one_dose_child_males=Sum('one_dose_child_males'),
+               total_two_doses_child_males=Sum('two_doses_child_males'),
+               total_three_doses_child_males=Sum('three_doses_child_males'),
+               total_four_doses_child_males=Sum('four_doses_child_males'),
+               total_one_dose_adult_males=Sum('one_dose_adult_males'),
+               total_two_doses_adult_males=Sum('two_doses_adult_males'),
+               total_three_doses_adult_males=Sum('three_doses_adult_males'),
+               total_four_doses_adult_males=Sum('four_doses_adult_males'),
+               treated_under_six=Sum('treated_under_six')))
+
+        total_child_males = (totals['total_one_dose_child_males'],
+                             totals['total_two_doses_child_males'],
+                             totals['total_three_doses_child_males'],
+                             totals['total_four_doses_child_males'])
+        totals['total_child_males'] = sumup(total_child_males)
+
+        total_adult_males = (totals['total_one_dose_adult_males'],
+                             totals['total_two_doses_adult_males'],
+                             totals['total_three_doses_adult_males'],
+                             totals['total_four_doses_adult_males'])
+        totals['total_adult_males'] =  sumup(total_adult_males)
+
+        total_males = (totals['total_child_males'],
+                       totals['total_adult_males'])
+        totals['total_males'] = sumup(total_males)
+        
+
+        # women totals
+        totals.update(results.aggregate(
+           total_one_dose_child_females=Sum('one_dose_child_females'),
+           total_two_doses_child_females=Sum('two_doses_child_females'),
+           total_three_doses_child_females=Sum('three_doses_child_females'),
+           total_four_doses_child_females=Sum('four_doses_child_females'),
+           total_one_dose_adult_females=Sum('one_dose_adult_females'),
+           total_two_doses_adult_females=Sum('two_doses_adult_females'),
+           total_three_doses_adult_females=Sum('three_doses_adult_females'),
+           total_four_doses_adult_females=Sum('four_doses_adult_females')))
+
+        total_child_females = (totals['total_one_dose_child_females'],
+                             totals['total_two_doses_child_females'],
+                             totals['total_three_doses_child_females'],
+                             totals['total_four_doses_child_females'])
+        totals['total_child_females'] = sumup(total_child_females)
+
+        total_adult_females = (totals['total_one_dose_adult_females'],
+                             totals['total_two_doses_adult_females'],
+                             totals['total_three_doses_adult_females'],
+                             totals['total_four_doses_adult_females'])
+        totals['total_adult_females'] =  sumup(total_adult_females)
+
+        total_females = (totals['total_child_females'],
+                       totals['total_adult_females'])
+        totals['total_females'] = sumup(total_females)
+        
+
+        # men special case totals
+        totals.update(results.aggregate(
+           total_child_males_not_available=Sum('child_males_not_available'),
+           total_child_males_refusing=Sum('child_males_refusing'),
+           total_child_males_side_effects=Sum('child_males_side_effects'),
+           total_adult_males_not_available=Sum('adult_males_not_available'),
+           total_adult_males_refusing=Sum('adult_males_refusing'),
+           total_adult_males_side_effects=Sum('adult_males_side_effects')))
+
+        total_males_not_available = (totals['total_child_males_not_available'],
+                                    totals['total_adult_males_not_available'])
+        totals['total_males_not_available'] = sumup(total_males_not_available)
+
+        total_males_refusing = (totals['total_child_males_refusing'],
+                                       totals['total_adult_males_refusing'])
+        totals['total_males_refusing'] = sumup(total_males_refusing)
+
+        total_males_side_effects = (totals['total_child_males_side_effects'],
+                                    totals['total_adult_males_side_effects'])
+        totals['total_males_side_effects'] = sumup(total_males_side_effects)
+
+        total_untreated_males = (totals['total_males_not_available'],
+                                 totals['total_males_refusing'],
+                                 totals['total_males_side_effects'])
+        totals['total_untreated_males'] = sumup(total_untreated_males)
+
+
+        # women special case totals
+        totals.update(results.aggregate(
+          total_child_females_not_available=Sum('child_females_not_available'),
+          total_child_females_refusing=Sum('child_females_refusing'),
+          total_child_females_side_effects=Sum('child_females_side_effects'),
+          total_pregnant_child_females=Sum('pregnant_child_females'),
+          total_adult_females_not_available=Sum('adult_females_not_available'),
+          total_adult_females_refusing=Sum('adult_females_refusing'),
+          total_adult_females_side_effects=Sum('adult_females_side_effects'),
+          total_pregnant_adult_females=Sum('pregnant_adult_females')))
+
+        tot_females_not_available = (
+                                   totals['total_child_females_not_available'],
+                                   totals['total_adult_females_not_available'])
+
+        totals['total_females_not_available'] = sumup(tot_females_not_available)
+
+        total_females_refusing = (totals['total_child_females_refusing'],
+                                       totals['total_adult_females_refusing'])
+        totals['total_females_refusing'] = sumup(total_females_refusing)
+
+        tot_females_side_effects = (
+                                    totals['total_child_females_side_effects'],
+                                    totals['total_adult_females_side_effects'])
+        totals['total_females_side_effects'] = sumup(tot_females_side_effects)
+
+        total_pregnant_females = (totals['total_pregnant_child_females'],
+                                       totals['total_pregnant_adult_females'])
+        totals['total_pregnant_females'] = sumup(total_pregnant_females)
+
+        total_untreated_females = (totals['total_females_not_available'],
+                            totals['total_females_refusing'],
+                            totals['total_females_side_effects'])
+        totals['total_untreated_females'] = sumup(total_untreated_females)
+
+        totals['fsc_progress'] = Report.objects\
+                                       .filter(results__campaign=campaign,
+                                               status__msc=True)\
+                                       .count() * 100 / report_count 
+
+        # stock movements
+        totals['stocks'] = DrugsStockMovement\
+                                     .objects\
+                                     .filter(for_results__campaign=campaign)\
+                                     .values('drug__name')\
+                                     .annotate(
+                                        total_received=Sum('received'),
+                                        total_returned=Sum('returned'))
+        
+        for drug_dict in totals['stocks']:
+            drug_name = drug_dict['drug__name']
+            drug_dict['used'] = DrugsStockMovement.objects.total_used(campaign, 
+                                                                      drug_name)
+            drug_dict['lost'] = DrugsStockMovement.objects.total_lost(campaign, 
+                                                                      drug_name)
+  
         
         
     ctx = locals()
