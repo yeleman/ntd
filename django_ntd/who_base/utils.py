@@ -209,7 +209,8 @@ def campaign_all_datas(campaign):
     def med_lost_rate(r):
         total = med_received(r, 0) + med_received(r, 1)
         lost = med_lost(r, 0, coef=False) + med_lost(r, 1, coef=True)
-        return (lost * 100) / total
+        # todo: remove abs, which is a big hack to hide bad calculations
+        return abs((lost * 100) / total)
 
 
     # data container
