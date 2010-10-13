@@ -105,6 +105,8 @@
         </li>
     </ul>
     
+    <p><a href="{% url xls-campaign campaign.pk %}">{% trans "Download all data" %}</a></p>
+    
     <table id='tabs-1'>
         <caption>{% trans "Population" %}</caption>
         <thead>
@@ -491,10 +493,17 @@
                 
                 {% if r.stock_movements.exists %}
                     {% for mov in r.stock_movements.all %}
+                        {% if mov.received %}
                         <td>{{ mov.received }}</td>
                         <td>{{ mov.returned }}</td>
                         <td>{{ mov.used }}</td>
                         <td>{{ mov.lost }}</td>
+                        {% else %}
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td> 
+                        {% endif %}
                     {% endfor %}
                 {% else %}
                     {% for mov in r.drugs_pack.drugs.all %}
@@ -516,10 +525,17 @@
             <tr>
             <td class='total' colspan="3" >{% trans "Total" %}</td>
             {% for stock in totals.stocks %}
+                {% if stock.total_received %}
                 <td>{{ stock.total_received }}</td>
                 <td>{{ stock.total_returned }}</td>
                 <td>{{ stock.used }}</td>
                 <td>{{ stock.lost }}</td>
+                {% else %}
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                {% endif %}
             {% endfor %}
             </tr>
         </tfoot>

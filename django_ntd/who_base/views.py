@@ -273,8 +273,6 @@ def campaigns_results(request):
                                          totals['stock_progress']
                                         )) / 6
         
-       
-        
     ctx = locals()
 
     return render_to_response('campaigns_results.html',  ctx,

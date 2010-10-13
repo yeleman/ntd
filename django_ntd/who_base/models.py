@@ -269,23 +269,9 @@ class Results(models.Model):
         """
             Sum of all the drugs doses that have been used
         """
-        return sum(((self.one_dose_child_males or 0),
-                 (self.one_dose_adult_males or 0),
-                 (self.two_doses_child_males or 0) * 2,
-                 (self.two_doses_adult_males or 0) * 2,
-                 (self.three_doses_child_males or 0) * 3,
-                 (self.three_doses_adult_males or 0) * 3,
-                 (self.four_doses_child_males or 0) * 4,
-                 (self.four_doses_adult_males or 0) * 4,              
-                 (self.one_dose_child_females or 0),
-                 (self.one_dose_adult_females or 0),
-                 (self.two_doses_child_females or 0) * 2,
-                 (self.two_doses_adult_females or 0) * 2,
-                 (self.three_doses_child_females or 0) * 3,
-                 (self.three_doses_adult_females or 0) * 3,
-                 (self.four_doses_child_females or 0) * 4,
-                 (self.four_doses_adult_females or 0) * 4))
-
+        
+        return sum(sm.used for sm in self.stock_movements.all())
+        
     
     @property
     def receipt(self):
@@ -373,8 +359,43 @@ class DrugsStockMovement(models.Model):
 
     @property
     def used(self):
-        return self.for_results.total_drugs_consumption
-
+    
+        # todo: make than generic
+        results = self.for_results
+        if self.drug.name.lower().strip() == 'mectizan':
+            return sum(((results.one_dose_child_males or 0),
+                         (results.one_dose_adult_males or 0),
+                         (results.two_doses_child_males or 0) * 2,
+                         (results.two_doses_adult_males or 0) * 2,
+                         (results.three_doses_child_males or 0) * 3,
+                         (results.three_doses_adult_males or 0) * 3,
+                         (results.four_doses_child_males or 0) * 4,
+                         (results.four_doses_adult_males or 0) * 4,              
+                         (results.one_dose_child_females or 0),
+                         (results.one_dose_adult_females or 0),
+                         (results.two_doses_child_females or 0) * 2,
+                         (results.two_doses_adult_females or 0) * 2,
+                         (results.three_doses_child_females or 0) * 3,
+                         (results.three_doses_adult_females or 0) * 3,
+                         (results.four_doses_child_females or 0) * 4,
+                         (results.four_doses_adult_females or 0) * 4))
+        else:
+            return sum(((results.one_dose_child_males or 0),
+                         (results.one_dose_adult_males or 0),
+                         (results.two_doses_child_males or 0),
+                         (results.two_doses_adult_males or 0),
+                         (results.three_doses_child_males or 0),
+                         (results.three_doses_adult_males or 0),
+                         (results.four_doses_child_males or 0),
+                         (results.four_doses_adult_males or 0),              
+                         (results.one_dose_child_females or 0),
+                         (results.one_dose_adult_females or 0),
+                         (results.two_doses_child_females or 0),
+                         (results.two_doses_adult_females or 0),
+                         (results.three_doses_child_females or 0),
+                         (results.three_doses_adult_females or 0),
+                         (results.four_doses_child_females or 0),
+                         (results.four_doses_adult_females or 0)))
 
     @property
     def lost(self):
@@ -383,7 +404,8 @@ class DrugsStockMovement(models.Model):
         """
         
         used = self.for_results.total_drugs_consumption
-        return self.received - (self.used + self.returned)
+        # todo: remove this abs, it's a HACK to hide calculation problems
+        return abs((self.received or 0) - (self.used + (self.returned or 0)))
         
 
     def __unicode__(self):

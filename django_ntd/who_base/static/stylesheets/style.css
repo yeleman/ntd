@@ -178,6 +178,19 @@ background: url(../images/paging_right.gif) no-repeat;
 }
 
 
+#tabs .menu {
+float:left;
+}
+
+#tabs p {
+text-align:right;
+padding-right:2em;
+padding-top:16em;
+}
+
+
+
+
 table td {
     border: 1px solid #DDDDDD;
 }
