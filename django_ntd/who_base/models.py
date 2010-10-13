@@ -263,6 +263,30 @@ class Results(models.Model):
         return _(u"Results of campaign %(campaign)s at %(area)s") % {
                   'campaign': self.campaign, 'area': self.area  }
 
+
+    @property
+    def total_drugs_consumption(self):
+        """
+            Sum of all the drugs doses that have been used
+        """
+        return sum(((self.one_dose_child_males or 0),
+                 (self.one_dose_adult_males or 0),
+                 (self.two_doses_child_males or 0) * 2,
+                 (self.two_doses_adult_males or 0) * 2,
+                 (self.three_doses_child_males or 0) * 3,
+                 (self.three_doses_adult_males or 0) * 3,
+                 (self.four_doses_child_males or 0) * 4,
+                 (self.four_doses_adult_males or 0) * 4,              
+                 (self.one_dose_child_females or 0),
+                 (self.one_dose_adult_females or 0),
+                 (self.two_doses_child_females or 0) * 2,
+                 (self.two_doses_adult_females or 0) * 2,
+                 (self.three_doses_child_females or 0) * 3,
+                 (self.three_doses_adult_females or 0) * 3,
+                 (self.four_doses_child_females or 0) * 4,
+                 (self.four_doses_adult_females or 0) * 4))
+
+    
     @property
     def receipt(self):
         if self.report_manager.completed:
@@ -308,6 +332,27 @@ class LocationHierarchy(models.Model):
         return u"%s < %s" % (self.data_collection, self.data_source)
 
 
+class DrugsStockMovementManager(models.Manager):
+    
+    
+    def total_lost(self, campaign, drug_name):
+        """
+            Total of the lost drugs.
+        """
+        qs = self.get_query_set().filter(for_results__campaign=campaign,
+                                         drug__name=drug_name)
+        return sum(dst.lost for dst in qs)
+
+
+    def total_used(self, campaign, drug_name):
+        """
+            Total of the used drugs.
+        """
+        qs = self.get_query_set().filter(for_results__campaign=campaign,
+                                 drug__name=drug_name)
+        return sum(dst.used for dst in qs)
+
+
 class DrugsStockMovement(models.Model):
 
     class Meta:
@@ -323,6 +368,23 @@ class DrugsStockMovement(models.Model):
                                              blank=True, null=True)
     returned = models.IntegerField(verbose_name=__(u'returned'),
                                              blank=True, null=True)
+
+    objects = DrugsStockMovementManager()
+
+    @property
+    def used(self):
+        return self.for_results.total_drugs_consumption
+
+
+    @property
+    def lost(self):
+        """
+            Drugs that have been lost in the process
+        """
+        
+        used = self.for_results.total_drugs_consumption
+        return self.received - (self.used + self.returned)
+        
 
     def __unicode__(self):
         if self.received and self.returned:

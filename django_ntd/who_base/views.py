@@ -246,17 +246,35 @@ def campaigns_results(request):
                                        .count() * 100 / report_count 
 
         # stock movements
-        totals['stocks'] = DrugsStockMovement.objects\
-                                             .filter(for_results__campaign=campaign)\
-                                             .values('drug__name')\
-                                             .annotate(
-                                                total_received=Sum('received'),
-                                                total_returned=Sum('returned'))
-                                                
+        totals['stocks'] = DrugsStockMovement\
+                                     .objects\
+                                     .filter(for_results__campaign=campaign)\
+                                     .values('drug__name')\
+                                     .annotate(
+                                        total_received=Sum('received'),
+                                        total_returned=Sum('returned'))
+        
+        for drug_dict in totals['stocks']:
+            drug_name = drug_dict['drug__name']
+            drug_dict['used'] = DrugsStockMovement.objects.total_used(campaign, 
+                                                                      drug_name)
+            drug_dict['lost'] = DrugsStockMovement.objects.total_lost(campaign, 
+                                                                      drug_name)
         totals['stock_progress'] = Report.objects\
                                          .filter(results__campaign=campaign,
                                                  status__drug=True)\
                                          .count() * 100 / report_count 
+                                         
+        totals['global_progress'] = sum((totals['pop_progress'],
+                                         totals['males_progress'],
+                                         totals['females_progress'],
+                                         totals['msc_progress'],
+                                         totals['fsc_progress'],
+                                         totals['stock_progress']
+                                        )) / 6
+        
+       
+        
     ctx = locals()
 
     return render_to_response('campaigns_results.html',  ctx,

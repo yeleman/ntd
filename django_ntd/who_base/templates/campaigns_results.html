@@ -40,8 +40,10 @@
         
         <h3 title={{ campaign.code }}>
             <a href="{% url who-dashboard %}"?page={{ page }}>
-            {{ campaign.name }}
-            </a>
+            {{ campaign.name }}</a>
+            <span>
+            ({{ totals.global_progress }}% {% trans "completed" %})
+            </span>
         </h3> 
          
         {% if page.has_previous %}
@@ -55,7 +57,8 @@
          </div>
         
         <p id="campaign-date" class="span-4 last" >
-        {% trans "starts on" %} {{ campaign.start_date|date:"SHORT_DATE_FORMAT" }}
+        {% trans "starts on" %} 
+        {{ campaign.start_date|date:"SHORT_DATE_FORMAT" }}
         </p>
     
     </div>
@@ -463,7 +466,15 @@
             <th rowspan="2" >{% trans "Target area" %}</th>
             
             {% for drug in results.0.drugs_pack.drugs.all%}
-                <th colspan="2">{{ drug.name }}</th>
+                <th colspan="4">{{ drug.name }}</th>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for drug in results.0.drugs_pack.drugs.all%}
+                <th>{% trans "Received" %}</th>
+                <th>{% trans "Returned" %}</th>
+                <th>{% trans "Used" %}</th>
+                <th>{% trans "Lost" %}</th>
             {% endfor %}
         </tr>
         </thead>
@@ -482,9 +493,13 @@
                     {% for mov in r.stock_movements.all %}
                         <td>{{ mov.received }}</td>
                         <td>{{ mov.returned }}</td>
+                        <td>{{ mov.used }}</td>
+                        <td>{{ mov.lost }}</td>
                     {% endfor %}
                 {% else %}
                     {% for mov in r.drugs_pack.drugs.all %}
+                        <td></td>
+                        <td></td>
                         <td></td>
                         <td></td>
                     {% endfor %}
@@ -499,14 +514,14 @@
         {% if totals.stocks %}
         <tfoot>
             <tr>
-            <td class='total' colspan="3" "rowspan=2">{% trans "Total" %}</td>
-            {% with totals.stocks.values as stocks %}
-            {% for stock in stocks %}
-                <td>{{ stock.received }}</td>
-                <td>{{ stock.returned }}</td>
+            <td class='total' colspan="3" >{% trans "Total" %}</td>
+            {% for stock in totals.stocks %}
+                <td>{{ stock.total_received }}</td>
+                <td>{{ stock.total_returned }}</td>
+                <td>{{ stock.used }}</td>
+                <td>{{ stock.lost }}</td>
             {% endfor %}
             </tr>
-            {% endwith %}
         </tfoot>
         {% endif %}
     

@@ -142,12 +142,17 @@ margin-right:1em;
 	height:37px;
 }
 
-/*** DASHBOARD ***/
+/*** Campaigns results (previously dashboard) ***/
 
 
 #dashboard #pagination h3, 
 #dashboard #pagination p {
 float: left;
+}
+
+#dashboard #pagination h3 span {
+font-size:0.7em;
+color:grey;
 }
 
 #who #pagination .previous a {
