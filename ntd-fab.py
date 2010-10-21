@@ -134,6 +134,7 @@ def loadfixtures():
 
     ylmfab.loadfixtures(rep=root, fixtures=root_fixtures, working_dir=root_dir)
 
+
 def gitrw():
 
     """ changes repositories url to use private ones (rw access) """
