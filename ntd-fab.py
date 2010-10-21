@@ -49,7 +49,8 @@ simple_locations = ylmfab.Dependency()
 simple_locations.source = 'git://github.com/yeleman/simple_locations.git'
 
 django_simple_config = ylmfab.Dependency()
-django_simple_config.source = 'git://github.com/yeleman/django_simple_config.git'
+django_simple_config.source = \
+                            'git://github.com/yeleman/django_simple_config.git'
 django_simple_config.lib_name = 'django_simple_config'
 
 code_generator = ylmfab.Dependency()
@@ -63,7 +64,8 @@ django_eav.source = 'git+git://github.com/mvpdev/django-eav.git#egg=django-eav'
 django_eav.kind = ylmfab.Dependency.PIP_URL
 
 rapidsms_xforms = ylmfab.Dependency()
-rapidsms_xforms.source = 'git+git://github.com/nyaruka/rapidsms-xforms.git#egg=rapidsms_xforms'
+rapidsms_xforms.source = \
+         'git+git://github.com/nyaruka/rapidsms-xforms.git#egg=rapidsms_xforms'
 rapidsms_xforms.kind = ylmfab.Dependency.PIP_URL
 
 dependencies = [ntd, bolibana, direct_sms, logger_ng, simple_locations, \
@@ -79,12 +81,13 @@ local_settings_skel = os.path.join(root_dir, 'skeletons', 'local_settings.py')
 
 # fabric available options
 
+
 def deploy():
 
     # install dependencies
     install_dep()
 
-    # syncdb on 
+    # syncdb on
     syncdb()
 
     # load fixtures
@@ -96,13 +99,16 @@ def install_dep():
     for dependency in dependencies:
         ylmfab.install(dependency)
 
+
 def syncdb():
 
     import shutil
+
     if not os.path.exists(local_settings):
-       shutil.copyfile(local_settings_skel, local_settings)
+        shutil.copyfile(local_settings_skel, local_settings)
     ylmfab.syncdb(rep=root, working_dir=root_dir)
     ylmfab.migrate(rep=root, working_dir=root_dir)
+
 
 def loadfixtures():
 
