@@ -84,6 +84,14 @@ local_settings_skel = os.path.join(root_dir, 'skeletons', 'local_settings.py')
 
 def deploy():
 
+    """ complete deployment of the system:
+
+    - install all dependencies
+    - creates the database with admin user
+    - load initial fixtures
+
+    """
+
     # install dependencies
     install_dep()
 
@@ -96,11 +104,21 @@ def deploy():
 
 def install_dep():
 
+    """ installs all the dependencies """
+
     for dependency in dependencies:
         ylmfab.install(dependency)
 
 
 def syncdb():
+
+    """ creates the dabatase through django
+
+    - copies local_settings skeleton
+    - django syncdb
+    - south migrate
+
+    """
 
     import shutil
 
@@ -112,4 +130,13 @@ def syncdb():
 
 def loadfixtures():
 
+    """ loads the basic fixtures into the database """
+
     ylmfab.loadfixtures(rep=root, fixtures=root_fixtures, working_dir=root_dir)
+
+def gitrw():
+
+    """ changes repositories url to use private ones (rw access) """
+
+    for dependency in dependencies:
+        ylmfab.github_to_private(dependency)
