@@ -89,8 +89,8 @@ INSTALLED_APPS = [
     "simple_locations",
     "report_parts",
     "eav",
-    "uni_form",
-    "rapidsms_xforms"
+#    "uni_form",
+#    "rapidsms_xforms"
 ]
 
 

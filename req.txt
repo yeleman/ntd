@@ -8,3 +8,4 @@ djtables==0.1.1
 nose==0.11.4
 wsgiref==0.1.2
 xlwt==0.7.2
+django-uni-form==0.7.0
