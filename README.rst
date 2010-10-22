@@ -6,49 +6,55 @@ periodic data collection over SMS.
 
 It is based on rapidsms (0.9.x) and depends on the following packages:
 
-* PyPi packages you can install using 'pip install -r req.txt'
+PIP URL(s)
+~~~~~~~~~~
 
-* rapidsms fork: `bolibana <http://github.com:bolibana/bolibana>`_ branch 'who'
-  
-    git clone git@github.com:bolibana/bolibana.git && ln -s bolibana/lib/rapidsms/ rapidsms
-    cd bolibana && git checkout new-core
-    cd ..
-    
-* `direct_sms <http://github.com/rgaudin/Direct-SMS>`_ (new-core branch) branch new-core
+- **django-eav**
 
-    git clone http://github.com/rgaudin/Direct-SMS.git && mv Direct-SMS/ direct_sms
-    cd direct_sms && git checkout new-core
-    cd ..
+    ``pip install -e git+git://github.com/mvpdev/django-eav.git#egg=django-eav``
 
-* `logger_ng <http://github.com/ksamuel/Logger-NG>`_ (new-core branch)
+- **rapidsms-xforms**
 
-    git clone https://github.com/ksamuel/Logger-NG.git && mv Logger-NG/ logger_ng branch new-core
-    cd logger_ng/ &&  git checkout new-core
-    cd ..
+    ``pip install -e git+git://github.com/nyaruka/rapidsms-xforms.git#egg=rapidsms_xforms``
 
-* `simple_locations <http://github.com/yeleman/simple_locations>`_
+Git repositor(y|ies)
+~~~~~~~~~~~~~~~~~~~~
 
-     git clone git@github.com:yeleman/simple_locations.git
-    
-* `django_simple_config <http://github.com/yeleman/django_simple_config>`_
+- **ntd**
 
-    clone git@github.com:yeleman/django_simple_config.git
+    ``git clone git://github.com/yeleman/ntd.git``
 
-* `code_generator <http://github.com/yeleman/code_generator>`_
+- **rapidsms**
 
-    clone git@github.com:yeleman/code_generator.git
+    ``git clone git://github.com/bolibana/bolibana.git``
+    ``git checkout who``
 
-* `report_parts <http://github.com/yeleman/report_parts>`_
+- **direct_sms**
 
-    git clone git@github.com:yeleman/report_parts.git
+    ``git clone git://github.com/rgaudin/Direct-SMS.git``
+    ``git checkout new-core``
 
-* `django_eav <http://github.com/mvpdev/django-eav>`_
+- **logger_ng**
 
-    pip install -e git+git://github.com/mvpdev/django-eav.git#egg=django-eav
+    ``git clone git://github.com/ksamuel/Logger-NG.git``
+    ``git checkout new-core``
 
-* `rapidsms-xforms <http://github.com/nicpottier/rapidsms-xforms>`_
+- **simple_locations**
 
-    pip install -e git+git://github.com/rgaudin/rapidsms-xforms.git#egg=rapidsms_xforms
+    ``git clone git://github.com/yeleman/simple_locations.git``
+
+- **django_simple_config**
+
+    ``git clone git://github.com/yeleman/django_simple_config.git``
+
+- **code_generator**
+
+    ``git clone git://github.com/yeleman/code_generator.git``
+
+- **report_parts**
+
+    ``git clone git://github.com/yeleman/report_parts.git``
+
 
 Optionnaly, if you wish to use an modem:
 

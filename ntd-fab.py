@@ -141,3 +141,14 @@ def gitrw():
 
     for dependency in dependencies:
         ylmfab.github_to_private(dependency)
+
+
+def rst():
+
+    """ outputs the list of dependencies for inclusion in an RST file """
+
+    with settings(
+        hide('warnings', 'running', 'stdout', 'stderr'), \
+        warn_only=True):
+
+        print(ylmfab.dependencies_to_rst(dependencies))
